@@ -1,713 +1,1921 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>VIV Studio — лазерная эпиляция и косметология в центре Санкт-Петербурга</title>
-<meta name="description" content="VIV Studio на Суворовском, 35: лазерная эпиляция и эстетическая косметология. Скидка 50% на первое посещение, рейтинг 5,0 на Яндекс Картах, камерная студия у Смольного. Бесплатная консультация.">
-<meta name="theme-color" content="#F7F1E9">
-<meta property="og:title" content="VIV Studio — лазерная эпиляция и косметология в Санкт-Петербурге">
-<meta property="og:description" content="Гладкая кожа без бритвы, раздражения и вросших волос. Скидка 50% на первое посещение. Суворовский пр-т, 35.">
+<title>VIV Studio — лазерная эпиляция и косметология в СПб | Первое посещение −50%</title>
+<meta name="description" content="Студия лазерной эпиляции и эстетической косметологии VIV Studio, Санкт-Петербург, Суворовский пр-т 35. Гладкая кожа без бритвы, вросших волос и раздражения. Первое посещение лазерной эпиляции — со скидкой 50%. Рейтинг 5,0 по 53 оценкам на Яндекс Картах.">
+<meta name="theme-color" content="#F7EDE6">
+<meta name="format-detection" content="telephone=no">
 <meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%233A2E27'/%3E%3Cpath d='M10 11l6 12 6-12' fill='none' stroke='%23EBD8C7' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:site_name" content="VIV Studio">
+<meta property="og:title" content="Гладкая кожа без бритвы — VIV Studio, Санкт-Петербург">
+<meta property="og:description" content="Лазерная эпиляция и косметология на Суворовском, 35. Первое посещение — со скидкой 50%. 5,0 из 5 по 53 оценкам.">
+<meta property="og:image" content="assets/img/hero-main.svg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23A87C86'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='17' fill='%23FDF9F5' text-anchor='middle'%3EV%3C/text%3E%3C/svg%3E">
+<!-- Сюда вставьте счётчик Яндекс.Метрики (с вебвизором) и/или Google Analytics.
+     Цели уже вызываются из кода формы: ym(0,'reachGoal','lead') и gtag('event','generate_lead'). -->
+<script>
+/* Мобильная версия живёт отдельным файлом m.html: на телефоне у неё своя,
+   сокращённая структура. Уводим туда до первой отрисовки, чтобы не мигало.
+   «Полная версия сайта» открывается по ссылке из подвала m.html (?full=1)
+   и запоминается на время сессии. */
+(function(){
+  try{
+    if(location.search.indexOf('full=1') > -1){ sessionStorage.setItem('viv-full','1'); return; }
+    if(sessionStorage.getItem('viv-full') === '1') return;
+    if(window.matchMedia && matchMedia('(max-width:700px)').matches){
+      location.replace('m.html' + location.hash);
+    }
+  }catch(e){}
+})();
+</script>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/manrope-cyrillic.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/cormorant-cyrillic-500.woff2" crossorigin>
+<style>
+
+/* Шрифты хостим локально: Google Fonts из РФ отдаётся нестабильно и блокирует рендер */
+@font-face{font-family:'Manrope';font-style:normal;font-weight:400 800;font-display:swap;
+  src:url(assets/fonts/manrope-cyrillic.woff2) format('woff2');
+  unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Manrope';font-style:normal;font-weight:400 800;font-display:swap;
+  src:url(assets/fonts/manrope-latin.woff2) format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Cormorant';font-style:normal;font-weight:400 700;font-display:swap;
+  src:url(assets/fonts/cormorant-cyrillic-500.woff2) format('woff2');
+  unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Cormorant';font-style:normal;font-weight:400 700;font-display:swap;
+  src:url(assets/fonts/cormorant-latin-500.woff2) format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2212,U+FEFF,U+FFFD}
+@font-face{font-family:'Cormorant';font-style:italic;font-weight:400 700;font-display:swap;
+  src:url(assets/fonts/cormorant-cyrillic-500-italic.woff2) format('woff2');
+  unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Cormorant';font-style:italic;font-weight:400 700;font-display:swap;
+  src:url(assets/fonts/cormorant-latin-500-italic.woff2) format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2212,U+FEFF,U+FFFD}
+
+:root{
+  /* базовые тона — пыльная роза и тёплый крем, как на фирменном постере */
+  --cream:#FBEFEE;
+  --sand:#F9E7E3;
+  --blush:#F4D9DD;
+  --rose:#E9C1CA;
+  --pink:#EBAFC2;
+  --pink-soft:#FBE7EC;
+  --pink-mid:#F4CCD9;
+  --fuchsia:#C4638A;
+  --pink-deep:#A94D74;
+  --lilac:#DCC7D8;
+  --peach:#F2CEB6;
+  --apricot:#E0A98C;
+  --mauve:#A5798A;
+  --mauve-soft:#F4E5E8;
+  --plum:#4E2E38;
+  --plum-2:#6B4451;
+  --wine:#3E2130;
+  --gold:#B8913F;
+  --gold-2:#D9B871;
+  --gold-soft:#F8EEDB;
+  --sage:#6F8C6D;
+  --sage-soft:#EAF0E6;
+  --ink:#3A2A2C;
+  --ink-2:#7E6B6B;
+  --line:#EEDCDC;
+  --line-2:#E4CFD1;
+  --cta:#C05379;
+  --cta-hi:#D2648B;
+  /* градиенты */
+  --g-cta:linear-gradient(135deg,#D0608A 0%,#A94268 100%);
+  --g-cta-hi:linear-gradient(135deg,#DE7099 0%,#BC4E75 100%);
+  --g-band:linear-gradient(135deg,#4A2937 0%,#7A4457 45%,#B27F92 100%);
+  --g-text:linear-gradient(100deg,#B8913F 0%,#C4638A 55%,#A5798A 100%);
+  --g-warm:linear-gradient(135deg,#F7E2CE 0%,#F3C9D4 46%,#E7C3D8 100%);
+  --g-pink:linear-gradient(135deg,#F7D5E0 0%,#F1BCCF 55%,#E7ADC5 100%);
+  --g-pinkband:linear-gradient(135deg,#A94D74 0%,#C4638A 45%,#E2A3B6 100%);
+  --g-card:linear-gradient(150deg,#FFFBFA 0%,#FBEFF1 100%);
+  --g-card-2:linear-gradient(150deg,#FEF8F6 0%,#FAEBEE 100%);
+  --g-gold:linear-gradient(120deg,#EBD29A,#B8913F);
+  /* геометрия и тени */
+  --r:22px;
+  --r-sm:16px;
+  --c:1200px;
+  --sh:0 20px 36px -20px rgba(78,46,56,.5);
+  --sh-sm:0 9px 18px -12px rgba(78,46,56,.4);
+  --sh-warm:0 20px 36px -18px rgba(192,83,121,.4);
+  --sh-lift:0 26px 42px -20px rgba(78,46,56,.48);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{
+  font-family:'Manrope',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  color:var(--ink);font-size:17px;line-height:1.6;
+  background:
+    radial-gradient(920px 720px at 100% 0%, #F2CCD9 0%, rgba(242,204,217,0) 58%),
+    radial-gradient(820px 620px at 0% 18%, #F6DCCB 0%, rgba(246,220,203,0) 56%),
+    radial-gradient(760px 580px at 50% 100%, #EBD2E2 0%, rgba(235,210,226,0) 60%),
+    linear-gradient(180deg,#FAEDEB 0%,#F6DFE2 55%,#FAEAE3 100%);
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;position:relative;
+}
+img{max-width:100%;display:block;height:auto}
+a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
+.wrap{max-width:var(--c);margin:0 auto;padding:0 22px;position:relative;z-index:2}
+section{padding:96px 0;position:relative;z-index:2}
+section.sand,section.blush,section.band,footer{border-radius:60px 60px 0 0;overflow:hidden}
+section.band+section{border-radius:60px 60px 0 0}
+@media(max-width:760px){section.sand,section.blush,section.band,footer,section.band+section{border-radius:34px 34px 0 0}}
+.sand{background:linear-gradient(165deg,#F8E2DA 0%,#F3D3DC 55%,#F6DED6 100%)}
+
+/* страница высотой ~17 700 px: всё, что вне экрана, браузер пропускает */
+main>section:not(.hero),footer{content-visibility:auto}
+#pains{contain-intrinsic-size:auto 603px}
+#how{contain-intrinsic-size:auto 803px}
+#first{contain-intrinsic-size:auto 631px}
+#benefits{contain-intrinsic-size:auto 1100px}
+#methods{contain-intrinsic-size:auto 2116px}
+#quiz{contain-intrinsic-size:auto 717px}
+#prices{contain-intrinsic-size:auto 1646px}
+#works{contain-intrinsic-size:auto 1025px}
+#reviews{contain-intrinsic-size:auto 823px}
+#faq{contain-intrinsic-size:auto 1145px}
+#studio{contain-intrinsic-size:auto 1133px}
+#action{contain-intrinsic-size:auto 1100px}
+#contacts{contain-intrinsic-size:auto 626px}
+footer{contain-intrinsic-size:auto 298px}
+/* на телефоне блоки перестраиваются — оценки высот другие */
+@media(max-width:560px){
+  #pains{contain-intrinsic-size:auto 709px}
+  #how{contain-intrinsic-size:auto 1577px}
+  #first{contain-intrinsic-size:auto 1284px}
+  #methods{contain-intrinsic-size:auto 2564px}
+  #quiz{contain-intrinsic-size:auto 993px}
+  #prices{contain-intrinsic-size:auto 2127px}
+  #reviews{contain-intrinsic-size:auto 1207px}
+  #faq{contain-intrinsic-size:auto 1350px}
+  #studio{contain-intrinsic-size:auto 1718px}
+  #contacts{contain-intrinsic-size:auto 1134px}
+  footer{contain-intrinsic-size:auto 878px}
+}
+/* на время программной прокрутки раскладку разворачиваем целиком,
+   иначе якорь промахнётся мимо блока */
+html.cv-off main>section,html.cv-off footer{content-visibility:visible}
+.blush{background:linear-gradient(165deg,#F2CFDC 0%,#F7DFD8 100%)}
+h1,h2,h3.serif,.serif{font-family:'Cormorant',Georgia,'Times New Roman',serif;font-weight:600}
+h1{font-size:clamp(33px,3.95vw,53px);line-height:1.04;letter-spacing:-.005em;color:var(--plum)}
+h2{font-size:clamp(31px,3.8vw,49px);line-height:1.07;color:var(--plum);margin-bottom:16px}
+h3{font-size:20px;font-weight:800;line-height:1.28;letter-spacing:-.01em}
+.it{font-style:italic;background:var(--g-text);-webkit-background-clip:text;background-clip:text;
+  color:transparent;-webkit-text-fill-color:transparent;
+  padding-right:.14em;margin-right:-.14em}
+.lead{font-size:19px;color:var(--ink-2);max-width:720px;line-height:1.62}
+.center{text-align:center}
+.center .lead{margin-left:auto;margin-right:auto}
+.num{font-variant-numeric:tabular-nums}
+
+/* декоративные цветные пятна */
+.blob{position:absolute;border-radius:50%;opacity:.75;pointer-events:none;z-index:0}
+.b-peach{background:radial-gradient(circle,#F9C9A4 0%,rgba(249,201,164,0) 70%)}
+.b-rose{background:radial-gradient(circle,#F4BBC6 0%,rgba(244,187,198,0) 70%)}
+.b-gold{background:radial-gradient(circle,#F0DCA8 0%,rgba(240,220,168,0) 70%)}
+.b-mauve{background:radial-gradient(circle,#D3AEBD 0%,rgba(211,174,189,0) 70%)}
+
+.eyebrow{
+  display:inline-flex;align-items:center;gap:9px;font-size:12.5px;font-weight:800;
+  letter-spacing:.14em;text-transform:uppercase;color:#8C6A2A;
+  background:linear-gradient(#FFFBF8,#FFFBF8) padding-box,var(--g-gold) border-box;
+  border:1.5px solid transparent;padding:9px 17px;border-radius:99px;margin-bottom:20px;
+  box-shadow:0 8px 14px -11px rgba(74,34,51,.5)
+}
+.eyebrow.plain{background:linear-gradient(120deg,#F8E3E8,#F9EBDC);border-color:transparent;box-shadow:none;color:#8C6A2A}
+.hr-flower{display:flex;align-items:center;justify-content:center;gap:14px;color:var(--gold);margin:0 0 18px}
+.hr-flower::before,.hr-flower::after{content:"";height:1px;width:72px;
+  background:linear-gradient(90deg,transparent,var(--gold-2))}
+.hr-flower::after{background:linear-gradient(270deg,transparent,var(--gold-2))}
+
+/* ---------- кнопки ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;text-align:center;
+  position:relative;overflow:hidden;isolation:isolate;
+  background:var(--g-cta);color:#fff;border:0;cursor:pointer;text-decoration:none;
+  font-weight:800;font-size:17px;letter-spacing:-.01em;padding:19px 34px;border-radius:99px;
+  box-shadow:0 12px 20px -8px rgba(169,66,104,.7),inset 0 1px 0 rgba(255,255,255,.3);
+  transition:transform .22s cubic-bezier(.2,.7,.3,1),box-shadow .22s,background .22s;
+}
+.btn::after{
+  content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;z-index:-1;
+  background:linear-gradient(100deg,rgba(255,255,255,0) 0%,rgba(255,255,255,.42) 50%,rgba(255,255,255,0) 100%);
+  transform:skewX(-18deg);transition:left .55s cubic-bezier(.2,.7,.3,1);
+}
+.btn:hover{background:var(--g-cta-hi);transform:translateY(-3px);
+  box-shadow:0 18px 26px -10px rgba(208,96,138,.75),inset 0 1px 0 rgba(255,255,255,.35)}
+.btn:hover::after{left:120%}
+.btn:active{transform:translateY(-1px)}
+.btn-lg{padding:22px 42px;font-size:18px}
+.btn-ghost{
+  background:linear-gradient(#fff,#fff) padding-box,var(--g-warm) border-box;
+  color:var(--plum);border:1.5px solid transparent;box-shadow:0 9px 16px -12px rgba(74,34,51,.6);
+  padding:18px 30px;font-weight:700
+}
+.btn-ghost::after{display:none}
+.btn-ghost:hover{background:linear-gradient(#FFFAF6,#FFFAF6) padding-box,var(--g-gold) border-box;
+  color:var(--plum);transform:translateY(-3px);box-shadow:0 15px 20px -13px rgba(184,145,63,.85)}
+.btn-white{background:#fff;color:var(--plum);box-shadow:var(--sh-sm)}
+.btn-white:hover{background:#fff;color:var(--cta)}
+.btn-wide{width:100%}
+.note{font-size:13.5px;color:var(--ink-2);line-height:1.45}
+.ic{width:20px;height:20px;flex:none;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+
+/* ---------- шапка ---------- */
+header{
+  position:sticky;top:0;z-index:70;background:#FDF1EF;
+  border-bottom:1px solid #F5DBE1
+}
+.hbar{position:absolute;left:0;bottom:-1px;height:2px;width:100%;
+  background:var(--g-cta);transform:scaleX(0);transform-origin:0 50%;will-change:transform}
+.hd{display:flex;align-items:center;gap:20px;height:74px}
+.logo{font-family:'Cormorant',Georgia,serif;font-size:30px;font-weight:600;color:var(--plum);
+  letter-spacing:.01em;text-decoration:none;line-height:1;white-space:nowrap;display:inline-flex;align-items:baseline;gap:2px}
+.logo span{background:var(--g-text);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.desc{font-size:12.5px;color:var(--ink-2);line-height:1.32;max-width:215px;
+  border-left:1px solid var(--line-2);padding-left:18px}
+.hd-sp{flex:1}
+.hd-nav{display:flex;gap:24px;font-size:15px;font-weight:600;color:var(--plum-2)}
+.hd-nav a{text-decoration:none;padding:6px 0;position:relative;transition:color .18s}
+.hd-nav a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:2px;border-radius:2px;
+  background:var(--g-cta);transition:right .25s cubic-bezier(.2,.7,.3,1)}
+.hd-nav a:hover{color:var(--cta)}
+.hd-nav a:hover::after{right:0}
+.hd-phone{text-align:right;line-height:1.2}
+.hd-phone a{font-weight:800;font-size:17.5px;text-decoration:none;white-space:nowrap;color:var(--plum)}
+.hd-phone span{display:block;font-size:11.5px;color:var(--ink-2);letter-spacing:.02em}
+@media(max-width:1180px){.desc{display:none}}
+@media(max-width:1080px){.hd-nav{display:none}}
+@media(max-width:600px){.hd{height:64px;gap:12px}.logo{font-size:26px}.hd-phone a{font-size:16px}}
+
+/* ---------- первый экран ---------- */
+.hero{padding:52px 0 80px;position:relative;overflow:hidden;
+  background:
+   radial-gradient(920px 680px at 96% -8%, #EDB2C8 0%, rgba(237,178,200,0) 62%),
+   radial-gradient(700px 560px at -6% 2%, #F3D3BC 0%, rgba(243,211,188,0) 58%),
+   radial-gradient(720px 560px at 52% 116%, #E5B7D2 0%, rgba(229,183,210,0) 64%),
+   radial-gradient(560px 460px at 24% 46%, #F7D9C9 0%, rgba(247,217,201,0) 64%),
+   radial-gradient(460px 400px at 76% 58%, #E0C0DC 0%, rgba(224,192,220,0) 68%),
+   linear-gradient(165deg,#F9E6E6 0%,#F3D2DC 50%,#F7DED2 100%)}
+.hero .b1{width:420px;height:420px;right:-90px;top:-120px}
+.hero .b2{width:340px;height:340px;left:-120px;bottom:-60px}
+.hero-grid{display:grid;grid-template-columns:1.04fr .96fr;gap:56px;align-items:center}
+.hero h1{margin-bottom:18px;max-width:640px}
+.hero .lead{font-size:18px;color:#66525A;margin-bottom:24px;max-width:600px}
+.bullets{list-style:none;display:grid;gap:11px;margin-bottom:26px}
+.bullets li{display:flex;gap:11px;align-items:flex-start;font-size:15.8px;line-height:1.42}
+.bullets .bi{width:27px;height:27px;flex:none;border-radius:50%;
+  background:linear-gradient(135deg,#F6D3DE,#F8E5D2);color:var(--gold);
+  display:grid;place-items:center;margin-top:1px;box-shadow:0 4px 8px -5px rgba(206,83,52,.6)}
+.bullets .bi svg{width:14px;height:14px;stroke-width:2.6}
+.bullets b{font-weight:800}
+.cta-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+/* стрелка-указатель слева от главной кнопки первого экрана.
+   В самом ряду слева места нет — колонка начинается ровно с края кнопки,
+   поэтому стрелка вынесена абсолютом в левое поле страницы */
+.cta-wrap{position:relative;display:inline-flex}
+.cta-arrow{position:absolute;right:100%;top:50%;margin-right:9px;
+  transform:translateY(-50%);pointer-events:none}
+.cta-arrow svg{display:block;overflow:visible;
+  filter:drop-shadow(0 4px 7px rgba(192,83,121,.28));
+  animation:cta-point 2.9s ease-in-out infinite}
+.cta-arrow .a-body,.cta-arrow .a-head{fill:url(#ag)}
+/* только покачивание к кнопке: анимация появления оставляла стрелку
+   невидимой до своего старта, а рисунок должен быть виден сразу */
+@keyframes cta-point{0%,100%{transform:translateX(0)}50%{transform:translateX(5px)}}
+@media(prefers-reduced-motion:reduce){.cta-arrow svg{animation:none}}
+/* левое поле страницы = (ширина окна − 1200)/2 + 22. Стрелке нужно 67px
+   плюс воздух до края экрана, иначе она липнет к нему — ниже 1360px убираем */
+@media(max-width:1359px){.cta-arrow{display:none}}
+.hero-trust{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:22px;padding-top:22px;
+  border-top:1px solid var(--line-2)}
+@media(max-width:1180px) and (min-width:981px){.hero-trust{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.hero-trust{grid-template-columns:1fr}}
+.tchip{display:flex;align-items:center;gap:9px;background:linear-gradient(150deg,rgba(255,255,255,.88),rgba(253,231,239,.82));
+  border:1px solid rgba(255,255,255,.85);border-radius:16px;padding:11px 15px;font-size:13.5px;
+  line-height:1.25;box-shadow:0 10px 18px -13px rgba(74,34,51,.7);
+}
+.tchip b{display:block;font-size:15px;font-weight:800;color:var(--plum)}
+.tchip .stars{color:var(--gold);font-size:13px;letter-spacing:1px}
+
+.hero-art{position:relative;min-height:560px}
+.hero-art .ph{position:absolute;border-radius:28px;overflow:hidden;
+  box-shadow:0 30px 48px -24px rgba(74,34,51,.65);border:6px solid #fff}
+.hero-art .ph::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(150deg,rgba(255,214,180,.18),rgba(214,150,170,.14) 60%,transparent)}
+.hero-art .ph img{width:100%;height:100%;object-fit:cover}
+.ph-main{width:78%;height:100%;right:0;top:0}
+.ph-sub{width:47%;height:44%;left:0;bottom:6%}
+.hero-badge{
+  position:absolute;left:-4%;top:14%;z-index:3;border-radius:20px;padding:17px 21px;max-width:225px;
+  background:linear-gradient(150deg,rgba(255,255,255,.92),rgba(253,229,238,.88));
+  border:1px solid rgba(255,255,255,.9);
+  box-shadow:0 20px 30px -17px rgba(74,34,51,.7)
+}
+.hero-badge .big{font-family:'Cormorant',Georgia,serif;font-size:40px;font-weight:600;line-height:1;
+  background:var(--g-text);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.hero-badge .cap{font-size:13px;color:var(--ink-2);margin-top:5px;line-height:1.35}
+.hero-price{
+  position:absolute;right:2%;bottom:-2%;z-index:3;background:var(--g-band);
+  color:#fff;border-radius:20px;padding:16px 24px;text-align:center;
+  box-shadow:0 20px 32px -14px rgba(60,26,42,.85);border:1px solid rgba(255,255,255,.14)
+}
+.hero-price .s{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#E9CD9A}
+.hero-price .p{font-family:'Cormorant',Georgia,serif;font-size:35px;font-weight:600;line-height:1.1;
+  background:linear-gradient(120deg,#F3DCA6,#D9B871 55%,#E8CE95);-webkit-background-clip:text;
+  background-clip:text;color:transparent;-webkit-text-fill-color:transparent;padding-right:.1em}
+.hero-price .p s{-webkit-text-fill-color:#E6C7C0;color:#E6C7C0}
+.hero-price .p s{font-size:19px;opacity:.55;margin-left:8px;font-weight:400}
+.scrollhint{display:inline-flex;align-items:center;gap:10px;margin-top:34px;text-decoration:none;
+  color:var(--mauve);font-size:14px;font-weight:700;letter-spacing:.01em}
+.scrollhint svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;
+  stroke-linejoin:round;animation:bob 2.2s ease-in-out infinite}
+.scrollhint:hover{color:var(--cta)}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
+
+/* бегущая строка услуг */
+.ticker{background:linear-gradient(120deg,#8A4A5E 0%,#B4697F 45%,#DDA3AF 100%);
+  color:#FFF3F0;overflow:hidden;padding:16px 0;position:relative;z-index:2}
+.ticker::before,.ticker::after{content:"";position:absolute;top:0;bottom:0;width:120px;z-index:2}
+.ticker::before{left:0;background:linear-gradient(90deg,#8A4A5E,rgba(138,74,94,0))}
+.ticker::after{right:0;background:linear-gradient(270deg,#DDA3AF,rgba(221,163,175,0))}
+.ticker-row{display:flex;gap:0;width:max-content;animation:slide 42s linear infinite;will-change:transform}
+.ticker span{font-family:'Cormorant',Georgia,serif;font-size:23px;font-style:italic;
+  padding:0 26px;white-space:nowrap;display:inline-flex;align-items:center;gap:26px}
+.ticker span::after{content:"✦";font-style:normal;font-size:12px;color:#F0D49A}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.ticker:hover .ticker-row{animation-play-state:paused}
+
+/* ---------- карточки, сетки ---------- */
+.grid{display:grid;gap:22px}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+.card{background:var(--g-card);border:1px solid #F6DCE2;border-radius:var(--r);padding:30px;
+  box-shadow:var(--sh-sm);position:relative;overflow:hidden;transition:transform .25s,box-shadow .25s}
+.card::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:var(--g-gold);
+  opacity:0;transition:opacity .25s}
+.card:hover{transform:translateY(-3px);box-shadow:var(--sh-lift)}
+.card:hover::before{opacity:1}
+.card h3{margin-bottom:9px;color:var(--plum)}
+.card p{font-size:15.5px;color:var(--ink-2);line-height:1.55}
+.icon-round{width:52px;height:52px;border-radius:18px;display:grid;place-items:center;margin-bottom:17px;
+  background:linear-gradient(135deg,#FBDCE8,#F7E5DC);color:var(--fuchsia);
+  box-shadow:0 10px 16px -11px rgba(212,92,139,.9)}
+.icon-round svg{width:25px;height:25px}
+.icon-round.warm{background:linear-gradient(135deg,#F8DED0,#F1C9B6);color:#A9603F;
+  box-shadow:0 10px 16px -11px rgba(206,83,52,.9)}
+.icon-round.pink{background:linear-gradient(135deg,#FBD8E7,#F6BFD6);color:#B44872;
+  box-shadow:0 10px 16px -11px rgba(180,72,114,.9)}
+.icon-round.gold{background:linear-gradient(135deg,#F8EBD2,#F0DBAA);color:#96701F;
+  box-shadow:0 10px 16px -11px rgba(185,140,60,.9)}
+.icon-round.sage{background:linear-gradient(135deg,#E7EFE4,#D9E6D6);color:#4F6E4E;
+  box-shadow:0 10px 16px -11px rgba(111,140,109,.9)}
+
+/* боли */
+.pain{display:flex;gap:14px;align-items:flex-start;border-radius:20px;padding:22px 24px;
+  background:linear-gradient(#fff,#fff) padding-box,linear-gradient(140deg,#EFC3D0,#E6C88E) border-box;
+  border:1.5px solid transparent;box-shadow:0 12px 20px -16px rgba(74,34,51,.7);
+  transition:transform .25s,box-shadow .25s}
+.pain:hover{transform:translateY(-3px);box-shadow:0 20px 28px -17px rgba(74,34,51,.7)}
+.pain .q{font-family:'Cormorant',Georgia,serif;font-size:38px;line-height:.8;flex:none;margin-top:8px;
+  background:var(--g-text);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.pain p{font-size:16px;line-height:1.5}
+.pain-after{margin-top:36px;text-align:center;font-family:'Cormorant',Georgia,serif;
+  font-size:clamp(23px,2.7vw,32px);line-height:1.34;color:var(--plum);max-width:860px;margin-left:auto;margin-right:auto}
+
+/* как работает */
+.steps{counter-reset:s;display:grid;gap:22px;grid-template-columns:repeat(3,1fr)}
+.step{background:var(--g-card-2);border:1px solid #F6DCE2;border-radius:var(--r);padding:32px 28px;
+  position:relative;overflow:hidden;box-shadow:var(--sh-sm);transition:transform .25s,box-shadow .25s}
+.step::before{counter-increment:s;content:"0" counter(s);position:absolute;top:18px;right:24px;
+  font-family:'Cormorant',Georgia,serif;font-size:56px;line-height:1;font-weight:600;
+  background:var(--g-warm);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.step:hover{transform:translateY(-4px);box-shadow:var(--sh-lift)}
+.step h3{margin-bottom:8px;color:var(--plum);max-width:80%}
+.step p{font-size:15.5px;color:var(--ink-2)}
+
+/* полоса цифр */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:44px}
+.stat{border-radius:20px;padding:24px 22px;text-align:center;
+  background:linear-gradient(#fff,#fff) padding-box,linear-gradient(140deg,#EFC3D0,#E6C88E) border-box;
+  border:1.5px solid transparent;box-shadow:0 14px 23px -17px rgba(74,34,51,.7);
+  transition:transform .25s,box-shadow .25s}
+.stat:hover{transform:translateY(-4px);box-shadow:0 21px 30px -18px rgba(74,34,51,.7)}
+.stat .sv{font-family:'Cormorant',Georgia,serif;font-size:44px;font-weight:600;line-height:1;
+  background:var(--g-text);-webkit-background-clip:text;background-clip:text;color:transparent;
+  -webkit-text-fill-color:transparent;margin-bottom:7px;padding-right:.08em}
+.stat .sl{font-size:14px;color:var(--ink-2);line-height:1.4}
+.stat .sv .st{-webkit-text-fill-color:var(--gold);color:var(--gold);background:none;font-size:.66em;vertical-align:.16em}
+@media(max-width:860px){.stats{grid-template-columns:repeat(2,1fr);gap:14px}}
+@media(max-width:420px){.stat{padding:20px 16px}.stat .sv{font-size:36px}}
+
+/* тёмная плашка КЭВ */
+.band{background:var(--g-band);color:#FBEFEA;position:relative;overflow:hidden}
+.band::after{content:"";position:absolute;width:620px;height:620px;border-radius:50%;right:-160px;top:-220px;
+  background:radial-gradient(circle,rgba(246,201,168,.3) 0%,rgba(246,201,168,0) 68%)}
+.band::before{content:"";position:absolute;width:460px;height:460px;border-radius:50%;left:-180px;bottom:-200px;
+  background:radial-gradient(circle,rgba(255,255,255,.16) 0%,rgba(255,255,255,0) 70%)}
+.band h2{color:#fff}
+.band .lead{color:#F0D8D0}
+.band .eyebrow{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.28);color:#F8DED4;box-shadow:none}
+.band .it{background:none;color:#FCDFA8;-webkit-text-fill-color:#FCDFA8}
+.offer-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:46px;align-items:center;position:relative;z-index:2}
+.offer-list{list-style:none;display:grid;gap:14px;margin:26px 0 0}
+.offer-list li{display:flex;gap:13px;align-items:flex-start;font-size:16.5px;line-height:1.45}
+.offer-list .bi{width:27px;height:27px;flex:none;border-radius:50%;
+  background:linear-gradient(135deg,rgba(255,255,255,.3),rgba(255,255,255,.12));
+  color:#fff;display:grid;place-items:center;margin-top:1px;border:1px solid rgba(255,255,255,.22)}
+.offer-list .bi svg{width:14px;height:14px;stroke-width:2.6}
+/* ── «чек» первого визита: распакованная ценность шага ──────────────── */
+.value-card{background:#FFFCFB;color:var(--ink);border-radius:var(--r);
+  padding:26px 28px 24px;margin-top:26px;box-shadow:0 26px 44px -26px rgba(74,23,35,.6)}
+.vc-top{display:flex;gap:22px;align-items:flex-start;margin-bottom:20px}
+.vc-intro h3{color:var(--plum);margin-bottom:7px}
+.vc-intro p{font-size:15px;color:var(--ink-2);line-height:1.5}
+
+/* нарисованный предмет: именной бланк программы, который гость уносит с собой.
+   Под ним — второй лист из стопки, снизу лист «оторван» фестонами */
+.vc-doc{flex:none;width:214px;position:relative;padding:6px 8px 10px}
+.vc-doc::before{content:"";position:absolute;left:16px;right:2px;top:12px;bottom:16px;
+  background:#FDF3F0;border:1px solid var(--line);border-radius:12px;transform:rotate(4deg);
+  box-shadow:0 10px 18px -14px rgba(74,23,35,.5)}
+.vd-sheet{position:relative;border-radius:12px;padding:0 15px 18px;overflow:hidden;
+  background:#FFFAF8;
+  border:1px solid var(--line);transform:rotate(-2.5deg);
+  box-shadow:0 18px 30px -18px rgba(74,23,35,.65)}
+/* фестоны по нижнему краю — как у отрывного талона */
+.vd-sheet::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:9px;
+  background:radial-gradient(circle at 6px 9px,transparent 5.2px,#FFFCFB 5.4px) repeat-x;
+  background-size:12px 9px}
+
+.vd-brand{display:flex;align-items:center;gap:7px;margin:0 -15px 13px;padding:8px 15px;
+  font-size:9.5px;font-weight:800;letter-spacing:.11em;text-transform:uppercase;color:#7A5B1E;
+  background:#F0DFB2}
+.vd-mono{width:19px;height:19px;flex:none;border-radius:50%;display:grid;place-items:center;
+  font-family:'Cormorant',Georgia,serif;font-size:13px;font-weight:600;color:#FFFBF4;
+  background:var(--gold);box-shadow:0 2px 5px -2px rgba(120,90,30,.7)}
+
+.vd-zone{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--ink-2);margin-bottom:5px}
+.vd-metric{display:flex;align-items:baseline;gap:7px;font-family:'Cormorant',Georgia,serif;
+  font-weight:600;line-height:1}
+.vd-metric b{font-size:31px;color:var(--cta)}
+.vd-metric i{font-style:normal;font-size:17px;color:var(--gold)}
+.vd-delta{margin-top:6px;display:inline-block;font-size:10px;font-weight:800;
+  color:#7C6A2A;background:var(--gold-soft);border-radius:99px;padding:4px 9px}
+
+.vd-rows{margin-top:12px;display:grid;gap:0;width:calc(100% - 58px)}
+.vd-rows div{display:flex;justify-content:space-between;gap:8px;font-size:10px;line-height:1.3;
+  padding:5px 0;border-top:1px solid var(--line)}
+.vd-rows span{color:var(--ink-2)}
+.vd-rows b{color:var(--plum);text-align:right}
+
+.vd-seal{position:absolute;right:9px;bottom:16px;width:54px;height:54px;border-radius:50%;
+  display:grid;place-items:center;text-align:center;transform:rotate(-13deg);
+  border:1.5px dashed var(--gold-2);background:rgba(248,238,219,.75);
+  font-size:7.5px;font-weight:800;line-height:1.25;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--gold)}
+.vd-seal::before{content:"";position:absolute;inset:4px;border-radius:50%;
+  border:1px solid rgba(184,145,63,.35)}
+
+.vc-list{list-style:none;display:grid;gap:0}
+.vc-list li{display:flex;justify-content:space-between;align-items:baseline;gap:16px;
+  font-size:15px;line-height:1.4;padding:11px 0;border-top:1px dashed var(--line-2)}
+.vc-list li b{flex:none;font-size:15.5px;color:var(--plum);font-variant-numeric:tabular-nums}
+
+.vc-sum{margin-top:16px;padding-top:16px;border-top:2px solid var(--line-2);
+  display:flex;align-items:flex-end;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.vc-old span,.vc-new span{display:block;font-size:12.5px;font-weight:700;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--ink-2);margin-bottom:2px}
+.vc-old b{font-family:'Cormorant',Georgia,serif;font-size:30px;font-weight:600;color:var(--ink-2);
+  position:relative;display:inline-block;padding:0 3px}
+.vc-old b::after{content:"";position:absolute;left:-2px;right:-2px;top:52%;height:2px;border-radius:2px;
+  background:linear-gradient(90deg,rgba(192,83,121,.25),var(--cta) 22%,var(--cta) 78%,rgba(192,83,121,.25));
+  transform:rotate(-4deg)}
+.vc-new{text-align:right}
+.vc-new b{font-family:'Cormorant',Georgia,serif;font-size:46px;font-weight:600;line-height:1;
+  background:var(--g-cta);-webkit-background-clip:text;background-clip:text;
+  color:transparent;-webkit-text-fill-color:transparent;padding-right:.06em}
+.vc-note{margin-top:14px;font-size:13px;color:var(--ink-2);line-height:1.45}
+@media(max-width:600px){
+  .value-card{padding:22px 18px 20px}
+  .vc-top{flex-direction:column;gap:16px}
+  .vc-doc{width:100%;max-width:250px;align-self:center}
+  .vc-list li{font-size:14.5px;gap:12px}
+  .vc-new b{font-size:40px}
+}
+.offer-price .v{font-family:'Cormorant',Georgia,serif;font-size:46px;font-weight:600;line-height:1;
+  background:linear-gradient(120deg,#F6E2B4,#DDBC78 55%,#F0D9A4);-webkit-background-clip:text;
+  background-clip:text;color:transparent;-webkit-text-fill-color:transparent;padding-right:.1em}
+.offer-price .v s{-webkit-text-fill-color:#EBD2CC;color:#EBD2CC}
+
+/* розовая плашка */
+.band.pink{background:var(--g-pinkband)}
+.band.pink::after{background:radial-gradient(circle,rgba(255,232,205,.34) 0%,rgba(255,232,205,0) 68%)}
+.band.pink .lead{color:#FCE4EA}
+.band.pink .it{background:none;color:#FCDFA8;-webkit-text-fill-color:#FCDFA8}
+#action h2 .it{color:#F5DDAF;-webkit-text-fill-color:#F5DDAF;font-weight:500}
+
+/* формы */
+.form{background:linear-gradient(160deg,#FFFDFC 0%,#FDEFF3 100%);border-radius:26px;padding:34px;
+  border:1px solid rgba(255,255,255,.7);
+  box-shadow:0 30px 48px -24px rgba(40,16,26,.75)}
+.form h3{font-size:24px;color:var(--plum);margin-bottom:6px;font-family:'Cormorant',Georgia,serif;font-weight:600}
+.form .fnote{font-size:14.5px;color:var(--ink-2);margin-bottom:20px;line-height:1.45}
+.field{margin-bottom:14px}
+.field label{display:block;font-size:13.5px;font-weight:700;color:var(--plum-2);margin-bottom:7px}
+.field input,.field select,.field textarea{
+  width:100%;background:#fff;color:var(--ink);border:1.5px solid var(--line-2);border-radius:15px;
+  padding:16px 17px;font-size:16px;appearance:none;-webkit-appearance:none;
+  transition:border-color .18s,box-shadow .18s}
+.field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='M1 1l6 6 6-6' fill='none' stroke='%23A4737F' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 17px center;padding-right:44px}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--pink);
+  box-shadow:0 0 0 4px rgba(235,175,194,.3)}
+.field input::placeholder{color:#C0AAB0}
+.agree{display:flex;gap:10px;align-items:flex-start;font-size:12.5px;color:var(--ink-2);line-height:1.4;margin-top:14px}
+.agree input{width:17px;height:17px;flex:none;margin-top:2px;accent-color:var(--cta)}
+.form-ok{display:none;text-align:center;padding:16px 4px}
+.form-ok .ok-ic{width:68px;height:68px;border-radius:50%;display:grid;place-items:center;margin:0 auto 16px;
+  background:linear-gradient(135deg,#E8F1E5,#DCE9D8);color:var(--sage);
+  box-shadow:0 14px 20px -13px rgba(111,140,109,.9)}
+.form-ok .ok-ic svg{width:31px;height:31px;stroke-width:2.2}
+.form-ok h4{font-family:'Cormorant',Georgia,serif;font-size:28px;font-weight:600;color:var(--plum);margin-bottom:8px}
+.form-ok p{font-size:15px;color:var(--ink-2);margin-bottom:16px}
+.is-done .form-body{display:none}
+.is-done .form-ok{display:block}
+.quiz.is-done .quiz-head,.quiz.is-done .quiz-body{display:none}
+
+/* методики */
+.mcard{background:var(--g-card);border:1px solid #F6DCE2;border-radius:var(--r);overflow:hidden;
+  box-shadow:var(--sh-sm);display:flex;flex-direction:column;
+  transition:transform .28s cubic-bezier(.2,.7,.3,1),box-shadow .28s}
+.mcard:hover{transform:translateY(-6px);box-shadow:var(--sh-lift)}
+.mcard .mimg{aspect-ratio:4/3;overflow:hidden;background:var(--blush);position:relative}
+.mcard .mimg::after{content:"";position:absolute;inset:0;transition:opacity .4s;
+  background:linear-gradient(160deg,rgba(255,196,150,.22),rgba(200,120,150,.2) 55%,rgba(74,34,51,.28))}
+.mcard:hover .mimg::after{opacity:.35}
+.mcard .mimg img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.7,.3,1)}
+.mcard:hover .mimg img{transform:scale(1.07)}
+.mcard .mbody{padding:24px 24px 26px;display:flex;flex-direction:column;flex:1}
+.mcard h3{margin-bottom:8px;color:var(--plum)}
+.mcard p{font-size:15px;color:var(--ink-2);line-height:1.5;flex:1}
+.mtag{display:inline-flex;align-items:center;gap:7px;align-self:flex-start;
+  background:linear-gradient(135deg,#FBDCE9,#F8E6DC);color:var(--fuchsia);
+  font-size:12px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;
+  padding:7px 13px;border-radius:99px;margin-bottom:13px}
+.mtag.t-warm{background:linear-gradient(135deg,#F8E0D2,#F2CBB8);color:#9C5B3A}
+.mtag.t-gold{background:linear-gradient(135deg,#F8ECD4,#F2DFB4);color:#8E6A1E}
+.mtag.t-sage{background:linear-gradient(135deg,#E8F0E5,#DCE9D7);color:#4C6B4B}
+.mtag.t-plum{background:linear-gradient(135deg,#F6D8E8,#EBC2DC);color:#8E3663}
+.mtag.t-pink{background:linear-gradient(135deg,#FBD3E4,#F7BBD3);color:#A93C6C}
+.mfoot{margin-top:18px;padding-top:15px;border-top:1px dashed var(--line-2);display:flex;
+  justify-content:space-between;align-items:center;font-size:14px;color:var(--ink-2);gap:12px}
+.mfoot b{color:var(--cta);font-size:16px;font-weight:800}
+
+/* выгоды */
+.benefit{display:flex;gap:18px;align-items:flex-start}
+.benefit .bnum{font-family:'Cormorant',Georgia,serif;font-size:50px;font-weight:600;line-height:.95;
+  flex:none;width:194px;text-align:right;background:var(--g-text);-webkit-background-clip:text;
+  background-clip:text;color:transparent;-webkit-text-fill-color:transparent;
+  padding-right:.08em;margin-right:-.08em}
+.benefit h3{margin-bottom:5px;color:var(--plum)}
+.benefit p{font-size:15.5px;color:var(--ink-2);line-height:1.5}
+
+
+/* квиз */
+.quiz{background:linear-gradient(165deg,#FFFDFC 0%,#FDEFF3 60%,#FCE8EF 100%);border-radius:28px;
+  border:1px solid #F7DCE4;overflow:hidden;
+  max-width:840px;margin:0 auto;box-shadow:0 33px 54px -28px rgba(40,16,26,.65)}
+.quiz-head{padding:28px 34px 0}
+.quiz-bar{height:8px;background:linear-gradient(90deg,#FADCE7,#F9E9DC);border-radius:99px;
+  overflow:hidden;margin:16px 0 6px}
+.quiz-bar i{display:block;height:100%;width:16%;border-radius:99px;
+  background:linear-gradient(90deg,#E3B87A,#C4638A 50%,#A94D74 100%);
+  box-shadow:0 0 16px rgba(196,99,138,.5);transition:width .4s cubic-bezier(.2,.7,.3,1)}
+.quiz-meta{display:flex;justify-content:space-between;font-size:13px;color:var(--ink-2);font-weight:700}
+.quiz-body{padding:26px 34px 34px}
+.qstep{display:none}
+.qstep.active{display:block;animation:fade .38s ease}
+@keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.qstep h3{font-family:'Cormorant',Georgia,serif;font-size:clamp(25px,3vw,33px);font-weight:600;
+  color:var(--plum);margin-bottom:6px;line-height:1.14}
+.qstep .qsub{font-size:14.5px;color:var(--ink-2);margin-bottom:20px}
+.qopts{display:grid;gap:11px;grid-template-columns:repeat(2,1fr)}
+.qopt{display:flex;gap:12px;align-items:center;border:1.5px solid var(--line-2);border-radius:16px;
+  padding:16px 18px;cursor:pointer;background:rgba(255,255,255,.72);transition:.2s;font-size:15.5px;
+  line-height:1.35;text-align:left}
+.qopt:hover{border-color:var(--gold-2);background:linear-gradient(135deg,#FFF9FB,#FDF4EF);
+  transform:translateY(-2px);box-shadow:0 10px 16px -12px rgba(184,145,63,.8)}
+.qopt .qi{width:23px;height:23px;border-radius:50%;border:1.5px solid var(--rose);flex:none;
+  display:grid;place-items:center;transition:.2s}
+.qopt.sel{border-color:transparent;background:linear-gradient(135deg,#FDE2EC,#FBE7DE);
+  box-shadow:0 10px 17px -12px rgba(212,92,139,.9)}
+.qopt.sel .qi{background:var(--g-cta);border-color:transparent;color:#fff}
+.qopt .qi svg{width:12px;height:12px;stroke-width:3;opacity:0}
+.qopt.sel .qi svg{opacity:1}
+.qnav{display:flex;justify-content:space-between;align-items:center;margin-top:22px;gap:12px}
+.qback{background:none;border:0;color:var(--ink-2);font-size:14.5px;font-weight:700;cursor:pointer;padding:8px 4px}
+.qback:hover{color:var(--cta)}
+.qgift{display:flex;gap:15px;align-items:center;border-radius:18px;padding:18px 20px;margin-bottom:18px;
+  background:linear-gradient(135deg,#FDF0E4,#FBE6E6);border:1px solid #F6DCD3}
+.qgift svg{width:27px;height:27px;color:var(--cta);flex:none}
+.qgift p{font-size:14.5px;line-height:1.45}
+@media(max-width:640px){.qopts{grid-template-columns:1fr}.quiz-head,.quiz-body{padding-left:20px;padding-right:20px}}
+
+/* цены */
+.ptable{background:var(--g-card);border:1px solid #F6DCE2;border-radius:var(--r);overflow:hidden;box-shadow:var(--sh-sm)}
+.prow{display:grid;grid-template-columns:1.3fr 1fr 1fr 1.1fr;gap:12px;padding:18px 26px;align-items:center;
+  border-bottom:1px solid var(--line);font-size:15.5px;transition:background .2s}
+.prow:last-child{border-bottom:0}
+.prow:not(.head):hover{background:#FFF1F5}
+.prow.head{background:linear-gradient(135deg,#FBEDE3,#F9E6E6);font-size:12.5px;font-weight:800;
+  letter-spacing:.09em;text-transform:uppercase;color:var(--mauve)}
+.prow.best{background:linear-gradient(100deg,#FDEFE5,#FBE7E7);position:relative}
+.prow.best::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--g-cta)}
+.prow b{font-weight:800;color:var(--plum);font-size:17px}
+.prow .save{color:#9C7526;font-weight:800}
+.prow .badge{display:inline-block;background:linear-gradient(120deg,#E8CB8C,#BE9440);color:#4A2E38;
+  font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;
+  border-radius:99px;margin-left:8px;vertical-align:2px;box-shadow:0 6px 11px -6px rgba(190,148,64,.95)}
+.plist{list-style:none;display:grid;gap:11px}
+.plist li{display:flex;justify-content:space-between;gap:16px;padding-bottom:11px;
+  border-bottom:1px dashed var(--line-2);font-size:15.5px}
+.plist li:last-child{border-bottom:0}
+.plist b{white-space:nowrap;font-weight:800;color:var(--plum)}
+.plist span{color:var(--ink-2)}
+@media(max-width:720px){
+  .prow{grid-template-columns:1fr 1fr;gap:6px 12px;padding:16px 18px}
+  .prow.head{display:none}
+  .prow .c3{text-align:right}
+}
+/* короткая форма в блоке цен */
+.pfcard{margin-top:36px;display:grid;grid-template-columns:1.15fr .85fr;gap:34px;align-items:center;padding:36px;
+  background:linear-gradient(135deg,#FFFCFB,#FDE9F0)}
+@media(max-width:860px){.pfcard{grid-template-columns:1fr;gap:22px;padding:26px 22px}}
+
+/* отзывы и рейтинг */
+.rating{display:flex;gap:18px;flex-wrap:wrap;align-items:stretch;margin-bottom:34px}
+.rbox{border-radius:20px;padding:20px 26px;display:flex;gap:15px;align-items:center;min-width:238px;
+  background:linear-gradient(#fff,#fff) padding-box,linear-gradient(140deg,#EFC3D0,#E6C88E) border-box;
+  border:1.5px solid transparent;box-shadow:0 14px 22px -16px rgba(74,34,51,.7)}
+.rbox .rv-val{font-family:'Cormorant',Georgia,serif;font-size:46px;font-weight:600;line-height:1;
+  background:var(--g-text);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.rbox .rt{font-size:13.5px;color:var(--ink-2);line-height:1.35}
+.rbox .stars{color:var(--gold);letter-spacing:2px;font-size:14px}
+.quote{background:var(--g-card);border:1px solid #F6DCE2;border-radius:20px;padding:28px;
+  box-shadow:var(--sh-sm);position:relative;display:flex;flex-direction:column;
+  transition:transform .25s,box-shadow .25s}
+.quote:hover{transform:translateY(-3px);box-shadow:var(--sh-lift)}
+.quote::before{content:"”";font-family:'Cormorant',Georgia,serif;font-size:92px;line-height:1;
+  position:absolute;top:4px;right:22px;
+  background:linear-gradient(135deg,#F0D9A8,#EFC4D2);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.quote p{font-size:16.5px;line-height:1.55;position:relative;z-index:1;flex:1}
+.quote p mark{background:linear-gradient(180deg,transparent 52%,#FBD9C8 52%);color:inherit;padding:0 2px}
+.quote .qmeta{margin-top:18px;padding-top:15px;border-top:1px solid var(--line);display:flex;
+  align-items:center;gap:11px;font-size:13.5px;color:var(--ink-2)}
+.quote .qav{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;flex:none;
+  background:linear-gradient(135deg,#F8EAD2,#F2DDB0);color:#96701F}
+
+/* спойлеры / страхи */
+.faq{display:grid;gap:12px;max-width:900px;margin:0 auto}
+details.sp{background:var(--g-card);border:1px solid #F6DCE2;border-radius:18px;box-shadow:var(--sh-sm);
+  overflow:hidden;transition:box-shadow .25s,border-color .25s}
+details.sp summary{list-style:none;cursor:pointer;padding:22px 60px 22px 26px;font-weight:800;
+  font-size:17px;color:var(--plum);position:relative;line-height:1.35}
+details.sp summary::-webkit-details-marker{display:none}
+details.sp summary::after{content:"";position:absolute;right:24px;top:50%;width:11px;height:11px;
+  border-right:2px solid var(--cta);border-bottom:2px solid var(--cta);
+  transform:translateY(-70%) rotate(45deg);transition:transform .25s}
+details.sp[open] summary::after{transform:translateY(-30%) rotate(225deg);
+  border-color:var(--gold)}
+details.sp .spb{padding:0 26px 24px;font-size:15.5px;color:var(--ink-2);line-height:1.6}
+details.sp .spb b{color:var(--plum)}
+details.sp[open]{border-color:transparent;box-shadow:0 20px 30px -20px rgba(74,34,51,.7);
+  background:linear-gradient(#fff,#fff) padding-box,linear-gradient(140deg,#EFC3D0,#E6C88E) border-box;
+  border:1.5px solid transparent}
+details.sp:hover{box-shadow:0 16px 26px -19px rgba(74,34,51,.7)}
+
+/* безопасность / галерея */
+.safe{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}
+.safe li{display:flex;gap:11px;align-items:flex-start;font-size:15.5px;line-height:1.45;list-style:none}
+.safe .bi{width:25px;height:25px;flex:none;border-radius:50%;display:grid;place-items:center;margin-top:1px;
+  background:linear-gradient(135deg,#F8EBD5,#F2DEB6);color:var(--gold)}
+.safe .bi svg{width:13px;height:13px;stroke-width:2.6}
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.gal figure{border-radius:20px;overflow:hidden;background:var(--g-card);border:1px solid #F6DCE2;
+  box-shadow:var(--sh-sm);transition:transform .28s,box-shadow .28s;display:flex;flex-direction:column}
+.gal figure:hover{transform:translateY(-5px);box-shadow:var(--sh-lift)}
+.gal img{aspect-ratio:1/1;object-fit:cover;width:100%;height:auto;transition:transform .6s cubic-bezier(.2,.7,.3,1)}
+.gal figure:hover img{transform:scale(1.05)}
+.gal figcaption{flex:1;font-size:14.5px;font-weight:700;color:var(--plum);padding:14px 16px 16px;
+  line-height:1.4;background:linear-gradient(135deg,#FAE3EA,#F9E6DC);border-top:2px solid transparent;
+  border-image:var(--g-cta) 1;position:relative}
+.gal figcaption b{color:#9C7526;font-weight:800}
+.gal-3{grid-template-columns:repeat(3,1fr)}
+@media(min-width:761px){
+  #works .gal-3{max-width:940px;margin:0 auto}
+  #studio .gal{max-width:1000px;margin:0 auto}
+  #studio .simg{max-width:450px}
+}
+@media(max-width:640px){.gal-3{grid-template-columns:1fr;max-width:420px;margin:0 auto}}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center}
+.split .simg{border-radius:26px;overflow:hidden;border:7px solid #fff;position:relative;
+  box-shadow:0 30px 48px -26px rgba(74,34,51,.7)}
+.split .simg::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(150deg,rgba(255,208,170,.16),transparent 60%)}
+.split .simg img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.split.tall .simg img{aspect-ratio:3/4}
+
+/* контакты */
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:46px;align-items:start}
+.cinfo{display:grid;gap:20px}
+.crow{display:flex;gap:16px;align-items:flex-start}
+.crow .ci{width:48px;height:48px;border-radius:16px;display:grid;place-items:center;flex:none;
+  background:linear-gradient(135deg,#FBE9E0,#F8EEDB);color:var(--cta);
+  box-shadow:0 10px 17px -12px rgba(206,83,52,.9)}
+.crow .ct{font-size:12.5px;color:var(--ink-2);letter-spacing:.08em;text-transform:uppercase;font-weight:800}
+.crow .cv{font-size:17px;font-weight:700;color:var(--plum);line-height:1.4}
+.crow .cv a{text-decoration:none}
+.crow .cv a:hover{color:var(--cta)}
+.crow small{display:block;font-size:14px;color:var(--ink-2);font-weight:500;margin-top:3px}
+.msgs{display:flex;gap:11px;flex-wrap:wrap;margin-top:8px}
+.msg{display:inline-flex;align-items:center;gap:9px;border-radius:99px;padding:12px 20px;font-size:15px;
+  font-weight:700;text-decoration:none;color:var(--plum);
+  background:linear-gradient(#fff,#fff) padding-box,linear-gradient(140deg,#EFC3D0,#E6C88E) border-box;
+  border:1.5px solid transparent;box-shadow:0 9px 16px -13px rgba(74,34,51,.8);transition:.2s}
+.msg:hover{transform:translateY(-3px);color:var(--cta);box-shadow:0 15px 20px -13px rgba(206,83,52,.9)}
+.msg svg{width:19px;height:19px}
+.mapcard{border-radius:26px;overflow:hidden;border:7px solid #fff;position:relative;display:block;
+  box-shadow:0 30px 48px -26px rgba(74,34,51,.7)}
+.mapcard img{width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform .6s}
+.mapcard:hover img{transform:scale(1.04)}
+.mapcard .mo{position:absolute;left:0;right:0;bottom:0;padding:24px;color:#fff;
+  background:linear-gradient(0deg,rgba(45,18,30,.9) 0%,rgba(45,18,30,0) 100%)}
+.mapcard .mo b{display:block;font-size:17px;margin-bottom:3px}
+.mapcard .mo span{font-size:14px;opacity:.9}
+
+/* подвал */
+footer{background:linear-gradient(160deg,#3E1A2C 0%,#5A2740 55%,#7A3355 100%);color:#E6CBD3;
+  padding:64px 0 44px;font-size:14.5px;position:relative;overflow:hidden;z-index:2}
+footer::after{content:"";position:absolute;width:560px;height:560px;border-radius:50%;right:-180px;top:-240px;
+  background:radial-gradient(circle,rgba(246,201,168,.18) 0%,rgba(246,201,168,0) 70%)}
+footer::before{content:"";position:absolute;width:520px;height:520px;border-radius:50%;left:-200px;bottom:-240px;
+  background:radial-gradient(circle,rgba(232,140,175,.26) 0%,rgba(232,140,175,0) 70%)}
+footer a{color:#F3E2DC}
+.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:38px;padding-bottom:34px;
+  border-bottom:1px solid rgba(233,200,126,.28);position:relative;z-index:2}
+.flogo{font-family:'Cormorant',Georgia,serif;font-size:34px;color:#fff;font-weight:600;margin-bottom:10px}
+.fgrid p{line-height:1.55;opacity:.85}
+.fgrid h4{font-size:13px;letter-spacing:.11em;text-transform:uppercase;color:#E0B79F;margin-bottom:15px;font-weight:800}
+.fgrid ul{list-style:none;display:grid;gap:9px}
+.fgrid ul a{text-decoration:none;opacity:.88;transition:.18s}
+.fgrid ul a:hover{opacity:1;color:#FFD9C2}
+.fbot{padding-top:24px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
+  font-size:13px;opacity:.72;line-height:1.5;position:relative;z-index:2}
+
+/* липкая мобильная панель */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:80;display:none;gap:10px;
+  padding:10px 14px calc(10px + env(safe-area-inset-bottom));
+  background:#FDF1EF;
+  border-top:1px solid #F5DBE1;box-shadow:0 -8px 18px -12px rgba(74,34,51,.8)}
+.sticky .btn{flex:1;padding:16px 12px;font-size:15.5px;width:auto}
+.sticky .btn-ghost{flex:none;width:56px;padding:16px 0}
+
+/* анимация появления */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.3,1)}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  .rv{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+  .scrollhint svg,.ticker-row{animation:none}
+}
+
+
+/* секции вне экрана не отрисовываются, пока до них не долистают */
+#pains,#benefits,#works,#action{content-visibility:auto;contain-intrinsic-size:0 1100px}
+
+/* ══════════ МОБИЛЬНАЯ ВЕРСИЯ ══════════
+   Тот же URL и та же страница: на узких экранах меняется композиция.
+   По методике: 10–12 блоков вместо 17, все формы захвата на месте,
+   один блок = один экран, спойлеры вместо простыней, крупные тапы,
+   липкая панель действий внизу. */
+.m-only{display:none}
+@media(max-width:760px){
+  /* — воздух и ритм — */
+  body{font-size:16.5px;line-height:1.58}
+  section{padding:52px 0}
+  .wrap{padding:0 18px}
+  h1{font-size:clamp(29px,7.6vw,34px);line-height:1.08}
+  h2{font-size:clamp(25px,6.6vw,30px);line-height:1.1}
+  .lead{font-size:16px}
+  .grid{gap:14px}
+  .center{margin-bottom:26px}
+
+  /* — всё кликабельное крупное и в зоне большого пальца — */
+  .btn{min-height:56px;padding:17px 20px}
+  .btn-ghost{min-height:54px}
+  .msg{min-height:48px;padding:12px 17px}
+  .qopt{min-height:58px;padding:15px 16px;font-size:16px}
+  details.sp summary{padding:19px 52px 19px 20px;font-size:16.5px;min-height:58px}
+  details.sp .spb{padding:0 20px 20px;font-size:15.5px}
+  .field input,.field select{min-height:56px;font-size:16px}  /* 16px — иначе iOS зумит */
+  .agree input{width:20px;height:20px}
+  .hd-phone a{font-size:17px}
+
+  /* — формы целиком в один экран — */
+  .form{padding:24px 18px;border-radius:22px}
+  .form h3{font-size:22px}
+  .form .fnote{font-size:14px;margin-bottom:16px}
+  .field{margin-bottom:12px}
+  .quiz{border-radius:22px}
+  .quiz-head{padding:20px 18px 0}
+  .quiz-body{padding:20px 18px 26px}
+  .qstep h3{font-size:22px}
+  .qstep .qsub{font-size:14px;margin-bottom:16px}
+
+  /* — 10–12 блоков: лишние карточки прячем — */
+  .m-extra{display:none}
+  .m-open .m-extra{display:block}
+  .m-open .mcard.m-extra{display:flex}
+  .m-only{display:block}
+  .m-more{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;
+    margin-top:14px;min-height:54px;padding:15px 18px;border-radius:99px;cursor:pointer;
+    font-weight:700;font-size:15.5px;color:var(--plum);
+    background:linear-gradient(#fff,#fff) padding-box,linear-gradient(140deg,#EFC3D0,#E6C88E) border-box;
+    border:1.5px solid transparent;box-shadow:var(--sh-sm)}
+  .m-more svg{width:17px;height:17px;transition:transform .25s}
+  .m-open .m-more svg{transform:rotate(180deg)}
+
+  /* — компактнее блоки — */
+  .pain{padding:17px 18px;border-radius:16px}
+  .pain p{font-size:15.5px}
+  .pain .q{font-size:32px;margin-top:6px}
+  .pain-after{font-size:21px;margin-top:26px;line-height:1.4}
+  .step{padding:24px 20px}
+  .step::before{font-size:44px;top:14px;right:18px}
+  .stats{gap:11px}
+  .stat{padding:18px 14px}
+  .stat .sv{font-size:33px}
+  .stat .sl{font-size:13px}
+  .benefit{gap:13px}
+  .mcard .mbody{padding:18px 18px 20px}
+  .mcard .mimg{aspect-ratio:16/10}
+  .mcard p{font-size:14.5px}
+  .quote{padding:22px 20px}
+  .quote p{font-size:16px}
+  .rbox{min-width:0;width:100%;padding:16px 20px}
+  .rating{gap:10px;margin-bottom:22px}
+  .ptable{border-radius:18px}
+  .plist li{font-size:15px}
+  .gal{gap:11px}
+  .gal figcaption{font-size:13.5px;padding:11px 13px 13px}
+  .split{gap:26px}
+  .crow .ci{width:44px;height:44px}
+  .ticker span{font-size:18px;padding:0 16px;gap:16px}
+  .scrollhint{display:none}          /* на телефоне листают и без подсказки */
+
+  /* — липкая панель: позвонить, написать, записаться — */
+  .sticky{display:flex;gap:9px;padding:9px 12px calc(9px + env(safe-area-inset-bottom))}
+  .sticky .btn{flex:1;min-height:52px;padding:14px 10px;font-size:15.5px}
+  .sticky .btn-ghost{flex:none;width:52px;padding:0;min-height:52px}
+}
+@media(max-width:400px){
+  .wrap{padding:0 15px}
+  h1{font-size:27.5px}
+  .btn{font-size:16px}
+  .stat .sv{font-size:30px}
+}
+
+/* адаптив */
+@media(max-width:1020px){
+  .g4{grid-template-columns:repeat(2,1fr)}
+  .gal{grid-template-columns:repeat(2,1fr)}
+  .offer-grid,.split,.contact{grid-template-columns:1fr;gap:34px}
+  .steps{grid-template-columns:1fr}
+  .fgrid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:980px){
+  .hero{padding:32px 0 60px}
+  .hero-grid{grid-template-columns:1fr;gap:38px}
+  .hero-copy{display:flex;flex-direction:column}
+  .hero-copy .eyebrow{order:1}
+  .hero-copy h1{order:2}
+  .hero-copy .lead{order:3}
+  .hero-copy .cta-row{order:4;margin-bottom:12px}
+  .hero-copy .note{order:5;margin-bottom:24px}
+  .hero-copy .bullets{order:6;margin-bottom:0}
+  .hero-copy .hero-trust{order:7}
+  .hero-art{min-height:420px}
+  .ph-main{width:74%;height:100%}
+  .ph-sub{width:44%;height:42%}
+  .hero-badge{max-width:200px;padding:14px 17px}
+  .hero-badge .big{font-size:33px}
+}
+@media(max-width:760px){
+  section{padding:66px 0}
+  .g2,.g3{grid-template-columns:1fr}
+  .safe{grid-template-columns:1fr}
+  .card{padding:26px 22px}
+  .form{padding:28px 22px}
+  .sticky{display:flex}
+  body{padding-bottom:76px}
+  .fgrid{grid-template-columns:1fr;gap:28px}
+  .benefit .bnum{font-size:40px;width:156px}
+  .hero-badge{left:0;top:4%}
+  .ticker span{font-size:19px;padding:0 18px}
+}
+/* на узком экране колонка чисел съедала бы почти половину ширины,
+   поэтому число встаёт над текстом — тексты всё равно от одной вертикали */
+@media(max-width:560px){
+  .benefit{flex-direction:column;gap:4px}
+  .benefit .bnum{width:auto;text-align:left;font-size:38px}
+}
+@media(max-width:620px){
+  .hd > .btn{display:none}          /* CTA живёт в липкой панели снизу */
+  .hd{gap:10px}
+}
+@media(max-width:560px){
+  .hero-art{min-height:340px}
+  .hero .lead{font-size:17.5px}
+  .bullets li{font-size:15.5px}
+  .hero-price{right:0;bottom:-4%;padding:13px 17px}
+  .hero-price .p{font-size:28px}
+  .cta-row .btn,.center .btn,.form .btn,.quiz .btn{width:100%;padding:18px 22px;font-size:16.5px}
+  .cta-row{gap:11px}
+  .eyebrow{font-size:11.5px;letter-spacing:.1em}
+}
+
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BeautySalon",
+  "name": "VIV Studio",
+  "description": "Студия лазерной эпиляции и эстетической косметологии в центре Санкт-Петербурга",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Суворовский проспект, 35, офис 409",
+    "addressLocality": "Санкт-Петербург",
+    "addressCountry": "RU"
+  },
+  "telephone": "+7-921-915-62-55",
+  "priceRange": "650–30000 ₽",
+  "aggregateRating": {"@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "47", "bestRating": "5"},
+  "sameAs": [
+    "https://t.me/VIV_Studio",
+    "https://vk.com/viv.studio",
+    "https://yandex.ru/maps/org/116601474737/"
+  ],
+  "makesOffer": [
+    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Лазерная эпиляция"}},
+    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Чистка лица"}},
+    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Пилинги"}},
+    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Биоревитализация"}},
+    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Ботулинотерапия"}},
+    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Контурная пластика губ"}},
+    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Мезотерапия"}}
+  ]
+}
+</script>
 </head>
 <body>
 
-<a class="skip-link" href="#main">Перейти к содержанию</a>
+<svg style="display:none" aria-hidden="true">
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-9.2A3.9 3.9 0 0 1 12 8a3.9 3.9 0 0 1 7 2.8C19 15.6 12 20 12 20z"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.4-3 8-7 9-4-1-7-4.6-7-9V6z"/><path d="M9 12l2 2 4-4"/></symbol>
+  <symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 3s6 6.2 6 10a6 6 0 0 1-12 0c0-3.8 6-10 6-10z"/></symbol>
+  <symbol id="i-wave" viewBox="0 0 24 24"><path d="M2 9c2.5-3 5-3 7.5 0S15 12 17.5 9 22 6 22 6"/><path d="M2 16c2.5-3 5-3 7.5 0s5.5 3 8-.5"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></symbol>
+  <symbol id="i-gift" viewBox="0 0 24 24"><path d="M4 11h16v9H4z"/><path d="M2 7h20v4H2zM12 7v13"/><path d="M12 7S9.5 3 7.5 4 9 7 12 7zM12 7s2.5-4 4.5-3S15 7 12 7z"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 3h4l2 5-2.5 1.5a12 12 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2.2 2A17 17 0 0 1 3 5.2 2 2 0 0 1 5 3z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></symbol>
+  <symbol id="i-tg" viewBox="0 0 24 24"><path d="M21 4 3 11l5 2 2 6 3-4 5 4z"/><path d="m8 13 9-6-6 8"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path d="M21 12a9 9 0 0 1-13.4 7.8L3 21l1.3-4.4A9 9 0 1 1 21 12z"/><path d="M8.8 8.4c.4-.1.8 0 1 .4l.7 1.3c.2.3.1.6-.1.8l-.5.5a6 6 0 0 0 2.7 2.7l.5-.5c.2-.2.5-.3.8-.1l1.3.7c.4.2.5.6.4 1a2 2 0 0 1-2 1.3 8 8 0 0 1-6.2-6.2 2 2 0 0 1 1.4-1.9z"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6 8-6s8 2 8 6"/></symbol>
+  <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3v6M12 15v6M3 12h6M15 12h6"/><path d="m6.5 6.5 3 3M14.5 14.5l3 3M17.5 6.5l-3 3M9.5 14.5l-3 3"/></symbol>
+  <symbol id="i-razor" viewBox="0 0 24 24"><path d="M4 3h16v6H4z"/><path d="M8 9v5a4 4 0 0 0 8 0V9"/><path d="M12 18v3"/></symbol>
+</svg>
 
-<!-- ══════════ ШАПКА ══════════ -->
-<header class="site-header" id="siteHeader">
-  <div class="container header-inner">
-    <a class="logo" href="#top" aria-label="VIV Studio — на главную">
-      <span class="logo-mark" aria-hidden="true">
-        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.2">
-          <circle cx="16" cy="16" r="13.2"/>
-          <path d="M10.6 10.8L16 22.4l5.4-11.6" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </span>
-      <span class="logo-text">VIV<span class="logo-dot">.</span>STUDIO</span>
-    </a>
-
-    <nav class="nav" aria-label="Основная навигация">
-      <a href="#services">Услуги</a>
+<header>
+  <i class="hbar"></i>
+  <div class="wrap hd">
+    <a href="#top" class="logo">VIV Studio<span>.</span></a>
+    <div class="desc">Студия лазерной эпиляции и эстетической косметологии · СПб</div>
+    <div class="hd-sp"></div>
+    <nav class="hd-nav">
+      <a href="#methods">Процедуры</a>
       <a href="#prices">Цены</a>
-      <a href="#fears">Вопросы и страхи</a>
-      <a href="#reviews">Отзывы</a>
+      <a href="#studio">Студия</a>
+      <a href="#faq">Вопросы</a>
       <a href="#contacts">Контакты</a>
     </nav>
-
-    <div class="header-actions">
-      <a class="header-phone" href="tel:+79219156255">+7 (921) 915-62-55</a>
-      <a class="btn btn-primary btn-sm" href="#booking">Записаться</a>
+    <div class="hd-phone">
+      <a href="tel:+79219156255">+7 921 915-62-55</a>
+      <span>ежедневно, по записи</span>
     </div>
-
-    <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobileNav">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-
-  <div class="mobile-nav" id="mobileNav" hidden>
-    <a href="#services">Услуги</a>
-    <a href="#prices">Цены</a>
-    <a href="#fears">Вопросы и страхи</a>
-    <a href="#reviews">Отзывы</a>
-    <a href="#contacts">Контакты</a>
-    <a class="btn btn-primary" href="#booking">Записаться со скидкой 50%</a>
+    <a href="#first" class="btn" style="padding:13px 22px;font-size:15.5px">Записаться</a>
   </div>
 </header>
 
-<main id="main">
+<main id="top">
 
-<!-- ══════════ ПЕРВЫЙ ЭКРАН · ОФФЕР 4U ══════════ -->
-<section class="hero" id="top">
-  <div class="hero-glow" aria-hidden="true"></div>
-  <div class="container hero-inner">
+<!-- ═══════════ 1. ПЕРВЫЙ ЭКРАН ═══════════ -->
+<section class="hero">
+  <div class="blob b-peach b1"></div>
+  <div class="blob b-rose b2"></div>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow"><svg class="ic" style="width:14px;height:14px"><use href="#i-pin"/></svg> СПб, Суворовский пр-т 35 · 7 минут от Смольного</span>
+      <h1>Гладкая кожа <span class="it">без бритвы и вросших волос</span>: первая процедура со скидкой <span class="num">50%</span></h1>
+      <p class="lead">Лазерная эпиляция и эстетическая косметология в камерной студии, где вами занимается один мастер — от первой консультации до последней процедуры. Комплекс «тотальное бикини + подмышки» на первом визите — <b>1&nbsp;450&nbsp;₽ вместо 2&nbsp;900&nbsp;₽</b>.</p>
 
-    <div class="hero-copy reveal">
-      <p class="eyebrow">Санкт-Петербург · Суворовский пр-т, 35 · 7 минут от Смольного</p>
-
-      <h1>
-        Гладкая кожа <em>без бритвы</em>,<br>
-        раздражения и вросших волос
-      </h1>
-
-      <p class="hero-sub">
-        Курс лазерной эпиляции в камерной студии, где вами занимается один мастер —
-        от первой консультации до последней процедуры. Заметный результат уже после первого сеанса,
-        <strong>−50% на первое посещение</strong> и честный план курса без навязанных услуг.
-      </p>
-
-      <ul class="hero-bullets">
-        <li>
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
-          <span>Первое посещение лазерной эпиляции — <strong>со скидкой 50%</strong></span>
-        </li>
-        <li>
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
-          <span>Комплекс «тотальное бикини + подмышки» — <strong>2 900 ₽</strong> вместо 2 950 ₽ по отдельности</span>
-        </li>
-        <li>
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
-          <span>Параметры подбираются под вашу кожу — с тестовой вспышкой на первом визите</span>
-        </li>
-        <li>
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
-          <span>Один кабинет, один мастер, никого лишнего — даже в деликатных зонах</span>
-        </li>
+      <ul class="bullets">
+        <li><span class="bi"><svg class="ic"><use href="#i-check"/></svg></span><span><b>15 минут</b> на зону — успеете в обед или после работы, без реабилитации и следов</span></li>
+        <li><span class="bi"><svg class="ic"><use href="#i-check"/></svg></span><span><b>Тестовая вспышка на первом визите</b> — вы понимаете свои ощущения до начала процедуры</span></li>
+        <li><span class="bi"><svg class="ic"><use href="#i-check"/></svg></span><span><b>Параметры под ваш фототип</b> — мощность подбирают под вашу кожу, а не «как всем»</span></li>
+        <li><span class="bi"><svg class="ic"><use href="#i-check"/></svg></span><span><b>Один кабинет и один мастер</b> — никого лишнего даже в деликатных зонах</span></li>
       </ul>
 
-      <div class="hero-cta">
-        <a class="btn btn-primary btn-lg" href="#booking">Записаться со скидкой 50%</a>
-        <a class="btn btn-ghost btn-lg" href="#prices">Посмотреть цены</a>
-      </div>
-
-      <p class="hero-note">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 16v-4M12 8h.01"/></svg>
-        Консультация бесплатна и ни к чему не обязывает. Решаете уже в кабинете — после того,
-        как мастер посмотрит вашу кожу и честно скажет, будет ли толк.
-      </p>
-    </div>
-
-    <aside class="hero-card reveal" aria-label="Оценки студии">
-      <!-- Место под фотографию студии: замените блок .hero-photo на <img src="images/studio.jpg" alt="Кабинет VIV Studio"> -->
-      <div class="hero-photo" role="img" aria-label="Интерьер студии VIV Studio">
-        <span class="hero-photo-word">VIV</span>
-        <span class="hero-photo-caption">Элегантность, уют и забота о каждой детали</span>
-      </div>
-
-      <div class="rating-block">
-        <div class="rating-score">
-          <span class="score">5,0</span>
-          <span class="stars" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+      <div class="cta-row">
+        <span class="cta-wrap">
+          <span class="cta-arrow" aria-hidden="true">
+            <svg viewBox="1 1 60 26" width="60" height="26">
+              <defs><linearGradient id="ag" x1="0" y1="0" x2="1" y2=".8">
+                <stop offset="0" stop-color="#F2C8D5"/><stop offset=".45" stop-color="#D2648B"/>
+                <stop offset="1" stop-color="#B8446C"/></linearGradient></defs>
+              <path class="a-body" d="M1.8 2.1 L2.4 3.5 L3.0 4.9 L3.6 6.2 L4.3 7.5 L5.0 8.7 L5.7 9.9 L6.5 11.0 L7.2 12.1 L8.0 13.1 L8.8 14.0 L9.7 14.9 L10.5 15.8 L11.4 16.6 L12.3 17.4 L13.2 18.1 L14.1 18.8 L15.0 19.4 L16.0 20.0 L17.0 20.5 L17.9 21.0 L18.9 21.5 L19.9 21.9 L20.9 22.3 L21.9 22.6 L23.0 22.9 L24.0 23.2 L25.0 23.4 L26.1 23.6 L27.1 23.8 L28.1 23.9 L29.2 24.0 L30.2 24.1 L31.3 24.1 L32.3 24.1 L33.4 24.1 L34.4 24.1 L35.4 24.0 L36.4 23.9 L37.5 23.8 L38.5 23.7 L39.5 23.5 L40.5 23.3 L41.5 23.2 L42.5 23.0 L43.4 22.7 L44.4 22.5 L45.3 22.2 L46.3 22.0 L47.2 21.7 L48.1 21.4 L49.0 21.1 L49.9 20.8 L48.0 16.0 L47.2 16.4 L46.4 16.7 L45.6 17.0 L44.7 17.3 L43.9 17.7 L43.0 18.0 L42.2 18.2 L41.3 18.5 L40.4 18.8 L39.5 19.0 L38.6 19.2 L37.7 19.5 L36.8 19.6 L35.9 19.8 L35.0 20.0 L34.0 20.1 L33.1 20.2 L32.2 20.3 L31.2 20.4 L30.3 20.4 L29.3 20.4 L28.4 20.4 L27.4 20.4 L26.5 20.3 L25.6 20.2 L24.6 20.1 L23.7 19.9 L22.7 19.7 L21.8 19.5 L20.9 19.2 L19.9 18.9 L19.0 18.6 L18.1 18.2 L17.2 17.8 L16.3 17.3 L15.4 16.8 L14.5 16.3 L13.6 15.7 L12.7 15.0 L11.8 14.3 L11.0 13.6 L10.1 12.8 L9.3 12.0 L8.4 11.1 L7.6 10.1 L6.8 9.1 L6.0 8.1 L5.2 7.0 L4.4 5.8 L3.7 4.6 L2.9 3.3 L2.2 1.9Z"/>
+              <path class="a-head" d="M60.2 15.1 L46.4 26.3 Q49.2 18.5 42.5 13.7Z"/>
+            </svg>
           </span>
-          <span class="rating-meta">53 оценки на Яндекс&nbsp;Картах</span>
-        </div>
-        <div class="rating-badge">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.2 4.5 5 .7-3.6 3.5.9 5-4.5-2.4-4.5 2.4.9-5L4.8 8.2l5-.7z"/></svg>
-          «Хорошее место 2026» по оценкам пользователей Яндекс Карт
-        </div>
+          <a href="#first" class="btn btn-lg">Записаться со скидкой 50%</a>
+        </span>
+        <a href="#quiz" class="btn btn-ghost">Подобрать программу</a>
       </div>
-    </aside>
-  </div>
-</section>
+      <p class="note">Перезвоним в течение 15 минут в рабочее время и подтвердим удобное окно.</p>
 
-<!-- ══════════ ПОЛОСА ДОВЕРИЯ ══════════ -->
-<section class="trustbar" aria-label="Коротко о студии">
-  <div class="container trustbar-grid">
-    <div class="trust-item reveal"><span class="trust-num">5,0</span><span class="trust-label">средняя оценка<br>по 53 отзывам</span></div>
-    <div class="trust-item reveal"><span class="trust-num">47</span><span class="trust-label">развёрнутых отзывов<br>на Яндекс Картах</span></div>
-    <div class="trust-item reveal"><span class="trust-num">−50%</span><span class="trust-label">на первое посещение<br>лазерной эпиляции</span></div>
-    <div class="trust-item reveal"><span class="trust-num">15 мин</span><span class="trust-label">средняя процедура<br>для одной зоны</span></div>
-  </div>
-</section>
+      <div class="hero-trust">
+        <div class="tchip"><div><b>5,0 <span class="stars">★★★★★</span></b>53 оценки на Яндекс Картах</div></div>
+        <div class="tchip"><div><b>«Хорошее место 2026»</b>по оценкам пользователей Яндекс Карт</div></div>
+        <div class="tchip"><div><b>47 отзывов</b>и ни одного ниже пяти звёзд</div></div>
+      </div>
+    </div>
 
-<!-- ══════════ ЧТО ВЫ ПОЛУЧАЕТЕ ══════════ -->
-<section class="section" id="benefits">
-  <div class="container">
-    <p class="section-eyebrow reveal">Что меняется после курса</p>
-    <h2 class="section-title reveal">Не «процедура», а привычка,<br>от которой можно отказаться</h2>
-    <p class="section-lead reveal">
-      Лазерная эпиляция окупается не только гладкостью. Вы перестаёте закладывать в каждое утро
-      пятнадцать минут и в каждый отпуск — станок и раздражение.
-    </p>
-
-    <div class="cards-grid">
-      <article class="card reveal">
-        <span class="card-icon"><svg viewBox="0 0 24 24"><path d="M3 12h18M12 3v18"/><circle cx="12" cy="12" r="9"/></svg></span>
-        <h3>Утро без станка</h3>
-        <p>Больше не нужно планировать бритьё под платье, бассейн или неожиданную поездку. Кожа гладкая по умолчанию.</p>
-      </article>
-      <article class="card reveal">
-        <span class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 3v18M5 8l7-5 7 5"/></svg></span>
-        <h3>Ни вросших, ни раздражения</h3>
-        <p>Лазер работает с волосяным фолликулом, а не срезает волос. Уходит главная причина воспалений и тёмных точек.</p>
-      </article>
-      <article class="card reveal">
-        <span class="card-icon"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 10-7.8 7.8l8.8 8.8 8.8-8.8a5.5 5.5 0 000-7.8z"/></svg></span>
-        <h3>Комфортно даже в бикини</h3>
-        <p>Деликатные зоны — самая частая причина откладывать запись. Здесь их делают спокойно, быстро и без лишних глаз.</p>
-      </article>
-      <article class="card reveal">
-        <span class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 2l7 4v6c0 4.4-3 8.3-7 10-4-1.7-7-5.6-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></span>
-        <h3>Параметры под вашу кожу</h3>
-        <p>Фототип, гормональный фон, тип волоса и загар — мощность подбирается индивидуально, а не «как всем».</p>
-      </article>
-      <article class="card reveal">
-        <span class="card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg></span>
-        <h3>Один мастер весь курс</h3>
-        <p>Екатерина ведёт вас от первой консультации до последней процедуры и помнит вашу историю без напоминаний.</p>
-      </article>
-      <article class="card reveal">
-        <span class="card-icon"><svg viewBox="0 0 24 24"><path d="M4 20V9l8-5 8 5v11"/><path d="M9 20v-6h6v6"/></svg></span>
-        <h3>Камерный формат</h3>
-        <p>Отдельный кабинет в центре города, запись по времени, без очередей и конвейера сетевых студий.</p>
-      </article>
+    <div class="hero-art">
+      <div class="ph ph-main"><img decoding="async" src="assets/img/hero-main.svg" alt="Процедура лазерной эпиляции в студии VIV Studio" width="900" height="675"></div>
+      <div class="ph ph-sub"><img decoding="async" src="assets/img/hero-sub.svg" alt="Интерьер кабинета студии VIV Studio" loading="lazy" width="900" height="1200"></div>
+      <div class="hero-badge">
+        <div class="big">−50%</div>
+        <div class="cap">на первое посещение лазерной эпиляции — на любую зону и любой комплекс</div>
+      </div>
+      <div class="hero-price">
+        <div class="s">Комплекс S на первом визите</div>
+        <div class="p">1 450 ₽ <s>2 900 ₽</s></div>
+      </div>
     </div>
   </div>
+  <div class="wrap"><a class="scrollhint" href="#how"><span>Листайте вниз — покажем, как это работает</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a></div>
 </section>
 
-<!-- ══════════ УСЛУГИ ══════════ -->
-<section class="section section-tinted" id="services">
-  <div class="container">
-    <p class="section-eyebrow reveal">Два направления</p>
-    <h2 class="section-title reveal">Лазерная эпиляция и эстетическая косметология</h2>
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-row">
+      <span>Лазерная эпиляция</span>
+      <span>Бикини</span>
+      <span>Подмышки</span>
+      <span>Ноги полностью</span>
+      <span>Лицо и шея</span>
+      <span>Чистка лица</span>
+      <span>Пилинги Mediderma</span>
+      <span>Биоревитализация</span>
+      <span>Ботулинотерапия</span>
+      <span>Контурная пластика</span>
+      <span>Мезотерапия</span>
+      <span>Лазерная эпиляция</span>
+      <span>Бикини</span>
+      <span>Подмышки</span>
+      <span>Ноги полностью</span>
+      <span>Лицо и шея</span>
+      <span>Чистка лица</span>
+      <span>Пилинги Mediderma</span>
+      <span>Биоревитализация</span>
+      <span>Ботулинотерапия</span>
+      <span>Контурная пластика</span>
+      <span>Мезотерапия</span>
+  </div>
+</div>
 
-    <div class="services-grid">
-      <article class="service-card reveal">
-        <div class="service-head">
-          <span class="service-index">01</span>
-          <h3>Лазерная эпиляция</h3>
+<!-- ═══════════ 2. БОЛИ ═══════════ -->
+<section class="sand" id="pains">
+  <div class="blob b-rose" style="width:380px;height:380px;left:-130px;top:4%"></div>
+  <div class="wrap">
+    <div class="center" style="margin-bottom:38px">
+      <div class="hr-flower"><svg class="ic" style="width:18px;height:18px"><use href="#i-sparkle"/></svg></div>
+      <h2>Узнаёте себя?</h2>
+      <p class="lead">Мы каждый день слышим эти фразы от женщин, которые впервые заходят к нам в кабинет.</p>
+    </div>
+    <div class="grid g3 rv">
+      <div class="pain"><span class="q">«</span><p>Каждое утро начинается со станка — и уже к вечеру всё колется заново</p></div>
+      <div class="pain"><span class="q">«</span><p>Вросшие волосы и тёмные точки в зоне бикини не уходят никакими скрабами</p></div>
+      <div class="pain"><span class="q">«</span><p>После шугаринга раздражение держится неделю — а через три недели всё сначала</p></div>
+      <div class="pain"><span class="q">«</span><p>Планирую бассейн и поездки вокруг того, успела я побриться или нет</p></div>
+      <div class="pain m-extra"><span class="q">«</span><p>Хочу лазер, но боюсь боли, ожога и что потом останутся пятна</p></div>
+      <div class="pain m-extra"><span class="q">«</span><p>Стесняюсь бикини: не хочу, чтобы в кабинет кто-то заходил и комментировал</p></div>
+    </div>
+    <p class="pain-after rv">Бритва и воск не решают задачу, а <span class="it">откладывают её на две-три недели</span>. Лазер работает не с волосом, а с фолликулом — поэтому его результат не нужно повторять всю жизнь.</p>
+  </div>
+</section>
+
+<!-- ═══════════ 3. КАК ЭТО РАБОТАЕТ ═══════════ -->
+<section id="how">
+  <div class="wrap">
+    <div class="center" style="margin-bottom:40px">
+      <span class="eyebrow plain">Как это работает</span>
+      <h2>Три шага, которые <span class="it">бритва не делает никогда</span></h2>
+      <p class="lead">Лазерная эпиляция не срезает волос по поверхности. Луч находит пигмент внутри волоса, нагревает фолликул — и волос перестаёт расти. Курс нужен потому, что волосы растут циклами.</p>
+    </div>
+    <div class="steps rv">
+      <div class="step">
+        <div class="icon-round warm"><svg class="ic"><use href="#i-bolt"/></svg></div>
+        <h3>Луч находит пигмент</h3>
+        <p>Свет поглощается меланином внутри волоса и проходит по нему вглубь, к корню. Кожа вокруг остаётся холодной — её защищает система охлаждения насадки.</p>
+      </div>
+      <div class="step">
+        <div class="icon-round gold"><svg class="ic"><use href="#i-drop"/></svg></div>
+        <h3>Фолликул нагревается</h3>
+        <p>Тепло доходит до зоны роста и она перестаёт работать. Обработанные волосы выпадают в течение одной-двух недель — их не нужно выдёргивать или сбривать заново.</p>
+      </div>
+      <div class="step">
+        <div class="icon-round sage"><svg class="ic"><use href="#i-sparkle"/></svg></div>
+        <h3>Курс закрывает все циклы</h3>
+        <p>В любой момент в фазе роста находится лишь часть волос — остальные «спят». Поэтому процедуры повторяют с интервалом, пока не будут задеты все фолликулы зоны.</p>
+      </div>
+    </div>
+    <div class="stats rv">
+      <div class="stat"><div class="sv">15 мин</div><div class="sl">одна зона — можно в обеденный перерыв</div></div>
+      <div class="stat"><div class="sv">−50%</div><div class="sl">на первое посещение лазерной эпиляции</div></div>
+      <div class="stat"><div class="sv">2 900 ₽</div><div class="sl">комплекс «бикини + подмышки» по прайсу</div></div>
+      <div class="stat"><div class="sv">5,0 <span class="st">★</span></div><div class="sl">53 оценки на Яндекс Картах</div></div>
+    </div>
+    <p class="note center" style="margin-top:26px;max-width:760px;margin-left:auto;margin-right:auto">Одна зона — от нескольких минут до получаса. Курс подбираем индивидуально: чаще всего это несколько процедур с интервалом в несколько недель, но точное число мастер назовёт только после осмотра кожи и типа волоса.</p>
+  </div>
+</section>
+
+<!-- ═══════════ 4. КЭВ: ПЕРВЫЙ ВИЗИТ + ФОРМА ═══════════ -->
+<section class="band" id="first">
+  <div class="wrap offer-grid">
+    <div>
+      <span class="eyebrow">Знакомство со студией</span>
+      <h2>Первое посещение со скидкой 50%:<br>приходите и <span class="it">убедитесь сами</span></h2>
+      <p class="lead">Это не «консультация ради консультации». Вы получаете полноценную процедуру и понятный план курса — а решаете, продолжать ли, уже потом, дома, спокойно.</p>
+
+      <div class="value-card">
+        <div class="vc-top">
+          <div class="vc-doc" aria-hidden="true">
+            <div class="vd-sheet">
+              <div class="vd-brand"><span class="vd-mono">V</span>VIV Studio · программа</div>
+              <div class="vd-zone">Тотальное бикини</div>
+              <div class="vd-metric"><b>2 900</b><i>→</i><b>1 450</b></div>
+              <div class="vd-delta">−50% на первое посещение</div>
+              <div class="vd-rows">
+                <div><span>Фототип</span><b>III</b></div>
+                <div><span>Интервал</span><b>4–6 недель</b></div>
+                <div><span>Мастер</span><b>Екатерина</b></div>
+              </div>
+              <div class="vd-seal"><span>ваш<br>экземпляр</span></div>
+            </div>
+          </div>
+          <div class="vc-intro">
+            <h3>Что вы уносите домой</h3>
+            <p>План курса с вашим фототипом, параметрами аппарата и интервалом между процедурами — с ним можно уйти думать и сравнивать. Ничего не подписываете на месте.</p>
+          </div>
         </div>
-        <p class="service-text">
-          От единичных зон до тела полностью. Комплексы дешевле, чем те же зоны по отдельности,
-          и рассчитаны на реальные сценарии: «лето», «первый курс», «поддержка».
-        </p>
-        <ul class="service-list">
-          <li>Лицо и шея — от 650 ₽</li>
-          <li>Подмышки — 1 000 ₽</li>
-          <li>Линия и тотальное бикини — 1 150–1 950 ₽</li>
-          <li>Ноги полностью — 1 950 ₽</li>
-          <li>Комплекс S — 2 900 ₽ · Комплекс XL «тело полностью» — 8 500 ₽</li>
+
+        <ul class="vc-list">
+          <li><span>Консультация: тип волоса, фототип, здоровье и противопоказания</span><b>2 000 ₽</b></li>
+          <li><span>Тестовая вспышка — проверим реакцию кожи и ваши ощущения</span><b>500 ₽</b></li>
+          <li><span>Полноценная процедура на выбранной зоне</span><b>от 650 ₽</b></li>
+          <li><span>Подбор индивидуальных параметров под ваш фототип</span><b>1 000 ₽</b></li>
+          <li><span>План курса и памятка по уходу — на руки</span><b>1 000 ₽</b></li>
         </ul>
-        <a class="link-arrow" href="#prices">Весь прайс на эпиляцию
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      </article>
 
-      <article class="service-card reveal">
-        <div class="service-head">
-          <span class="service-index">02</span>
-          <h3>Косметология</h3>
+        <div class="vc-sum">
+          <div class="vc-old"><span>Комплекс S по прайсу</span><b>2 900 ₽</b></div>
+          <div class="vc-new"><span>Первое посещение</span><b>1 450 ₽</b></div>
         </div>
-        <p class="service-text">
-          Инъекционные и уходовые методики на препаратах с именем — Belotero, Stylage, Neauvia,
-          Profhilo, Filorga, Mediderma. Всё начинается с консультации, а не с продажи процедуры.
-        </p>
-        <ul class="service-list">
-          <li>Чистки лица — 3 300–5 500 ₽</li>
-          <li>Пилинги, в том числе Mediderma — 3 000–6 000 ₽</li>
-          <li>Биоревитализация — 6 000–29 000 ₽</li>
-          <li>Ботулинотерапия — от 320 ₽ за единицу</li>
-          <li>Контурная пластика губ и лица — 12 000–28 000 ₽</li>
-        </ul>
-        <a class="link-arrow" href="#prices">Весь прайс на косметологию
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════ КАК ПРОХОДИТ ВИЗИТ ══════════ -->
-<section class="section" id="how">
-  <div class="container">
-    <p class="section-eyebrow reveal">Как проходит первый визит</p>
-    <h2 class="section-title reveal">Четыре шага — и никаких сюрпризов</h2>
-
-    <ol class="steps">
-      <li class="step reveal">
-        <span class="step-num">1</span>
-        <h3>Разговор и осмотр</h3>
-        <p>Мастер расспрашивает про здоровье, гормональный фон, загар и прошлый опыт эпиляции. Смотрит кожу и тип волоса.</p>
-      </li>
-      <li class="step reveal">
-        <span class="step-num">2</span>
-        <h3>Тестовая вспышка</h3>
-        <p>Пробный импульс на небольшом участке: вы понимаете свои ощущения, мастер — как реагирует ваша кожа.</p>
-      </li>
-      <li class="step reveal">
-        <span class="step-num">3</span>
-        <h3>Сама процедура</h3>
-        <p>Подмышки — пара минут, бикини — около десяти, ноги полностью — до сорока. Каждый этап проговаривается вслух.</p>
-      </li>
-      <li class="step reveal">
-        <span class="step-num">4</span>
-        <h3>План курса и уход</h3>
-        <p>Вы уходите с понятным графиком: сколько процедур, с каким интервалом, что делать с загаром и уходом дома.</p>
-      </li>
-    </ol>
-  </div>
-</section>
-
-<!-- ══════════ ЦЕНЫ ══════════ -->
-<section class="section section-tinted" id="prices">
-  <div class="container">
-    <p class="section-eyebrow reveal">Прайс без звёздочек</p>
-    <h2 class="section-title reveal">Цены</h2>
-    <p class="section-lead reveal">Стоимость указана за одну процедуру. Скидка 50% действует на первое посещение лазерной эпиляции.</p>
-
-    <div class="tabs reveal" role="tablist" aria-label="Разделы прайса">
-      <button class="tab is-active" role="tab" aria-selected="true" aria-controls="tab-epil" id="btn-epil">Лазерная эпиляция</button>
-      <button class="tab" role="tab" aria-selected="false" aria-controls="tab-cosm" id="btn-cosm">Косметология</button>
-    </div>
-
-    <!-- ЭПИЛЯЦИЯ -->
-    <div class="tab-panel is-active" id="tab-epil" role="tabpanel" aria-labelledby="btn-epil">
-
-      <div class="complex-grid">
-        <article class="complex-card reveal">
-          <div class="complex-top"><h3>Комплекс S</h3><span class="complex-price">2 900 ₽</span></div>
-          <p>Тотальное бикини + подмышки</p>
-        </article>
-        <article class="complex-card reveal">
-          <div class="complex-top"><h3>Комплекс M1</h3><span class="complex-price">4 900 ₽</span></div>
-          <p>Ноги полностью (бёдра, колени, голени, подъём стопы, пальцы) + подмышки</p>
-        </article>
-        <article class="complex-card reveal">
-          <div class="complex-top"><h3>Комплекс M2</h3><span class="complex-price">4 900 ₽</span></div>
-          <p>Голени с коленями и пальчиками + тотальное бикини + подмышки</p>
-        </article>
-        <article class="complex-card reveal is-featured">
-          <span class="complex-flag">Выбирают чаще всего</span>
-          <div class="complex-top"><h3>Комплекс L</h3><span class="complex-price">5 900 ₽</span></div>
-          <p>Ноги полностью + тотальное бикини с межъягодичной зоной + подмышки</p>
-        </article>
-        <article class="complex-card reveal">
-          <div class="complex-top"><h3>Комплекс XL</h3><span class="complex-price">8 500 ₽</span></div>
-          <p>Тело полностью: лицо, подмышки, руки, тотальное бикини, межъягодичная зона, белая линия живота, ноги</p>
-        </article>
-      </div>
-
-      <div class="price-columns">
-        <div class="price-block reveal">
-          <h3 class="price-block-title">Лицо и шея</h3>
-          <ul class="price-list">
-            <li><span>Межбровие</span><b>650 ₽</b></li>
-            <li><span>Верхняя губа</span><b>750 ₽</b></li>
-            <li><span>Бакенбарды</span><b>800 ₽</b></li>
-            <li><span>Подбородок</span><b>850 ₽</b></li>
-            <li><span>Щёки</span><b>850 ₽</b></li>
-            <li><span>Шейная область</span><b>1 450 ₽</b></li>
-            <li><span>Лицо полностью</span><b>1 950 ₽</b></li>
-          </ul>
-        </div>
-
-        <div class="price-block reveal">
-          <h3 class="price-block-title">Руки</h3>
-          <ul class="price-list">
-            <li><span>Кисти рук</span><b>800 ₽</b></li>
-            <li><span>Подмышки</span><b>1 000 ₽</b></li>
-            <li><span>Руки до локтя</span><b>1 450 ₽</b></li>
-            <li><span>Руки полностью + кисти</span><b>1 950 ₽</b></li>
-          </ul>
-          <h3 class="price-block-title mt">Бикини</h3>
-          <ul class="price-list">
-            <li><span>Межъягодичная зона</span><b>850 ₽</b></li>
-            <li><span>Линия бикини</span><b>1 150 ₽</b></li>
-            <li><span>Классическое бикини <em>(глубокое, без межъягодичной зоны)</em></span><b>1 650 ₽</b></li>
-            <li><span>Тотальное бикини <em>(с межъягодичной зоной)</em></span><b>1 950 ₽</b></li>
-          </ul>
-        </div>
-
-        <div class="price-block reveal">
-          <h3 class="price-block-title">Ноги</h3>
-          <ul class="price-list">
-            <li><span>Колени</span><b>800 ₽</b></li>
-            <li><span>Бёдра</span><b>1 000 ₽</b></li>
-            <li><span>Голени</span><b>1 450 ₽</b></li>
-            <li><span>Голени с коленями и пальчиками ног</span><b>1 950 ₽</b></li>
-            <li><span>Пальцы ног, подъём стопы</span><b>1 950 ₽</b></li>
-            <li><span>Ноги полностью <em>(включая пальцы и подъём стопы)</em></span><b>1 950 ₽</b></li>
-          </ul>
-        </div>
-
-        <div class="price-block reveal">
-          <h3 class="price-block-title">Тело</h3>
-          <ul class="price-list">
-            <li><span>Белая линия живота</span><b>750 ₽</b></li>
-            <li><span>Ареолы</span><b>850 ₽</b></li>
-            <li><span>Грудь полностью</span><b>950 ₽</b></li>
-            <li><span>Живот полностью</span><b>1 450 ₽</b></li>
-            <li><span>Ягодицы</span><b>1 450 ₽</b></li>
-            <li><span>Поясница</span><b>1 550 ₽</b></li>
-            <li><span>Спина полностью</span><b>1 950 ₽</b></li>
-            <li><span>Бритьё зоны</span><b>300 ₽</b></li>
-          </ul>
-        </div>
+        <p class="vc-note">Скидка 50% действует один раз, на первое посещение лазерной эпиляции — на любую зону и любой комплекс. Приходите с подругой: её первый визит тоже со скидкой.</p>
       </div>
     </div>
 
-    <!-- КОСМЕТОЛОГИЯ -->
-    <div class="tab-panel" id="tab-cosm" role="tabpanel" aria-labelledby="btn-cosm" hidden>
-      <div class="price-columns">
-        <div class="price-block reveal">
-          <h3 class="price-block-title">Консультация</h3>
-          <ul class="price-list">
-            <li><span>Консультация косметолога</span><b>2 000 ₽</b></li>
-            <li><span>Консультация дерматолога</span><b>3 000 ₽</b></li>
-          </ul>
-          <h3 class="price-block-title mt">Чистка лица</h3>
-          <ul class="price-list">
-            <li><span>Ультразвуковая чистка</span><b>3 300 ₽</b></li>
-            <li><span>Комбинированная чистка</span><b>4 500 ₽</b></li>
-            <li><span>Сложная чистка для проблемной кожи</span><b>5 500 ₽</b></li>
-          </ul>
-          <h3 class="price-block-title mt">Массаж лица</h3>
-          <ul class="price-list">
-            <li><span>Классический массаж + альгинатная маска</span><b>2 500 ₽</b></li>
-          </ul>
+    <form class="form" id="form-first" novalidate>
+      <div class="form-body">
+        <h3>Записаться на первое посещение</h3>
+        <p class="fnote">Оставьте номер телефона — мастер перезвонит в течение 15 минут, покажет свободные окна и ответит на вопросы. За вашим номером закрепим скидку 50%.</p>
+        <div class="field">
+          <label for="f1-phone">Телефон, на который позвонить</label>
+          <input id="f1-phone" name="phone" type="tel" inputmode="tel" placeholder="+7 999 123-45-67" autocomplete="tel" required>
         </div>
-
-        <div class="price-block reveal">
-          <h3 class="price-block-title">Пилинги</h3>
-          <ul class="price-list">
-            <li><span>Миндальный</span><b>3 000 ₽</b></li>
-            <li><span>BioRePeel</span><b>4 000 ₽</b></li>
-            <li><span>Peach Peel</span><b>4 000 ₽</b></li>
-            <li><span>Mediderma C-Ferulic Glow <em>— витаминное сияние</em></span><b>4 000 ₽</b></li>
-            <li><span>Mediderma лечебный пилинг <em>— наслоение кислот</em></span><b>6 000 ₽</b></li>
-            <li><span>Mediderma ретиноевый <em>— омолаживающий</em></span><b>6 000 ₽</b></li>
-          </ul>
-          <h3 class="price-block-title mt">Ботулинотерапия</h3>
-          <ul class="price-list">
-            <li><span>Релатокс, 1 единица</span><b>320 ₽</b></li>
-            <li><span>Full Face в технике доктора Кизуб</span><b>25 000 ₽</b></li>
-            <li><span>Гипергидроз, ReNTox</span><b>13 000 ₽</b></li>
-            <li><span>Гипергидроз, Релатокс</span><b>20 000 ₽</b></li>
-          </ul>
+        <div class="field">
+          <label for="f1-zone">С какой зоной работаем</label>
+          <select id="f1-zone" name="zone">
+            <option>Бикини</option>
+            <option>Подмышки и руки</option>
+            <option>Ноги</option>
+            <option>Лицо и шея</option>
+            <option>Комплекс на всё тело</option>
+            <option>Косметология лица</option>
+            <option selected>Не знаю — нужна консультация</option>
+          </select>
         </div>
-
-        <div class="price-block reveal">
-          <h3 class="price-block-title">Биоревитализация</h3>
-          <ul class="price-list">
-            <li><span>Bio Prospect 2,5 / 5 мл</span><b>6 000 / 8 000 ₽</b></li>
-            <li><span>Bellarti Amino · Extra · Hydrate · Lift, 2 мл</span><b>12 000 ₽</b></li>
-            <li><span>Neauvia Hydro Delux 2,5 мл</span><b>12 000 ₽</b></li>
-            <li><span>Meso-Xantin F199T · MesoWharton P199</span><b>13 000 ₽</b></li>
-            <li><span>Novacutan S-bio / Y-bio, 2 мл</span><b>13 000 ₽</b></li>
-            <li><span>Plinest · REVI strong · REVI silk, 2 мл</span><b>14 000 ₽</b></li>
-            <li><span>RRS HA Lost Lasting 3 мл</span><b>18 000 ₽</b></li>
-            <li><span>PROFHILO 2 мл</span><b>18 000 ₽</b></li>
-            <li><span>Neauvia Stimulate 1 / 2 мл</span><b>18 000 / 29 000 ₽</b></li>
-          </ul>
-          <h3 class="price-block-title mt">Область вокруг глаз</h3>
-          <ul class="price-list">
-            <li><span>MesoEye C 71</span><b>13 000 ₽</b></li>
-            <li><span>Plinest Fast 2 мл</span><b>14 000 ₽</b></li>
-          </ul>
-        </div>
-
-        <div class="price-block reveal">
-          <h3 class="price-block-title">Контурная пластика</h3>
-          <ul class="price-list">
-            <li><span>Губы: Mira Line 1 мл</span><b>12 000 ₽</b></li>
-            <li><span>Губы: Belotero lips shape 0,6 мл</span><b>14 000 ₽</b></li>
-            <li><span>Губы: Stylage M 1 мл</span><b>16 000 ₽</b></li>
-            <li><span>Губы: Neauvia lips 1 мл</span><b>18 000 ₽</b></li>
-            <li><span>Лицо: Belotero Volume 1 / 2 мл</span><b>17 000 / 28 000 ₽</b></li>
-            <li><span>Лицо: Stylage XL 1 мл</span><b>18 000 ₽</b></li>
-            <li><span>Выведение филлера, Liporase</span><b>5 000 ₽</b></li>
-          </ul>
-          <h3 class="price-block-title mt">Мезотерапия и коллаген</h3>
-          <ul class="price-list">
-            <li><span>Hair X Vita Line B+ 4 мл <em>— волосы</em></span><b>3 000 ₽</b></li>
-            <li><span>Hair X Peptide 1,3 мл <em>— волосы</em></span><b>4 000 ₽</b></li>
-            <li><span>AND Restart Peptide 2 мл</span><b>6 000 ₽</b></li>
-            <li><span>Filorga NCTF 135 HA 1,5 мл</span><b>6 500 ₽</b></li>
-            <li><span>Гель Коллост 7% / 15%, 1 мл</span><b>11 000 / 16 000 ₽</b></li>
-            <li><span>Collost micro</span><b>16 000 ₽</b></li>
-            <li><span>Липолитики Light fit 2 мл</span><b>3 000 ₽</b></li>
-            <li><span>MesoSculpt C71</span><b>13 000 ₽</b></li>
-            <li><span>Бланширование Belotero Soft / Balance / Neauvia FLUX, 1 мл</span><b>14 000 ₽</b></li>
-            <li><span>Полимолочная кислота Bellarti Estilla 3 мл</span><b>15 000 ₽</b></li>
-            <li><span>Полимолочная кислота Miraline PLLA 28</span><b>30 000 ₽</b></li>
-          </ul>
+        <button type="submit" class="btn btn-wide btn-lg">Записаться со скидкой 50%</button>
+        <label class="agree"><input type="checkbox" checked required><span>Я согласна с <a href="privacy.html" target="_blank">политикой конфиденциальности</a> и на обработку персональных данных</span></label>
+      </div>
+      <div class="form-ok">
+        <div class="ok-ic"><svg class="ic"><use href="#i-check"/></svg></div>
+        <h4>Заявка у нас</h4>
+        <p>Мастер перезвонит с номера +7 921 915-62-55 в течение 15 минут в рабочее время. Если удобнее в переписке — напишите нам прямо сейчас:</p>
+        <div class="msgs" style="justify-content:center">
+          <a class="msg" href="https://wa.me/79219156255" target="_blank" rel="noopener"><svg class="ic"><use href="#i-wa"/></svg> WhatsApp</a>
+          <a class="msg" href="https://t.me/VIV_Studio" target="_blank" rel="noopener"><svg class="ic"><use href="#i-tg"/></svg> Telegram</a>
         </div>
       </div>
-    </div>
-
-    <p class="price-note reveal">
-      Итоговый план и стоимость курса всегда обсуждаются на консультации. Имеются противопоказания —
-      необходима консультация специалиста.
-    </p>
-  </div>
-</section>
-
-<!-- ══════════ СТРАХИ И ВОЗРАЖЕНИЯ ══════════ -->
-<section class="section" id="fears">
-  <div class="container">
-    <p class="section-eyebrow reveal">Честно о неудобном</p>
-    <h2 class="section-title reveal">Шесть причин, по которым<br>обычно откладывают запись</h2>
-    <p class="section-lead reveal">Мы собрали то, что клиенты чаще всего боятся спросить вслух — и отвечаем прямо.</p>
-
-    <div class="fears-grid">
-      <article class="fear reveal">
-        <p class="fear-q">«Наверное, это очень больно»</p>
-        <p class="fear-a">
-          Ощущения сравнимы с щелчком тёплой резинки: в подмышках и на голенях — почти незаметно,
-          в бикини — чувствительнее, но терпимо. На первом визите делается тестовая вспышка:
-          вы понимаете, на что идёте, ещё до начала процедуры. Мощность подстраивается под вас, а не наоборот.
-        </p>
-      </article>
-
-      <article class="fear reveal">
-        <p class="fear-q">«А вдруг мне не поможет»</p>
-        <p class="fear-a">
-          Лазер работает по волосу с пигментом, и на седых или совсем светлых пушковых волосах результата
-          не будет — об этом честно скажут на консультации, а не после оплаченного курса.
-          Если ваш случай не для лазера, вам так и ответят и предложат альтернативу.
-        </p>
-      </article>
-
-      <article class="fear reveal">
-        <p class="fear-q">«Боюсь ожога и пигментных пятен»</p>
-        <p class="fear-a">
-          Именно поэтому важны фототип, свежий загар и лекарства, которые вы принимаете — их спрашивают до,
-          а не после. По свежему загару процедуру не делают, параметры проверяют тестом,
-          а домой вы уходите с понятными правилами ухода и SPF.
-        </p>
-      </article>
-
-      <article class="fear reveal">
-        <p class="fear-q">«Стесняюсь зоны бикини»</p>
-        <p class="fear-a">
-          Кабинет закрытый, вы в нём вдвоём с мастером, одноразовое бельё выдаётся на месте.
-          Никаких «а сейчас коллега зайдёт посмотреть». Судя по отзывам, именно эта деликатность
-          и возвращает клиентов: «с ней максимально комфортно, легко и всё понятно».
-        </p>
-      </article>
-
-      <article class="fear reveal">
-        <p class="fear-q">«Дорого, я не потяну курс»</p>
-        <p class="fear-a">
-          Первое посещение — со скидкой 50%, а комплексы дешевле, чем те же зоны по отдельности:
-          подмышки и тотальное бикини вместе стоят 2 900 ₽. Курс лазера — конечная трата,
-          в отличие от станков, воска и шугаринга, которые повторяются каждые две-три недели годами.
-        </p>
-      </article>
-
-      <article class="fear reveal">
-        <p class="fear-q">«Начнут навязывать лишнее»</p>
-        <p class="fear-a">
-          Консультация бесплатная и ни к чему не обязывает: можно прийти, задать вопросы, посмотреть студию
-          и уйти думать. Вам назовут число процедур, которое нужно именно вам, — даже если оно меньше,
-          чем хотелось бы студии.
-        </p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════ ОТЗЫВЫ ══════════ -->
-<section class="section section-tinted" id="reviews">
-  <div class="container">
-    <p class="section-eyebrow reveal">5,0 из 5 по 53 оценкам</p>
-    <h2 class="section-title reveal">Что пишут в отзывах</h2>
-    <p class="section-lead reveal">Реальные отзывы клиентов с Яндекс Карт.</p>
-
-    <div class="reviews-grid">
-      <figure class="review reveal">
-        <blockquote>Это не косметолог, а персональный мастер красоты, комфорта и хорошего настроения.</blockquote>
-        <figcaption><span class="review-name">Ирина Скутина</span><span class="review-src">Яндекс Карты</span></figcaption>
-      </figure>
-      <figure class="review reveal">
-        <blockquote>Косметолог очень внимательная, всё чётко расспросила, объяснила каждый этап.</blockquote>
-        <figcaption><span class="review-name">Александра Кудля</span><span class="review-src">Яндекс Карты</span></figcaption>
-      </figure>
-      <figure class="review reveal">
-        <blockquote>Процедура прошла максимально комфортно, почти безболезненно.</blockquote>
-        <figcaption><span class="review-name">Алина Ч.</span><span class="review-src">Яндекс Карты</span></figcaption>
-      </figure>
-      <figure class="review reveal">
-        <blockquote>Екатерина быстро успокоила меня, подробно рассказала, как будет происходить процесс.</blockquote>
-        <figcaption><span class="review-name">Артём Банин</span><span class="review-src">Яндекс Карты</span></figcaption>
-      </figure>
-      <figure class="review reveal">
-        <blockquote>Мастер очень внимательная и сразу располагает к себе.</blockquote>
-        <figcaption><span class="review-name">Полина Зеленцова</span><span class="review-src">Яндекс Карты</span></figcaption>
-      </figure>
-      <figure class="review reveal">
-        <blockquote>С ней максимально комфортно, легко и всё понятно.</blockquote>
-        <figcaption><span class="review-name">Яна Правдина</span><span class="review-src">Яндекс Карты</span></figcaption>
-      </figure>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════ FAQ ══════════ -->
-<section class="section" id="faq">
-  <div class="container container-narrow">
-    <p class="section-eyebrow reveal">Вопросы</p>
-    <h2 class="section-title reveal">Что спрашивают перед первой записью</h2>
-
-    <div class="faq">
-      <details class="faq-item reveal">
-        <summary>Сколько нужно процедур?</summary>
-        <p>Волосы растут циклами, и лазер действует только на те, что находятся в фазе роста. Поэтому работают курсом: обычно это несколько процедур с интервалом в несколько недель, а точное число мастер назовёт после осмотра — оно зависит от зоны, гормонального фона и плотности волоса.</p>
-      </details>
-      <details class="faq-item reveal">
-        <summary>Как подготовиться к процедуре?</summary>
-        <p>Зону нужно побрить за один-два дня до визита (если не успели — бритьё в студии стоит 300 ₽), не выдёргивать волосы пинцетом, воском и сахаром минимум месяц и не приходить со свежим загаром. Все нюансы вам проговорят при записи.</p>
-      </details>
-      <details class="faq-item reveal">
-        <summary>Можно ли делать эпиляцию летом?</summary>
-        <p>Да, если кожа без свежего загара, а после процедуры вы пользуетесь SPF и не идёте в солярий. Мастер оценит состояние кожи на месте и при необходимости предложит перенести визит — это нормальная практика, а не отказ от клиента.</p>
-      </details>
-      <details class="faq-item reveal">
-        <summary>Кому процедура не подойдёт?</summary>
-        <p>Есть состояния и заболевания, при которых лазерная эпиляция и инъекционные методики противопоказаны, а также препараты, несовместимые с процедурой. Поэтому первый шаг — консультация: вас подробно расспросят о здоровье и честно скажут, можно ли работать.</p>
-      </details>
-      <details class="faq-item reveal">
-        <summary>Что будет с кожей после?</summary>
-        <p>Обычно — лёгкое покраснение и ощущение тепла, которые проходят за несколько часов. В первые пару дней стоит отказаться от бани, сауны, бассейна и активного спорта. Полный список рекомендаций вы получите в кабинете.</p>
-      </details>
-      <details class="faq-item reveal">
-        <summary>Где вы находитесь и как записаться?</summary>
-        <p>Санкт-Петербург, Суворовский проспект, 35 — рядом со Смольным, есть лифт и парковка. Записаться можно по телефону, в WhatsApp или Telegram, а также через форму ниже — мы перезвоним и подберём удобное время.</p>
-      </details>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════ ЗАПИСЬ ══════════ -->
-<section class="booking" id="booking">
-  <div class="container booking-inner">
-    <div class="booking-copy reveal">
-      <p class="section-eyebrow light">Первый шаг</p>
-      <h2 class="booking-title">Приходите на бесплатную консультацию —<br>решение примете уже в кабинете</h2>
-      <p class="booking-text">
-        Никакой предоплаты и обязательств. Вы задаёте вопросы, мастер смотрит кожу, делает тестовую вспышку
-        и честно говорит, что реально получится. Первое посещение лазерной эпиляции — со скидкой 50%.
-      </p>
-      <ul class="booking-points">
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> <span>Перезвоним в течение 15 минут в рабочее время</span></li>
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> <span>Подберём время, включая вечерние часы</span></li>
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> <span>Ответим на вопросы до визита — в мессенджере</span></li>
-      </ul>
-    </div>
-
-    <form class="booking-form reveal" id="bookingForm" novalidate>
-      <h3 class="form-title">Записаться в VIV Studio</h3>
-
-      <div class="field">
-        <label for="fname">Как к вам обращаться</label>
-        <input type="text" id="fname" name="fname" autocomplete="given-name" placeholder="Имя" required>
-      </div>
-
-      <div class="field">
-        <label for="fphone">Телефон</label>
-        <input type="tel" id="fphone" name="fphone" autocomplete="tel" inputmode="tel" placeholder="+7 (___) ___-__-__" required>
-        <span class="field-error" id="phoneError" hidden>Введите номер телефона — иначе мы не сможем перезвонить</span>
-      </div>
-
-      <div class="field">
-        <label for="fservice">Что интересует</label>
-        <select id="fservice" name="fservice">
-          <option>Лазерная эпиляция — консультация</option>
-          <option>Лазерная эпиляция — комплекс</option>
-          <option>Косметология — чистка или пилинг</option>
-          <option>Косметология — инъекционные методики</option>
-          <option>Пока не знаю, нужен совет</option>
-        </select>
-      </div>
-
-      <label class="consent">
-        <input type="checkbox" id="fconsent" checked required>
-        <span>Согласен(на) на обработку персональных данных для записи на приём</span>
-      </label>
-
-      <button class="btn btn-primary btn-block btn-lg" type="submit" id="submitBtn">Записаться со скидкой 50%</button>
-
-      <p class="form-alt">
-        Или напишите сразу:
-        <a href="https://wa.me/79219156255" target="_blank" rel="noopener">WhatsApp</a> ·
-        <a href="https://t.me/VIV_Studio" target="_blank" rel="noopener">Telegram</a> ·
-        <a href="tel:+79219156255">+7 (921) 915-62-55</a>
-      </p>
-
-      <p class="form-success" id="formSuccess" hidden>
-        Спасибо! Открываем чат с мастером — отправьте сообщение, и мы подтвердим время.
-      </p>
     </form>
   </div>
 </section>
 
-<!-- ══════════ КОНТАКТЫ ══════════ -->
-<section class="section" id="contacts">
-  <div class="container">
-    <p class="section-eyebrow reveal">Как нас найти</p>
-    <h2 class="section-title reveal">Суворовский проспект, 35</h2>
+<!-- ═══════════ 5. ВЫГОДЫ ═══════════ -->
+<section id="benefits">
+  <div class="wrap">
+    <div class="center" style="margin-bottom:44px">
+      <span class="eyebrow plain">Что вы получите</span>
+      <h2>Результат, который <span class="it">видно и не нужно повторять</span></h2>
+    </div>
+    <div class="grid g2 rv" style="gap:34px 44px">
+      <div class="benefit">
+        <div class="bnum">0</div>
+        <div><h3>Вросших волос и раздражения</h3><p>Лазер работает с фолликулом, а не срезает волос под углом к коже. Уходит сама причина воспалений, тёмных точек и «щетины» на второй день после бритья.</p></div>
+      </div>
+      <div class="benefit">
+        <div class="bnum">15 мин</div>
+        <div><h3>Столько занимает подмышки или бикини</h3><p>Без наркоза, восстановления и следов: после процедуры вы одеваетесь и идёте по делам. Записаться можно даже в обеденный перерыв — студия в семи минутах от Смольного.</p></div>
+      </div>
+      <div class="benefit">
+        <div class="bnum">−50%</div>
+        <div><h3>На первое посещение</h3><p>Комплекс «тотальное бикини + подмышки» на первом визите обойдётся в 1 450 ₽ вместо 2 900 ₽. Это дешевле одного визита на шугаринг, который придётся повторить через три недели.</p></div>
+      </div>
+      <div class="benefit m-extra">
+        <div class="bnum">2 900 ₽</div>
+        <div><h3>Комплекс вместо разрозненных зон</h3><p>Тотальное бикини и подмышки по отдельности стоят 2 950 ₽, комплексом — 2 900 ₽. Комплекс L закрывает ноги полностью, бикини и подмышки за 5 900 ₽ вместо 6 850 ₽.</p></div>
+      </div>
+      <div class="benefit m-extra">
+        <div class="bnum">1</div>
+        <div><h3>Мастер на весь курс</h3><p>Екатерина ведёт вас от первой консультации до последней процедуры: помнит вашу историю, параметры и реакцию кожи без напоминаний. Судя по отзывам, к ней и возвращаются.</p></div>
+      </div>
+      <div class="benefit">
+        <div class="bnum">III</div>
+        <div><h3>Параметры под ваш фототип</h3><p>Перед первой процедурой мастер определяет фототип, спрашивает о загаре, лекарствах и гормональном фоне и делает тестовую вспышку. Мощность подстраивается под вас, а не наоборот.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <div class="contacts-grid">
-      <div class="contacts-info reveal">
-        <div class="contact-row">
-          <span class="contact-ic"><svg viewBox="0 0 24 24"><path d="M12 21s7-5.7 7-11a7 7 0 10-14 0c0 5.3 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg></span>
-          <div><b>Адрес</b><p>Санкт-Петербург, Суворовский пр-т, д. 35, офис 409.<br>Рядом со Смольным. Есть лифт и парковка.</p></div>
+<!-- ═══════════ 6. МЕТОДИКИ ═══════════ -->
+<section class="sand" id="methods">
+  <div class="blob b-peach" style="width:420px;height:420px;right:-160px;bottom:4%"></div>
+  <div class="wrap">
+    <div class="center" style="margin-bottom:40px">
+      <span class="eyebrow plain">Процедуры студии</span>
+      <h2>Лазерная эпиляция <span class="it">и эстетическая косметология</span></h2>
+      <p class="lead">Два направления в одном кабинете: избавиться от волос — и работать с качеством кожи. Что именно выбрать, решаем вместе на консультации, а не по прайсу.</p>
+    </div>
+
+    <div class="grid g3 rv">
+      <article class="mcard">
+        <div class="mimg"><img decoding="async" src="assets/img/m-bikini.svg" alt="Лазерная эпиляция зоны бикини" loading="lazy" width="900" height="675"></div>
+        <div class="mbody">
+          <span class="mtag t-pink">Самая частая зона</span>
+          <h3>Бикини</h3>
+          <p>Линия бикини, классическое и тотальное бикини с межъягодичной зоной. Кабинет закрытый, вы в нём вдвоём с мастером, одноразовое бельё выдаётся на месте.</p>
+          <div class="mfoot"><span>10–15 минут</span><span><b>от 850 ₽</b></span></div>
         </div>
-        <div class="contact-row">
-          <span class="contact-ic"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg></span>
-          <div><b>Телефон</b><p><a href="tel:+79219156255">+7 (921) 915-62-55</a></p></div>
+      </article>
+
+      <article class="mcard">
+        <div class="mimg"><img decoding="async" src="assets/img/m-underarm.svg" alt="Лазерная эпиляция подмышек и рук" loading="lazy" width="900" height="675"></div>
+        <div class="mbody">
+          <span class="mtag t-warm">Быстро</span>
+          <h3>Подмышки и руки</h3>
+          <p>Подмышки — пара минут и почти без ощущений: это зона, с которой чаще всего начинают знакомство с лазером. Руки до локтя, кисти и руки полностью — отдельно или комплексом.</p>
+          <div class="mfoot"><span>5–20 минут</span><span><b>от 800 ₽</b></span></div>
         </div>
-        <div class="contact-row">
-          <span class="contact-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
-          <div><b>Запись</b><p>По телефону, в WhatsApp и Telegram или через форму на сайте — предварительная запись обязательна.</p></div>
+      </article>
+
+      <article class="mcard">
+        <div class="mimg"><img decoding="async" src="assets/img/m-legs.svg" alt="Лазерная эпиляция ног" loading="lazy" width="900" height="675"></div>
+        <div class="mbody">
+          <span class="mtag t-gold">Большая зона</span>
+          <h3>Ноги</h3>
+          <p>Голени, бёдра, колени, пальцы и подъём стопы. Ноги полностью — включая пальцы и стопу — стоят столько же, сколько одни голени с коленями: 1 950 ₽.</p>
+          <div class="mfoot"><span>до 40 минут</span><span><b>от 800 ₽</b></span></div>
+        </div>
+      </article>
+
+      <article class="mcard">
+        <div class="mimg"><img decoding="async" src="assets/img/m-face.svg" alt="Лазерная эпиляция лица и шеи" loading="lazy" width="900" height="675"></div>
+        <div class="mbody">
+          <span class="mtag t-plum">Деликатно</span>
+          <h3>Лицо и шея</h3>
+          <p>Верхняя губа, подбородок, щёки, бакенбарды, межбровие и шейная область. Работаем аккуратно и малой мощностью: на лице важнее не скорость, а отсутствие реакции кожи.</p>
+          <div class="mfoot"><span>5–15 минут</span><span><b>от 650 ₽</b></span></div>
+        </div>
+      </article>
+
+      <article class="mcard m-extra">
+        <div class="mimg"><img decoding="async" src="assets/img/m-clean.svg" alt="Чистка лица в студии VIV Studio" loading="lazy" width="900" height="675"></div>
+        <div class="mbody">
+          <span class="mtag t-sage">Кожа</span>
+          <h3>Чистка лица</h3>
+          <p>Ультразвуковая, комбинированная и сложная чистка для проблемной кожи. Начинается с осмотра: если коже сейчас нужна не чистка, вам об этом скажут прямо.</p>
+          <div class="mfoot"><span>60–90 минут</span><span><b>3 300–5 500 ₽</b></span></div>
+        </div>
+      </article>
+
+      <article class="mcard m-extra">
+        <div class="mimg"><img decoding="async" src="assets/img/m-peel.svg" alt="Пилинги Mediderma" loading="lazy" width="900" height="675"></div>
+        <div class="mbody">
+          <span class="mtag t-warm">Сияние</span>
+          <h3>Пилинги</h3>
+          <p>BioRePeel, Peach Peel, миндальный и линейка Mediderma: витаминное сияние с феруловой кислотой, лечебный и ретиноевый пилинги. Под сезон и состояние кожи.</p>
+          <div class="mfoot"><span>30–60 минут</span><span><b>3 000–6 000 ₽</b></span></div>
+        </div>
+      </article>
+
+      <article class="mcard m-extra">
+        <div class="mimg"><img decoding="async" src="assets/img/m-bio.svg" alt="Биоревитализация" loading="lazy" width="900" height="675"></div>
+        <div class="mbody">
+          <span class="mtag t-pink">Увлажнение</span>
+          <h3>Биоревитализация</h3>
+          <p>Profhilo, Neauvia, Meso-Xantin, MesoWharton, Plinest, REVI, Bellarti, Novacutan. Отдельная линейка для области вокруг глаз — MesoEye C71 и Plinest Fast.</p>
+          <div class="mfoot"><span>по записи</span><span><b>6 000–29 000 ₽</b></span></div>
+        </div>
+      </article>
+
+      <article class="mcard m-extra">
+        <div class="mimg"><img decoding="async" src="assets/img/m-botox.svg" alt="Ботулинотерапия" loading="lazy" width="900" height="675"></div>
+        <div class="mbody">
+          <span class="mtag t-plum">Мимика</span>
+          <h3>Ботулинотерапия</h3>
+          <p>Релатокс от 320 ₽ за единицу, Full Face в технике доктора Кизуб. Отдельно — лечение гипергидроза: ReNTox и Релатокс, чтобы забыть о влажных подмышках на месяцы.</p>
+          <div class="mfoot"><span>20–40 минут</span><span><b>от 320 ₽</b> за единицу</span></div>
+        </div>
+      </article>
+
+      <article class="mcard m-extra">
+        <div class="mimg"><img decoding="async" src="assets/img/m-lips.svg" alt="Контурная пластика губ" loading="lazy" width="900" height="675"></div>
+        <div class="mbody">
+          <span class="mtag t-pink">Объём и форма</span>
+          <h3>Контурная пластика</h3>
+          <p>Губы — Stylage, Belotero lips shape, Mira Line, Neauvia. Лицо — Stylage XL и Belotero Volume. Если результат не понравится, филлер выводится: Liporase — 5 000 ₽.</p>
+          <div class="mfoot"><span>40–60 минут</span><span><b>12 000–28 000 ₽</b></span></div>
+        </div>
+      </article>
+
+      <article class="mcard m-extra">
+        <div class="mimg"><img decoding="async" src="assets/img/m-meso.svg" alt="Мезотерапия лица и волос" loading="lazy" width="900" height="675"></div>
+        <div class="mbody">
+          <span class="mtag t-sage">Плотность</span>
+          <h3>Мезотерапия и коллаген</h3>
+          <p>Filorga NCTF, AND Restart Peptide, коллаген Collost, полимолочная кислота Miraline и Bellarti Estilla. Отдельная линейка Hair X — для густоты и роста волос.</p>
+          <div class="mfoot"><span>30–50 минут</span><span><b>от 3 000 ₽</b></span></div>
+        </div>
+      </article>
+    </div>
+
+    <button type="button" class="m-more m-only" data-more="Показать ещё 6 процедур" data-less="Свернуть список">
+      <span>Показать ещё 6 процедур</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+    <p class="note center" style="margin-top:28px">Ещё в студии: массаж лица с альгинатной маской, липолитики, бланширование и консультация дерматолога. Полный прайс — <a href="#prices" style="color:var(--cta);font-weight:700">ниже на странице</a>.</p>
+  </div>
+</section>
+
+<!-- ═══════════ 7. КВИЗ ═══════════ -->
+<section class="blush" id="quiz">
+  <div class="wrap">
+    <div class="center" style="margin-bottom:34px">
+      <span class="eyebrow plain">1 минута · 5 вопросов</span>
+      <h2>Подберите свою программу <span class="it">и узнайте цену курса</span></h2>
+      <p class="lead">Ответьте на пять простых вопросов — соберём программу под ваши зоны, посчитаем количество процедур и стоимость с учётом комплекса. В подарок за прохождение — скидка 50% на первое посещение.</p>
+    </div>
+
+    <form class="quiz" id="quiz-form" novalidate>
+      <div class="quiz-head">
+        <div class="quiz-meta"><span id="q-label">Шаг 1 из 6</span><span id="q-pct">Заполнено на 16%</span></div>
+        <div class="quiz-bar"><i id="q-bar"></i></div>
+      </div>
+      <div class="quiz-body">
+
+        <div class="qstep active" data-step="1">
+          <h3>С какой зоной поработаем в первую очередь?</h3>
+          <p class="qsub">Можно начать с одной — остальные подключим позже.</p>
+          <div class="qopts" data-name="Зона">
+            <button type="button" class="qopt"><span class="qi"><svg class="ic"><use href="#i-check"/></svg></span>Бикини</button>
+            <button type="button" class="qopt"><span class="qi"><svg class="ic"><use href="#i-check"/></svg></span>Подмышки</button>
+            <button type="button" class="qopt"><span class="qi"><svg class="ic"><use href="#i-check"/></svg></span>Ноги</button>
+            <button type="button" class="qopt"><span class="qi"><svg class="ic"><use href="#i-check"/></svg></span>Лицо и шея</button>
+            <button type="button" class="qopt"><span class="qi"><svg class="ic"><use href="#i-check"/></svg></span>Всё тело целиком</button>
+            <button type="button" class="qopt"><span class="qi"><svg class="ic"><use href="#i-check"/></svg></span>Не знаю — нужна консультация</button>
+          </div>
         </div>
 
-        <div class="socials">
-          <a class="social" href="https://wa.me/79219156255" target="_blank" rel="noopener" aria-label="Написать в WhatsApp">
-            <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
-          </a>
-          <a class="social" href="https://t.me/VIV_Studio" target="_blank" rel="noopener" aria-label="Написать в Telegram">
-            <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-          </a>
-          <a class="social" href="https://vk.com/viv.studio" target="_blank" rel="noopener" aria-label="Мы во ВКонтакте">
-            <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M15.07 2H8.93C3.33 2 2 3.33 2 8.93v6.14C2 20.67 3.33 22 8.93 22h6.14c5.6 0 6.93-1.33 6.93-6.93V8.93C22 3.33 20.66 2 15.07 2zm3.08 14.27h-1.45c-.55 0-.72-.44-1.71-1.44-.87-.83-1.24-.94-1.46-.94-.3 0-.38.08-.38.49v1.31c0 .35-.11.56-1.03.56-1.52 0-3.2-.92-4.39-2.63-1.79-2.5-2.28-4.39-2.28-4.77 0-.21.08-.4.49-.4h1.45c.37 0 .51.17.65.56.71 2.06 1.9 3.86 2.39 3.86.18 0 .27-.08.27-.55V10.2c-.06-.98-.58-1.06-.58-1.41 0-.17.14-.34.37-.34h2.28c.31 0 .42.17.42.54v2.87c0 .31.14.42.23.42.18 0 .33-.11.66-.44 1.02-1.14 1.75-2.9 1.75-2.9.09-.21.26-.4.63-.4h1.45c.44 0 .53.23.44.54-.18.85-1.97 3.38-1.97 3.38-.15.25-.21.36 0 .64.15.21.64.63.97 1.02.6.68 1.06 1.25 1.19 1.65.12.4-.08.6-.49.6z"/></svg>
-          </a>
+        <div class="qstep" data-step="2">
+          <h3>Что беспокоит больше всего?</h3>
+          <p class="qsub">От этого зависит, с чего начнём и как построим курс.</p>
+          <div class="qopts" data-name="Задача">
+            <button type="button" class="qopt"><span class="qi"><svg class="ic"><use href="#i-check"/></svg></span>Волосы отрастают слишком быстро</button>
+            <button type="button" class="qopt"><span class="qi"><svg class="ic"><use href="#i-check"/></svg></span>Вросшие волосы и тёмные точки</button>
+            <button type="button" class="qopt"><span class="qi"><svg class="ic"><use href="#i-check"/></svg></span>Раздражение после бритья и воска</button>
+            <button type="button" class="qopt"><span class="qi"><svg class="ic"><use href="#i-check"/></svg></span>Тёмные жёсткие волосы на лице</button>
+            <button type="button" class="qopt"><span class="qi"><svg class="ic"><use href="#i-check"/></svg></span>Хочу закрыть вопрос целиком, комплексом</button>
+            <button type="button" class="qopt"><span class="qi"><svg class="ic"><use href="#i-check"/></svg></span>Интересует не эпиляция, а косметология</button>
+          </div>
+        </div>
+
+        <div class="qstep" data-step="3">
+          <h3>Делали лазерную эпиляцию раньше?</h3>
+          <p class="qsub">Новичкам всегда начинаем с щадящих параметров и тестовой вспышки.</p>
+          <div class="qopts" data-name="Опыт">
+            <button type="button" class="qopt"><span class="qi"><svg class="ic"><use href="#i-check"/></svg></span>Да, прохожу курс регулярно</button>
+            <button type="button" class="qopt"><span class="qi"><svg class="ic"><use href="#i-check"/></svg></span>Пробовала пару раз</button>
+            <button type="button" class="qopt"><span class="qi"><svg class="ic"><use href="#i-check"/></svg></span>Никогда — это будет первый раз</button>
+            <button type="button" class="qopt"><span class="qi"><svg class="ic"><use href="#i-check"/></svg></span>Раньше делала воск или шугаринг</button>
+          </div>
+        </div>
+
+        <div class="qstep" data-step="4">
+          <h3>Когда вам удобно приходить?</h3>
+          <p class="qsub">Подберём окна под ваш график — работаем по записи, в том числе вечером.</p>
+          <div class="qopts" data-name="Время">
+            <button type="button" class="qopt"><span class="qi"><svg class="ic"><use href="#i-check"/></svg></span>Утром, до 12:00</button>
+            <button type="button" class="qopt"><span class="qi"><svg class="ic"><use href="#i-check"/></svg></span>Днём, 12:00–17:00</button>
+            <button type="button" class="qopt"><span class="qi"><svg class="ic"><use href="#i-check"/></svg></span>Вечером, после 17:00</button>
+            <button type="button" class="qopt"><span class="qi"><svg class="ic"><use href="#i-check"/></svg></span>В выходные</button>
+          </div>
+        </div>
+
+        <div class="qstep" data-step="5">
+          <h3>Есть ли что-то важное о здоровье и коже?</h3>
+          <p class="qsub">Свежий загар, беременность и лактация, приём фотосенсибилизирующих препаратов, онкология, эпилепсия, острые воспаления в зоне — о таком лучше сказать сразу.</p>
+          <div class="qopts" data-name="Здоровье">
+            <button type="button" class="qopt"><span class="qi"><svg class="ic"><use href="#i-check"/></svg></span>Нет, всё в порядке</button>
+            <button type="button" class="qopt"><span class="qi"><svg class="ic"><use href="#i-check"/></svg></span>Есть свежий загар</button>
+            <button type="button" class="qopt"><span class="qi"><svg class="ic"><use href="#i-check"/></svg></span>Есть — расскажу мастеру лично</button>
+            <button type="button" class="qopt"><span class="qi"><svg class="ic"><use href="#i-check"/></svg></span>Не уверена — нужна консультация</button>
+          </div>
+        </div>
+
+        <div class="qstep" data-step="6">
+          <div class="qgift">
+            <svg class="ic"><use href="#i-gift"/></svg>
+            <p><b>Готово! Программа собрана.</b> Куда отправить расчёт и подобранную программу? За вашим номером закрепляем скидку 50% на первое посещение.</p>
+          </div>
+          <div class="qopts" data-name="Куда отправить" style="margin-bottom:16px">
+            <button type="button" class="qopt sel"><span class="qi"><svg class="ic"><use href="#i-check"/></svg></span>В WhatsApp</button>
+            <button type="button" class="qopt"><span class="qi"><svg class="ic"><use href="#i-check"/></svg></span>В Telegram</button>
+            <button type="button" class="qopt"><span class="qi"><svg class="ic"><use href="#i-check"/></svg></span>Позвоните мне — расскажу подробнее</button>
+            <button type="button" class="qopt"><span class="qi"><svg class="ic"><use href="#i-check"/></svg></span>SMS</button>
+          </div>
+          <div class="field">
+            <label for="q-phone">Номер, на который отправить программу</label>
+            <input id="q-phone" type="tel" inputmode="tel" placeholder="+7 999 123-45-67" autocomplete="tel">
+          </div>
+          <button type="submit" class="btn btn-wide btn-lg">Получить программу и цену курса</button>
+          <label class="agree"><input type="checkbox" checked required><span>Я согласна с <a href="privacy.html" target="_blank">политикой конфиденциальности</a> и на обработку персональных данных</span></label>
+        </div>
+
+        <div class="qnav">
+          <button type="button" class="qback" id="q-back" hidden>← Назад</button>
+          <span class="note" id="q-hint">Выберите один вариант — перейдём к следующему вопросу</span>
         </div>
       </div>
 
-      <div class="map-wrap reveal">
-        <iframe
-          src="https://yandex.ru/map-widget/v1/?ll=30.376235%2C59.938775&mode=search&oid=116601474737&ol=biz&z=16.7"
-          width="100%" height="440" frameborder="0" loading="lazy"
-          title="VIV Studio на карте: Суворовский проспект, 35"></iframe>
+      <div class="form-ok" style="padding:36px 32px 40px">
+        <div class="ok-ic"><svg class="ic"><use href="#i-check"/></svg></div>
+        <h4>Программа собрана</h4>
+        <p>Мы получили ваши ответы. Мастер пришлёт программу и расчёт курса, а также покажет ближайшие свободные окна. Хотите быстрее — напишите нам сами:</p>
+        <div class="msgs" style="justify-content:center">
+          <a class="msg" href="https://wa.me/79219156255" target="_blank" rel="noopener"><svg class="ic"><use href="#i-wa"/></svg> WhatsApp</a>
+          <a class="msg" href="https://t.me/VIV_Studio" target="_blank" rel="noopener"><svg class="ic"><use href="#i-tg"/></svg> Telegram</a>
+          <a class="msg" href="tel:+79219156255"><svg class="ic"><use href="#i-phone"/></svg> +7 921 915-62-55</a>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ═══════════ 8. ЦЕНЫ ═══════════ -->
+<section class="sand" id="prices">
+  <div class="blob b-rose" style="width:420px;height:420px;right:-150px;top:10%"></div>
+  <div class="wrap">
+    <div class="center" style="margin-bottom:36px">
+      <span class="eyebrow plain">Прозрачные цены</span>
+      <h2>Комплексы VIV Studio: <span class="it">чем больше зон — тем выгоднее</span></h2>
+      <p class="lead">Комплекс дешевле, чем те же зоны по отдельности, и рассчитан на реальные сценарии: «первый курс», «лето», «всё тело сразу». Цена указана за одну процедуру.</p>
+    </div>
+
+    <div class="ptable rv">
+      <div class="prow head"><span>Комплекс</span><span>Что входит</span><span>Цена</span><span>Выгода</span></div>
+      <div class="prow"><span><b>Комплекс S</b></span><span>Тотальное бикини + подмышки</span><span class="num c3">2 900 ₽</span><span class="save">−50 ₽</span></div>
+      <div class="prow"><span><b>Комплекс M1</b></span><span>Ноги полностью + подмышки</span><span class="num c3">4 900 ₽</span><span class="save">−1 000 ₽</span></div>
+      <div class="prow"><span><b>Комплекс M2</b></span><span>Голени с коленями и пальцами + тотальное бикини + подмышки</span><span class="num c3">4 900 ₽</span><span class="save">−950 ₽</span></div>
+      <div class="prow best"><span><b>Комплекс L</b><span class="badge">хит</span></span><span>Ноги полностью + тотальное бикини + подмышки</span><span class="num c3">5 900 ₽</span><span class="save">−950 ₽</span></div>
+      <div class="prow"><span><b>Комплекс XL</b></span><span>Тело полностью: лицо, руки, бикини, живот, ноги</span><span class="num c3">8 500 ₽</span><span class="save">−2 600 ₽</span></div>
+    </div>
+    <p class="note" style="margin:14px 0 40px">Выгода посчитана относительно тех же зон по отдельному прайсу. На первое посещение действует скидка 50% — она применяется и к комплексам: например, комплекс L обойдётся в 2 950 ₽ вместо 5 900 ₽.</p>
+
+    <div class="grid g2">
+      <div class="card rv">
+        <div class="icon-round pink"><svg class="ic"><use href="#i-sparkle"/></svg></div>
+        <h3 style="font-size:23px;margin-bottom:16px">Лазерная эпиляция · тело и бикини</h3>
+        <ul class="plist">
+          <li><span>Белая линия живота</span><b>750 ₽</b></li>
+          <li><span>Ареолы</span><b>850 ₽</b></li>
+          <li><span>Межъягодичная зона</span><b>850 ₽</b></li>
+          <li><span>Грудь полностью</span><b>950 ₽</b></li>
+          <li><span>Линия бикини</span><b>1 150 ₽</b></li>
+          <li><span>Живот полностью</span><b>1 450 ₽</b></li>
+          <li><span>Ягодицы</span><b>1 450 ₽</b></li>
+          <li><span>Поясница</span><b>1 550 ₽</b></li>
+          <li><span>Классическое бикини (глубокое)</span><b>1 650 ₽</b></li>
+          <li><span>Тотальное бикини (с межъягодичной зоной)</span><b>1 950 ₽</b></li>
+          <li><span>Спина полностью</span><b>1 950 ₽</b></li>
+          <li><span>Бритьё зоны перед процедурой</span><b>300 ₽</b></li>
+        </ul>
+      </div>
+
+      <div class="card rv">
+        <div class="icon-round gold"><svg class="ic"><use href="#i-star"/></svg></div>
+        <h3 style="font-size:23px;margin-bottom:16px">Лазерная эпиляция · лицо, руки, ноги</h3>
+        <ul class="plist">
+          <li><span>Межбровие</span><b>650 ₽</b></li>
+          <li><span>Верхняя губа</span><b>750 ₽</b></li>
+          <li><span>Бакенбарды</span><b>800 ₽</b></li>
+          <li><span>Подбородок · Щёки</span><b>850 ₽</b></li>
+          <li><span>Шейная область</span><b>1 450 ₽</b></li>
+          <li><span>Лицо полностью</span><b>1 950 ₽</b></li>
+          <li><span>Кисти рук · Колени</span><b>800 ₽</b></li>
+          <li><span>Подмышки · Бёдра</span><b>1 000 ₽</b></li>
+          <li><span>Руки до локтя · Голени</span><b>1 450 ₽</b></li>
+          <li><span>Руки полностью + кисти</span><b>1 950 ₽</b></li>
+          <li><span>Голени с коленями и пальчиками ног</span><b>1 950 ₽</b></li>
+          <li><span>Ноги полностью (с пальцами и стопой)</span><b>1 950 ₽</b></li>
+        </ul>
+      </div>
+
+      <div class="card rv m-extra">
+        <div class="icon-round warm"><svg class="ic"><use href="#i-drop"/></svg></div>
+        <h3 style="font-size:23px;margin-bottom:16px">Косметология · уход и пилинги</h3>
+        <ul class="plist">
+          <li><span>Консультация косметолога</span><b>2 000 ₽</b></li>
+          <li><span>Консультация дерматолога</span><b>3 000 ₽</b></li>
+          <li><span>Массаж лица + альгинатная маска</span><b>2 500 ₽</b></li>
+          <li><span>Миндальный пилинг</span><b>3 000 ₽</b></li>
+          <li><span>Ультразвуковая чистка</span><b>3 300 ₽</b></li>
+          <li><span>BioRePeel · Peach Peel</span><b>4 000 ₽</b></li>
+          <li><span>Mediderma C-Ferulic Glow — витаминное сияние</span><b>4 000 ₽</b></li>
+          <li><span>Комбинированная чистка</span><b>4 500 ₽</b></li>
+          <li><span>Сложная чистка для проблемной кожи</span><b>5 500 ₽</b></li>
+          <li><span>Mediderma: лечебный и ретиноевый пилинг</span><b>6 000 ₽</b></li>
+        </ul>
+      </div>
+
+      <div class="card rv m-extra">
+        <div class="icon-round sage"><svg class="ic"><use href="#i-heart"/></svg></div>
+        <h3 style="font-size:23px;margin-bottom:16px">Косметология · инъекционные методики</h3>
+        <ul class="plist">
+          <li><span>Ботулинотерапия, Релатокс — 1 единица</span><b>320 ₽</b></li>
+          <li><span>Hair X — мезотерапия для волос</span><b>3 000–4 000 ₽</b></li>
+          <li><span>Липолитики Light fit 2 мл</span><b>3 000 ₽</b></li>
+          <li><span>Выведение филлера, Liporase</span><b>5 000 ₽</b></li>
+          <li><span>Мезотерапия Filorga NCTF · AND Restart</span><b>6 000–6 500 ₽</b></li>
+          <li><span>Биоревитализация Bio Prospect 2,5 / 5 мл</span><b>6 000 / 8 000 ₽</b></li>
+          <li><span>Биоревитализация Bellarti, Neauvia, Novacutan</span><b>12 000–13 000 ₽</b></li>
+          <li><span>Контурная пластика губ</span><b>12 000–18 000 ₽</b></li>
+          <li><span>Бланширование Belotero · Neauvia FLUX</span><b>14 000 ₽</b></li>
+          <li><span>PROFHILO 2 мл · RRS HA Lost Lasting</span><b>18 000 ₽</b></li>
+          <li><span>Контурная пластика лица</span><b>17 000–28 000 ₽</b></li>
+          <li><span>Full Face в технике доктора Кизуб</span><b>25 000 ₽</b></li>
+        </ul>
+      </div>
+    </div>
+
+    <button type="button" class="m-more m-only" data-more="Показать прайс на косметологию" data-less="Свернуть прайс">
+      <span>Показать прайс на косметологию</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+
+    <!-- форма №3: короткая, только телефон -->
+    <div class="card rv pfcard">
+      <div>
+        <h3 style="font-size:24px;font-family:'Cormorant',Georgia,serif;font-weight:600;color:var(--plum);margin-bottom:8px">Не понимаете, сколько процедур нужно именно вам?</h3>
+        <p style="font-size:16px;color:var(--ink-2)">Оставьте номер — мастер перезвонит, задаст 3–4 вопроса про тип волоса, загар и прошлый опыт и честно скажет, сколько процедур понадобится. Без записи и без давления.</p>
+      </div>
+      <form class="fq" id="form-price" novalidate>
+        <div class="form-body">
+          <div class="field" style="margin-bottom:12px">
+            <label for="f3-phone">Ваш телефон</label>
+            <input id="f3-phone" type="tel" inputmode="tel" placeholder="+7 999 123-45-67" autocomplete="tel" required>
+          </div>
+          <button type="submit" class="btn btn-wide">Узнать, сколько нужно мне</button>
+          <label class="agree"><input type="checkbox" checked required><span>Согласна с <a href="privacy.html" target="_blank">политикой конфиденциальности</a></span></label>
+        </div>
+        <div class="form-ok" style="padding:8px">
+          <div class="ok-ic" style="width:52px;height:52px"><svg class="ic"><use href="#i-check"/></svg></div>
+          <h4 style="font-size:22px">Спасибо, записали</h4>
+          <p style="margin-bottom:0">Перезвоним в течение 15 минут в рабочее время.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 8б. РАБОТЫ КОСМЕТОЛОГА ═══════════ -->
+<section id="works" style="padding-top:0">
+  <div class="wrap">
+    <div class="center" style="margin-bottom:30px">
+      <span class="eyebrow plain">До и после</span>
+      <h2>Работы <span class="it">косметолога студии</span></h2>
+      <p class="lead">Препараты с именем — Belotero, Stylage, Neauvia, Profhilo, Filorga — и аккуратная работа под ваши черты, без «перекачанного» вида. Если результат не понравится, филлер выводится.</p>
+    </div>
+    <div class="gal gal-3 rv">
+      <figure><img decoding="async" src="assets/img/ba-1.svg" alt="Контурная пластика губ: до и после" loading="lazy" width="900" height="900"><figcaption><b>Губы</b> — до и после</figcaption></figure>
+      <figure><img decoding="async" src="assets/img/ba-2.svg" alt="Чистка лица: до и после" loading="lazy" width="900" height="900"><figcaption><b>Чистка лица</b> — до и после</figcaption></figure>
+      <figure><img decoding="async" src="assets/img/ba-3.svg" alt="Биоревитализация: до и после" loading="lazy" width="900" height="900"><figcaption><b>Биоревитализация</b> — до и после</figcaption></figure>
+    </div>
+    <div class="center" style="margin-top:26px">
+      <a href="#first" class="btn btn-ghost">Записаться на консультацию косметолога</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 9. ОТЗЫВЫ ═══════════ -->
+<section class="blush" id="reviews">
+  <div class="blob b-rose" style="width:420px;height:420px;left:-150px;top:10%"></div>
+  <div class="wrap">
+    <div class="center" style="margin-bottom:34px">
+      <span class="eyebrow plain">Отзывы</span>
+      <h2>5,0 из 5 — <span class="it">по 53 оценкам</span> на Яндекс Картах</h2>
+    </div>
+
+    <div class="rating rv" style="justify-content:center">
+      <div class="rbox">
+        <span class="rv-val" style="font-family:'Cormorant',Georgia,serif;font-size:44px;font-weight:600;color:var(--plum);line-height:1">5,0</span>
+        <span class="rt"><span class="stars">★★★★★</span><br><b style="color:var(--plum)">47 отзывов</b><br>на Яндекс Картах</span>
+      </div>
+      <div class="rbox">
+        <span class="icon-round gold" style="margin:0;width:46px;height:46px;border-radius:15px"><svg class="ic"><use href="#i-star"/></svg></span>
+        <span class="rt"><b style="color:var(--plum);font-size:16px">«Хорошее место 2026»</b><br>по оценкам<br>пользователей Яндекс Карт</span>
+      </div>
+      <div class="rbox">
+        <span class="icon-round sage" style="margin:0;width:46px;height:46px;border-radius:15px"><svg class="ic"><use href="#i-user"/></svg></span>
+        <span class="rt"><b style="color:var(--plum);font-size:16px">Постоянные гостьи</b><br>проходят курс<br>и приводят подруг</span>
+      </div>
+    </div>
+
+    <div class="grid g3 rv">
+      <div class="quote">
+        <p>Это не косметолог, а <mark>персональный мастер красоты, комфорта и хорошего настроения</mark>.</p>
+        <div class="qmeta"><span class="qav">И</span><span><b style="color:var(--plum);display:block;font-size:14.5px">Ирина Скутина</b>Яндекс Карты · январь</span></div>
+      </div>
+      <div class="quote">
+        <p>Косметолог очень внимательная, <mark>всё чётко расспросила, объяснила каждый этап</mark>.</p>
+        <div class="qmeta"><span class="qav">А</span><span><b style="color:var(--plum);display:block;font-size:14.5px">Александра Кудля</b>Яндекс Карты · февраль</span></div>
+      </div>
+      <div class="quote">
+        <p>Процедура прошла <mark>максимально комфортно, почти безболезненно</mark>.</p>
+        <div class="qmeta"><span class="qav">А</span><span><b style="color:var(--plum);display:block;font-size:14.5px">Алина Ч.</b>Яндекс Карты · март</span></div>
+      </div>
+      <div class="quote m-extra">
+        <p>Екатерина быстро успокоила меня, <mark>подробно рассказала, как будет происходить процесс</mark>.</p>
+        <div class="qmeta"><span class="qav">А</span><span><b style="color:var(--plum);display:block;font-size:14.5px">Артём Банин</b>Яндекс Карты · июнь</span></div>
+      </div>
+      <div class="quote m-extra">
+        <p><mark>Мастер очень внимательная и сразу располагает к себе</mark>. Фея с золотыми ручками.</p>
+        <div class="qmeta"><span class="qav">П</span><span><b style="color:var(--plum);display:block;font-size:14.5px">Полина Зеленцова</b>Яндекс Карты · июнь</span></div>
+      </div>
+      <div class="quote m-extra">
+        <p>С ней <mark>максимально комфортно, легко и всё понятно</mark>.</p>
+        <div class="qmeta"><span class="qav">Я</span><span><b style="color:var(--plum);display:block;font-size:14.5px">Яна Правдина</b>Яндекс Карты · июнь</span></div>
+      </div>
+    </div>
+
+    <div class="center" style="margin-top:28px">
+      <a class="btn btn-ghost" href="https://yandex.ru/maps/org/116601474737/reviews/" target="_blank" rel="noopener">Читать все 47 отзывов на Яндекс Картах</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 10. СТРАХИ И ВОЗРАЖЕНИЯ ═══════════ -->
+<section class="sand" id="faq">
+  <div class="wrap">
+    <div class="center" style="margin-bottom:34px">
+      <span class="eyebrow plain">Честные ответы</span>
+      <h2>О чём обычно <span class="it">волнуются перед первым визитом</span></h2>
+      <p class="lead">Мы собрали вопросы, которые нам задают чаще всего — и отвечаем на них так же прямо, как в кабинете.</p>
+    </div>
+
+    <div class="faq rv">
+      <details class="sp" open>
+        <summary>Это больно?</summary>
+        <div class="spb">Ощущения сравнимы с щелчком тёплой резинки по коже: в подмышках и на голенях почти незаметно, в бикини и на лице — чувствительнее, но терпимо. <b>На первом визите делается тестовая вспышка</b>: вы понимаете, на что идёте, ещё до начала процедуры. Если в какой-то момент станет некомфортно, мастер снижает мощность сразу же — достаточно сказать слово.</div>
+      </details>
+
+      <details class="sp">
+        <summary>А если мне не поможет? Не выброшу ли я деньги?</summary>
+        <div class="spb">Лазер работает по волосу с пигментом. На седых и совсем светлых пушковых волосах результата не будет — и <b>об этом вам скажут на консультации, а не после оплаченного курса</b>. Поэтому первое посещение и стоит вдвое дешевле: вы проверяете методику на себе, почти ничем не рискуя. Если ваш случай не для лазера, вам так и ответят и предложат альтернативу.</div>
+      </details>
+
+      <details class="sp">
+        <summary>Боюсь ожога и пигментных пятен</summary>
+        <div class="spb">Именно поэтому до процедуры важны фототип, свежий загар и лекарства, которые вы принимаете, — их спрашивают <b>до</b>, а не после. По свежему загару процедуру не делают, параметры проверяют тестовой вспышкой, а домой вы уходите с понятными правилами ухода и рекомендацией по SPF. Мощность подбирается под вашу кожу, а не берётся «как у всех».</div>
+      </details>
+
+      <details class="sp">
+        <summary>Мне неловко раздеваться, особенно в зоне бикини</summary>
+        <div class="spb">Это нормально, и с этим приходят почти все. Кабинет <b>закрытый, вы в нём вдвоём с мастером</b>, одноразовое бельё выдаётся на месте. Никаких «сейчас коллега зайдёт посмотреть» и комментариев по поводу вашего тела. Судя по отзывам, именно эта деликатность и возвращает клиенток: «с ней максимально комфортно, легко и всё понятно».</div>
+      </details>
+
+      <details class="sp">
+        <summary>Не будут ли навязывать лишние процедуры?</summary>
+        <div class="spb">Не будут. Мастер считает <b>минимально необходимое</b> количество процедур под вашу задачу, а не максимальное. Можно прийти, задать вопросы, посмотреть студию и уйти думать — консультация ни к чему не обязывает. Вам назовут число процедур, которое нужно именно вам, даже если оно меньше, чем хотелось бы студии.</div>
+      </details>
+
+      <details class="sp">
+        <summary>Сколько нужно процедур и как быстро будет виден результат?</summary>
+        <div class="spb">Обработанные волосы выпадают в течение одной-двух недель — эффект видно уже после первой процедуры. Но в фазе роста одновременно находится лишь часть волос, поэтому нужен курс: <b>несколько процедур с интервалом в несколько недель</b>. Точное число зависит от зоны, гормонального фона, плотности и цвета волоса — мастер назовёт его после осмотра.</div>
+      </details>
+
+      <details class="sp">
+        <summary>Как подготовиться к процедуре?</summary>
+        <div class="spb">Зону нужно <b>побрить за один-два дня</b> до визита — если не успели, бритьё в студии стоит 300 ₽. Минимум за месяц откажитесь от воска, шугаринга и пинцета: лазеру нужен корень волоса на месте. И не приходите со свежим загаром — в том числе из солярия. Все нюансы вам проговорят ещё при записи.</div>
+      </details>
+
+      <details class="sp">
+        <summary>Можно ли делать эпиляцию летом?</summary>
+        <div class="spb">Да, если на коже нет свежего загара, а после процедуры вы пользуетесь SPF и не идёте в солярий. Мастер оценит состояние кожи на месте и при необходимости предложит перенести визит — <b>это нормальная практика, а не отказ от клиента</b>: безопасность важнее одной записи в графике.</div>
+      </details>
+
+      <details class="sp">
+        <summary>Кому нельзя? Какие противопоказания?</summary>
+        <div class="spb">Есть состояния, при которых лазерная эпиляция и инъекционные методики не проводятся: беременность и лактация, онкологические заболевания, эпилепсия, острые воспаления и повреждения кожи в зоне, декомпенсированный сахарный диабет, приём фотосенсибилизирующих препаратов, свежий загар. <b>Поэтому первый шаг — консультация</b>: вас подробно расспросят о здоровье и честно скажут, можно ли работать. Если есть сомнения — попросят согласовать процедуру с вашим врачом.</div>
+      </details>
+
+      <details class="sp">
+        <summary>Что будет с кожей сразу после и как записаться?</summary>
+        <div class="spb">Обычно — лёгкое покраснение и ощущение тепла, которые проходят за несколько часов. В первые пару дней стоит отказаться от бани, сауны, бассейна и активного спорта, полный список рекомендаций вы получите в кабинете. Записаться можно по телефону <a href="tel:+79219156255" style="color:var(--cta);font-weight:700">+7 921 915-62-55</a>, в WhatsApp, Telegram или через форму на сайте. Перенести визит можно — просто предупредите заранее.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 11. БЕЗОПАСНОСТЬ И СТУДИЯ ═══════════ -->
+<section id="studio">
+  <div class="wrap split">
+    <div class="simg rv"><img decoding="async" src="assets/img/room.svg" alt="Кабинет студии VIV Studio" loading="lazy" width="900" height="675"></div>
+    <div>
+      <span class="eyebrow plain">Наша студия</span>
+      <h2>Камерная студия, где вас <span class="it">помнят по имени</span></h2>
+      <p class="lead" style="margin-bottom:22px">Мы не сеть и не конвейер: записи разводим по времени, чтобы вы не ждали в коридоре и не пересекались с другими гостями. Поэтому у нас тихо, никто не подгоняет, а мастер помнит, на какой процедуре курса вы находитесь, без напоминаний.</p>
+      <ul class="safe">
+        <li><span class="bi"><svg class="ic"><use href="#i-check"/></svg></span>Одноразовое бельё и расходники, которые вскрываются при вас</li>
+        <li><span class="bi"><svg class="ic"><use href="#i-check"/></svg></span>Обработка насадок и кушетки после каждого визита</li>
+        <li><span class="bi"><svg class="ic"><use href="#i-check"/></svg></span>Закрытый кабинет и мастер-женщина — никто не зайдёт во время процедуры</li>
+        <li><span class="bi"><svg class="ic"><use href="#i-check"/></svg></span>Опрос о здоровье и тестовая вспышка перед первой процедурой</li>
+        <li><span class="bi"><svg class="ic"><use href="#i-check"/></svg></span>Индивидуальные параметры под ваш фототип, а не единая настройка</li>
+        <li><span class="bi"><svg class="ic"><use href="#i-check"/></svg></span>Центр города, лифт в здании и парковка рядом</li>
+      </ul>
+      <div class="cta-row" style="margin-top:28px">
+        <a href="#first" class="btn">Записаться на первое посещение</a>
+        <a href="https://t.me/VIV_Studio" target="_blank" rel="noopener" class="btn btn-ghost">Смотреть студию в Telegram</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap" style="margin-top:56px">
+    <div class="gal rv">
+      <figure><img decoding="async" src="assets/img/master.svg" alt="Мастер студии VIV Studio" loading="lazy" width="900" height="900"><figcaption><b>Екатерина</b> — ведёт вас весь курс, от консультации до результата</figcaption></figure>
+      <figure><img decoding="async" src="assets/img/reception.svg" alt="Зона ожидания студии VIV Studio" loading="lazy" width="900" height="900"><figcaption><b>Ресепшн</b> — здесь начинается ваш визит</figcaption></figure>
+      <figure><img decoding="async" src="assets/img/device.svg" alt="Аппарат для лазерной эпиляции" loading="lazy" width="900" height="900"><figcaption><b>Аппарат</b> — с системой охлаждения кожи</figcaption></figure>
+      <figure><img decoding="async" src="assets/img/certs.svg" alt="Сертификаты и дипломы мастера" loading="lazy" width="900" height="900"><figcaption><b>Сертификаты</b> — покажем по первой просьбе</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 12. АКЦИЯ + ФИНАЛЬНАЯ ФОРМА ═══════════ -->
+<section class="band pink" id="action">
+  <div class="wrap offer-grid">
+    <div>
+      <span class="eyebrow"><svg class="ic" style="width:14px;height:14px"><use href="#i-gift"/></svg> Действует сейчас</span>
+      <h2>Приходите с подругой — <span class="it">её первое посещение тоже −50%</span></h2>
+      <p class="lead">Вдвоём и не так волнительно: можно прийти в один день, занять соседние окна и потом вместе обсудить ощущения. А если хотите сделать подарок — у нас есть сертификаты на любую сумму и любую услугу.</p>
+      <ul class="offer-list">
+        <li><span class="bi"><svg class="ic"><use href="#i-check"/></svg></span><span>Скидка 50% на первое посещение — и вам, и подруге</span></li>
+        <li><span class="bi"><svg class="ic"><use href="#i-check"/></svg></span><span>Подарочный сертификат — на процедуру, комплекс или любую сумму</span></li>
+        <li><span class="bi"><svg class="ic"><use href="#i-check"/></svg></span><span>Свободные окна публикуем в Telegram — иногда остаются на сегодня</span></li>
+      </ul>
+    </div>
+
+    <form class="form" id="form-final" novalidate>
+      <div class="form-body">
+        <h3>Занять окно на этой неделе</h3>
+        <p class="fnote">Оставьте номер — мастер перезвонит, предложит ближайшие свободные окна и закрепит за вами скидку 50% на первое посещение.</p>
+        <div class="field">
+          <label for="f4-phone">Телефон</label>
+          <input id="f4-phone" type="tel" inputmode="tel" placeholder="+7 999 123-45-67" autocomplete="tel" required>
+        </div>
+        <div class="field">
+          <label for="f4-time">Когда удобно, чтобы вам позвонили</label>
+          <select id="f4-time">
+            <option>Как можно скорее</option>
+            <option>Утром, до 12:00</option>
+            <option>Днём, 12:00–17:00</option>
+            <option>Вечером, после 17:00</option>
+            <option>Лучше напишите в мессенджер</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-wide btn-lg">Записаться со скидкой 50%</button>
+        <label class="agree"><input type="checkbox" checked required><span>Я согласна с <a href="privacy.html" target="_blank">политикой конфиденциальности</a> и на обработку персональных данных</span></label>
+      </div>
+      <div class="form-ok">
+        <div class="ok-ic"><svg class="ic"><use href="#i-check"/></svg></div>
+        <h4>Готово, ждём вас</h4>
+        <p>Мастер перезвонит и подтвердит время. Пока ждёте — загляните в наш Telegram: там свободные окна, работы и жизнь студии.</p>
+        <div class="msgs" style="justify-content:center">
+          <a class="msg" href="https://t.me/VIV_Studio" target="_blank" rel="noopener"><svg class="ic"><use href="#i-tg"/></svg> Telegram</a>
+          <a class="msg" href="https://wa.me/79219156255" target="_blank" rel="noopener"><svg class="ic"><use href="#i-wa"/></svg> WhatsApp</a>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ═══════════ 13. КОНТАКТЫ ═══════════ -->
+<section id="contacts">
+  <div class="wrap">
+    <div class="center" style="margin-bottom:38px">
+      <span class="eyebrow plain">Как нас найти</span>
+      <h2>Центральный район, <span class="it">7 минут от Смольного</span></h2>
+    </div>
+
+    <div class="contact">
+      <div class="cinfo">
+        <div class="crow">
+          <span class="ci"><svg class="ic"><use href="#i-pin"/></svg></span>
+          <div><div class="ct">Адрес</div>
+            <div class="cv">Санкт-Петербург, Суворовский пр-т, 35</div>
+            <small>Офис 409. Метро «Чернышевская» или «Площадь Восстания», рядом Смольный. В здании есть лифт, у дома — парковка.</small></div>
+        </div>
+        <div class="crow">
+          <span class="ci"><svg class="ic"><use href="#i-phone"/></svg></span>
+          <div><div class="ct">Телефон</div>
+            <div class="cv"><a href="tel:+79219156255">+7 921 915-62-55</a></div>
+            <small>Позвоните или напишите — ответим в рабочее время</small></div>
+        </div>
+        <div class="crow">
+          <span class="ci"><svg class="ic"><use href="#i-wa"/></svg></span>
+          <div><div class="ct">Мессенджеры и запись</div>
+            <div class="cv"><a href="https://wa.me/79219156255" target="_blank" rel="noopener">+7 921 915-62-55</a></div>
+            <div class="msgs">
+              <a class="msg" href="https://wa.me/79219156255" target="_blank" rel="noopener"><svg class="ic"><use href="#i-wa"/></svg> WhatsApp</a>
+              <a class="msg" href="https://t.me/VIV_Studio" target="_blank" rel="noopener"><svg class="ic"><use href="#i-tg"/></svg> Telegram</a>
+              <a class="msg" href="https://vk.com/viv.studio" target="_blank" rel="noopener"><svg class="ic"><use href="#i-heart"/></svg> ВКонтакте</a>
+            </div></div>
+        </div>
+        <div class="crow">
+          <span class="ci"><svg class="ic"><use href="#i-clock"/></svg></span>
+          <div><div class="ct">Режим работы</div>
+            <div class="cv">По записи, включая вечерние часы</div>
+            <small>Предварительная запись обязательна: так вы не ждёте в коридоре и не пересекаетесь с другими гостями.</small></div>
+        </div>
+      </div>
+
+      <div>
+        <a class="mapcard" href="https://yandex.ru/maps/org/116601474737/" target="_blank" rel="noopener" style="display:block;text-decoration:none">
+          <img decoding="async" src="assets/img/map.svg" alt="VIV Studio — Суворовский проспект, 35" loading="lazy" width="900" height="675">
+          <div class="mo">
+            <b>Суворовский пр-т, 35 · офис 409</b>
+            <span>Открыть в Яндекс Картах →</span>
+          </div>
+        </a>
+        <p class="note" style="margin-top:14px">Приезжаете впервые? Заходите в здание, поднимайтесь на лифте — офис 409. Заблудитесь — позвоните, встретим.</p>
       </div>
     </div>
   </div>
@@ -715,40 +1923,246 @@
 
 </main>
 
-<!-- ══════════ ПОДВАЛ ══════════ -->
-<footer class="site-footer">
-  <div class="container footer-inner">
-    <div class="footer-brand">
-      <span class="logo-text">VIV<span class="logo-dot">.</span>STUDIO</span>
-      <p>Элегантность, уют и забота о каждой детали.<br>Лазерная эпиляция и эстетическая косметология в центре Петербурга.</p>
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <div class="flogo">VIV Studio</div>
+        <p>Студия лазерной эпиляции и эстетической косметологии в Центральном районе Санкт-Петербурга. Элегантность, уют и забота о каждой детали.</p>
+        <p style="margin-top:14px;font-size:13px;opacity:.7">Информация на сайте не является медицинской рекомендацией и публичной офертой. Имеются противопоказания — необходима консультация специалиста.</p>
+      </div>
+      <div>
+        <h4>Разделы</h4>
+        <ul>
+          <li><a href="#methods">Процедуры</a></li>
+          <li><a href="#prices">Цены и комплексы</a></li>
+          <li><a href="#reviews">Отзывы</a></li>
+          <li><a href="#faq">Вопросы и ответы</a></li>
+          <li><a href="#contacts">Контакты</a></li>
+          <li><a href="privacy.html">Политика конфиденциальности</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Контакты</h4>
+        <ul>
+          <li><a href="tel:+79219156255">+7 921 915-62-55</a></li>
+          <li><a href="https://wa.me/79219156255" target="_blank" rel="noopener">WhatsApp +7 921 915-62-55</a></li>
+          <li><a href="https://t.me/VIV_Studio" target="_blank" rel="noopener">Telegram</a></li>
+          <li><a href="https://vk.com/viv.studio" target="_blank" rel="noopener">ВКонтакте</a></li>
+          <li><a href="https://yandex.ru/maps/org/116601474737/" target="_blank" rel="noopener">Мы на Яндекс Картах</a></li>
+          <li>Суворовский пр-т, 35, офис 409</li>
+        </ul>
+      </div>
     </div>
-    <nav class="footer-nav" aria-label="Разделы сайта">
-      <a href="#services">Услуги</a>
-      <a href="#prices">Цены</a>
-      <a href="#fears">Вопросы и страхи</a>
-      <a href="#reviews">Отзывы</a>
-      <a href="#contacts">Контакты</a>
-    </nav>
-    <div class="footer-contacts">
-      <a href="tel:+79219156255">+7 (921) 915-62-55</a>
-      <p>Суворовский пр-т, 35, офис 409<br>Санкт-Петербург</p>
+    <div class="fbot">
+      <!-- перед публикацией: подставьте реквизиты — ИП/ООО, ИНН, ОГРН -->
+      <span>© 2026 VIV Studio, Санкт-Петербург</span>
+      <span>Фотографии на сайте — заглушки: замените на реальные снимки студии</span>
     </div>
-  </div>
-  <div class="container footer-bottom">
-    <p>© 2026 VIV Studio. Все права защищены.</p>
-    <p class="disclaimer">Имеются противопоказания. Необходима консультация специалиста. Информация на сайте не является публичной офертой.</p>
   </div>
 </footer>
 
-<!-- ══════════ МОБИЛЬНАЯ ПАНЕЛЬ ══════════ -->
-<div class="mobile-bar">
-  <a class="btn btn-ghost mobile-bar-btn" href="tel:+79219156255">
-    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg>
-    Позвонить
-  </a>
-  <a class="btn btn-primary mobile-bar-btn" href="#booking">Записаться −50%</a>
+<div class="sticky">
+  <a href="tel:+79219156255" class="btn btn-ghost" aria-label="Позвонить"><svg class="ic"><use href="#i-phone"/></svg></a>
+  <a href="https://wa.me/79219156255" target="_blank" rel="noopener" class="btn btn-ghost" aria-label="Написать в WhatsApp"><svg class="ic"><use href="#i-wa"/></svg></a>
+  <a href="#first" class="btn">Записаться −50%</a>
 </div>
 
-<script src="js/script.js"></script>
+<script>
+
+(function(){
+  'use strict';
+
+  /* ---- прокрутка с учётом content-visibility ----
+     Пока часть секций не отрисована, их высота — оценка, и якорь промахнётся.
+     Поэтому на время перехода раскладку разворачиваем целиком. */
+  var root = document.documentElement, cvTimer = 0;
+  function cvBack(){
+    clearTimeout(cvTimer);
+    window.removeEventListener('scrollend', cvBack);
+    root.classList.remove('cv-off');
+    measure();
+  }
+  function scrollToY(getY){
+    root.classList.add('cv-off');
+    void document.body.offsetHeight;          /* форсируем полную раскладку */
+    window.scrollTo({top: Math.max(0, getY()), behavior:'smooth'});
+    /* возвращаем экономию только когда прокрутка реально закончилась,
+       иначе блоки схлопнутся на лету и якорь промахнётся */
+    clearTimeout(cvTimer);
+    window.removeEventListener('scrollend', cvBack);
+    window.addEventListener('scrollend', cvBack);
+    cvTimer = setTimeout(cvBack, 2500);
+  }
+
+  /* ---- появление блоков при скролле ---- */
+  var rv = document.querySelectorAll('.rv');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, {rootMargin:'0px 0px -12% 0px', threshold:.06});
+    rv.forEach(function(el){ io.observe(el); });
+  } else { rv.forEach(function(el){ el.classList.add('in'); }); }
+
+  /* ---- утилиты ---- */
+  function digits(v){ return (v||'').replace(/\D/g,''); }
+  function validPhone(v){ var d = digits(v); return d.length >= 10; }
+  function shake(el){
+    el.style.borderColor = '#C0563B';
+    el.focus();
+    el.addEventListener('input', function h(){ el.style.borderColor=''; el.removeEventListener('input',h); });
+  }
+  /* Куда уходит заявка: сейчас — только экран «спасибо».
+     Чтобы подключить CRM / почту / Telegram-бота, отправьте payload на свой endpoint:
+     fetch('/lead', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload)}) */
+  function sendLead(payload){
+    try { console.log('LEAD', payload); } catch(e){}
+    if (window.ym)  { try { ym(0,'reachGoal','lead'); } catch(e){} }
+    if (window.gtag){ try { gtag('event','generate_lead'); } catch(e){} }
+  }
+  function done(form){
+    form.classList.add('is-done');
+    scrollToY(function(){ return form.getBoundingClientRect().top + window.pageYOffset - 110; });
+  }
+
+  /* ---- простые формы ---- */
+  ['form-first','form-price','form-final'].forEach(function(id){
+    var f = document.getElementById(id);
+    if(!f) return;
+    f.addEventListener('submit', function(e){
+      e.preventDefault();
+      var phone = f.querySelector('input[type=tel]');
+      if(!validPhone(phone.value)) { shake(phone); return; }
+      var agree = f.querySelector('input[type=checkbox]');
+      if(agree && !agree.checked){ agree.focus(); return; }
+      var data = {form:id, phone:phone.value};
+      var sel = f.querySelector('select');   if(sel) data.extra = sel.value;
+      sendLead(data);
+      done(f);
+    });
+  });
+
+  /* ---- квиз ---- */
+  var quiz = document.getElementById('quiz-form');
+  if(quiz){
+    var steps = quiz.querySelectorAll('.qstep');
+    var total = steps.length, cur = 1;
+    var qbar  = document.getElementById('q-bar');
+    var label = document.getElementById('q-label');
+    var pct   = document.getElementById('q-pct');
+    var back  = document.getElementById('q-back');
+    var hint  = document.getElementById('q-hint');
+    var answers = {};
+
+    function render(){
+      steps.forEach(function(s){ s.classList.toggle('active', +s.dataset.step === cur); });
+      var p = Math.round(cur/total*100);
+      qbar.style.width = p + '%';
+      label.textContent = 'Шаг ' + cur + ' из ' + total;
+      pct.textContent = 'Заполнено на ' + p + '%';
+      back.hidden = cur === 1;
+      hint.textContent = cur === total
+        ? 'Никакого спама: номер нужен только чтобы прислать программу'
+        : 'Выберите один вариант — перейдём к следующему вопросу';
+    }
+
+    quiz.querySelectorAll('.qopts').forEach(function(group){
+      group.querySelectorAll('.qopt').forEach(function(opt){
+        opt.addEventListener('click', function(){
+          group.querySelectorAll('.qopt').forEach(function(o){ o.classList.remove('sel'); });
+          opt.classList.add('sel');
+          answers[group.dataset.name] = opt.textContent.trim();
+          var step = +opt.closest('.qstep').dataset.step;
+          if(step < total){ setTimeout(function(){ if(cur === step){ cur = step + 1; render(); } }, 240); }
+        });
+      });
+    });
+
+    back.addEventListener('click', function(){ if(cur > 1){ cur--; render(); } });
+
+    quiz.addEventListener('submit', function(e){
+      e.preventDefault();
+      var phone = document.getElementById('q-phone');
+      if(!validPhone(phone.value)){ shake(phone); return; }
+      var agree = quiz.querySelector('.qstep[data-step="6"] input[type=checkbox]');
+      if(agree && !agree.checked){ agree.focus(); return; }
+      answers['Телефон'] = phone.value;
+      sendLead(Object.assign({form:'quiz'}, answers));
+
+      var ch = answers['Куда отправить'] || '';
+      var text = 'Здравствуйте! Прошла тест на сайте, хочу записаться на первое посещение со скидкой 50%.\n'
+        + 'Зона: ' + (answers['Зона'] || '—') + '\n'
+        + 'Задача: ' + (answers['Задача'] || '—') + '\n'
+        + 'Опыт: ' + (answers['Опыт'] || '—') + '\n'
+        + 'Удобное время: ' + (answers['Время'] || '—');
+      if(ch.indexOf('WhatsApp') > -1){
+        window.open('https://wa.me/79219156255?text=' + encodeURIComponent(text), '_blank', 'noopener');
+      } else if(ch.indexOf('Telegram') > -1){
+        window.open('https://t.me/VIV_Studio', '_blank', 'noopener');
+      }
+      done(quiz);
+    });
+
+    render();
+  }
+
+  /* ---- бегущая строка крутится только когда видна ---- */
+  var tick_row = document.querySelector('.ticker-row');
+  if (tick_row && 'IntersectionObserver' in window) {
+    new IntersectionObserver(function(es){
+      tick_row.style.animationPlayState = es[0].isIntersecting ? 'running' : 'paused';
+    }, {threshold:0}).observe(tick_row);
+  }
+
+  /* ---- «показать ещё» на мобильном ---- */
+  document.querySelectorAll('.m-more').forEach(function(b){
+    b.addEventListener('click', function(){
+      var box = b.closest('section');
+      var open = box.classList.toggle('m-open');
+      var label = b.querySelector('span');
+      if(label) label.textContent = open ? b.dataset.less : b.dataset.more;
+      if(!open){
+        scrollToY(function(){ return box.getBoundingClientRect().top + window.pageYOffset - 70; });
+      }
+    });
+  });
+
+  /* ---- индикатор прочитанного в шапке ----
+     ВНИМАНИЕ: var здесь общий с кодом выше по файлу — имена не переиспользовать
+     (полоса квиза уже ломалась из-за второго `var bar` в этой же области).
+     scrollHeight читаем не каждый кадр (это форсировало пересчёт раскладки),
+     а только когда высота документа реально меняется. */
+  var bar = document.querySelector('.hbar'), maxY = 0, lastP = -1, tick = false;
+  function measure(){ maxY = document.documentElement.scrollHeight - window.innerHeight; }
+  function progress(){
+    tick = false;
+    var p = maxY > 0 ? Math.min(1, window.pageYOffset / maxY) : 0;
+    if (Math.abs(p - lastP) < 0.002) return;
+    lastP = p;
+    if (bar) bar.style.transform = 'scaleX(' + p.toFixed(4) + ')';
+  }
+  window.addEventListener('scroll', function(){
+    if(!tick){ tick = true; requestAnimationFrame(progress); }
+  }, {passive:true});
+  window.addEventListener('resize', function(){ measure(); progress(); });
+  if ('ResizeObserver' in window) new ResizeObserver(measure).observe(document.body);
+  measure();
+  progress();
+
+  /* ---- плавный переход по якорям с учётом липкой шапки ---- */
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var id = a.getAttribute('href');
+      if(id.length < 2) return;
+      var t = document.querySelector(id);
+      if(!t) return;
+      e.preventDefault();
+      scrollToY(function(){ return t.getBoundingClientRect().top + window.pageYOffset - 84; });
+      history.replaceState(null, '', id);
+    });
+  });
+})();
+
+</script>
 </body>
 </html>
