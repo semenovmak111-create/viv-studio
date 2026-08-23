@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" width="900" height="900" role="img">
 <defs>
 <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-<stop offset="0" stop-color="#EDE4D6"/><stop offset=".55" stop-color="#D9C4A8"/><stop offset="1" stop-color="#C0A688"/>
+<stop offset="0" stop-color="#FCEFDD"/><stop offset=".55" stop-color="#F2D6B4"/><stop offset="1" stop-color="#E5BE94"/>
 </linearGradient>
 <radialGradient id="s" cx=".72" cy=".22" r=".7">
 <stop offset="0" stop-color="#FFFFFF" stop-opacity=".5"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
@@ -9,12 +9,12 @@
 </defs>
 <rect width="900" height="900" fill="url(#g)"/>
 <rect width="900" height="900" fill="url(#s)"/>
-<g opacity=".45" fill="none" stroke="#5F4533" stroke-width="4.0">
+<g opacity=".45" fill="none" stroke="#8F4522" stroke-width="4.0">
 <circle cx="450.0" cy="342" r="72"/>
 <path d="M378 342 l144 0" stroke-linecap="round"/>
 </g>
 <text x="50%" y="504" text-anchor="middle" font-family="Georgia,serif" font-style="italic"
- font-size="56" fill="#5F4533" opacity=".82">VIV Studio</text>
+ font-size="56" fill="#8F4522" opacity=".82">VIV Studio</text>
 <text x="50%" y="562" text-anchor="middle" font-family="Helvetica,Arial,sans-serif"
- font-size="27" fill="#5F4533" opacity=".6">До и после: биоревитализация</text>
+ font-size="27" fill="#8F4522" opacity=".6">До и после: биоревитализация</text>
 </svg>

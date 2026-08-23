@@ -36,26 +36,26 @@
   unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
 
 :root{
-  /* палитра снята с vivstd.ru */
-  --bg:#FEFDFC;
-  --bg-2:#F8F5F1;
-  --bg-3:#F2EDE6;
-  --bg-4:#F7F2E9;
-  --bg-5:#F4F1EC;
-  --g-cta:linear-gradient(135deg,#6E5138,#4B3224);
-  --g-num:linear-gradient(120deg,#977247,#6E5138 60%,#4B3224);
-  --ink:#3B2A1E;
-  --ink-2:#6E6055;
-  --line:#E6E3DE;
-  --line-2:#D9D3CA;
-  --cta:#5F4533;
-  --cta-dark:#4B3224;
-  --gold:#977247;
-  --gold-2:#C0A176;
-  --gold-soft:#F4EEE4;
-  --plum:#4B3224;
+  /* Тёплая база студии + медный акцент на действиях */
+  --bg:#FFFDFA;
+  --bg-2:#FBF4EA;
+  --bg-3:#F7EBDC;
+  --bg-4:#FCF3E4;
+  --bg-5:#F7F0E7;
+  --g-cta:linear-gradient(135deg,#D27A46,#A85228);
+  --g-num:linear-gradient(120deg,#B98E2E,#C0693A 60%,#8F4522);
+  --ink:#33241C;
+  --ink-2:#6F6055;
+  --line:#EDE2D4;
+  --line-2:#DFD0BD;
+  --cta:#C0693A;
+  --cta-dark:#A85228;
+  --gold:#B98E2E;
+  --gold-2:#E0C177;
+  --gold-soft:#FBF1DA;
+  --plum:#33241C;
   --r:18px;
-  --sh:0 14px 28px -18px rgba(59,40,28,.55);
+  --sh:0 14px 28px -18px rgba(51,36,28,.55);
 }
 
 *{box-sizing:border-box;margin:0;padding:0}
@@ -75,31 +75,31 @@ button,input,select{font:inherit;color:inherit}
 
 /* один блок = один экран смартфона, между блоками — воздух и смена фона */
 section{padding:40px 0}
-.sand{background:linear-gradient(170deg,#F9F5EF,#F4EEE5)}
-.blush{background:linear-gradient(170deg,#F4EEE5,#EFE8DC)}
+.sand{background:linear-gradient(170deg,#FBF4E9,#F5EADB)}
+.blush{background:linear-gradient(170deg,#F5F0E4,#F0EADB)}
 /* тёмная плашка первого визита — те же цвета, что у .band на десктопе */
 /* цвет назначаем адресно, а не наследованием: внутри плашки лежат белые
    карточки (прайс, форма), они должны сохранить свою тёмную типографику */
 .band{background:
-  radial-gradient(110% 70% at 12% 0%,rgba(255, 232, 200, .35) 0%,rgba(255, 232, 200, 0) 60%),
-  linear-gradient(160deg,#4B3224 0%,#6E5138 44%,#9A7B61 100%)}
+  radial-gradient(110% 70% at 12% 0%,rgba(243, 234, 212, .35) 0%,rgba(243, 234, 212, 0) 60%),
+  linear-gradient(160deg,#4F3320 0%,#764C30 44%,#AB7450 100%)}
 .band>.wrap>h2{color:#fff}
-.band>.wrap>.lead{color:#F0EEED}
-.band>.wrap>.eyebrow{background:rgba(255,255,255,.2);color:#F5F3F2}
-.band .sheet-t{color:#F0EEED}
+.band>.wrap>.lead{color:#F1EFEC}
+.band>.wrap>.eyebrow{background:rgba(255,255,255,.2);color:#F6F4F1}
+.band .sheet-t{color:#F1EFEC}
 .band .sheet-t b{color:#fff}
 /* перфорация бланка имитирует цвет подложки — на тёмной плашке она лишняя */
 .band .sheet::after{display:none}
 .band .sheet{border-radius:12px}
-.cream{background:linear-gradient(170deg,#FAF5ED,#F6F0E6)}
-.lilac{background:linear-gradient(170deg,#F5F1EB,#EFEAE2)}
+.cream{background:linear-gradient(170deg,#FAF6ED,#F7F2E5)}
+.lilac{background:linear-gradient(170deg,#F6F2EA,#EDE9E4)}
 /* мягкое цветное пятно в углу секции — воздух и глубина, но текст не трогает */
 main>section::after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;
   right:-90px;top:-70px;pointer-events:none;z-index:0;
-  background:radial-gradient(circle,rgba(223, 214, 207, .5) 0%,rgba(223, 214, 207, 0) 70%)}
-main>section.cream::after{background:radial-gradient(circle,rgba(225, 209, 186, .45) 0%,rgba(225, 209, 186, 0) 70%)}
-main>section.lilac::after{background:radial-gradient(circle,rgba(211, 205, 199, .4) 0%,rgba(211, 205, 199, 0) 70%)}
-main>section.band::after{background:radial-gradient(circle,rgba(243, 236, 226, .35) 0%,rgba(243, 236, 226, 0) 70%)}
+  background:radial-gradient(circle,rgba(229, 215, 201, .5) 0%,rgba(229, 215, 201, 0) 70%)}
+main>section.cream::after{background:radial-gradient(circle,rgba(228, 214, 183, .45) 0%,rgba(228, 214, 183, 0) 70%)}
+main>section.lilac::after{background:radial-gradient(circle,rgba(215, 205, 195, .4) 0%,rgba(215, 205, 195, 0) 70%)}
+main>section.band::after{background:radial-gradient(circle,rgba(244, 238, 225, .35) 0%,rgba(244, 238, 225, 0) 70%)}
 main>section .wrap{position:relative;z-index:1}
 main>section{overflow:hidden}
 
@@ -118,15 +118,15 @@ h3{font-size:17px;font-weight:800;line-height:1.3}
 .btn{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;
   min-height:58px;padding:16px 20px;border:0;border-radius:99px;cursor:pointer;
   background:var(--g-cta);color:#fff;font-size:17px;font-weight:800;text-decoration:none;
-  box-shadow:0 12px 20px -12px rgba(147, 116, 88, .85)}
+  box-shadow:0 12px 20px -10px rgba(168, 82, 40, .6)}
 .btn:active{transform:translateY(1px)}
 .btn-ghost{background:#fff;color:var(--plum);border:1.5px solid var(--line-2);box-shadow:none}
 /* кнопка перманента: тонкая золотая оправа — зовёт, но не спорит с записью за 600 ₽ */
-.btn-gold{margin-top:16px;white-space:nowrap;color:#755C37;font-weight:700;
+.btn-gold{margin-top:16px;white-space:nowrap;color:#7A6432;font-weight:700;
   background:linear-gradient(#FDFCFB,#FDFCFB) padding-box,
-             linear-gradient(120deg,#DAC7AB,#B09367) border-box;
+             linear-gradient(120deg,#DECDA7,#B59C62) border-box;
   border:1.5px solid transparent;box-shadow:none}
-.btn-gold .ic{color:#B09367}
+.btn-gold .ic{color:#B59C62}
 .under{margin-top:10px;font-size:13px;color:var(--ink-2);text-align:center;line-height:1.4}
 
 /* мессенджеры — по всему лендингу */
@@ -139,7 +139,7 @@ h3{font-size:17px;font-weight:800;line-height:1.3}
 .ic-f{fill:currentColor;stroke:none}
 
 /* ───── шапка ───── */
-header{position:sticky;top:0;z-index:60;background:rgba(254, 251, 246, .95);
+header{position:sticky;top:0;z-index:60;background:rgba(253, 251, 247, .95);
   backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--line)}
 .hd{display:flex;align-items:center;gap:10px;min-height:62px;padding:7px 18px}
 .brand{display:block;text-decoration:none}
@@ -155,9 +155,9 @@ header{position:sticky;top:0;z-index:60;background:rgba(254, 251, 246, .95);
 /* ───── первый экран ───── */
 .hero{padding:12px 0 26px;
   background:
-    radial-gradient(520px 380px at 92% -6%, #F3E8D8 0%, rgba(243, 232, 216, 0) 62%),
-    radial-gradient(420px 320px at -8% 12%, #F6EBDB 0%, rgba(246, 235, 219, 0) 60%),
-    linear-gradient(180deg,#FEFBF7,#FFFFFF 72%)}
+    radial-gradient(520px 380px at 92% -6%, #F4EBD7 0%, rgba(244, 235, 215, 0) 62%),
+    radial-gradient(420px 320px at -8% 12%, #F6EEDB 0%, rgba(246, 238, 219, 0) 60%),
+    linear-gradient(180deg,#FDFCF8,#FFFFFF 72%)}
 .hero .place{display:flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;
   color:var(--ink-2);margin-bottom:12px}
 .hero h1{margin-bottom:12px}
@@ -168,7 +168,7 @@ header{position:sticky;top:0;z-index:60;background:rgba(254, 251, 246, .95);
 .hero-photo img{width:100%;aspect-ratio:16/11;object-fit:cover;object-position:center 45%}
 .hero-price{position:absolute;left:10px;bottom:10px;display:flex;align-items:baseline;gap:7px;
   background:rgba(255,255,255,.95);border-radius:12px;padding:7px 12px;
-  box-shadow:0 8px 16px -10px rgba(66, 53, 42, .7)}
+  box-shadow:0 8px 16px -10px rgba(73, 50, 35, .7)}
 .hero-price b{font-family:'Cormorant',Georgia,serif;font-size:24px;font-weight:600;
   line-height:1;color:var(--cta)}
 .hero-price s{font-size:13px;color:var(--ink-2)}
@@ -177,9 +177,9 @@ header{position:sticky;top:0;z-index:60;background:rgba(254, 251, 246, .95);
 .bullets{list-style:none;display:grid;gap:7px;margin-bottom:14px}
 .bullets li{display:flex;gap:10px;align-items:flex-start;font-size:15.5px;line-height:1.4}
 .bullets .bi{width:24px;height:24px;flex:none;border-radius:50%;
-  background:linear-gradient(135deg,#EDE5D8,#EAE7E5);color:var(--gold);
+  background:linear-gradient(135deg,#EFE7D6,#ECE8E3);color:var(--gold);
   display:grid;place-items:center;margin-top:1px;
-  box-shadow:0 4px 8px -6px rgba(102, 80, 48, .9)}
+  box-shadow:0 4px 8px -6px rgba(106, 87, 44, .9)}
 .bullets .bi svg{width:13px;height:13px;stroke-width:2.6}
 
 /* ── слоистость: каждая секция ложится на предыдущую скруглением, как на десктопе ── */
@@ -190,9 +190,9 @@ main>section{position:relative}
 /* золотой разделитель со ромбом — фирменная деталь десктопа */
 .hr{display:flex;align-items:center;justify-content:center;gap:10px;margin:0 0 16px}
 .hr::before,.hr::after{content:"";height:1px;width:54px;
-  background:linear-gradient(90deg,transparent,#CBB89A)}
-.hr::after{background:linear-gradient(270deg,transparent,#CBB89A)}
-.hr i{width:6px;height:6px;flex:none;transform:rotate(45deg);background:#CBB89A;border-radius:1px}
+  background:linear-gradient(90deg,transparent,#CFBE96)}
+.hr::after{background:linear-gradient(270deg,transparent,#CFBE96)}
+.hr i{width:6px;height:6px;flex:none;transform:rotate(45deg);background:#CFBE96;border-radius:1px}
 
 /* чипы доверия под кнопкой первого экрана */
 .chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
@@ -204,11 +204,11 @@ main>section{position:relative}
 .g3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:16px}
 .g3 figure{margin:0}
 .g3 img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:12px;
-  box-shadow:0 8px 16px -12px rgba(66, 53, 42, .6)}
+  box-shadow:0 8px 16px -12px rgba(73, 50, 35, .6)}
 .g3 figcaption{margin-top:6px;font-size:11.5px;line-height:1.25;color:var(--ink-2);text-align:center}
 .g2{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:16px}
 .g2 img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:14px;
-  box-shadow:0 10px 20px -14px rgba(66, 53, 42, .6)}
+  box-shadow:0 10px 20px -14px rgba(73, 50, 35, .6)}
 
 /* цифры результата: цифра в плитке фиксированного размера — все строки ровные */
 .nums{display:grid;gap:10px}
@@ -217,8 +217,8 @@ main>section{position:relative}
 .num b{width:84px;height:84px;place-self:center;flex:none;display:flex;align-items:center;
   justify-content:center;gap:4px;position:relative;overflow:hidden;
   border-radius:50%;border:1px solid var(--line);
-  background:linear-gradient(150deg,#F9F7F5 0%,#F7F3ED 100%);
-  box-shadow:0 10px 20px -14px rgba(66, 53, 42, .55)}
+  background:linear-gradient(150deg,#F9F7F5 0%,#F8F4EC 100%);
+  box-shadow:0 10px 20px -14px rgba(73, 50, 35, .55)}
 /* мягкий блик по диагонали, чтобы круг не был плоской заливкой */
 .num b::after{content:"";position:absolute;inset:0;border-radius:50%;pointer-events:none;
   background:linear-gradient(150deg,rgba(255,255,255,.9),rgba(255,255,255,0) 56%)}
@@ -238,13 +238,13 @@ main>section{position:relative}
 /* работы мастера: до и после — вертикальные кадры, подпись под каждым */
 .works{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .works figure{margin:0;background:#fff;border:1px solid var(--line);border-radius:16px;
-  overflow:hidden;box-shadow:0 12px 22px -18px rgba(66, 53, 42, .7)}
-.works img{width:100%;aspect-ratio:3/4;object-fit:contain;background:#F5F3F2;display:block}
+  overflow:hidden;box-shadow:0 12px 22px -18px rgba(73, 50, 35, .7)}
+.works img{width:100%;aspect-ratio:3/4;object-fit:contain;background:#F6F4F1;display:block}
 .works figcaption{padding:8px 10px;font-size:12.5px;line-height:1.3;color:var(--ink-2);text-align:center}
 .works figcaption b{color:var(--plum)}
 
 .visit-photo{border-radius:var(--r);overflow:hidden;margin-bottom:16px;
-  box-shadow:0 14px 26px -18px rgba(66, 53, 42, .6)}
+  box-shadow:0 14px 26px -18px rgba(73, 50, 35, .6)}
 .visit-photo img{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:center 40%}
 
 /* цены: две карточки вместо таблицы — выгода считывается за секунду */
@@ -256,24 +256,24 @@ main>section{position:relative}
 .pcard b{display:block;font-family:'Cormorant',Georgia,serif;font-size:31px;font-weight:600;
   line-height:1;color:var(--ink-2)}
 .pcard i{display:block;font-style:normal;font-size:12.5px;color:var(--ink-2);margin-top:5px}
-.pcard.hit{border-color:var(--cta);background:linear-gradient(170deg,#FBFAFA,#F3F2F1);
-  box-shadow:0 12px 22px -16px rgba(147, 116, 88, .8)}
+.pcard.hit{border-color:var(--cta);background:linear-gradient(170deg,#FBFBFA,#F4F2F0);
+  box-shadow:0 12px 22px -16px rgba(165, 108, 70, .8)}
 .pcard.hit b{background:var(--g-cta);-webkit-background-clip:text;background-clip:text;
   color:transparent;-webkit-text-fill-color:transparent;font-size:34px}
 
 /* бланк программы — предмет, который гость уносит домой */
 .sheet-wrap{display:flex;gap:14px;align-items:center;margin-bottom:16px}
 .sheet{flex:none;width:174px;position:relative;padding:0 13px 15px;border-radius:12px;
-  background:#FCFBFB;border:1px solid var(--line);transform:rotate(-2.5deg);overflow:hidden;
-  box-shadow:0 16px 26px -18px rgba(66, 53, 42, .65)}
+  background:#FCFCFB;border:1px solid var(--line);transform:rotate(-2.5deg);overflow:hidden;
+  box-shadow:0 16px 26px -18px rgba(73, 50, 35, .65)}
 .sheet::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:8px;
-  background:radial-gradient(circle at 5px 8px,transparent 4.6px,#F5F3F2 4.8px) repeat-x;
+  background:radial-gradient(circle at 5px 8px,transparent 4.6px,#F6F4F1 4.8px) repeat-x;
   background-size:10px 8px}
 .sh-brand{display:flex;align-items:center;gap:6px;margin:0 -13px 11px;padding:7px 13px;
-  font-size:8.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#675131;
-  background:#E2D4C0}
+  font-size:8.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#6B582D;
+  background:#E5D9BD}
 .sh-mono{width:17px;height:17px;flex:none;border-radius:50%;display:grid;place-items:center;
-  font-family:'Cormorant',Georgia,serif;font-size:12px;font-weight:600;color:#FCFAF7;
+  font-family:'Cormorant',Georgia,serif;font-size:12px;font-weight:600;color:#FCFBF7;
   background:var(--gold)}
 .sh-zone{font-size:9px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;
   color:var(--ink-2);margin-bottom:4px}
@@ -281,7 +281,7 @@ main>section{position:relative}
   font-weight:600;line-height:1}
 .sh-metric b{font-size:27px;color:var(--cta)}
 .sh-metric i{font-style:normal;font-size:15px;color:var(--gold)}
-.sh-delta{margin-top:5px;display:inline-block;font-size:9px;font-weight:800;color:#6C583A;
+.sh-delta{margin-top:5px;display:inline-block;font-size:9px;font-weight:800;color:#705E36;
   background:var(--gold-soft);border-radius:99px;padding:3px 8px}
 .sh-rows{margin-top:10px;display:grid;width:calc(100% - 46px)}
 .sh-rows div{display:flex;justify-content:space-between;gap:6px;font-size:9px;line-height:1.3;
@@ -290,7 +290,7 @@ main>section{position:relative}
 .sh-rows b{color:var(--plum)}
 .sh-seal{position:absolute;right:7px;bottom:13px;width:46px;height:46px;border-radius:50%;
   display:grid;place-items:center;text-align:center;transform:rotate(-13deg);
-  border:1.5px dashed var(--gold-2);background:rgba(242, 235, 225, .75);
+  border:1.5px dashed var(--gold-2);background:rgba(243, 237, 224, .75);
   font-size:6.5px;font-weight:800;line-height:1.25;letter-spacing:.06em;
   text-transform:uppercase;color:var(--gold)}
 .sheet-t{font-size:13.5px;line-height:1.45;color:var(--ink-2)}
@@ -341,14 +341,14 @@ main>section{position:relative}
 /* шапка «Приходите с подругой» — те же цвета, что в версии для компа */
 .form-pink{padding-top:0;overflow:hidden}
 .pinkhead{margin:0 -16px 18px;padding:22px 18px 20px;text-align:center;
-  background:linear-gradient(135deg,#4B3224 0%,#6E5138 45%,#9A7B61 100%)}
+  background:linear-gradient(135deg,#4F3320 0%,#764C30 45%,#AB7450 100%)}
 .pinkhead h2{color:#fff}
-.pinkhead .it{color:#EFD9B4}
-.form .pinkhead .fnote{color:#F2F0EE;margin-bottom:0}
+.pinkhead .it{color:#ECDCB7}
+.form .pinkhead .fnote{color:#F3F0ED;margin-bottom:0}
 .form-pink.is-done{padding-top:20px}
-.pinkhead .hr::before{background:linear-gradient(90deg,transparent,rgba(227, 213, 192, .95))}
-.pinkhead .hr::after{background:linear-gradient(270deg,transparent,rgba(227, 213, 192, .95))}
-.pinkhead .hr i{background:#E3D5C0}
+.pinkhead .hr::before{background:linear-gradient(90deg,transparent,rgba(230, 218, 189, .95))}
+.pinkhead .hr::after{background:linear-gradient(270deg,transparent,rgba(230, 218, 189, .95))}
+.pinkhead .hr i{background:#E6DABD}
 .form h2{margin-bottom:8px}
 .form .fnote{font-size:14.5px;color:var(--ink-2);line-height:1.45;margin-bottom:16px}
 .field{margin-bottom:14px}
@@ -448,11 +448,11 @@ details p b{color:var(--plum)}
 .sum-price{font-size:13px;font-weight:800;color:var(--cta);white-space:nowrap}
 .tag-s{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.04em;
   border-radius:99px;padding:3px 9px;margin-right:7px;vertical-align:middle;white-space:nowrap}
-.t-warm{background:#ECE9E7;color:#82673E}
-.t-pink{background:#EFEDEC;color:#917155}
-.t-sage{background:#EBECEA;color:#5E6259}
-.t-gold{background:#F2EBE1;color:#745A34}
-.t-plum{background:#EDEBEA;color:#64564A}
+.t-warm{background:#EEEAE5;color:#877039}
+.t-pink{background:#F0EEEB;color:#A36943}
+.t-sage{background:#EBEEE8;color:#5E6A51}
+.t-gold{background:#F3EDE0;color:#79632F}
+.t-plum{background:#EEECE9;color:#6C5342}
 #methods summary{gap:9px}
 
 /* ───── цены ───── */
@@ -480,11 +480,11 @@ details p b{color:var(--plum)}
 .quote .row{display:flex;gap:9px;align-items:center}
 .av{width:30px;height:30px;flex:none;border-radius:50%;display:grid;place-items:center;
   font-size:13px;font-weight:800;color:#fff}
-.av-1{background:linear-gradient(135deg,#D1C7BF,#A29385)}
-.av-2{background:linear-gradient(135deg,#D8C4A6,#AC8C5B)}
-.av-3{background:linear-gradient(135deg,#C2C4BF,#7D8079)}
+.av-1{background:linear-gradient(135deg,#D7C8B9,#AC937B)}
+.av-2{background:linear-gradient(135deg,#DCCAA2,#B29655)}
+.av-3{background:linear-gradient(135deg,#C2C9BA,#7E8D6C)}
 .quote p{font-size:14.5px;line-height:1.45;margin-bottom:8px}
-.quote mark{background:linear-gradient(180deg,transparent 55%,#F0E5D2 55%);color:inherit}
+.quote mark{background:linear-gradient(180deg,transparent 55%,#F8DFC0);color:inherit}
 .quote .who{font-size:11.5px;color:var(--ink-2);line-height:1.3}
 .quote .who b{color:var(--plum);font-size:13px;display:block}
 
@@ -505,26 +505,26 @@ details p b{color:var(--plum)}
 .cont b{display:block;font-size:13px;color:var(--ink-2);font-weight:700;margin-bottom:1px}
 .cont .ic{color:var(--cta);margin-top:2px}
 footer{position:relative;overflow:hidden;padding:34px 0 30px;font-size:13.5px;
-  line-height:1.5;color:#DDD8D4;
-  background:linear-gradient(160deg,#372B21 0%,#503F31 55%,#6B5542 100%)}
+  line-height:1.5;color:#E0D9D1;
+  background:linear-gradient(160deg,#3E281A 0%,#593C28 55%,#775036 100%)}
 footer::after{content:"";position:absolute;width:340px;height:340px;border-radius:50%;
   right:-150px;top:-160px;pointer-events:none;
-  background:radial-gradient(circle,rgba(216, 206, 198, .2) 0%,rgba(216, 206, 198, 0) 70%)}
+  background:radial-gradient(circle,rgba(222, 207, 192, .2) 0%,rgba(222, 207, 192, 0) 70%)}
 footer .wrap{position:relative;z-index:1}
-footer a{color:#EAE7E5;text-decoration:none}
+footer a{color:#ECE8E3;text-decoration:none}
 .flogo{font-family:'Cormorant',Georgia,serif;font-size:30px;font-weight:600;color:#fff;
   line-height:1;margin-bottom:9px}
 .fabout{opacity:.85;margin-bottom:22px}
 /* две колонки ссылок — на телефоне помещаются, но не расползаются в простыню */
 .fgrid{display:grid;grid-template-columns:1fr 1fr;gap:20px 16px;padding-bottom:20px;
-  border-bottom:1px solid rgba(209, 185, 150, .28)}
-.fgrid h4{font-size:11.5px;letter-spacing:.11em;text-transform:uppercase;color:#C9BFB6;
+  border-bottom:1px solid rgba(213, 193, 146, .28)}
+.fgrid h4{font-size:11.5px;letter-spacing:.11em;text-transform:uppercase;color:#D0C0AF;
   font-weight:800;margin-bottom:11px}
 .fgrid ul{list-style:none;display:grid;gap:9px}
 .fgrid a{opacity:.9}
-.faddr{margin-top:18px;color:#EAE7E5;opacity:.9}
+.faddr{margin-top:18px;color:#ECE8E3;opacity:.9}
 .fnote-law{margin-top:12px;font-size:12px;opacity:.62}
-.fbot{margin-top:18px;padding-top:16px;border-top:1px solid rgba(209, 185, 150, .22);
+.fbot{margin-top:18px;padding-top:16px;border-top:1px solid rgba(213, 193, 146, .22);
   display:grid;gap:6px;font-size:12px;opacity:.72}
 
 /* ───── липкая панель: главное действие всегда под пальцем ───── */
@@ -570,7 +570,7 @@ footer a{color:#EAE7E5;text-decoration:none}
 <section class="hero">
   <div class="wrap">
     <div class="place">
-      <svg class="ic" style="width:15px;height:15px;color:#A8876B"><use href="#i-pin"/></svg>
+      <svg class="ic" style="width:15px;height:15px;color:#BA8059"><use href="#i-pin"/></svg>
       СПб, Суворовский пр-т 35 · 7 минут от Смольного
     </div>
 
@@ -1050,7 +1050,7 @@ footer a{color:#EAE7E5;text-decoration:none}
   function digits(v){ return (v||'').replace(/\D/g,''); }
   function validPhone(v){ return digits(v).length >= 10; }
   function shake(el){
-    el.style.borderColor = '#A47B57';
+    el.style.borderColor = '#B27349';
     el.focus();
     el.addEventListener('input', function h(){ el.style.borderColor=''; el.removeEventListener('input',h); });
   }
