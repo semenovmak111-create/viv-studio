@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 900" width="700" height="900" role="img">
 <defs>
 <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-<stop offset="0" stop-color="#F9E0E7"/><stop offset=".55" stop-color="#F1C3D3"/><stop offset="1" stop-color="#E3AFC6"/>
+<stop offset="0" stop-color="#F6EFE6"/><stop offset=".55" stop-color="#E4D6C4"/><stop offset="1" stop-color="#D2BFA8"/>
 </linearGradient>
 <radialGradient id="s" cx=".72" cy=".22" r=".7">
 <stop offset="0" stop-color="#FFFFFF" stop-opacity=".5"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
@@ -9,12 +9,12 @@
 </defs>
 <rect width="700" height="900" fill="url(#g)"/>
 <rect width="700" height="900" fill="url(#s)"/>
-<g opacity=".45" fill="none" stroke="#8C5F72" stroke-width="3.5">
-<circle cx="350.0" cy="360" r="63"/>
-<path d="M287 360 l126 0" stroke-linecap="round"/>
+<g opacity=".45" fill="none" stroke="#7B5F4F" stroke-width="3.1">
+<circle cx="350.0" cy="342" r="56"/>
+<path d="M294 342 l112 0" stroke-linecap="round"/>
 </g>
 <text x="50%" y="504" text-anchor="middle" font-family="Georgia,serif" font-style="italic"
- font-size="52" fill="#8C5F72" opacity=".8">VIV Studio</text>
-<text x="50%" y="554" text-anchor="middle" font-family="Helvetica,Arial,sans-serif"
- font-size="24" fill="#8C5F72" opacity=".6">Фото: мастер за процедурой</text>
+ font-size="52" fill="#7B5F4F" opacity=".82">VIV Studio</text>
+<text x="50%" y="562" text-anchor="middle" font-family="Helvetica,Arial,sans-serif"
+ font-size="24" fill="#7B5F4F" opacity=".6">Фото: мастер за процедурой</text>
 </svg>
