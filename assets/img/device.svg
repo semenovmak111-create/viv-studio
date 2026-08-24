@@ -1,1 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" width="900" height="900" role="img"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E6F0E9"/><stop offset="1" stop-color="#CFE2D5"/></linearGradient><radialGradient id="r"><stop offset="0" stop-color="#689F86" stop-opacity=".55"/><stop offset="1" stop-color="#689F86" stop-opacity="0"/></radialGradient></defs><rect width="900" height="900" fill="url(#g)"/><circle cx="702" cy="162" r="378" fill="url(#r)" opacity=".5"/><circle cx="108" cy="774" r="342" fill="url(#r)" opacity=".35"/><g transform="translate(450 324) scale(2.250)" fill="none" stroke="#35604F" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" opacity=".85"><rect x="-46" y="-34" width="92" height="60" rx="14"/><path d="M0 26v20M-22 46h44M-24-8h48M-24 6h30"/></g><text x="50%" y="540" text-anchor="middle" font-family="Georgia,serif" font-size="55" fill="#251505">Аппарат</text><text x="50%" y="612" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="29" fill="#8A7663">Фото: лазер с охлаждением</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 345" width="460" height="345" role="img" aria-label="Фото: лазерный аппарат">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FDF7F0"/><stop offset="1" stop-color="#F7E7D6"/>
+    </linearGradient>
+    <radialGradient id="r" cx="0.72" cy="0.22" r="0.8">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity=".55"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="460" height="345" fill="url(#g)"/>
+  <rect width="460" height="345" fill="url(#r)"/>
+  <g opacity=".30" fill="none" stroke="#7A6152" stroke-width="1.38">
+    <circle cx="230.0" cy="144.9" r="69.0"/>
+    <circle cx="230.0" cy="144.9" r="100.0"/>
+  </g>
+  <g transform="translate(230.0 144.9)">
+    <path d="M-25.9 -21.4L0 21.4L25.9 -21.4" fill="none" stroke="#7A6152" stroke-width="6.21" stroke-linecap="round" stroke-linejoin="round" opacity=".75"/>
+  </g>
+  <text x="230.0" y="248.4" text-anchor="middle" font-family="Georgia, serif" font-size="20.0" fill="#7A6152" opacity=".85">VIV Studio</text>
+  <text x="230.0" y="269.8" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12.4" fill="#7A6152" opacity=".6">Фото: лазерный аппарат</text>
+</svg>

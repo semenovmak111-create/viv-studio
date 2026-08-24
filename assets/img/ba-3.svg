@@ -1,1 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 675" width="900" height="675" role="img"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F5E9D9"/><stop offset="1" stop-color="#EFE2C8"/></linearGradient><radialGradient id="r"><stop offset="0" stop-color="#A48D55" stop-opacity=".55"/><stop offset="1" stop-color="#A48D55" stop-opacity="0"/></radialGradient></defs><rect width="900" height="675" fill="url(#g)"/><circle cx="702" cy="121" r="378" fill="url(#r)" opacity=".5"/><circle cx="108" cy="580" r="342" fill="url(#r)" opacity=".35"/><g transform="translate(450 243) scale(1.687)" fill="none" stroke="#7A6535" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" opacity=".85"><path d="M0-52v104"/><circle cx="-30" cy="0" r="24"/><path d="M22-14a24 24 0 1 1 0 28"/></g><text x="50%" y="405" text-anchor="middle" font-family="Georgia,serif" font-size="41" fill="#251505">Биоревитализация</text><text x="50%" y="459" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="22" fill="#8A7663">Фото: до и после</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 347" width="520" height="347" role="img" aria-label="Фото: до и после">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F0C8B2"/><stop offset="1" stop-color="#FDF7F0"/>
+    </linearGradient>
+    <radialGradient id="r" cx="0.72" cy="0.22" r="0.8">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity=".55"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="520" height="347" fill="url(#g)"/>
+  <rect width="520" height="347" fill="url(#r)"/>
+  <g opacity=".30" fill="none" stroke="#8C5B41" stroke-width="1.39">
+    <circle cx="260.0" cy="145.7" r="69.4"/>
+    <circle cx="260.0" cy="145.7" r="100.6"/>
+  </g>
+  <g transform="translate(260.0 145.7)">
+    <path d="M-26.0 -21.5L0 21.5L26.0 -21.5" fill="none" stroke="#8C5B41" stroke-width="6.25" stroke-linecap="round" stroke-linejoin="round" opacity=".75"/>
+  </g>
+  <text x="260.0" y="249.8" text-anchor="middle" font-family="Georgia, serif" font-size="20.1" fill="#8C5B41" opacity=".85">VIV Studio</text>
+  <text x="260.0" y="271.4" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12.5" fill="#8C5B41" opacity=".6">Фото: до и после</text>
+</svg>

@@ -1,1 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1125" width="900" height="1125" role="img"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E6F0E9"/><stop offset="1" stop-color="#CFE2D5"/></linearGradient><radialGradient id="r"><stop offset="0" stop-color="#689F86" stop-opacity=".55"/><stop offset="1" stop-color="#689F86" stop-opacity="0"/></radialGradient></defs><rect width="900" height="1125" fill="url(#g)"/><circle cx="702" cy="202" r="378" fill="url(#r)" opacity=".5"/><circle cx="108" cy="967" r="342" fill="url(#r)" opacity=".35"/><g transform="translate(450 405) scale(2.250)" fill="none" stroke="#35604F" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" opacity=".85"><path d="M-40-30a40 46 0 0 1 80 0v26a40 46 0 0 1-80 0z"/><path d="M-18-16h6M12-16h6M-12 20c8 7 16 7 24 0"/></g><text x="50%" y="675" text-anchor="middle" font-family="Georgia,serif" font-size="55" fill="#251505">Екатерина</text><text x="50%" y="747" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="29" fill="#8A7663">Фото: мастер студии</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 650" width="520" height="650" role="img" aria-label="Фото: Екатерина, мастер студии">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F7E7D6"/><stop offset="1" stop-color="#D3DEC8"/>
+    </linearGradient>
+    <radialGradient id="r" cx="0.72" cy="0.22" r="0.8">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity=".55"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="520" height="650" fill="url(#g)"/>
+  <rect width="520" height="650" fill="url(#r)"/>
+  <g opacity=".30" fill="none" stroke="#5C6A50" stroke-width="2.08">
+    <circle cx="260.0" cy="273.0" r="104.0"/>
+    <circle cx="260.0" cy="273.0" r="150.8"/>
+  </g>
+  <g transform="translate(260.0 273.0)">
+    <path d="M-39.0 -32.2L0 32.2L39.0 -32.2" fill="none" stroke="#5C6A50" stroke-width="9.36" stroke-linecap="round" stroke-linejoin="round" opacity=".75"/>
+  </g>
+  <text x="260.0" y="429.0" text-anchor="middle" font-family="Georgia, serif" font-size="30.2" fill="#5C6A50" opacity=".85">VIV Studio</text>
+  <text x="260.0" y="461.2" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="18.7" fill="#5C6A50" opacity=".6">Фото: Екатерина, мастер студии</text>
+</svg>
