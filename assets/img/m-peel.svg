@@ -1,20 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 675" width="900" height="675" role="img">
 <defs>
-<linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-<stop offset="0" stop-color="#F7EDE2"/><stop offset=".55" stop-color="#E9D2B8"/><stop offset="1" stop-color="#D9BC9A"/>
+<linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#312819"/><stop offset=".55" stop-color="#231D15"/><stop offset="1" stop-color="#181410"/>
 </linearGradient>
 <radialGradient id="s" cx=".72" cy=".22" r=".7">
-<stop offset="0" stop-color="#FFFFFF" stop-opacity=".5"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+<stop offset="0" stop-color="#D9B571" stop-opacity=".2"/><stop offset="1" stop-color="#D9B571" stop-opacity="0"/>
 </radialGradient>
 </defs>
 <rect width="900" height="675" fill="url(#g)"/>
 <rect width="900" height="675" fill="url(#s)"/>
-<g opacity=".45" fill="none" stroke="#8F4522" stroke-width="4.0">
+<g opacity=".6" fill="none" stroke="#D9B571" stroke-width="4.0">
 <circle cx="450.0" cy="256" r="72"/>
 <path d="M378 256 l144 0" stroke-linecap="round"/>
 </g>
 <text x="50%" y="378" text-anchor="middle" font-family="Georgia,serif" font-style="italic"
- font-size="56" fill="#8F4522" opacity=".82">VIV Studio</text>
+ font-size="56" fill="#D9B571" opacity=".82">VIV Studio</text>
 <text x="50%" y="422" text-anchor="middle" font-family="Helvetica,Arial,sans-serif"
- font-size="27" fill="#8F4522" opacity=".6">Фото: пилинг</text>
+ font-size="27" fill="#D9B571" opacity=".6">Фото: пилинг</text>
 </svg>
