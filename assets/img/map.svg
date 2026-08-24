@@ -1,19 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 675" width="900" height="675" role="img">
-<defs>
-<linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#312819"/><stop offset=".55" stop-color="#231D15"/><stop offset="1" stop-color="#181410"/>
-</linearGradient>
-<radialGradient id="s" cx=".72" cy=".22" r=".7">
-<stop offset="0" stop-color="#D9B571" stop-opacity=".2"/><stop offset="1" stop-color="#D9B571" stop-opacity="0"/>
-</radialGradient>
-</defs>
-<rect width="900" height="675" fill="url(#g)"/>
-<rect width="900" height="675" fill="url(#s)"/>
-<g opacity=".6" fill="none" stroke="#D9B571" stroke-width="4.0">
-<circle cx="450.0" cy="256" r="72"/>
-<path d="M378 256 l144 0" stroke-linecap="round"/>
+<rect width="900" height="675" fill="#DDE7EA"/>
+<g fill="none" stroke="#688593" stroke-width="3.0374999999999996" stroke-opacity=".8">
+<circle cx="450" cy="270" r="57"/>
+<path d="M393 270 L507 270" stroke-linecap="round"/>
 </g>
-<text x="50%" y="378" text-anchor="middle" font-family="Georgia,serif" font-style="italic"
- font-size="56" fill="#D9B571" opacity=".82">VIV Studio</text>
-<text x="50%" y="422" text-anchor="middle" font-family="Helvetica,Arial,sans-serif"
- font-size="27" fill="#D9B571" opacity=".6">Фото: вход в здание на Суворовском, 35</text>
+<text x="50%" y="389" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-weight="bold"
+ font-size="41" letter-spacing="5" fill="#342019">VIV STUDIO</text>
+<text x="50%" y="448" text-anchor="middle" font-family="Helvetica,Arial,sans-serif"
+ font-size="21" fill="#5B6E77">Карта: Суворовский пр-т, 35</text>
 </svg>

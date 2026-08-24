@@ -1,19 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" width="900" height="900" role="img">
-<defs>
-<linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#312819"/><stop offset=".55" stop-color="#231D15"/><stop offset="1" stop-color="#181410"/>
-</linearGradient>
-<radialGradient id="s" cx=".72" cy=".22" r=".7">
-<stop offset="0" stop-color="#D9B571" stop-opacity=".2"/><stop offset="1" stop-color="#D9B571" stop-opacity="0"/>
-</radialGradient>
-</defs>
-<rect width="900" height="900" fill="url(#g)"/>
-<rect width="900" height="900" fill="url(#s)"/>
-<g opacity=".6" fill="none" stroke="#D9B571" stroke-width="4.0">
-<circle cx="450.0" cy="342" r="72"/>
-<path d="M378 342 l144 0" stroke-linecap="round"/>
+<rect width="900" height="900" fill="#DDE7EA"/>
+<g fill="none" stroke="#688593" stroke-width="4.05" stroke-opacity=".8">
+<circle cx="450" cy="360" r="76"/>
+<path d="M374 360 L526 360" stroke-linecap="round"/>
 </g>
-<text x="50%" y="504" text-anchor="middle" font-family="Georgia,serif" font-style="italic"
- font-size="56" fill="#D9B571" opacity=".82">VIV Studio</text>
-<text x="50%" y="562" text-anchor="middle" font-family="Helvetica,Arial,sans-serif"
- font-size="27" fill="#D9B571" opacity=".6">Фото: аппарат для лазерной эпиляции</text>
+<text x="50%" y="519" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-weight="bold"
+ font-size="55" letter-spacing="7" fill="#342019">VIV STUDIO</text>
+<text x="50%" y="598" text-anchor="middle" font-family="Helvetica,Arial,sans-serif"
+ font-size="28" fill="#5B6E77">Фото: аппарат крупным планом</text>
 </svg>
