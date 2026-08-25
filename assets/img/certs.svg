@@ -1,17 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 345" width="460" height="345" role="img" aria-label="Фото: сертификаты мастера">
-  <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E5D3BE"/><stop offset="1" stop-color="#EFE2D0"/></linearGradient>
-    <radialGradient id="r" cx="0.7" cy="0.2" r="0.85"><stop offset="0" stop-color="#FFFFFF" stop-opacity=".5"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/></radialGradient>
-  </defs>
-  <rect width="460" height="345" fill="url(#g)"/>
-  <rect width="460" height="345" fill="url(#r)"/>
-  <rect x="9.7" y="9.7" width="440.7" height="325.7" rx="10.3" fill="none" stroke="#B99358" stroke-width="1" opacity=".75"/>
-  <g opacity=".42" fill="none" stroke="#B99358" stroke-width="1.21">
-    <circle cx="230.0" cy="144.9" r="65.5"/><circle cx="230.0" cy="144.9" r="94.9"/>
-  </g>
-  <g transform="translate(230.0 144.9)">
-    <path d="M-24.8 -20.7L0 20.7L24.8 -20.7" fill="none" stroke="#7A5A31" stroke-width="5.87" stroke-linecap="round" stroke-linejoin="round" opacity=".8"/>
-  </g>
-  <text x="230.0" y="244.9" text-anchor="middle" font-family="Georgia, serif" font-size="17.2" fill="#7A5A31" opacity=".9" letter-spacing="2.8">VIV STUDIO</text>
-  <text x="230.0" y="265.0" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="11.7" fill="#7A5A31" opacity=".62">Фото: сертификаты мастера</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 345" width="460" height="345" role="img" aria-label="Сертификаты мастера" preserveAspectRatio="xMidYMid slice">
+<defs>
+  <filter id="far" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="25.3"/></filter>
+  <filter id="mid" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="7.4"/></filter>
+  <filter id="near" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="3.2"/></filter>
+  <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4"/><feColorMatrix type="saturate" values="0"/></filter>
+  <radialGradient id="vig" cx="50%" cy="44%" r="76%"><stop offset="52%" stop-color="#000" stop-opacity="0"/><stop offset="100%" stop-color="#2A1B10" stop-opacity=".40"/></radialGradient>
+  <linearGradient id="bg" x1="0" y1="0" x2=".8" y2="1"><stop offset="0" stop-color="#F3E7D3"/><stop offset=".55" stop-color="#E2D0B2"/><stop offset="1" stop-color="#C1A87F"/></linearGradient>
+</defs>
+<rect width="460" height="345" fill="url(#bg)"/>
+<g filter="url(#far)"><ellipse cx="60" cy="60" rx="140" ry="120" fill="#FEF7E8" opacity="0.75"/><ellipse cx="400" cy="290" rx="130" ry="100" fill="#B0906A" opacity="0.35"/></g>
+<g filter="url(#mid)"><rect x="74" y="66" width="118" height="152" fill="#FBF3E2" opacity="0.95" rx="3"/><rect x="88" y="82" width="90" height="120" fill="#E6D5B6" opacity="0.8" rx="2"/><rect x="216" y="92" width="104" height="132" fill="#FBF3E2" opacity="0.92" rx="3"/><rect x="228" y="106" width="80" height="104" fill="#E6D5B6" opacity="0.78" rx="2"/><rect x="344" y="70" width="82" height="106" fill="#FBF3E2" opacity="0.88" rx="3"/><rect x="354" y="82" width="62" height="82" fill="#E6D5B6" opacity="0.74" rx="2"/><rect x="0" y="268" width="460" height="12" fill="#B08A5E" opacity="0.45"/></g>
+<g filter="url(#near)"><ellipse cx="80" cy="258" rx="18" ry="26" fill="#D9BE8C" opacity="0.7"/></g>
+<rect width="460" height="345" fill="url(#vig)"/>
+<rect width="460" height="345" filter="url(#grain)" opacity=".09"/>
 </svg>

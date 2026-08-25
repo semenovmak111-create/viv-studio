@@ -1,24 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 475" width="760" height="475" role="img" aria-label="Схема: Суворовский проспект, 35">
-  <rect width="760" height="475" fill="#EFE2D0"/>
-  <g stroke="#FBF4E8" stroke-linecap="round" fill="none">
-    <path d="M-20 130 H780" stroke-width="26"/><path d="M-20 330 H780" stroke-width="18"/>
-    <path d="M150 -20 V500" stroke-width="20"/><path d="M520 -20 V500" stroke-width="14"/>
-    <path d="M-20 420 H780" stroke-width="10"/><path d="M320 -20 V500" stroke-width="9"/>
-    <path d="M640 60 L760 220" stroke-width="12"/>
-  </g>
-  <g fill="#E1CDB0">
-    <rect x="180" y="160" width="110" height="140" rx="10"/><rect x="360" y="160" width="130" height="140" rx="10"/>
-    <rect x="560" y="150" width="120" height="150" rx="10"/><rect x="30" y="150" width="90" height="150" rx="10"/>
-    <rect x="180" y="350" width="120" height="100" rx="10"/><rect x="360" y="350" width="130" height="100" rx="10"/>
-  </g>
-  <g fill="#C7AE8A" opacity=".6">
-    <circle cx="90" cy="380" r="16"/><circle cx="120" cy="405" r="11"/><circle cx="700" cy="360" r="18"/><circle cx="672" cy="392" r="12"/>
-  </g>
-  <g transform="translate(400 210)">
-    <ellipse cx="0" cy="62" rx="30" ry="8" fill="#2E2018" opacity=".18"/>
-    <path d="M0 58C0 58 34 26 34 4A34 34 0 1 0-34 4C-34 26 0 58 0 58Z" fill="#9A552A"/>
-    <circle cx="0" cy="2" r="12.5" fill="#F8F1E7"/>
-  </g>
-  <text x="400" y="152" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="17" font-weight="bold" fill="#7A5A31" opacity=".75" letter-spacing="2">СУВОРОВСКИЙ ПРОСПЕКТ</text>
-  <text x="30" y="42" font-family="Helvetica, Arial, sans-serif" font-size="15" fill="#7A5A31" opacity=".6">Схема-заглушка — заменить на карту или скриншот Яндекс Карт</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 522" width="760" height="522" role="img" aria-label="Схема проезда: Суворовский проспект, 35">
+<defs><filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4"/><feColorMatrix type="saturate" values="0"/></filter></defs>
+<rect width="760" height="522" fill="#EFE4D2"/>
+<g fill="#E5D6BD"><rect x="46" y="62" width="140" height="116" rx="3"/><rect x="238" y="40" width="160" height="140" rx="3"/><rect x="452" y="70" width="168" height="108" rx="3"/><rect x="66" y="250" width="130" height="118" rx="3"/><rect x="252" y="236" width="148" height="140" rx="3"/><rect x="452" y="250" width="188" height="128" rx="3"/><rect x="66" y="424" width="130" height="74" rx="3"/><rect x="452" y="424" width="218" height="70" rx="3"/></g>
+<g stroke="#FBF6EC" stroke-linecap="square"><path d="M0 212H760" stroke-width="26"/><path d="M424 0V522" stroke-width="30"/><path d="M0 400H760" stroke-width="18"/><path d="M220 0V522" stroke-width="16"/></g>
+<g stroke="#DCC7A6" stroke-width="1" stroke-dasharray="7 7"><path d="M0 212H760"/><path d="M424 0V522"/></g>
+<g fill="#CAD2B3" opacity=".9"><circle cx="678" cy="150" r="44"/><circle cx="702" cy="196" r="28"/><circle cx="122" cy="470" r="30"/></g>
+<g font-family="Golos, Manrope, sans-serif" fill="#8A7458" font-size="11" font-weight="600" letter-spacing="1.6"><text x="46" y="198">КИРОЧНАЯ УЛ.</text><text x="46" y="388">УЛ. МОИСЕЕНКО</text><text transform="rotate(-90 452 132)" x="452" y="132">СУВОРОВСКИЙ ПР-Т</text><text x="606" y="122" fill="#7E8C63">САД</text></g>
+<g font-family="Golos, Manrope, sans-serif" font-size="11.5" font-weight="600"><circle cx="220" cy="212" r="8" fill="#B23A2A"/><text x="238" y="207" fill="#6A5949">М «Чернышевская»</text><text x="238" y="223" fill="#96836E" font-weight="400">12 минут пешком</text><circle cx="220" cy="400" r="8" fill="#B23A2A"/><text x="238" y="395" fill="#6A5949">М «Площадь Восстания»</text><text x="238" y="411" fill="#96836E" font-weight="400">15 минут пешком</text></g>
+<g><path d="M424 252c-19 0-34 15-34 34 0 25 34 58 34 58s34-33 34-58c0-19-15-34-34-34z" fill="#9A4B24"/><circle cx="424" cy="286" r="11" fill="#F5EEE3"/><g font-family="Cormorant, Georgia, serif" font-size="20" font-weight="600" fill="#241A13"><text x="470" y="286">VIV Studio</text></g><g font-family="Golos, Manrope, sans-serif" font-size="11.5" fill="#6A5949"><text x="470" y="305">Суворовский пр-т, 35 · офис 409</text></g></g>
+<rect width="760" height="522" filter="url(#grain)" opacity=".07"/>
 </svg>

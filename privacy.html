@@ -5,41 +5,60 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Политика конфиденциальности — студия VIV Studio</title>
 <meta name="robots" content="noindex">
-<meta name="theme-color" content="#F8F1E7">
+<meta name="theme-color" content="#F5EEE3">
 <style>
-@font-face{font-family:'Manrope';font-style:normal;font-weight:400 800;font-display:swap;
-  src:url(assets/fonts/manrope-cyrillic.woff2) format('woff2');
+@font-face{font-family:'Cormorant';font-style:normal;font-weight:400 700;font-display:swap;
+  src:url(assets/fonts/cormorant-cyrillic.woff2) format('woff2');
   unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
-@font-face{font-family:'Playfair';font-style:normal;font-weight:400 700;font-display:swap;
-  src:url(assets/fonts/playfair-cyrillic.woff2) format('woff2');
+@font-face{font-family:'Cormorant';font-style:normal;font-weight:400 700;font-display:swap;
+  src:url(assets/fonts/cormorant-latin.woff2) format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+2000-206F,U+2122,U+FEFF,U+FFFD}
+@font-face{font-family:'Golos';font-style:normal;font-weight:400 800;font-display:swap;
+  src:url(assets/fonts/golos-cyrillic.woff2) format('woff2');
   unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
-@font-face{font-family:'Manrope';font-style:normal;font-weight:400 800;font-display:swap;
-  src:url(assets/fonts/manrope-latin.woff2) format('woff2');
-  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
-@font-face{font-family:'Playfair';font-style:normal;font-weight:400 700;font-display:swap;
-  src:url(assets/fonts/playfair-latin.woff2) format('woff2');
-  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2212,U+FEFF,U+FFFD}
+@font-face{font-family:'Golos';font-style:normal;font-weight:400 800;font-display:swap;
+  src:url(assets/fonts/golos-latin.woff2) format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+2000-206F,U+2122,U+FEFF,U+FFFD}
+:root{
+  --paper:#F5EEE3; --plate:#FCF9F3; --paper-3:#E4D6C2;
+  --ink:#241A13; --ink-2:#61503F; --ink-3:#74604A;
+  --accent:#9A4B24; --brass:#7E5A26; --rule:rgba(36,26,19,.17);
+  --serif:'Cormorant',Georgia,'Times New Roman',serif;
+  --sans:'Golos',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+}
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Manrope',-apple-system,Arial,sans-serif;background:#F8F1E7;color:#2E2018;
-  font-size:16.5px;line-height:1.68;padding:0 22px}
-.wrap{max-width:780px;margin:0 auto;padding:44px 0 80px}
-a{color:#9A552A;font-weight:700}
-h1{font-family:'Playfair',Georgia,serif;font-weight:600;letter-spacing:-.01em;font-size:clamp(30px,5vw,46px);line-height:1.08;
-  margin:20px 0 10px}
-h2{font-weight:800;letter-spacing:-.02em;font-size:22px;margin:36px 0 10px}
-p,li{color:#6A5445}
-ul{margin:10px 0 10px 22px}
-li{margin-bottom:7px}
-.back{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-size:11.5px;
-  font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#96733C}
-.upd{font-size:14px;color:#957E6C;margin-top:8px}
-.box{background:#F0E4CB;border-radius:24px;border-left:4px solid #C0995F;padding:20px 24px;margin:26px 0;
-  font-size:15px;color:#2E2018;box-shadow:inset 0 0 0 1px rgba(192,153,95,.35)}
+body{font-family:var(--sans);background:var(--paper);color:var(--ink-2);
+  font-size:16.5px;line-height:1.68;padding:0 clamp(18px,5vw,40px);-webkit-font-smoothing:antialiased}
+.page{max-width:760px;margin:0 auto;padding:34px 0 90px}
+a{color:var(--accent);font-weight:600}
+.head{display:flex;justify-content:space-between;align-items:baseline;gap:20px;
+  padding-bottom:14px;border-bottom:1px solid var(--ink);margin-bottom:clamp(28px,5vw,48px)}
+.mast{font-family:var(--serif);font-weight:600;font-size:21px;letter-spacing:.055em;
+  text-transform:uppercase;color:var(--ink);text-decoration:none}
+.back{font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--ink-3);text-decoration:none;white-space:nowrap}
+.back:hover{color:var(--accent)}
+h1{font-family:var(--serif);font-weight:500;letter-spacing:-.01em;color:var(--ink);
+  font-size:clamp(34px,6vw,58px);line-height:1.02;margin-bottom:12px}
+.upd{font-size:14px;color:var(--ink-3)}
+h2{font-family:var(--sans);font-weight:600;font-size:11px;letter-spacing:.17em;text-transform:uppercase;
+  color:var(--brass);margin:38px 0 12px;padding-top:16px;border-top:1px solid var(--rule)}
+p+p{margin-top:12px}
+ul{margin:12px 0 0}
+li{list-style:none;padding:9px 0 9px 22px;border-top:1px solid rgba(36,26,19,.09);position:relative}
+li:first-child{border-top:0;padding-top:2px}
+li::before{content:'—';position:absolute;left:0;color:var(--brass)}
+.box{background:var(--plate);border-left:2px solid var(--brass);padding:18px 22px;margin:26px 0;
+  font-size:15px;line-height:1.6;color:var(--ink-2)}
+.foot{margin-top:46px;padding-top:20px;border-top:1px solid var(--ink)}
 </style>
 </head>
 <body>
-<div class="wrap">
-  <a class="back" href="index.html">← На главную</a>
+<div class="page">
+  <div class="head">
+    <a class="mast" href="index.html">VIV Studio</a>
+    <a class="back" href="index.html">← На главную</a>
+  </div>
   <h1>Политика конфиденциальности</h1>
   <p class="upd">Действует с 1 января 2026 года. Сайт студии VIV Studio, Санкт-Петербург, Суворовский пр-т, 35, офис 409.</p>
 
@@ -87,7 +106,7 @@ li{margin-bottom:7px}
   <h2>9. Изменения политики</h2>
   <p>Оператор вправе изменять настоящую политику. Актуальная редакция всегда размещена на этой странице.</p>
 
-  <p style="margin-top:34px"><a class="back" href="index.html">← Вернуться на сайт</a></p>
+  <p class="foot"><a class="back" href="index.html">← Вернуться на сайт</a></p>
 </div>
 </body>
 </html>
