@@ -69,8 +69,7 @@
    Красная семья намеренно не тронута: розовое и вишнёвое заняты «Дофамином».
    ──────────────────────────────────────────────────────────────────── */
 :root{
-  --paper:#F4EFE3;        /* основная бумага */
-  --paper-2:#EAE3D2;      /* бумага потемнее: ею отбиваются главы */
+  --paper:#F4EFE3;        /* базовая бумага: тон незаполненных полей ввода */
   --paper-3:#DED5BF;      /* самая плотная бумага: врезки на светлом */
   --plate:#FBF8F0;        /* плита — то, что «наклеено» на бумагу */
   --ink:#23261F;          /* чернила */
@@ -93,6 +92,32 @@
   --rule-dark:rgba(232,226,208,.22); /* она же на тёмном */
   --rule-brass:rgba(158,127,70,.45);
 
+
+  /* ── поверхности: у каждой главы своя бумага, ни одной плоской заливки ── */
+  --g-ivory:linear-gradient(168deg,#FBF7EE 0%,#F5F1E4 58%,#FAF6EB 100%); /* самая светлая бумага */
+  --g-sand:linear-gradient(168deg,#F8EBCF 0%,#F0DCB4 56%,#F6E8C9 100%);   /* шампань-песок */
+  --g-mist:linear-gradient(168deg,#E9F0E6 0%,#D9E7DD 56%,#E5EDE3 100%);   /* нефритовая дымка */
+  --g-sage:linear-gradient(168deg,#D8E4D8 0%,#C3D6C9 58%,#D2E0D3 100%);   /* шалфей */
+  --g-deep:linear-gradient(158deg,#0C1C16 0%,#13322A 48%,#1B4536 100%);   /* глубокий нефрит */
+  --g-jade:linear-gradient(148deg,#0D4635 0%,#146149 42%,#1A6C51 74%,#1E7154 100%); /* яркий нефрит */
+  --g-brass:linear-gradient(150deg,#E9D6A3 0%,#D8BC7F 48%,#C8A76B 100%);  /* яркая шампань */
+  --g-text:linear-gradient(102deg,#1F4A3B 0%,#3B7861 46%,#856A33 100%);   /* курсив в заголовках */
+  --g-brassline:linear-gradient(120deg,#E2CE9C,#9E7F46);
+
+  /* пятна на фоне */
+  --blob-jade:#8DBCA4;
+  --blob-brass:#EBCE90;
+  --blob-sage:#B6CEBA;
+  --blob-mint:#A4CDB6;
+
+  /* тени окрашены в тон бумаги, а не в серый */
+  --sh-soft:0 18px 34px -24px rgba(24,54,42,.42);
+  --sh-lift:0 26px 44px -26px rgba(24,54,42,.5);
+  --sh-brass:0 18px 30px -20px rgba(126,98,44,.5);
+  --sh-jade:0 20px 34px -18px rgba(20,58,44,.55);
+
+  --rad:clamp(26px,4vw,54px);       /* скругление верхушки главы */
+
   --serif:'Cormorant',Georgia,'Times New Roman',serif;
   --sans:'Golos',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
 
@@ -105,7 +130,13 @@
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
 body{
-  margin:0;background:var(--paper);color:var(--ink);
+  margin:0;color:var(--ink);
+  background:
+    radial-gradient(920px 720px at 100% 0%, #EFE5CB 0%, rgba(239,229,203,0) 60%),
+    radial-gradient(780px 640px at 0% 20%, #E3ECDD 0%, rgba(227,236,221,0) 58%),
+    radial-gradient(840px 660px at 52% 100%, #F0E7D3 0%, rgba(240,231,211,0) 62%),
+    linear-gradient(180deg,#F6F2E7 0%,#EFEADC 54%,#F4EFE3 100%);
+  background-attachment:fixed;
   font-family:var(--sans);font-size:17px;line-height:1.62;font-weight:400;
   -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
   overflow-x:hidden;
@@ -125,12 +156,49 @@ body::after{
   mix-blend-mode:multiply;
 }
 
+/* ══════════════ ЦВЕТОВЫЕ ПЯТНА ════════════════════════════════════════ */
+/* Размытые круги за текстом: они не дают плоскости быть стерильной и
+   связывают соседние главы одним тоном. Всегда под контентом (z-index:0). */
+.blob{position:absolute;border-radius:50%;pointer-events:none;z-index:0}
+.b-jade{background:radial-gradient(circle,var(--blob-jade) 0%,rgba(156,196,174,0) 70%);opacity:.72}
+.b-brass{background:radial-gradient(circle,var(--blob-brass) 0%,rgba(233,211,162,0) 70%);opacity:.85}
+.b-sage{background:radial-gradient(circle,var(--blob-sage) 0%,rgba(195,214,198,0) 70%);opacity:.72}
+.b-mint{background:radial-gradient(circle,var(--blob-mint) 0%,rgba(180,213,196,0) 72%);opacity:.8}
+.b-glow{background:radial-gradient(circle,rgba(228,205,152,.3) 0%,rgba(228,205,152,0) 68%)}
+.b-teal{background:radial-gradient(circle,rgba(92,176,142,.32) 0%,rgba(92,176,142,0) 70%)}
+.b-white{background:radial-gradient(circle,rgba(255,255,255,.22) 0%,rgba(255,255,255,0) 70%)}
+@media(max-width:700px){.blob{transform:scale(.72)}}
+
 /* ══════════════ ПОЛОСА НАБОРА И ГЛАВЫ ══════════════════════════════════ */
-.spread{width:min(100% - 2*var(--gut),var(--page));margin-inline:auto}
+.spread{width:min(100% - 2*var(--gut),var(--page));margin-inline:auto;position:relative;z-index:2}
 .ch{position:relative;padding-block:clamp(56px,7vw,112px)}
 .ch--tight{padding-block:clamp(38px,4.4vw,64px)}
-.ch--paper2{background:var(--paper-2)}
+
+/* Главы уложены стопкой: у каждой скруглённая верхушка, и каждая заходит
+   на предыдущую ровно на радиус — в вырезанных углах видно бумагу соседа.
+   overflow:clip, а не hidden: hidden сломал бы липкие номера глав на полях. */
+.ch--s{border-radius:var(--rad) var(--rad) 0 0;overflow:clip;
+  margin-top:calc(var(--rad) * -1);padding-top:calc(clamp(56px,7vw,112px) + var(--rad))}
+.ch--s.ch--tight{padding-top:calc(clamp(38px,4.4vw,64px) + var(--rad))}
+
+/* поверхности глав */
+.ch--ivory{background:var(--g-ivory)}
+.ch--sand{background:var(--g-sand)}
+.ch--mist{background:var(--g-mist)}
+.ch--sage{background:var(--g-sage)}
+
+/* тёмные и цветные развороты: типографику ведёт .ch--dark,
+   а конкретный цвет и его светлые тона подставляются переменными */
 .ch--dark{background:var(--dark);color:var(--on-dark)}
+.ch--deep{background:var(--g-deep)}
+.ch--jade{background:var(--g-jade);
+  --on-dark:#F5F2E6;--on-dark-2:#E2ECE4;--rule-dark:rgba(245,242,230,.32);
+  --brass:#F0DBA8;--brass-soft:#F4E4BC;--dark-2:rgba(9,29,22,.4)}
+/* яркая шампань — единственный светлый блок, набранный тёмным по цвету */
+.ch--brass{background:var(--g-brass);color:var(--ink);
+  --ink-2:#2E3A2C;--ink-3:#333E30;--accent:#173B2E;--accent-hi:#1F4A3B;
+  --brass:#4A3809;--brass-ink:#4A3809;--brass-soft:#4A3809;--plate:#FAF4E4;--paper-3:#EFE2C1;
+  --rule:rgba(35,38,31,.3);--rule-soft:rgba(35,38,31,.15);--rule-brass:rgba(90,68,19,.5)}
 .ch--dark h1,.ch--dark h2,.ch--dark h3{color:#F2ECDA}
 
 /* сетка главы: слева поле под номер, справа полоса набора */
@@ -143,7 +211,9 @@ body::after{
 .ch-mar-in{position:sticky;top:104px;padding-top:4px}
 .ch-num{display:block;font-family:var(--serif);font-size:clamp(30px,3vw,44px);line-height:1;
   color:var(--brass);letter-spacing:.02em}
-.ch--dark .ch-num{color:var(--brass-soft)}
+.ch-num{background:var(--g-text);-webkit-background-clip:text;background-clip:text;
+  color:transparent;-webkit-text-fill-color:transparent}
+.ch--dark .ch-num{background:none;color:var(--brass-soft);-webkit-text-fill-color:var(--brass-soft)}
 .ch-mar .rule-v{display:block;width:38px;height:1px;background:var(--rule);margin:14px 0 12px}
 .ch--dark .ch-mar .rule-v{background:var(--rule-dark)}
 .ch-kicker{display:block;font-size:11px;font-weight:600;letter-spacing:.17em;text-transform:uppercase;
@@ -163,7 +233,11 @@ body::after{
   line-height:1.02;letter-spacing:-.008em;text-wrap:balance}
 .t-h3{font-family:var(--serif);font-weight:500;font-size:clamp(24px,2.4vw,34px);line-height:1.12}
 .t-h4{font-family:var(--sans);font-weight:600;font-size:17.5px;line-height:1.34;letter-spacing:-.006em}
-.t-it{font-style:italic;font-weight:400}
+.t-it{font-style:italic;font-weight:400;
+  background:var(--g-text);-webkit-background-clip:text;background-clip:text;
+  color:transparent;-webkit-text-fill-color:transparent;
+  padding-right:.1em;margin-right:-.1em}
+.ch--dark .t-it,.ch--jade .t-it{background:none;color:var(--brass-soft);-webkit-text-fill-color:var(--brass-soft)}
 .t-deck{font-family:var(--serif);font-style:italic;font-weight:400;
   font-size:clamp(20px,1.85vw,27px);line-height:1.36;color:var(--ink-2);max-width:36ch}
 .ch--dark .t-deck{color:var(--on-dark-2)}
@@ -200,27 +274,36 @@ em{font-style:italic}
 /* буквица — только в одном месте на всю страницу */
 .dropcap::first-letter{
   float:left;font-family:var(--serif);font-weight:500;font-size:4.15em;line-height:.78;
-  padding:.06em .1em 0 0;color:var(--accent);
+  padding:.06em .1em 0 0;
+  background:var(--g-text);-webkit-background-clip:text;background-clip:text;
+  color:transparent;-webkit-text-fill-color:transparent;
 }
+.ch--dark .dropcap::first-letter{background:none;color:var(--brass-soft);-webkit-text-fill-color:var(--brass-soft)}
 
 /* ══════════════ КНОПКИ ════════════════════════════════════════════════ */
 .btn{
   display:inline-flex;align-items:center;justify-content:center;gap:10px;
   padding:15px 27px;border-radius:999px;border:0;cursor:pointer;
   font-family:var(--sans);font-weight:600;font-size:15.5px;letter-spacing:-.005em;
-  text-decoration:none;background:var(--accent);color:#F5F0E2;
-  transition:background .2s var(--ease),color .2s var(--ease),box-shadow .2s var(--ease);
+  text-decoration:none;color:#F6F2E5;
+  background:linear-gradient(140deg,var(--accent-hi) 0%,var(--accent) 55%,var(--accent-deep) 100%);
+  box-shadow:0 12px 22px -14px rgba(16,48,36,.85);
+  transition:background .2s var(--ease),color .2s var(--ease),
+             box-shadow .24s var(--ease),transform .24s var(--ease);
 }
-.btn:hover{background:var(--accent-hi)}
-.btn:active{background:var(--accent-deep)}
+.btn:hover{background:linear-gradient(140deg,#347A61 0%,#245741 55%,#19402F 100%);
+  transform:translateY(-2px);box-shadow:0 18px 28px -14px rgba(16,48,36,.9)}
+.btn:active{transform:translateY(0);background:var(--accent-deep)}
 .btn--lg{padding:18px 32px;font-size:16.5px}
 .btn--wide{width:100%}
 .btn--line{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px var(--rule)}
 .btn--line:hover{background:transparent;box-shadow:inset 0 0 0 1px var(--ink)}
 .ch--dark .btn--line,.cover-art .btn--line{color:var(--on-dark);box-shadow:inset 0 0 0 1px var(--rule-dark)}
 .ch--dark .btn--line:hover{box-shadow:inset 0 0 0 1px var(--brass)}
-.btn--brass{background:var(--brass-soft);color:#101F19}
-.btn--brass:hover{background:#EAD9AE}
+.btn--brass{background:linear-gradient(140deg,#F0E0B8 0%,#DFC894 55%,#CDB27A 100%);color:#101F19;
+  box-shadow:0 12px 22px -14px rgba(90,68,19,.8)}
+.btn--brass:hover{background:linear-gradient(140deg,#F6E9C8 0%,#E8D5A4 55%,#D8BF8A 100%);
+  box-shadow:0 18px 28px -14px rgba(90,68,19,.85)}
 .btn:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible,button:focus-visible{
   outline:2px solid var(--accent);outline-offset:3px}
 .ch--dark .btn:focus-visible,.ch--dark a:focus-visible{outline-color:var(--brass-soft)}
@@ -234,14 +317,17 @@ em{font-style:italic}
 .cta-row{display:flex;flex-wrap:wrap;gap:14px 22px;align-items:center}
 
 /* ══════════════ ПЛИТЫ И КАДРЫ ═════════════════════════════════════════ */
-.plate{background:var(--plate);border-radius:10px;box-shadow:inset 0 0 0 1px var(--rule-soft)}
-.plate--paper{background:var(--paper-3);box-shadow:none}
-.plate--dark{background:var(--dark-2);color:var(--on-dark);box-shadow:inset 0 0 0 1px var(--rule-dark)}
+.plate{background:var(--plate);border-radius:clamp(14px,1.5vw,22px);
+  box-shadow:inset 0 0 0 1px var(--rule-soft),var(--sh-soft)}
+.plate--paper{background:var(--paper-3);box-shadow:inset 0 0 0 1px var(--rule-soft)}
+.plate--dark{color:var(--on-dark);
+  background:linear-gradient(155deg,#173A2D 0%,#0F241C 58%,#14352A 100%);
+  box-shadow:inset 0 0 0 1px var(--rule-dark),var(--sh-jade)}
 .pad{padding:clamp(22px,2.5vw,38px)}
 
 /* кадр под фотографию: подпись печатается под кадром, как в журнале */
 figure.shot{margin:0}
-.shot .frame{position:relative;overflow:hidden;border-radius:8px;background:var(--paper-3)}
+.shot .frame{position:relative;overflow:hidden;border-radius:clamp(12px,1.3vw,20px);background:var(--paper-3);box-shadow:var(--sh-soft)}
 .shot .frame img{width:100%;height:100%;object-fit:cover;display:block}
 .shot .frame::after{content:'';position:absolute;inset:0;border-radius:inherit;pointer-events:none;
   box-shadow:inset 0 0 0 1px rgba(35,38,31,.14)}
@@ -267,7 +353,7 @@ figure.shot{margin:0}
    Набран как колонтитул журнала: марка слева, оглавление посередине,
    телефон справа. Липкая, но почти невесомая.
    ──────────────────────────────────────────────────────────────────── */
-.top{position:sticky;top:0;z-index:900;background:var(--paper);
+.top{position:sticky;top:0;z-index:900;background:rgba(246,241,231,.88);backdrop-filter:saturate(1.5) blur(14px);-webkit-backdrop-filter:saturate(1.5) blur(14px);
   box-shadow:0 1px 0 var(--rule);transition:box-shadow .3s var(--ease),background .3s var(--ease)}
 .top.stuck{background:rgba(244,239,227,.93);backdrop-filter:blur(12px) saturate(1.1);
   box-shadow:0 1px 0 var(--rule),0 14px 26px -24px rgba(35,38,31,.5)}
@@ -288,11 +374,13 @@ figure.shot{margin:0}
 .top .btn{padding:11px 20px;font-size:14px}
 .burger{display:none;width:42px;height:42px;border-radius:999px;background:transparent;
   box-shadow:inset 0 0 0 1px var(--rule);border:0;cursor:pointer;place-items:center;color:var(--ink)}
-.progress{position:absolute;left:0;bottom:-1px;height:1.5px;width:0;z-index:2;background:var(--accent)}
+.progress{position:absolute;left:0;bottom:-1px;height:2px;width:0;z-index:2;
+  background:linear-gradient(90deg,var(--accent) 0%,#3B7861 55%,#9E7F46 100%)}
 @media(max-width:1080px){.nav{display:none}.burger{display:grid}}
 @media(max-width:700px){.top .btn{display:none}.top-tel span{display:none}}
 @media(max-width:620px){.top-tel{display:none}}
-.mnav{display:none;background:var(--paper);box-shadow:0 1px 0 var(--rule);padding:6px 0 16px}
+.mnav{display:none;background:rgba(246,241,231,.94);backdrop-filter:blur(14px);
+  box-shadow:0 1px 0 var(--rule);padding:6px 0 16px}
 .mnav.open{display:block}
 .mnav a{display:block;text-decoration:none;padding:12px var(--gut);font-weight:600;font-size:15px;
   border-bottom:1px solid var(--rule-soft)}
@@ -302,7 +390,12 @@ figure.shot{margin:0}
    Разворот: слева полоса набора на бумаге, справа тёмный кадр в вылет
    за край страницы. Ничего не «плавает» поверх фотографии.
    ──────────────────────────────────────────────────────────────────── */
-.cover{position:relative;background:var(--paper);overflow:hidden}
+.cover{position:relative;overflow:clip;
+  background:
+    radial-gradient(880px 660px at 96% -6%, #DCE8DE 0%, rgba(220,232,222,0) 62%),
+    radial-gradient(720px 560px at -6% 4%, #F2E6C9 0%, rgba(242,230,201,0) 58%),
+    radial-gradient(700px 560px at 22% 112%, #D4E5DA 0%, rgba(212,229,218,0) 66%),
+    linear-gradient(166deg,#F7F3E8 0%,#F0EDDE 52%,#F5F0E2 100%)}
 .cover-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.86fr);
   gap:clamp(24px,3.6vw,66px);align-items:stretch}
 .cover-type{padding-block:clamp(38px,4.6vw,74px) clamp(30px,3.6vw,54px);align-self:center}
@@ -310,7 +403,7 @@ figure.shot{margin:0}
 .cover-place .t-label{color:var(--ink-2)}
 .cover-place i{display:block;width:clamp(24px,3vw,52px);height:1px;background:var(--rule);flex:none}
 .cover h1{margin-bottom:clamp(20px,2.2vw,30px)}
-.cover h1 .t-it{color:var(--accent)}
+
 .cover .t-deck{max-width:34ch;margin-bottom:clamp(24px,2.8vw,36px)}
 
 /* ценник — набран как бирка в витрине, не как кнопка */
@@ -320,7 +413,8 @@ figure.shot{margin:0}
 .tag .tag-l{grid-column:1/-1;font-size:11px;font-weight:600;letter-spacing:.17em;text-transform:uppercase;
   color:var(--ink-3);margin-bottom:5px}
 .tag .tag-p{font-family:var(--serif);font-weight:600;font-size:clamp(38px,4vw,54px);line-height:.9;
-  color:var(--accent)}
+  background:var(--g-text);-webkit-background-clip:text;background-clip:text;
+  color:transparent;-webkit-text-fill-color:transparent;padding-right:.06em}
 .tag .tag-was{font-size:16px;color:var(--ink-3);text-decoration:line-through;margin-left:12px}
 .tag .tag-d{font-size:14.6px;line-height:1.45;color:var(--ink-2);align-self:center}
 @media(max-width:520px){.tag{grid-template-columns:1fr}.tag .tag-d{margin-top:6px}}
@@ -330,7 +424,7 @@ figure.shot{margin:0}
 .cover-note a{color:var(--ink-2);text-decoration:underline;text-underline-offset:2px}
 
 /* правая половина — кадр, уходящий в правый край экрана */
-.cover-art{position:relative;background:var(--dark);
+.cover-art{position:relative;background:var(--g-deep);
   margin-right:calc((100vw - min(100% * (1290 / 0.78) , 100vw)) * -0 - var(--gut));
   display:flex;flex-direction:column;justify-content:flex-end}
 /* кадр обложки живёт вне figure.shot, поэтому свои правила ему нужны здесь */
@@ -352,18 +446,20 @@ figure.shot{margin:0}
 }
 @media(min-width:961px){
   .cover-art{margin-right:calc(var(--gut) * -1)}
-  .cover-art .frame{border-radius:8px 0 0 8px}
+  .cover-art{border-radius:clamp(18px,2vw,30px) 0 0 clamp(18px,2vw,30px);overflow:clip}
 }
 
 /* полоса под обложкой: факты через линейку, без бегущей строки */
-.facts{border-top:1px solid var(--ink);border-bottom:1px solid var(--rule);background:var(--paper)}
+.facts{position:relative;overflow:clip;color:var(--ink);background:var(--g-brass);
+  border-radius:var(--rad) var(--rad) 0 0;margin-top:calc(var(--rad) * -1);padding-top:var(--rad);
+  --ink-3:#333E30;--brass:#4A3809;--brass-ink:#4A3809;--rule:rgba(35,38,31,.3)}
 .facts-in{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
-.facts-in > div{padding:20px clamp(14px,1.8vw,26px);border-left:1px solid var(--rule)}
+.facts-in > div{padding:22px clamp(14px,1.8vw,26px) 24px;border-left:1px solid var(--rule)}
 .facts-in > div:first-child{border-left:0;padding-left:0}
 .facts b{display:block;font-family:var(--serif);font-weight:600;font-size:clamp(21px,2vw,29px);
   line-height:1.05;margin-bottom:5px}
 .facts span{font-size:13.2px;line-height:1.45;color:var(--ink-3);display:block}
-.facts .stars{color:var(--brass);letter-spacing:2px;font-size:12px}
+.facts .stars{color:#4A3809;letter-spacing:2px;font-size:12px}
 @media(max-width:820px){
   .facts-in{grid-template-columns:repeat(2,minmax(0,1fr))}
   .facts-in > div:nth-child(2n+1){border-left:0;padding-left:0}
@@ -395,8 +491,8 @@ figure.shot{margin:0}
   gap:clamp(20px,2.4vw,38px);align-items:start}
 @media(max-width:1020px){.calc{grid-template-columns:1fr}}
 
-.blank{background:var(--plate);border-radius:10px;padding:clamp(22px,2.6vw,40px);
-  box-shadow:inset 0 0 0 1px var(--rule-soft)}
+.blank{background:var(--plate);border-radius:clamp(16px,1.7vw,24px);padding:clamp(22px,2.6vw,40px);
+  box-shadow:inset 0 0 0 1px var(--rule-soft),var(--sh-lift)}
 .blank-top{display:flex;justify-content:space-between;align-items:baseline;gap:16px;
   padding-bottom:12px;border-bottom:1px solid var(--ink);margin-bottom:clamp(22px,2.4vw,32px)}
 .blank-top .t-label{color:var(--ink-2)}
@@ -470,7 +566,7 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border:0;border-radiu
    ──────────────────────────────────────────────────────────────────── */
 .check{position:sticky;top:96px;background:var(--plate);color:var(--ink);
   padding:clamp(22px,2.2vw,30px) clamp(20px,2vw,28px) clamp(30px,3vw,40px);
-  box-shadow:inset 0 0 0 1px var(--rule-soft);
+  box-shadow:inset 0 0 0 1px var(--rule-soft);filter:drop-shadow(0 18px 26px rgba(24,54,42,.16));
   --tooth:11px;
   -webkit-mask:
     radial-gradient(var(--tooth) at 50% 0,#0000 98%,#000 101%) 50% 0/26px 22px repeat-x,
@@ -522,19 +618,21 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border:0;border-radiu
 .field input.bad{border-bottom-color:#B23A2A}
 .ch--dark .field .fl{color:var(--on-dark-2)}
 .ch--dark .field input{border-bottom-color:var(--rule-dark);color:var(--on-dark)}
-.ch--dark .field input::placeholder{color:#7A7D6C}
+.ch--dark .field input::placeholder{color:#8E9182}
+.ch--jade .field input::placeholder{color:#C5DACC}
 .ch--dark .field input:focus{border-bottom-color:var(--brass)}
 .agree{display:grid;grid-template-columns:auto 1fr;gap:11px;align-items:start;
   font-size:12.6px;line-height:1.5;color:var(--ink-3);margin-top:16px;cursor:pointer}
 .agree input{width:16px;height:16px;flex:none;margin:2px 0 0;accent-color:var(--accent)}
 .agree a{color:var(--ink-2);text-decoration:underline;text-underline-offset:2px}
-.ch--dark .agree{color:#8A8D7C}
+.ch--dark .agree{color:var(--on-dark-2)}
 .ch--dark .agree a{color:var(--on-dark-2)}
 .pillrow{display:flex;flex-wrap:wrap;gap:8px}
 .pill{padding:9px 16px;border-radius:999px;background:transparent;border:0;cursor:pointer;
   box-shadow:inset 0 0 0 1px var(--rule);font-size:13.8px;font-weight:500;transition:.18s var(--ease)}
 .pill:hover{box-shadow:inset 0 0 0 1px var(--ink)}
-.pill.sel{background:var(--accent);color:#F5F0E2;box-shadow:none;font-weight:600}
+.pill.sel{background:linear-gradient(140deg,var(--accent-hi),var(--accent));color:#F5F0E2;
+  box-shadow:0 8px 14px -10px rgba(16,48,36,.9);font-weight:600}
 .ch--dark .pill{box-shadow:inset 0 0 0 1px var(--rule-dark);color:var(--on-dark)}
 .ch--dark .pill:hover{box-shadow:inset 0 0 0 1px var(--brass)}
 .ch--dark .pill.sel{background:var(--brass-soft);color:#101F19;box-shadow:none}
@@ -591,8 +689,12 @@ table.cmp thead th{border-top:0;border-bottom:1px solid var(--ink);font-family:v
   padding-bottom:12px}
 table.cmp tbody th{font-weight:600;color:var(--ink);width:19%;font-size:15.4px}
 table.cmp td{color:var(--ink-2);line-height:1.5}
-table.cmp .win{width:30%;padding-left:22px;padding-right:22px;background:var(--paper-3);color:var(--ink)}
-table.cmp thead .win{color:var(--accent);background:var(--paper-3);border-bottom-color:var(--accent)}
+table.cmp .win{width:30%;padding-left:22px;padding-right:22px;color:var(--ink);
+  background:linear-gradient(180deg,rgba(31,74,59,.13),rgba(31,74,59,.06))}
+table.cmp thead .win{color:var(--accent);border-bottom-color:var(--accent);
+  background:linear-gradient(180deg,rgba(31,74,59,.2),rgba(31,74,59,.13))}
+table.cmp tr:first-child .win{border-radius:12px 12px 0 0}
+table.cmp tr:last-child .win{border-radius:0 0 12px 12px}
 table.cmp tbody .win{font-weight:500}
 table.cmp tbody tr:first-child .win{border-top:0}
 .swipe-hint{display:none;margin-top:12px;font-size:13.4px;color:var(--ink-3)}
@@ -767,13 +869,17 @@ details.q .qa a{color:var(--accent);font-weight:600}
 @media(max-width:900px){.final{grid-template-columns:1fr}}
 .perks{display:grid;margin-top:clamp(22px,2.6vw,34px)}
 .perks li{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:baseline;
-  padding:13px 0;border-top:1px solid var(--rule-dark);font-size:15.4px;line-height:1.5;
-  color:var(--on-dark-2)}
+  padding:13px 0;border-top:1px solid var(--rule);font-size:15.4px;line-height:1.5;
+  color:var(--ink-2)}
 .perks li:first-child{border-top:1px solid var(--brass)}
-.perks li:last-child{border-bottom:1px solid var(--rule-dark)}
+.perks li:last-child{border-bottom:1px solid var(--rule)}
 .perks .pm{color:var(--brass);font-family:var(--serif);font-size:15px}
-.perks b{color:#F2ECDA;font-weight:600}
-.formbox{background:var(--plate);color:var(--ink);border-radius:10px;padding:clamp(24px,2.8vw,38px)}
+.perks b{color:var(--ink);font-weight:600}
+.ch--dark .perks li{border-top-color:var(--rule-dark);color:var(--on-dark-2)}
+.ch--dark .perks li:last-child{border-bottom-color:var(--rule-dark)}
+.ch--dark .perks b{color:#F2ECDA}
+.formbox{background:var(--plate);color:var(--ink);border-radius:clamp(16px,1.7vw,24px);
+  padding:clamp(24px,2.8vw,38px);box-shadow:inset 0 0 0 1px var(--rule-soft),var(--sh-lift)}
 .formbox .t-h3{margin-bottom:8px}
 .formbox .fsub{font-size:14.6px;line-height:1.55;color:var(--ink-3);margin-bottom:24px}
 .formbox .fl-h{font-size:11px;font-weight:600;letter-spacing:.17em;text-transform:uppercase;
@@ -827,7 +933,7 @@ details.q .qa a{color:var(--accent);font-weight:600}
 .cline a{font-weight:600;text-decoration:none;box-shadow:inset 0 -1px 0 var(--rule)}
 .cline a:hover{color:var(--accent);box-shadow:inset 0 -1px 0 var(--accent)}
 .cline .t-small{display:block;margin-top:5px}
-.map{position:relative;border-radius:8px;overflow:hidden;background:#EAE3D2}
+.map{position:relative;border-radius:clamp(14px,1.5vw,22px);overflow:hidden;background:#E7EDE3;box-shadow:var(--sh-soft)}
 .map img{width:100%;height:auto;display:block}
 .map::after{content:'';position:absolute;inset:0;border-radius:inherit;pointer-events:none;
   box-shadow:inset 0 0 0 1px rgba(35,38,31,.14)}
@@ -838,7 +944,9 @@ details.q .qa a{color:var(--accent);font-weight:600}
 .map-tag a{display:inline-block;margin-top:5px;color:var(--accent);text-decoration:none;font-weight:600}
 
 /* ══════════════ ВЫХОДНЫЕ ДАННЫЕ (подвал) ══════════════════════════════ */
-.colophon{background:var(--dark);color:var(--on-dark-2);padding-block:clamp(42px,5vw,72px) 30px}
+.colophon{position:relative;overflow:clip;background:var(--g-deep);color:var(--on-dark-2);
+  border-radius:var(--rad) var(--rad) 0 0;margin-top:calc(var(--rad) * -1);
+  padding-block:calc(clamp(42px,5vw,72px) + var(--rad)) 30px}
 .colophon a{text-decoration:none;color:var(--on-dark-2)}
 .colophon a:hover{color:var(--brass-soft)}
 .col-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr) minmax(0,1fr);
@@ -856,7 +964,8 @@ details.q .qa a{color:var(--accent);font-weight:600}
 /* ══════════════ ЛИПКАЯ ПАНЕЛЬ НА ТЕЛЕФОНЕ ════════════════════════════ */
 .sticky{position:fixed;left:0;right:0;bottom:0;z-index:950;display:none;gap:9px;
   padding:10px 14px calc(10px + env(safe-area-inset-bottom));
-  background:rgba(244,239,227,.96);backdrop-filter:blur(12px);box-shadow:0 -1px 0 var(--rule)}
+  background:rgba(246,241,231,.94);backdrop-filter:saturate(1.4) blur(14px);
+  box-shadow:0 -1px 0 var(--rule),0 -14px 30px -22px rgba(24,54,42,.5)}
 .sticky .btn{flex:1 1 0;min-width:0;padding:14px 6px;font-size:14px;white-space:nowrap}
 .sticky .btn--line{flex:0 0 52px;padding:14px 0}
 @media(max-width:760px){.sticky{display:flex}body{padding-bottom:74px}}
@@ -903,6 +1012,8 @@ details.q .qa a{color:var(--accent);font-weight:600}
 
 <!-- ═══════════════ ОБЛОЖКА ═══════════════ -->
 <section class="cover">
+  <div class="blob b-brass" style="width:520px;height:520px;left:-190px;top:-160px" aria-hidden="true"></div>
+  <div class="blob b-sage" style="width:440px;height:440px;left:14%;bottom:-190px" aria-hidden="true"></div>
   <div class="spread cover-grid">
 
     <div class="cover-type">
@@ -969,7 +1080,8 @@ details.q .qa a{color:var(--accent);font-weight:600}
 </div>
 
 <!-- ═══════════════ I · СЧЁТ, КОТОРЫЙ НЕ ЗАКРЫВАЕТСЯ ═══════════════ -->
-<section class="ch ch--paper2">
+<section class="ch ch--s ch--mist">
+  <div class="blob b-mint" style="width:460px;height:460px;left:-170px;top:6%" aria-hidden="true"></div>
   <div class="spread ch-grid">
     <div class="ch-mar"><div class="ch-mar-in">
       <span class="ch-num">I</span><i class="rule-v"></i><span class="ch-kicker">Как это устроено сейчас</span>
@@ -984,7 +1096,7 @@ details.q .qa a{color:var(--accent);font-weight:600}
       </div>
 
       <div class="cost rv">
-        <div class="plate plate--dark pad" style="border-radius:10px">
+        <div class="plate plate--dark pad">
           <span class="t-label" style="color:var(--brass)">Во что обходится «пока так»</span>
           <ul class="figs" style="margin-top:22px">
             <li class="fig">
@@ -1015,7 +1127,9 @@ details.q .qa a{color:var(--accent);font-weight:600}
 </section>
 
 <!-- ═══════════════ II · БЛАНК РАСЧЁТА (ФОРМА №1) ═══════════════ -->
-<section class="ch" id="calc">
+<section class="ch ch--s ch--ivory" id="calc">
+  <div class="blob b-jade" style="width:520px;height:520px;right:-190px;top:2%" aria-hidden="true"></div>
+  <div class="blob b-brass" style="width:380px;height:380px;left:-150px;bottom:6%" aria-hidden="true"></div>
   <div class="spread ch-grid">
     <div class="ch-mar"><div class="ch-mar-in">
       <span class="ch-num">II</span><i class="rule-v"></i><span class="ch-kicker">Расчёт за минуту</span>
@@ -1200,7 +1314,8 @@ details.q .qa a{color:var(--accent);font-weight:600}
 </section>
 
 <!-- ═══════════════ III · ПЕРВЫЙ ВИЗИТ ═══════════════ -->
-<section class="ch ch--paper2" id="visit">
+<section class="ch ch--s ch--sand" id="visit">
+  <div class="blob b-brass" style="width:420px;height:420px;right:-160px;bottom:4%" aria-hidden="true"></div>
   <div class="spread ch-grid">
     <div class="ch-mar"><div class="ch-mar-in">
       <span class="ch-num">III</span><i class="rule-v"></i><span class="ch-kicker">Первый визит</span>
@@ -1252,7 +1367,9 @@ details.q .qa a{color:var(--accent);font-weight:600}
 </section>
 
 <!-- ═══════════════ ОБЪЯВЛЕНИЕ · ФОРМА №2 ═══════════════ -->
-<section class="ch ch--dark ch--tight">
+<section class="ch ch--s ch--dark ch--jade ch--tight">
+  <div class="blob b-glow" style="width:620px;height:620px;right:-200px;top:-260px" aria-hidden="true"></div>
+  <div class="blob b-white" style="width:420px;height:420px;left:-180px;bottom:-200px" aria-hidden="true"></div>
   <div class="spread">
     <div class="strip rv">
       <div>
@@ -1287,7 +1404,8 @@ details.q .qa a{color:var(--accent);font-weight:600}
 </section>
 
 <!-- ═══════════════ IV · СРАВНЕНИЕ ═══════════════ -->
-<section class="ch">
+<section class="ch ch--s ch--mist">
+  <div class="blob b-jade" style="width:480px;height:480px;right:-180px;top:8%" aria-hidden="true"></div>
   <div class="spread ch-grid">
     <div class="ch-mar"><div class="ch-mar-in">
       <span class="ch-num">IV</span><i class="rule-v"></i><span class="ch-kicker">Честное сравнение</span>
@@ -1325,7 +1443,9 @@ details.q .qa a{color:var(--accent);font-weight:600}
 </section>
 
 <!-- ═══════════════ V · МЕХАНИКА ═══════════════ -->
-<section class="ch ch--dark">
+<section class="ch ch--s ch--dark ch--deep">
+  <div class="blob b-teal" style="width:660px;height:660px;left:-240px;top:-200px" aria-hidden="true"></div>
+  <div class="blob b-glow" style="width:460px;height:460px;right:-170px;bottom:-180px" aria-hidden="true"></div>
   <div class="spread ch-grid">
     <div class="ch-mar"><div class="ch-mar-in">
       <span class="ch-num">V</span><i class="rule-v"></i><span class="ch-kicker">Механика без маркетинга</span>
@@ -1367,7 +1487,8 @@ details.q .qa a{color:var(--accent);font-weight:600}
 </section>
 
 <!-- ═══════════════ VI · ПРАЙС ═══════════════ -->
-<section class="ch" id="price">
+<section class="ch ch--s ch--ivory" id="price">
+  <div class="blob b-brass" style="width:440px;height:440px;left:-170px;top:12%" aria-hidden="true"></div>
   <div class="spread ch-grid">
     <div class="ch-mar"><div class="ch-mar-in">
       <span class="ch-num">VI</span><i class="rule-v"></i><span class="ch-kicker">Прайс без «цены по запросу»</span>
@@ -1445,7 +1566,8 @@ details.q .qa a{color:var(--accent);font-weight:600}
 </section>
 
 <!-- ═══════════════ VII · КОСМЕТОЛОГИЯ ═══════════════ -->
-<section class="ch ch--paper2" id="cosmo">
+<section class="ch ch--s ch--sage" id="cosmo">
+  <div class="blob b-mint" style="width:520px;height:520px;right:-190px;top:4%" aria-hidden="true"></div>
   <div class="spread ch-grid">
     <div class="ch-mar"><div class="ch-mar-in">
       <span class="ch-num">VII</span><i class="rule-v"></i><span class="ch-kicker">Второе направление</span>
@@ -1553,7 +1675,8 @@ details.q .qa a{color:var(--accent);font-weight:600}
 </section>
 
 <!-- ═══════════════ VIII · СТУДИЯ И МАСТЕР ═══════════════ -->
-<section class="ch" id="studio">
+<section class="ch ch--s ch--sand" id="studio">
+  <div class="blob b-brass" style="width:460px;height:460px;left:-180px;bottom:8%" aria-hidden="true"></div>
   <div class="spread ch-grid">
     <div class="ch-mar"><div class="ch-mar-in">
       <span class="ch-num">VIII</span><i class="rule-v"></i><span class="ch-kicker">Кто и где</span>
@@ -1644,7 +1767,8 @@ details.q .qa a{color:var(--accent);font-weight:600}
 </section>
 
 <!-- ═══════════════ IX · ЧТО ПИШУТ ═══════════════ -->
-<section class="ch ch--paper2" id="reviews">
+<section class="ch ch--s ch--mist" id="reviews">
+  <div class="blob b-mint" style="width:470px;height:470px;right:-180px;top:6%" aria-hidden="true"></div>
   <div class="spread ch-grid">
     <div class="ch-mar"><div class="ch-mar-in">
       <span class="ch-num">IX</span><i class="rule-v"></i><span class="ch-kicker">Яндекс Карты, без правок</span>
@@ -1705,7 +1829,8 @@ details.q .qa a{color:var(--accent);font-weight:600}
 </section>
 
 <!-- ═══════════════ X · ВОПРОСЫ ═══════════════ -->
-<section class="ch" id="faq">
+<section class="ch ch--s ch--ivory" id="faq">
+  <div class="blob b-sage" style="width:430px;height:430px;left:-170px;top:10%" aria-hidden="true"></div>
   <div class="spread ch-grid">
     <div class="ch-mar"><div class="ch-mar-in">
       <span class="ch-num">X</span><i class="rule-v"></i><span class="ch-kicker">Честные ответы</span>
@@ -1739,7 +1864,9 @@ details.q .qa a{color:var(--accent);font-weight:600}
 </section>
 
 <!-- ═══════════════ ЗАПИСЬ · ФОРМА №3 ═══════════════ -->
-<section class="ch ch--dark" id="final">
+<section class="ch ch--s ch--brass" id="final">
+  <div class="blob b-white" style="width:640px;height:640px;right:-220px;top:-240px" aria-hidden="true"></div>
+  <div class="blob b-white" style="width:420px;height:420px;left:-180px;bottom:-190px" aria-hidden="true"></div>
   <div class="spread">
     <div class="final rv">
       <div>
@@ -1802,7 +1929,8 @@ details.q .qa a{color:var(--accent);font-weight:600}
 </section>
 
 <!-- ═══════════════ КОНТАКТЫ ═══════════════ -->
-<section class="ch" id="contacts">
+<section class="ch ch--s ch--sage" id="contacts">
+  <div class="blob b-jade" style="width:440px;height:440px;right:-170px;top:8%" aria-hidden="true"></div>
   <div class="spread ch-grid">
     <div class="ch-mar"><div class="ch-mar-in">
       <span class="ch-num">✦</span><i class="rule-v"></i><span class="ch-kicker">Как нас найти</span>
@@ -1869,6 +1997,7 @@ details.q .qa a{color:var(--accent);font-weight:600}
 
 <!-- ═══════════════ ВЫХОДНЫЕ ДАННЫЕ ═══════════════ -->
 <footer class="colophon">
+  <div class="blob b-teal" style="width:620px;height:620px;right:-230px;top:-250px" aria-hidden="true"></div>
   <div class="spread">
     <div class="col-grid">
       <div>
