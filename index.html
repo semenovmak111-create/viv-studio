@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>VIV Studio — лазерная эпиляция в камерной студии, Санкт-Петербург | Первый визит −50%</title>
 <meta name="description" content="Студия лазерной эпиляции и косметологии на Суворовском, 35. Один мастер ведёт весь курс, закрытый кабинет, тестовая вспышка до начала. Первый визит вдвое дешевле: тотальное бикини и подмышки за 1 450 ₽ вместо 2 900 ₽. 5,0 по 53 оценкам на Яндекс Картах.">
-<meta name="theme-color" content="#F5EEE4">
+<meta name="theme-color" content="#F4EFE3">
 <meta name="robots" content="noindex, nofollow"><!-- ДЕМО-ПРЕВЬЮ: убрать строку при переезде на домен клиента -->
 <link rel="canonical" href="https://germanwin.github.io/viv-studio/">
 
@@ -16,7 +16,7 @@
 <meta property="og:description" content="Один мастер на весь курс, закрытый кабинет, тестовая вспышка до начала. Первый визит вдвое дешевле — 1 450 ₽ вместо 2 900 ₽.">
 <meta property="og:image" content="assets/img/og.svg">
 
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%231C140F'/%3E%3Cpath d='M17 21l15 24 15-24' fill='none' stroke='%23B08A4F' stroke-width='3.4'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230F211B'/%3E%3Cpath d='M17 21l15 24 15-24' fill='none' stroke='%23DFC894' stroke-width='3.4'/%3E%3C/svg%3E">
 
 <link rel="preload" href="assets/fonts/golos-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/cormorant-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
@@ -32,7 +32,7 @@
    ║    · поле слева — там висят номера глав и подписи на полях;          ║
    ║    · волосяная линейка вместо рамки, тени почти нигде;               ║
    ║    · две гарнитуры: антиква на крупном, гротеск на всём остальном;   ║
-   ║    · один цвет действия (коньяк) и латунь как редкое украшение.      ║
+   ║    · один цвет действия (нефрит) и шампань как редкое украшение.     ║
    ╚══════════════════════════════════════════════════════════════════════╝ */
 
 /* ── ГАРНИТУРЫ ─────────────────────────────────────────────────────────
@@ -61,32 +61,37 @@
   unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 
 /* ── ЦВЕТ ──────────────────────────────────────────────────────────────
-   Четыре бумаги, одни чернила, один цвет действия, латунь на редкость.
+   Слоновая кость, тёмный нефрит и шампань. Четыре бумаги, одни чернила,
+   один цвет действия, металл на редкость.
+
+   Нефрит и шампань — пара, на которой держится «дорого»: глубокий
+   холодноватый зелёный сам по себе строг, тёплая шампань его согревает.
+   Красная семья намеренно не тронута: розовое и вишнёвое заняты «Дофамином».
    ──────────────────────────────────────────────────────────────────── */
 :root{
-  --paper:#F5EEE3;        /* основная бумага */
-  --paper-2:#EDE2D2;      /* бумага потемнее: ею отбиваются главы */
-  --paper-3:#E4D6C2;      /* самая плотная бумага: врезки на светлом */
-  --plate:#FCF9F3;        /* плита — то, что «наклеено» на бумагу */
-  --ink:#241A13;          /* чернила */
-  --ink-2:#61503F;        /* текст на полях, подписи */
-  --ink-3:#74604A;        /* третий план: сноски, служебное — 4,7:1 на самой тёмной бумаге */
-  --dark:#1B130E;         /* тёмный разворот */
-  --dark-2:#241A13;
-  --dark-3:#33251A;
-  --on-dark:#E7DAC5;      /* текст на тёмном */
-  --on-dark-2:#B7A48A;
-  --accent:#9A4B24;       /* коньяк — ТОЛЬКО действие: кнопки, цены, выбор */
-  --accent-hi:#B25A2C;
-  --accent-deep:#763617;
-  --brass:#A67F42;        /* латунь — украшение: линейки и крупные цифры */
-  --brass-ink:#7E5A26;    /* та же латунь, но там, где она несёт мелкий текст */
-  --brass-soft:#D9BE8C;
+  --paper:#F4EFE3;        /* основная бумага */
+  --paper-2:#EAE3D2;      /* бумага потемнее: ею отбиваются главы */
+  --paper-3:#DED5BF;      /* самая плотная бумага: врезки на светлом */
+  --plate:#FBF8F0;        /* плита — то, что «наклеено» на бумагу */
+  --ink:#23261F;          /* чернила */
+  --ink-2:#41473A;        /* текст на полях, подписи */
+  --ink-3:#585D4E;        /* третий план: сноски, служебное — 4,7:1 на самой тёмной бумаге */
+  --dark:#0F211B;         /* тёмный разворот */
+  --dark-2:#163127;       /* плита на тёмном и кадр обложки */
+  --dark-3:#1E4034;
+  --on-dark:#E8E2D0;      /* текст на тёмном */
+  --on-dark-2:#ADA894;
+  --accent:#1F4A3B;       /* нефрит — ТОЛЬКО действие: кнопки, цены, выбор */
+  --accent-hi:#2A5F4C;
+  --accent-deep:#143229;
+  --brass:#9E7F46;        /* шампань — украшение: линейки и крупные цифры */
+  --brass-ink:#6C5521;    /* та же шампань, но там, где она несёт мелкий текст */
+  --brass-soft:#DFC894;   /* шампань на тёмном: там она может быть светлой */
 
-  --rule:rgba(36,26,19,.17);        /* волосяная линейка на бумаге */
-  --rule-soft:rgba(36,26,19,.085);
-  --rule-dark:rgba(231,218,197,.22); /* она же на тёмном */
-  --rule-brass:rgba(176,138,79,.45);
+  --rule:rgba(35,38,31,.17);        /* волосяная линейка на бумаге */
+  --rule-soft:rgba(35,38,31,.085);
+  --rule-dark:rgba(232,226,208,.22); /* она же на тёмном */
+  --rule-brass:rgba(158,127,70,.45);
 
   --serif:'Cormorant',Georgia,'Times New Roman',serif;
   --sans:'Golos',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
@@ -111,7 +116,7 @@ button,input,select,textarea{font:inherit;color:inherit}
 h1,h2,h3,h4{margin:0;font-weight:400}
 p{margin:0}
 ul,ol{margin:0;padding:0;list-style:none}
-::selection{background:var(--accent);color:#FBF3E8}
+::selection{background:var(--accent);color:#F7F2E4}
 
 /* бумажное зерно — очень слабое, чтобы плоскость не была стерильной */
 body::after{
@@ -126,7 +131,7 @@ body::after{
 .ch--tight{padding-block:clamp(38px,4.4vw,64px)}
 .ch--paper2{background:var(--paper-2)}
 .ch--dark{background:var(--dark);color:var(--on-dark)}
-.ch--dark h1,.ch--dark h2,.ch--dark h3{color:#F6EEDF}
+.ch--dark h1,.ch--dark h2,.ch--dark h3{color:#F2ECDA}
 
 /* сетка главы: слева поле под номер, справа полоса набора */
 .ch-grid{display:grid;grid-template-columns:var(--mar) minmax(0,1fr);gap:0 clamp(18px,2.6vw,44px)}
@@ -165,13 +170,13 @@ body::after{
 .t-body{font-size:17px;line-height:1.66;color:var(--ink-2);max-width:62ch}
 .ch--dark .t-body{color:var(--on-dark-2)}
 .t-small{font-size:14.6px;line-height:1.56;color:var(--ink-3)}
-.ch--dark .t-small{color:#93816A}
+.ch--dark .t-small{color:#8E9182}
 .t-label{font-size:11px;font-weight:600;letter-spacing:.17em;text-transform:uppercase;color:var(--ink-3);
   display:block}
 .ch--dark .t-label{color:var(--on-dark-2)}
 .num{font-variant-numeric:tabular-nums lining-nums}
 b,strong{font-weight:600;color:var(--ink)}
-.ch--dark b,.ch--dark strong{color:#F6EEDF}
+.ch--dark b,.ch--dark strong{color:#F2ECDA}
 em{font-style:italic}
 .accent{color:var(--accent)}
 .ch--dark .accent{color:var(--brass-soft)}
@@ -203,7 +208,7 @@ em{font-style:italic}
   display:inline-flex;align-items:center;justify-content:center;gap:10px;
   padding:15px 27px;border-radius:999px;border:0;cursor:pointer;
   font-family:var(--sans);font-weight:600;font-size:15.5px;letter-spacing:-.005em;
-  text-decoration:none;background:var(--accent);color:#FBF2E7;
+  text-decoration:none;background:var(--accent);color:#F5F0E2;
   transition:background .2s var(--ease),color .2s var(--ease),box-shadow .2s var(--ease);
 }
 .btn:hover{background:var(--accent-hi)}
@@ -214,8 +219,8 @@ em{font-style:italic}
 .btn--line:hover{background:transparent;box-shadow:inset 0 0 0 1px var(--ink)}
 .ch--dark .btn--line,.cover-art .btn--line{color:var(--on-dark);box-shadow:inset 0 0 0 1px var(--rule-dark)}
 .ch--dark .btn--line:hover{box-shadow:inset 0 0 0 1px var(--brass)}
-.btn--brass{background:var(--brass-soft);color:#2A1D12}
-.btn--brass:hover{background:#E6CFA3}
+.btn--brass{background:var(--brass-soft);color:#101F19}
+.btn--brass:hover{background:#EAD9AE}
 .btn:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible,button:focus-visible{
   outline:2px solid var(--accent);outline-offset:3px}
 .ch--dark .btn:focus-visible,.ch--dark a:focus-visible{outline-color:var(--brass-soft)}
@@ -239,7 +244,7 @@ figure.shot{margin:0}
 .shot .frame{position:relative;overflow:hidden;border-radius:8px;background:var(--paper-3)}
 .shot .frame img{width:100%;height:100%;object-fit:cover;display:block}
 .shot .frame::after{content:'';position:absolute;inset:0;border-radius:inherit;pointer-events:none;
-  box-shadow:inset 0 0 0 1px rgba(36,26,19,.14)}
+  box-shadow:inset 0 0 0 1px rgba(35,38,31,.14)}
 .shot figcaption{display:flex;gap:11px;align-items:baseline;margin-top:11px;
   font-size:13.2px;line-height:1.45;color:var(--ink-3);border-top:1px solid var(--rule);padding-top:9px}
 .shot figcaption .n{font-family:var(--serif);font-size:16px;color:var(--brass-ink);flex:none;line-height:1}
@@ -264,8 +269,8 @@ figure.shot{margin:0}
    ──────────────────────────────────────────────────────────────────── */
 .top{position:sticky;top:0;z-index:900;background:var(--paper);
   box-shadow:0 1px 0 var(--rule);transition:box-shadow .3s var(--ease),background .3s var(--ease)}
-.top.stuck{background:rgba(245,238,227,.93);backdrop-filter:blur(12px) saturate(1.1);
-  box-shadow:0 1px 0 var(--rule),0 14px 26px -24px rgba(36,26,19,.5)}
+.top.stuck{background:rgba(244,239,227,.93);backdrop-filter:blur(12px) saturate(1.1);
+  box-shadow:0 1px 0 var(--rule),0 14px 26px -24px rgba(35,38,31,.5)}
 .top-in{display:flex;align-items:center;gap:clamp(14px,2.2vw,34px);height:66px}
 .mast{display:flex;align-items:baseline;gap:11px;text-decoration:none;flex:none}
 .mast b{font-family:var(--serif);font-weight:600;font-size:23px;letter-spacing:.055em;line-height:1;
@@ -430,7 +435,7 @@ figure.shot{margin:0}
 .opt .op{font-weight:600;font-size:15px;color:var(--ink-2);white-space:nowrap;
   font-variant-numeric:tabular-nums}
 .opt:hover .ot b{color:var(--accent)}
-.opt.sel .tick{background:var(--accent);box-shadow:inset 0 0 0 1px var(--accent);color:#FBF2E7}
+.opt.sel .tick{background:var(--accent);box-shadow:inset 0 0 0 1px var(--accent);color:#F5F0E2}
 .opt.sel .ot b{color:var(--accent)}
 .opt.sel .op{color:var(--accent);font-weight:700}
 
@@ -485,13 +490,13 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border:0;border-radiu
 .check-items{padding:14px 0 4px;min-height:74px}
 .check-items .ci{display:grid;grid-template-columns:auto 1fr auto;gap:8px;align-items:baseline;
   font-size:14.4px;padding:5px 0;color:var(--ink-2)}
-.check-items .ci .ld{border-bottom:1px dotted rgba(36,26,19,.32);transform:translateY(-4px)}
+.check-items .ci .ld{border-bottom:1px dotted rgba(35,38,31,.32);transform:translateY(-4px)}
 .check-items .ci b{font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums}
 .check-empty{font-size:13.6px;line-height:1.5;color:var(--ink-3);padding:8px 0 4px}
 .check-sum{border-top:1px dashed var(--rule);padding-top:12px}
 .check-sum .cs{display:grid;grid-template-columns:auto 1fr auto;gap:8px;align-items:baseline;
   font-size:13.6px;padding:6px 0;color:var(--ink-3)}
-.check-sum .cs .ld{border-bottom:1px dotted rgba(36,26,19,.24);transform:translateY(-4px)}
+.check-sum .cs .ld{border-bottom:1px dotted rgba(35,38,31,.24);transform:translateY(-4px)}
 .check-sum .cs b{color:var(--ink-2);font-weight:600;font-variant-numeric:tabular-nums;font-size:14.6px}
 .check-total{margin-top:14px;padding:15px 16px;background:var(--paper-3);border-radius:6px}
 .check-total .l{display:block;font-size:10.6px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
@@ -517,22 +522,22 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border:0;border-radiu
 .field input.bad{border-bottom-color:#B23A2A}
 .ch--dark .field .fl{color:var(--on-dark-2)}
 .ch--dark .field input{border-bottom-color:var(--rule-dark);color:var(--on-dark)}
-.ch--dark .field input::placeholder{color:#7E6C58}
+.ch--dark .field input::placeholder{color:#7A7D6C}
 .ch--dark .field input:focus{border-bottom-color:var(--brass)}
 .agree{display:grid;grid-template-columns:auto 1fr;gap:11px;align-items:start;
   font-size:12.6px;line-height:1.5;color:var(--ink-3);margin-top:16px;cursor:pointer}
 .agree input{width:16px;height:16px;flex:none;margin:2px 0 0;accent-color:var(--accent)}
 .agree a{color:var(--ink-2);text-decoration:underline;text-underline-offset:2px}
-.ch--dark .agree{color:#8B7963}
+.ch--dark .agree{color:#8A8D7C}
 .ch--dark .agree a{color:var(--on-dark-2)}
 .pillrow{display:flex;flex-wrap:wrap;gap:8px}
 .pill{padding:9px 16px;border-radius:999px;background:transparent;border:0;cursor:pointer;
   box-shadow:inset 0 0 0 1px var(--rule);font-size:13.8px;font-weight:500;transition:.18s var(--ease)}
 .pill:hover{box-shadow:inset 0 0 0 1px var(--ink)}
-.pill.sel{background:var(--accent);color:#FBF2E7;box-shadow:none;font-weight:600}
+.pill.sel{background:var(--accent);color:#F5F0E2;box-shadow:none;font-weight:600}
 .ch--dark .pill{box-shadow:inset 0 0 0 1px var(--rule-dark);color:var(--on-dark)}
 .ch--dark .pill:hover{box-shadow:inset 0 0 0 1px var(--brass)}
-.ch--dark .pill.sel{background:var(--brass-soft);color:#2A1D12;box-shadow:none}
+.ch--dark .pill.sel{background:var(--brass-soft);color:#101F19;box-shadow:none}
 
 .form-ok{display:none;padding:6px 0}
 .form-ok.on{display:block}
@@ -600,7 +605,7 @@ table.cmp tbody tr:first-child .win{border-top:0}
 .phases > li:first-child{border-left:0;padding-left:0}
 .phases .pn{font-family:var(--serif);font-size:clamp(34px,3.6vw,50px);line-height:1;color:var(--brass);
   display:block;margin-bottom:16px}
-.phases h4{color:#F6EEDF;font-size:19px;margin-bottom:9px;font-weight:600}
+.phases h4{color:#F2ECDA;font-size:19px;margin-bottom:9px;font-weight:600}
 .phases p{font-size:15.2px;line-height:1.58;color:var(--on-dark-2)}
 @media(max-width:820px){
   .phases{grid-template-columns:1fr}
@@ -644,7 +649,7 @@ table.cmp tbody tr:first-child .win{border-top:0}
 .menu{display:grid}
 .menu li{display:grid;grid-template-columns:auto 1fr auto;gap:9px;align-items:baseline;
   padding:9px 0;font-size:15.4px;border-top:1px solid var(--rule-soft)}
-.menu li .ld{border-bottom:1px dotted rgba(36,26,19,.3);transform:translateY(-5px)}
+.menu li .ld{border-bottom:1px dotted rgba(35,38,31,.3);transform:translateY(-5px)}
 .menu li b{font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums;white-space:nowrap}
 .menu .grp{display:block;grid-template-columns:1fr;font-size:11px;font-weight:600;letter-spacing:.17em;
   text-transform:uppercase;color:var(--brass-ink);padding:26px 0 8px;border-top:0}
@@ -663,7 +668,7 @@ details.fold > summary .sg{display:flex;align-items:center;gap:14px;font-size:11
   letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3)}
 details.fold > summary .chev{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;
   flex:none;box-shadow:inset 0 0 0 1px var(--rule);transition:.25s var(--ease)}
-details.fold[open] > summary .chev{transform:rotate(180deg);background:var(--accent);color:#FBF2E7;
+details.fold[open] > summary .chev{transform:rotate(180deg);background:var(--accent);color:#F5F0E2;
   box-shadow:none}
 .fold-body{padding-bottom:26px}
 
@@ -767,12 +772,19 @@ details.q .qa a{color:var(--accent);font-weight:600}
 .perks li:first-child{border-top:1px solid var(--brass)}
 .perks li:last-child{border-bottom:1px solid var(--rule-dark)}
 .perks .pm{color:var(--brass);font-family:var(--serif);font-size:15px}
-.perks b{color:#F6EEDF;font-weight:600}
+.perks b{color:#F2ECDA;font-weight:600}
 .formbox{background:var(--plate);color:var(--ink);border-radius:10px;padding:clamp(24px,2.8vw,38px)}
 .formbox .t-h3{margin-bottom:8px}
 .formbox .fsub{font-size:14.6px;line-height:1.55;color:var(--ink-3);margin-bottom:24px}
 .formbox .fl-h{font-size:11px;font-weight:600;letter-spacing:.17em;text-transform:uppercase;
   color:var(--ink-3);margin:22px 0 11px;display:block}
+
+/* ── шампань на тёмном ─────────────────────────────────────────────────
+   Внутри тёмных разворотов переопределяется сама переменная, поэтому всё,
+   что набрано шампанью, светлеет автоматически — без отдельных правил.
+   ──────────────────────────────────────────────────────────────────── */
+.ch--dark,.cover-art,.colophon,.plate--dark{--brass:#DFC894;--brass-ink:#DFC894}
+.ch--dark .formbox{--brass:#9E7F46;--brass-ink:#6C5521}
 
 /* ── светлый остров на тёмном развороте ────────────────────────────────
    .formbox и светлые плиты лежат внутри .ch--dark, поэтому все тёмные
@@ -790,7 +802,7 @@ details.q .qa a{color:var(--accent);font-weight:600}
 .ch--dark .formbox .field input:focus{border-bottom-color:var(--accent)}
 .ch--dark .formbox .pill{box-shadow:inset 0 0 0 1px var(--rule);color:var(--ink);background:transparent}
 .ch--dark .formbox .pill:hover{box-shadow:inset 0 0 0 1px var(--ink)}
-.ch--dark .formbox .pill.sel{background:var(--accent);color:#FBF2E7;box-shadow:none}
+.ch--dark .formbox .pill.sel{background:var(--accent);color:#F5F0E2;box-shadow:none}
 .ch--dark .formbox .agree{color:var(--ink-3)}
 .ch--dark .formbox .agree a{color:var(--ink-2)}
 .ch--dark .formbox .msg-btn{box-shadow:inset 0 0 0 1px var(--rule);color:var(--ink)}
@@ -798,7 +810,7 @@ details.q .qa a{color:var(--accent);font-weight:600}
 .ch--dark .formbox .ok-l{color:var(--accent)}
 
 /* ── тёмная плита на светлой бумаге: зеркальная задача ─────────────────── */
-.plate--dark b,.plate--dark strong{color:#F6EEDF}
+.plate--dark b,.plate--dark strong{color:#F2ECDA}
 .plate--dark .t-body,.plate--dark p{color:var(--on-dark-2)}
 .plate--dark .t-label{color:var(--brass)}
 
@@ -815,13 +827,13 @@ details.q .qa a{color:var(--accent);font-weight:600}
 .cline a{font-weight:600;text-decoration:none;box-shadow:inset 0 -1px 0 var(--rule)}
 .cline a:hover{color:var(--accent);box-shadow:inset 0 -1px 0 var(--accent)}
 .cline .t-small{display:block;margin-top:5px}
-.map{position:relative;border-radius:8px;overflow:hidden;background:#EFE4D2}
+.map{position:relative;border-radius:8px;overflow:hidden;background:#EAE3D2}
 .map img{width:100%;height:auto;display:block}
 .map::after{content:'';position:absolute;inset:0;border-radius:inherit;pointer-events:none;
-  box-shadow:inset 0 0 0 1px rgba(36,26,19,.14)}
+  box-shadow:inset 0 0 0 1px rgba(35,38,31,.14)}
 .map-tag{position:absolute;left:16px;bottom:16px;background:var(--plate);border-radius:6px;
   padding:13px 17px;font-size:13.6px;line-height:1.45;max-width:80%;
-  box-shadow:0 12px 24px -18px rgba(36,26,19,.7)}
+  box-shadow:0 12px 24px -18px rgba(35,38,31,.7)}
 .map-tag b{display:block;font-weight:600}
 .map-tag a{display:inline-block;margin-top:5px;color:var(--accent);text-decoration:none;font-weight:600}
 
@@ -832,19 +844,19 @@ details.q .qa a{color:var(--accent);font-weight:600}
 .col-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr) minmax(0,1fr);
   gap:clamp(24px,3.4vw,58px)}
 @media(max-width:820px){.col-grid{grid-template-columns:1fr;gap:30px}}
-.colophon .mast b{color:#F6EEDF}
+.colophon .mast b{color:#F2ECDA}
 .colophon .mast span{color:var(--brass)}
 .colophon h4{font-size:11px;font-weight:600;letter-spacing:.17em;text-transform:uppercase;
   color:var(--brass);margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--rule-dark)}
 .colophon ul{display:grid;gap:10px;font-size:14.6px}
-.colophon .fine{font-size:12.4px;line-height:1.6;color:#8B7963;margin-top:24px;max-width:52ch}
+.colophon .fine{font-size:12.4px;line-height:1.6;color:#8A8D7C;margin-top:24px;max-width:52ch}
 .col-bottom{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-top:38px;
-  padding-top:20px;border-top:1px solid var(--rule-dark);font-size:12.2px;color:#7D6B57}
+  padding-top:20px;border-top:1px solid var(--rule-dark);font-size:12.2px;color:#787B6A}
 
 /* ══════════════ ЛИПКАЯ ПАНЕЛЬ НА ТЕЛЕФОНЕ ════════════════════════════ */
 .sticky{position:fixed;left:0;right:0;bottom:0;z-index:950;display:none;gap:9px;
   padding:10px 14px calc(10px + env(safe-area-inset-bottom));
-  background:rgba(245,238,227,.96);backdrop-filter:blur(12px);box-shadow:0 -1px 0 var(--rule)}
+  background:rgba(244,239,227,.96);backdrop-filter:blur(12px);box-shadow:0 -1px 0 var(--rule)}
 .sticky .btn{flex:1 1 0;min-width:0;padding:14px 6px;font-size:14px;white-space:nowrap}
 .sticky .btn--line{flex:0 0 52px;padding:14px 0}
 @media(max-width:760px){.sticky{display:flex}body{padding-bottom:74px}}
@@ -1261,7 +1273,7 @@ details.q .qa a{color:var(--accent);font-weight:600}
         </div>
         <div class="form-ok" id="shortOk">
           <span class="ok-l">Записали номер</span>
-          <h3 class="t-h3" style="color:#F6EEDF">Мастер перезвонит</h3>
+          <h3 class="t-h3" style="color:#F2ECDA">Мастер перезвонит</h3>
           <p class="t-body" style="margin-top:8px">С номера +7 921 915-62-55, в ближайшее рабочее время.
           Если удобнее в переписке:</p>
           <div class="msg-row">
@@ -1884,7 +1896,7 @@ details.q .qa a{color:var(--accent);font-weight:600}
       <div>
         <h4>Контакты</h4>
         <ul>
-          <li><a href="tel:+79219156255" style="font-size:18px;color:#F6EEDF;font-weight:600">+7 921 915-62-55</a></li>
+          <li><a href="tel:+79219156255" style="font-size:18px;color:#F2ECDA;font-weight:600">+7 921 915-62-55</a></li>
           <li><a href="https://wa.me/79219156255" target="_blank" rel="noopener">WhatsApp</a></li>
           <li><a href="https://t.me/+79219156255" target="_blank" rel="noopener">Telegram</a></li>
           <li><a href="https://vk.com/" target="_blank" rel="noopener">ВКонтакте</a></li>

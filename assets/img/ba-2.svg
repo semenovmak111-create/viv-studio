@@ -4,10 +4,10 @@
   <filter id="mid" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="8.3"/></filter>
   <filter id="near" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="3.6"/></filter>
   <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4"/><feColorMatrix type="saturate" values="0"/></filter>
-  <radialGradient id="vig" cx="50%" cy="44%" r="76%"><stop offset="52%" stop-color="#000" stop-opacity="0"/><stop offset="100%" stop-color="#2A1B10" stop-opacity=".40"/></radialGradient>
+  <radialGradient id="vig" cx="50%" cy="44%" r="76%"><stop offset="52%" stop-color="#000" stop-opacity="0"/><stop offset="100%" stop-color="#0E1F18" stop-opacity=".42"/></radialGradient>
   <linearGradient id="bgL" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#DFC3A2"/><stop offset="1" stop-color="#C7A37D"/></linearGradient>
   <linearGradient id="bgR" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F4E0C6"/><stop offset="1" stop-color="#E3C4A0"/></linearGradient>
-  <linearGradient id="scrim" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2A1B10" stop-opacity="0"/><stop offset="1" stop-color="#2A1B10" stop-opacity=".5"/></linearGradient>
+  <linearGradient id="scrim" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0E1F18" stop-opacity="0"/><stop offset="1" stop-color="#0E1F18" stop-opacity=".55"/></linearGradient>
   <clipPath id="cl"><rect width="260" height="347"/></clipPath>
   <clipPath id="cr"><rect x="260" width="260" height="347"/></clipPath>
 </defs>
