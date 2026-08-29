@@ -1,44 +1,66 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#33232c"/><stop offset=".55" stop-color="#241a20"/><stop offset="1" stop-color="#180f14"/>
+      <stop offset="0" stop-color="#150a29"/><stop offset=".55" stop-color="#0d0618"/><stop offset="1" stop-color="#180a2e"/>
     </linearGradient>
-    <radialGradient id="glow" cx=".5" cy=".5" r=".5">
-      <stop offset="0" stop-color="#b08c4f" stop-opacity=".38"/><stop offset="1" stop-color="#b08c4f" stop-opacity="0"/>
+    <radialGradient id="g1" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#7c3aed" stop-opacity=".85"/><stop offset="1" stop-color="#7c3aed" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="g2" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#e83fa4" stop-opacity=".7"/><stop offset="1" stop-color="#e83fa4" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="g3" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#22d3ee" stop-opacity=".45"/><stop offset="1" stop-color="#22d3ee" stop-opacity="0"/>
     </radialGradient>
     <linearGradient id="beam" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#d9be86" stop-opacity=".95"/><stop offset="1" stop-color="#d9be86" stop-opacity="0"/>
+      <stop offset="0" stop-color="#22d3ee" stop-opacity=".95"/><stop offset="1" stop-color="#22d3ee" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="txt" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#22d3ee"/><stop offset=".5" stop-color="#a78bfa"/><stop offset="1" stop-color="#f472b6"/>
+    </linearGradient>
+    <linearGradient id="blob" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7c3aed"/><stop offset=".55" stop-color="#c026d3"/><stop offset="1" stop-color="#e83fa4"/>
+    </linearGradient>
+    <linearGradient id="pill" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#7c3aed"/><stop offset="1" stop-color="#e83fa4"/>
     </linearGradient>
   </defs>
 
   <rect width="1200" height="630" fill="url(#bg)"/>
-  <circle cx="1010" cy="330" r="330" fill="url(#glow)"/>
-  <g fill="none" stroke="#d9be86" stroke-opacity=".22">
-    <circle cx="1010" cy="330" r="150"/><circle cx="1010" cy="330" r="215"/><circle cx="1010" cy="330" r="280"/>
-  </g>
-  <path d="M1010 90 L1010 320" stroke="url(#beam)" stroke-width="60" stroke-linecap="round"/>
-  <circle cx="1010" cy="330" r="11" fill="#d9be86"/>
+  <circle cx="120" cy="70" r="420" fill="url(#g1)"/>
+  <circle cx="1120" cy="560" r="400" fill="url(#g2)"/>
+  <circle cx="980" cy="120" r="300" fill="url(#g3)"/>
 
-  <g font-family="Manrope, Segoe UI, Arial, sans-serif">
-    <text x="80" y="112" font-size="21" font-weight="800" letter-spacing="7" fill="#d9be86">VIV.STUDIO</text>
-    <path d="M80 136 h96" stroke="#b08c4f" stroke-width="1.4"/>
-    <text x="80" y="168" font-size="19" letter-spacing="1.5" fill="#a89398">ЛАЗЕРНАЯ ЭПИЛЯЦИЯ И КОСМЕТОЛОГИЯ · САНКТ-ПЕТЕРБУРГ</text>
-  </g>
-
-  <g font-family="Playfair Display, Georgia, serif" fill="#ffffff">
-    <text x="80" y="272" font-size="60">Лазерная эпиляция</text>
-    <text x="80" y="342" font-size="60">всего тела — <tspan fill="#d9be86">4 900 ₽</tspan></text>
-    <text x="80" y="412" font-size="60">вместо 9 800 ₽</text>
-  </g>
-
-  <g font-family="Manrope, Segoe UI, Arial, sans-serif" fill="#c2b1b5" font-size="23">
-    <text x="80" y="470">Диодный лазер MAGIC ONE 4000 Вт · комплекс за 40 минут</text>
-    <text x="80" y="506">Ведёт косметолог с медицинским образованием</text>
+  <g transform="translate(960 330)">
+    <path d="M0-182C104-182 186-96 176 6 166 108 92 186-8 182-108 178-180 96-178-6-176-108-104-182 0-182z" fill="url(#blob)" opacity=".95"/>
+    <g fill="none" stroke="#ffffff" stroke-opacity=".32">
+      <circle r="150" stroke-width="1"/><circle r="104" stroke-width="1"/>
+    </g>
+    <path d="M0-158 L0 -12" stroke="url(#beam)" stroke-width="46" stroke-linecap="round"/>
+    <path d="M0-158 L0 -12" stroke="#ffffff" stroke-opacity=".55" stroke-width="1.6"/>
+    <circle cy="-6" r="10" fill="#22d3ee"/>
   </g>
 
   <g font-family="Manrope, Segoe UI, Arial, sans-serif">
-    <rect x="80" y="538" width="474" height="56" rx="28" fill="#a32f4c"/>
-    <text x="317" y="574" font-size="20" font-weight="800" fill="#ffffff" text-anchor="middle">м. Чернышевская · Суворовский пр-кт, 35</text>
-    <text x="584" y="574" font-size="21" font-weight="700" fill="#d9be86">+7 (921) 915-62-55</text>
+    <text x="80" y="106" font-size="20" font-weight="800" letter-spacing="6" fill="url(#txt)">VIV.STUDIO</text>
+    <path d="M80 128 h92" stroke="#8b5cf6" stroke-width="1.4" stroke-opacity=".8"/>
+    <text x="80" y="160" font-size="17" letter-spacing="1.6" fill="#bda9e0">ЛАЗЕРНАЯ ЭПИЛЯЦИЯ И КОСМЕТОЛОГИЯ · САНКТ-ПЕТЕРБУРГ</text>
+  </g>
+
+  <g font-family="Unbounded, Manrope, Segoe UI, Arial, sans-serif" fill="#ffffff" font-weight="600" letter-spacing="-1.6">
+    <text x="80" y="262" font-size="47">Лазерная эпиляция</text>
+    <text x="80" y="326" font-size="47">всего тела — <tspan fill="url(#txt)">4 900 ₽</tspan></text>
+    <text x="80" y="390" font-size="47">вместо 9 800 ₽</text>
+  </g>
+
+  <g font-family="Manrope, Segoe UI, Arial, sans-serif" fill="#bda9e0" font-size="21">
+    <text x="80" y="448">Диодный лазер MAGIC ONE 4000 Вт · комплекс за 40 минут</text>
+    <text x="80" y="482">Ведёт косметолог с медицинским образованием</text>
+  </g>
+
+  <g font-family="Manrope, Segoe UI, Arial, sans-serif">
+    <rect x="80" y="522" width="452" height="56" rx="28" fill="url(#pill)"/>
+    <text x="306" y="558" font-size="19" font-weight="800" fill="#ffffff" text-anchor="middle">м. Чернышевская · Суворовский, 35</text>
+    <text x="562" y="558" font-size="20" font-weight="700" fill="#22d3ee">+7 (921) 915-62-55</text>
   </g>
 </svg>

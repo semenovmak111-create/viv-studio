@@ -9,7 +9,7 @@
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/manrope-cyrillic.woff2" crossorigin>
-<link rel="preload" as="font" type="font/woff2" href="assets/fonts/playfair-cyrillic.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/unbounded-cyrillic.woff2" crossorigin>
 <style>
 @font-face{font-family:'Manrope';font-style:normal;font-weight:400 800;font-display:swap;
   src:url(assets/fonts/manrope-cyrillic.woff2) format('woff2');
@@ -17,16 +17,18 @@
 @font-face{font-family:'Manrope';font-style:normal;font-weight:400 800;font-display:swap;
   src:url(assets/fonts/manrope-latin.woff2) format('woff2');
   unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
-@font-face{font-family:'Playfair';font-style:normal;font-weight:400 700;font-display:swap;
-  src:url(assets/fonts/playfair-cyrillic.woff2) format('woff2');
+@font-face{font-family:'Unbounded';font-style:normal;font-weight:200 900;font-display:swap;
+  src:url(assets/fonts/unbounded-cyrillic.woff2) format('woff2');
   unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
-@font-face{font-family:'Playfair';font-style:normal;font-weight:400 700;font-display:swap;
-  src:url(assets/fonts/playfair-latin.woff2) format('woff2');
+@font-face{font-family:'Unbounded';font-style:normal;font-weight:200 900;font-display:swap;
+  src:url(assets/fonts/unbounded-latin.woff2) format('woff2');
   unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 :root{
-  --bg:#fbf8f6;--bg-alt:#f4eeea;--bg-dark:#241a20;--ink:#1e1719;--ink-2:#6b5d60;--ink-3:#94868a;
-  --line:#eadfd9;--line-2:#e0d2ca;--plum:#5b2438;--plum-soft:#f3e7ea;--cta:#a32f4c;--cta-hi:#bc3a5b;
-  --gold:#b08c4f;--gold-soft:#f5edde;
+  --bg:#0d0618;--bg-alt:rgba(255,255,255,.05);--bg-dark:#0a0414;--ink:#f6f0ff;--ink-2:#bda9e0;--ink-3:#8f7cb8;
+  --line:rgba(255,255,255,.11);--line-2:rgba(255,255,255,.2);--plum:#a78bfa;--plum-soft:rgba(124,58,237,.24);--cta:#c026d3;--cta-hi:#e83fa4;
+  --gold:#22d3ee;--gold-soft:rgba(34,211,238,.12);
+  --grad:linear-gradient(115deg,#7c3aed 0%,#c026d3 48%,#ec4899 100%);
+  --grad-2:linear-gradient(115deg,#22d3ee 0%,#8b5cf6 55%,#e83fa4 100%);
   --sh:0 1px 2px rgba(36,26,32,.04),0 8px 28px -14px rgba(36,26,32,.14);
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -34,25 +36,26 @@ body{font-family:'Manrope',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Ar
   color:var(--ink);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;background:var(--bg)}
 .wrap{max-width:780px;margin:0 auto;padding:0 22px}
 a{color:var(--plum)}
-h1{font-family:'Playfair',Georgia,serif;font-size:clamp(29px,4vw,44px);line-height:1.1;letter-spacing:-.015em;font-weight:500;margin-bottom:14px}
-h2{font-family:'Playfair',Georgia,serif;font-size:25px;letter-spacing:-.015em;font-weight:500;margin:40px 0 12px;line-height:1.15}
+h1{font-family:'Unbounded',sans-serif;font-size:clamp(26px,3.4vw,40px);line-height:1.08;letter-spacing:-.035em;font-weight:600;margin-bottom:14px}
+h2{font-family:'Unbounded',sans-serif;font-size:23px;letter-spacing:-.03em;font-weight:600;margin:40px 0 12px;line-height:1.15}
 h3{font-size:17px;font-weight:800;margin:24px 0 8px}
 p,li{margin-bottom:12px}
 ul,ol{padding-left:22px}
 li::marker{color:var(--gold)}
-.top{border-bottom:1px solid var(--line);padding:16px 0;position:sticky;top:0;background:rgba(251,248,246,.95);backdrop-filter:blur(10px);z-index:5}
+.top{border-bottom:1px solid var(--line);padding:16px 0;position:sticky;top:0;background:rgba(13,6,24,.8);backdrop-filter:blur(14px);z-index:5}
 .top .wrap{display:flex;align-items:center;gap:18px;justify-content:space-between}
-.logo{font-family:'Playfair',serif;font-weight:600;font-size:23px;color:var(--plum);text-decoration:none}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--cta);color:#fff;
+.logo{font-family:'Unbounded',sans-serif;font-weight:700;font-size:19px;letter-spacing:-.03em;text-decoration:none;
+  background:var(--grad-2);-webkit-background-clip:text;background-clip:text;color:transparent}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--grad);color:#fff;
   border:0;border-radius:99px;padding:13px 24px;font:inherit;font-weight:800;font-size:15.5px;cursor:pointer;text-decoration:none;
-  box-shadow:0 10px 22px -10px rgba(163,47,76,.6)}
-.btn:hover{background:var(--cta-hi)}
-.btn-line{background:transparent;color:var(--plum);border:1px solid var(--line-2);box-shadow:none}
-.btn-line:hover{background:var(--plum);color:#fff;border-color:var(--plum)}
+  box-shadow:0 14px 30px -12px rgba(192,38,211,.7)}
+.btn:hover{filter:brightness(1.09)}
+.btn-line{background:transparent;color:var(--ink);border:1px solid var(--line-2);box-shadow:none}
+.btn-line:hover{background:rgba(255,255,255,.1);border-color:var(--plum);filter:none}
 main{padding:52px 0 20px}
 .muted{color:var(--ink-2);font-size:15px}
-.card{border:1px solid var(--line);border-radius:16px;padding:26px;margin:20px 0;background:#fff;box-shadow:var(--sh)}
-.card.g{background:var(--gold-soft);border-color:#e8dbc2}
+.card{border:1px solid var(--line);border-radius:24px;padding:26px;margin:20px 0;background:rgba(255,255,255,.05);backdrop-filter:blur(14px)}
+.card.g{background:linear-gradient(120deg,rgba(124,58,237,.26),rgba(232,63,164,.18));border-color:var(--line-2)}
 .fill{background:var(--plum-soft);border-radius:5px;padding:1px 7px;font-weight:700;color:var(--plum);box-decoration-break:clone;-webkit-box-decoration-break:clone}
 .foot{border-top:1px solid var(--line);margin-top:56px;padding:28px 0 46px;color:var(--ink-2);font-size:14.5px}
 .foot .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
@@ -61,9 +64,18 @@ main{padding:52px 0 20px}
   .card{padding:20px}
   .top .btn{padding:11px 16px;font-size:14px}
 }
+.bg{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.bg b{position:absolute;display:block;border-radius:50%;filter:blur(90px);opacity:.5}
+.bg .b1{width:700px;height:700px;top:-240px;left:-160px;background:radial-gradient(circle,#7c3aed,transparent 68%)}
+.bg .b2{width:620px;height:620px;top:8%;right:-200px;background:radial-gradient(circle,#e83fa4,transparent 66%);opacity:.4}
+.bg .b3{width:600px;height:600px;bottom:-200px;left:6%;background:radial-gradient(circle,#22d3ee,transparent 66%);opacity:.2}
+.bg .grain{position:absolute;inset:-50%;opacity:.05;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E")}
+header,main,footer,.top,.foot{position:relative;z-index:1}
 </style>
 </head>
 <body>
+<div class="bg" aria-hidden="true"><b class="b1"></b><b class="b2"></b><b class="b3"></b><span class="grain"></span></div>
 
 <div class="top">
   <div class="wrap">
