@@ -3,119 +3,185 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Политика конфиденциальности — студия VIV Studio</title>
-<meta name="robots" content="noindex">
-<meta name="theme-color" content="#F4EFE3">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230F211B'/%3E%3Cpath d='M17 21l15 24 15-24' fill='none' stroke='%23DFC894' stroke-width='3.4'/%3E%3C/svg%3E">
+<title>Политика конфиденциальности — VIV.STUDIO</title>
+<meta name="description" content="Политика обработки персональных данных VIV.STUDIO: какие данные собираем, зачем, сколько храним и как их удалить.">
+<meta name="robots" content="noindex, follow">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/manrope-cyrillic.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/playfair-cyrillic.woff2" crossorigin>
 <style>
-@font-face{font-family:'Cormorant';font-style:normal;font-weight:400 700;font-display:swap;
-  src:url(assets/fonts/cormorant-cyrillic.woff2) format('woff2');
+@font-face{font-family:'Manrope';font-style:normal;font-weight:400 800;font-display:swap;
+  src:url(assets/fonts/manrope-cyrillic.woff2) format('woff2');
   unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
-@font-face{font-family:'Cormorant';font-style:normal;font-weight:400 700;font-display:swap;
-  src:url(assets/fonts/cormorant-latin.woff2) format('woff2');
-  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+2000-206F,U+2122,U+FEFF,U+FFFD}
-@font-face{font-family:'Golos';font-style:normal;font-weight:400 800;font-display:swap;
-  src:url(assets/fonts/golos-cyrillic.woff2) format('woff2');
+@font-face{font-family:'Manrope';font-style:normal;font-weight:400 800;font-display:swap;
+  src:url(assets/fonts/manrope-latin.woff2) format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Playfair';font-style:normal;font-weight:400 700;font-display:swap;
+  src:url(assets/fonts/playfair-cyrillic.woff2) format('woff2');
   unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
-@font-face{font-family:'Golos';font-style:normal;font-weight:400 800;font-display:swap;
-  src:url(assets/fonts/golos-latin.woff2) format('woff2');
-  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+2000-206F,U+2122,U+FEFF,U+FFFD}
+@font-face{font-family:'Playfair';font-style:normal;font-weight:400 700;font-display:swap;
+  src:url(assets/fonts/playfair-latin.woff2) format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 :root{
-  --paper:#F4EFE3; --plate:#FBF8F0; --paper-3:#DED5BF;
-  --ink:#23261F; --ink-2:#41473A; --ink-3:#585D4E;
-  --accent:#1F4A3B; --brass:#6C5521; --rule:rgba(35,38,31,.17);
-  --g-text:linear-gradient(102deg,#1F4A3B 0%,#3B7861 46%,#856A33 100%);
-  --serif:'Cormorant',Georgia,'Times New Roman',serif;
-  --sans:'Golos',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  --bg:#fbf8f6;--bg-alt:#f4eeea;--bg-dark:#241a20;--ink:#1e1719;--ink-2:#6b5d60;--ink-3:#94868a;
+  --line:#eadfd9;--line-2:#e0d2ca;--plum:#5b2438;--plum-soft:#f3e7ea;--cta:#a32f4c;--cta-hi:#bc3a5b;
+  --gold:#b08c4f;--gold-soft:#f5edde;
+  --sh:0 1px 2px rgba(36,26,32,.04),0 8px 28px -14px rgba(36,26,32,.14);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:var(--sans);color:var(--ink-2);font-size:17px;line-height:1.64;
-  padding:0 clamp(18px,5vw,44px);-webkit-font-smoothing:antialiased;min-height:100vh;
-  background:
-    radial-gradient(900px 700px at 100% 0%, #EFE5CB 0%, rgba(239,229,203,0) 60%),
-    radial-gradient(760px 620px at 0% 22%, #E0EADB 0%, rgba(224,234,219,0) 58%),
-    radial-gradient(820px 640px at 52% 100%, #F0E7D3 0%, rgba(240,231,211,0) 62%),
-    linear-gradient(180deg,#F7F3E9 0%,#EFEADC 54%,#F4EFE3 100%);
-  background-attachment:fixed}
-.page{max-width:760px;margin:0 auto;padding:34px 0 90px}
-a{color:var(--accent);font-weight:600}
-.head{display:flex;justify-content:space-between;align-items:baseline;gap:20px;
-  padding-bottom:14px;border-bottom:1px solid var(--ink);margin-bottom:clamp(28px,5vw,48px)}
-.mast{font-family:var(--serif);font-weight:600;font-size:21px;letter-spacing:.055em;
-  text-transform:uppercase;color:var(--ink);text-decoration:none}
-.back{font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--ink-3);text-decoration:none;white-space:nowrap}
-.back:hover{color:var(--accent)}
-h1{font-family:var(--serif);font-weight:500;letter-spacing:-.01em;color:var(--ink);
-  font-size:clamp(34px,6vw,58px);line-height:1.02;margin-bottom:12px}
-.upd{font-size:14px;color:var(--ink-3)}
-h2{font-family:var(--sans);font-weight:600;font-size:11px;letter-spacing:.17em;text-transform:uppercase;
-  color:var(--brass);margin:38px 0 12px;padding-top:16px;border-top:1px solid var(--rule)}
-p+p{margin-top:12px}
-ul{margin:12px 0 0}
-li{list-style:none;padding:9px 0 9px 22px;border-top:1px solid rgba(35,38,31,.09);position:relative}
-li:first-child{border-top:0;padding-top:2px}
-li::before{content:'—';position:absolute;left:0;color:var(--brass)}
-.box{background:var(--plate);border-left:2px solid var(--brass);border-radius:0 14px 14px 0;
-  box-shadow:0 16px 30px -24px rgba(24,54,42,.5);padding:18px 22px;margin:26px 0;
-  font-size:15px;line-height:1.6;color:var(--ink-2)}
-.foot{margin-top:46px;padding-top:20px;border-top:1px solid var(--ink)}
+body{font-family:'Manrope',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;
+  color:var(--ink);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;background:var(--bg)}
+.wrap{max-width:780px;margin:0 auto;padding:0 22px}
+a{color:var(--plum)}
+h1{font-family:'Playfair',Georgia,serif;font-size:clamp(29px,4vw,44px);line-height:1.1;letter-spacing:-.015em;font-weight:500;margin-bottom:14px}
+h2{font-family:'Playfair',Georgia,serif;font-size:25px;letter-spacing:-.015em;font-weight:500;margin:40px 0 12px;line-height:1.15}
+h3{font-size:17px;font-weight:800;margin:24px 0 8px}
+p,li{margin-bottom:12px}
+ul,ol{padding-left:22px}
+li::marker{color:var(--gold)}
+.top{border-bottom:1px solid var(--line);padding:16px 0;position:sticky;top:0;background:rgba(251,248,246,.95);backdrop-filter:blur(10px);z-index:5}
+.top .wrap{display:flex;align-items:center;gap:18px;justify-content:space-between}
+.logo{font-family:'Playfair',serif;font-weight:600;font-size:23px;color:var(--plum);text-decoration:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--cta);color:#fff;
+  border:0;border-radius:99px;padding:13px 24px;font:inherit;font-weight:800;font-size:15.5px;cursor:pointer;text-decoration:none;
+  box-shadow:0 10px 22px -10px rgba(163,47,76,.6)}
+.btn:hover{background:var(--cta-hi)}
+.btn-line{background:transparent;color:var(--plum);border:1px solid var(--line-2);box-shadow:none}
+.btn-line:hover{background:var(--plum);color:#fff;border-color:var(--plum)}
+main{padding:52px 0 20px}
+.muted{color:var(--ink-2);font-size:15px}
+.card{border:1px solid var(--line);border-radius:16px;padding:26px;margin:20px 0;background:#fff;box-shadow:var(--sh)}
+.card.g{background:var(--gold-soft);border-color:#e8dbc2}
+.fill{background:var(--plum-soft);border-radius:5px;padding:1px 7px;font-weight:700;color:var(--plum);box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.foot{border-top:1px solid var(--line);margin-top:56px;padding:28px 0 46px;color:var(--ink-2);font-size:14.5px}
+.foot .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+@media (max-width:640px){
+  body{font-size:16px}
+  .card{padding:20px}
+  .top .btn{padding:11px 16px;font-size:14px}
+}
 </style>
 </head>
 <body>
-<div class="page">
-  <div class="head">
-    <a class="mast" href="index.html">VIV Studio</a>
-    <a class="back" href="index.html">← На главную</a>
+
+<div class="top">
+  <div class="wrap">
+    <a href="index.html" class="logo">VIV.STUDIO</a>
+    <a href="index.html" class="btn btn-line">На сайт</a>
   </div>
-  <h1>Политика конфиденциальности</h1>
-  <p class="upd">Действует с 1 января 2026 года. Сайт студии VIV Studio, Санкт-Петербург, Суворовский пр-т, 35, офис 409.</p>
-
-  <div class="box">Заполните перед публикацией: наименование юридического лица или ИП, ОГРН/ОГРНИП, ИНН, юридический адрес и адрес электронной почты для обращений субъектов персональных данных.</div>
-
-  <h2>1. Общие положения</h2>
-  <p>Настоящая политика определяет порядок обработки и защиты персональных данных пользователей сайта студии VIV Studio (далее — Оператор) и подготовлена в соответствии с Федеральным законом от 27.07.2006 № 152-ФЗ «О персональных данных».</p>
-
-  <h2>2. Какие данные мы собираем</h2>
-  <ul>
-    <li>имя, которое вы указываете в форме записи;</li>
-    <li>номер телефона;</li>
-    <li>ответы на вопросы формы подбора программы (зона, задача, удобное время);</li>
-    <li>обезличенные данные о посещении сайта, которые передают сервисы веб-аналитики (файлы cookie, IP-адрес, тип браузера, источник перехода).</li>
-  </ul>
-
-  <h2>3. Зачем мы их обрабатываем</h2>
-  <ul>
-    <li>чтобы связаться с вами, согласовать время визита и ответить на вопросы;</li>
-    <li>чтобы подобрать программу процедур и рассчитать её стоимость;</li>
-    <li>чтобы сообщать об акциях и свободных окнах — только если вы на это согласились;</li>
-    <li>чтобы улучшать работу сайта на основе обезличенной статистики.</li>
-  </ul>
-
-  <h2>4. Правовые основания</h2>
-  <p>Обработка осуществляется на основании согласия пользователя, которое он даёт, отмечая соответствующий чекбокс и отправляя форму на сайте, а также для исполнения договора об оказании услуг, стороной которого является пользователь.</p>
-
-  <h2>5. Передача третьим лицам</h2>
-  <p>Оператор не продаёт и не передаёт персональные данные третьим лицам, за исключением случаев, предусмотренных законодательством РФ, а также передачи сервисам, обеспечивающим работу сайта и записи (системы онлайн-записи, телефонии, веб-аналитики) — в объёме, необходимом для оказания соответствующей услуги.</p>
-
-  <h2>6. Сроки хранения и защита</h2>
-  <p>Данные хранятся не дольше, чем этого требуют цели обработки, либо до отзыва согласия. Оператор принимает организационные и технические меры для защиты данных от неправомерного доступа, уничтожения, изменения и распространения.</p>
-
-  <h2>7. Ваши права</h2>
-  <ul>
-    <li>получить сведения об обработке ваших данных;</li>
-    <li>потребовать уточнения, блокирования или уничтожения данных;</li>
-    <li>отозвать согласие на обработку в любой момент.</li>
-  </ul>
-  <p>Для этого напишите нам или позвоните по телефону <a href="tel:+79219156255">+7 921 915-62-55</a>. Отзыв согласия обрабатываем в течение 10 рабочих дней.</p>
-
-  <h2>8. Файлы cookie</h2>
-  <p>Сайт использует cookie для корректной работы и сбора обезличенной статистики. Вы можете отключить cookie в настройках браузера — часть функций сайта при этом может работать некорректно.</p>
-
-  <h2>9. Изменения политики</h2>
-  <p>Оператор вправе изменять настоящую политику. Актуальная редакция всегда размещена на этой странице.</p>
-
-  <p class="foot"><a class="back" href="index.html">← Вернуться на сайт</a></p>
 </div>
+
+<main>
+  <div class="wrap">
+    <h1>Политика в отношении обработки персональных данных</h1>
+    <p class="muted">Редакция от <span class="fill">__.__.____</span>. Действует для сайта <b>viv.studio</b> и всех форм на нём.</p>
+
+    <div class="card g">
+      <b>Коротко, человеческим языком.</b>
+      <p style="margin:10px 0 0">Мы просим имя и номер телефона только для того, чтобы связаться с вами по вашей заявке: прислать расчёт курса, согласовать время визита и напомнить о записи. Мы не продаём и не передаём номера третьим лицам, не подписываем вас на рассылки без спроса и удаляем данные по первой просьбе. На консультации мы дополнительно спрашиваем о состоянии здоровья — это нужно, чтобы не навредить, и эти сведения защищены строже всего.</p>
+    </div>
+
+    <h2>1. Общие положения</h2>
+    <p>1.1. Настоящая Политика определяет порядок обработки и защиты персональных данных
+      <span class="fill">ИП / ООО «__________», ОГРНИП / ОГРН ____________, ИНН ____________, адрес: 191036, Санкт-Петербург, Суворовский пр-кт, д. 35</span>
+      (далее — Оператор, «VIV.STUDIO»).</p>
+    <p>1.2. Политика разработана в соответствии с Федеральным законом от 27.07.2006 № 152-ФЗ «О персональных данных».</p>
+    <p>1.3. Используя сайт и отправляя данные через любую форму, вы подтверждаете, что ознакомились с Политикой и согласны с условиями обработки ваших персональных данных.</p>
+    <p>1.4. Действующая редакция Политики размещена по адресу <b>viv.studio/privacy.html</b>. Оператор вправе изменять Политику; новая редакция вступает в силу с момента публикации.</p>
+
+    <h2>2. Какие данные обрабатываются</h2>
+    <p>2.1. <b>Данные, которые вы сообщаете сами</b> через формы на сайте, в мессенджерах или по телефону:</p>
+    <ul>
+      <li>имя (или то, как вы просите к вам обращаться);</li>
+      <li>номер телефона;</li>
+      <li>предпочитаемый способ связи (Telegram, WhatsApp, звонок);</li>
+      <li>ответы в квизе: интересующие услуги и зоны, опыт процедур, тип волос, желаемые сроки визита.</li>
+    </ul>
+    <p>2.2. <b>Данные, которые собираются автоматически</b> при посещении сайта: IP-адрес, данные файлов cookie, сведения о браузере и устройстве, источник перехода, страницы и действия на сайте, дата и время визита.</p>
+    <p>2.3. <b>Сведения о состоянии здоровья</b> (специальная категория персональных данных) собираются <b>не через сайт</b>, а очно на консультации в студии: противопоказания, перенесённые заболевания, принимаемые лекарства, особенности кожи. Они фиксируются в информированном добровольном согласии на медицинское вмешательство и в карте клиента, обрабатываются только для безопасного оказания услуги и в интернет не передаются.</p>
+    <p>2.4. Оператор не запрашивает и не обрабатывает через сайт паспортные данные, адрес проживания и платёжную информацию.</p>
+
+    <h2>3. Зачем обрабатываются данные</h2>
+    <ul>
+      <li>связаться с вами по оставленной заявке и ответить на вопросы;</li>
+      <li>подготовить и отправить расчёт курса и план процедур;</li>
+      <li>записать вас на процедуру, подтвердить визит и напомнить о нём;</li>
+      <li>оценить противопоказания и обеспечить безопасность процедуры;</li>
+      <li>вести историю визитов и начислять бонусы;</li>
+      <li>улучшать сайт и оценивать эффективность рекламы в обезличенном виде;</li>
+      <li>исполнять требования законодательства.</li>
+    </ul>
+    <p>3.2. Рекламные и информационные сообщения направляются только с вашего отдельного согласия. Отписаться можно в любой момент, написав нам одну строку в Telegram.</p>
+
+    <h2>4. Правовые основания</h2>
+    <ul>
+      <li>ваше согласие на обработку персональных данных (п. 1 ч. 1 ст. 6 152-ФЗ), которое вы даёте, отмечая соответствующую галочку в форме;</li>
+      <li>исполнение договора об оказании услуг, стороной которого вы являетесь;</li>
+      <li>для сведений о здоровье — ваше согласие в письменной форме и медицинско-профилактические цели (ч. 2 ст. 10 152-ФЗ);</li>
+      <li>требования законодательства РФ.</li>
+    </ul>
+
+    <h2>5. Кому данные могут быть переданы</h2>
+    <p>5.1. Оператор не продаёт, не сдаёт в аренду и не передаёт персональные данные третьим лицам для их собственных целей.</p>
+    <p>5.2. Данные могут обрабатываться привлечёнными по поручению Оператора лицами исключительно для целей из раздела 3 и на условиях конфиденциальности: сервис онлайн-записи и CRM, хостинг сайта, сервисы отправки сообщений, сервисы веб-аналитики (в обезличенном виде).</p>
+    <p>5.3. Данные могут быть переданы уполномоченным государственным органам по основаниям, предусмотренным законом.</p>
+    <p>5.4. Обработка и хранение осуществляются на серверах, расположенных на территории Российской Федерации.</p>
+
+    <h2>6. Сроки хранения</h2>
+    <ul>
+      <li>заявки, по которым не состоялся визит, — 1 год с момента обращения;</li>
+      <li>данные клиентов и история визитов — в течение срока сотрудничества и 3 года после последнего визита;</li>
+      <li>информированные согласия и сведения о здоровье — в сроки, установленные требованиями к медицинской документации;</li>
+      <li>данные веб-аналитики — в обезличенном виде, в сроки, установленные сервисом аналитики.</li>
+    </ul>
+    <p>По истечении сроков либо по вашему требованию данные удаляются или обезличиваются.</p>
+
+    <h2 id="soglasie">7. Согласие на обработку персональных данных</h2>
+    <div class="card">
+      <p>Отмечая галочку «Согласна на обработку персональных данных» и нажимая кнопку отправки формы, вы свободно, своей волей и в своём интересе даёте согласие
+        <span class="fill">ИП / ООО «__________», ИНН ____________</span>
+        на обработку указанных вами персональных данных (имя, номер телефона, способ связи, ответы в форме подбора).</p>
+      <p><b>Перечень действий:</b> сбор, запись, систематизация, накопление, хранение, уточнение, извлечение, использование, передача уполномоченным лицам по поручению, блокирование, удаление и уничтожение — как автоматизированным, так и неавтоматизированным способом.</p>
+      <p><b>Цель:</b> обратная связь по заявке, расчёт стоимости, запись на процедуру и напоминание о визите.</p>
+      <p><b>Срок действия:</b> до достижения целей обработки либо до отзыва согласия.</p>
+      <p style="margin-bottom:0"><b>Как отозвать:</b> напишите в Telegram <a href="https://t.me/VIV_Studio" target="_blank" rel="noopener">@VIV_Studio</a>, позвоните по номеру <a href="tel:+79219156255">+7 (921) 915-62-55</a> или направьте письменное заявление по адресу студии. Мы прекратим обработку и удалим данные в течение 10 рабочих дней, если закон не требует их сохранить.</p>
+    </div>
+
+    <h2>8. Как защищаются данные</h2>
+    <p>8.1. Оператор принимает правовые, организационные и технические меры для защиты данных от неправомерного доступа, копирования, распространения и уничтожения: ограничение круга лиц с доступом, соглашения о конфиденциальности, защищённое соединение (HTTPS), резервное копирование, хранение бумажных документов в закрытом шкафу.</p>
+    <p>8.2. Оператор не несёт ответственности за сведения, которые вы самостоятельно разместили в открытом доступе, в том числе в комментариях в социальных сетях.</p>
+
+    <h2>9. Ваши права</h2>
+    <p>Вы вправе: получить сведения об обработке своих данных; требовать уточнения, блокирования или уничтожения неполных, устаревших или незаконно полученных данных; отозвать согласие; обжаловать действия Оператора в Роскомнадзор или в суд.</p>
+    <p>Для реализации любого из этих прав достаточно написать нам — оформлять заявление специальным образом не требуется.</p>
+    <div class="card">
+      <b>Контакты для обращений</b>
+      <p style="margin:10px 0 0">Telegram: <a href="https://t.me/VIV_Studio" target="_blank" rel="noopener">@VIV_Studio</a><br>
+      Телефон: <a href="tel:+79219156255">+7 (921) 915-62-55</a><br>
+      Адрес: Санкт-Петербург, Суворовский пр-кт, д. 35<br>
+      E-mail: <span class="fill">__________@__________</span></p>
+    </div>
+
+    <h2>10. Файлы cookie и аналитика</h2>
+    <p>10.1. Сайт использует файлы cookie — небольшие текстовые файлы, которые браузер сохраняет на вашем устройстве. Они нужны, чтобы сайт корректно работал и чтобы мы понимали, какие блоки читают, а какие пролистывают.</p>
+    <p>10.2. Сайт может использовать сервис веб-аналитики Яндекс.Метрика (ООО «ЯНДЕКС», Россия), включая Вебвизор, карту скроллинга и аналитику форм. Сервис собирает обезличенные данные о поведении на сайте и не получает ваше имя и номер телефона.</p>
+    <p>10.3. Отключить cookie можно в настройках браузера. При этом часть функций сайта может работать некорректно.</p>
+
+    <h2>11. Заключительные положения</h2>
+    <p>11.1. Ко всему, что не урегулировано настоящей Политикой, применяется законодательство Российской Федерации.</p>
+    <p>11.2. Информация на сайте носит справочный характер, не является публичной офертой и не заменяет очную консультацию специалиста. Имеются противопоказания, необходима консультация специалиста.</p>
+    <p class="muted"><span class="fill">Лицензия на осуществление медицинской деятельности № ____________ от __.__.____, выдана ____________.</span></p>
+  </div>
+</main>
+
+<div class="foot">
+  <div class="wrap">
+    <span>© <span id="year">2026</span> VIV.STUDIO · Суворовский пр-кт, 35, Санкт-Петербург</span>
+    <span><a href="index.html">На главную</a> · <a href="tel:+79219156255">+7 (921) 915-62-55</a></span>
+  </div>
+</div>
+
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 </body>
 </html>

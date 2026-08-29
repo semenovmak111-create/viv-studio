@@ -3,122 +3,187 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Заявка принята — VIV Studio</title>
-<meta name="robots" content="noindex">
-<meta name="theme-color" content="#F4EFE3">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230F211B'/%3E%3Cpath d='M17 21l15 24 15-24' fill='none' stroke='%23DFC894' stroke-width='3.4'/%3E%3C/svg%3E">
+<title>Заявка принята — VIV.STUDIO</title>
+<meta name="description" content="Спасибо за заявку. Косметолог VIV.STUDIO свяжется в течение 15 минут в рабочее время.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/manrope-cyrillic.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/playfair-cyrillic.woff2" crossorigin>
 <style>
-@font-face{font-family:'Cormorant';font-style:normal;font-weight:400 700;font-display:swap;
-  src:url(assets/fonts/cormorant-cyrillic.woff2) format('woff2');
+@font-face{font-family:'Manrope';font-style:normal;font-weight:400 800;font-display:swap;
+  src:url(assets/fonts/manrope-cyrillic.woff2) format('woff2');
   unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
-@font-face{font-family:'Cormorant';font-style:normal;font-weight:400 700;font-display:swap;
-  src:url(assets/fonts/cormorant-latin.woff2) format('woff2');
-  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+2000-206F,U+2122,U+FEFF,U+FFFD}
-@font-face{font-family:'Cormorant';font-style:italic;font-weight:400 700;font-display:swap;
-  src:url(assets/fonts/cormorant-cyrillic-italic.woff2) format('woff2');
+@font-face{font-family:'Manrope';font-style:normal;font-weight:400 800;font-display:swap;
+  src:url(assets/fonts/manrope-latin.woff2) format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Playfair';font-style:normal;font-weight:400 700;font-display:swap;
+  src:url(assets/fonts/playfair-cyrillic.woff2) format('woff2');
   unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
-@font-face{font-family:'Golos';font-style:normal;font-weight:400 800;font-display:swap;
-  src:url(assets/fonts/golos-cyrillic.woff2) format('woff2');
-  unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
-@font-face{font-family:'Golos';font-style:normal;font-weight:400 800;font-display:swap;
-  src:url(assets/fonts/golos-latin.woff2) format('woff2');
-  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+2000-206F,U+2122,U+FEFF,U+FFFD}
-
+@font-face{font-family:'Playfair';font-style:normal;font-weight:400 700;font-display:swap;
+  src:url(assets/fonts/playfair-latin.woff2) format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 :root{
-  --paper:#F4EFE3; --plate:#FBF8F0; --ink:#23261F; --ink-2:#41473A; --ink-3:#585D4E;
-  --accent:#1F4A3B; --accent-hi:#2A5F4C; --brass:#6C5521; --rule:rgba(35,38,31,.17);
-  --g-text:linear-gradient(102deg,#1F4A3B 0%,#3B7861 46%,#856A33 100%);
-  --serif:'Cormorant',Georgia,'Times New Roman',serif;
-  --sans:'Golos',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  --bg:#fbf8f6;--bg-alt:#f4eeea;--bg-dark:#241a20;--ink:#1e1719;--ink-2:#6b5d60;--ink-3:#94868a;
+  --line:#eadfd9;--line-2:#e0d2ca;--plum:#5b2438;--plum-soft:#f3e7ea;--cta:#a32f4c;--cta-hi:#bc3a5b;
+  --gold:#b08c4f;--gold-lt:#d9be86;--gold-soft:#f5edde;--ok:#3f7d5f;
+  --sh:0 1px 2px rgba(36,26,32,.04),0 8px 28px -14px rgba(36,26,32,.14);
+  --sh-lg:0 2px 4px rgba(36,26,32,.05),0 28px 60px -26px rgba(36,26,32,.28);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:var(--sans);color:var(--ink-2);font-size:17px;line-height:1.64;
-  padding:0 clamp(18px,5vw,44px);-webkit-font-smoothing:antialiased;min-height:100vh;
-  background:
-    radial-gradient(900px 700px at 100% 0%, #EFE5CB 0%, rgba(239,229,203,0) 60%),
-    radial-gradient(760px 620px at 0% 22%, #E0EADB 0%, rgba(224,234,219,0) 58%),
-    radial-gradient(820px 640px at 52% 100%, #F0E7D3 0%, rgba(240,231,211,0) 62%),
-    linear-gradient(180deg,#F7F3E9 0%,#EFEADC 54%,#F4EFE3 100%);
-  background-attachment:fixed}
-.page{max-width:860px;margin:0 auto;padding:34px 0 80px}
+body{font-family:'Manrope',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  background:var(--bg);color:var(--ink);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
 a{color:inherit}
-
-.head{display:flex;justify-content:space-between;align-items:baseline;gap:20px;
-  padding-bottom:14px;border-bottom:1px solid var(--ink);margin-bottom:clamp(36px,7vw,72px)}
-.mast{font-family:var(--serif);font-weight:600;font-size:21px;letter-spacing:.055em;
-  text-transform:uppercase;color:var(--ink);text-decoration:none}
-.back{font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--ink-3);text-decoration:none;white-space:nowrap}
-.back:hover{color:var(--accent)}
-
-.label{display:block;font-size:11px;font-weight:600;letter-spacing:.17em;text-transform:uppercase;
-  color:var(--brass);margin-bottom:16px}
-h1{font-family:var(--serif);font-weight:500;color:var(--ink);letter-spacing:-.012em;
-  font-size:clamp(40px,7.4vw,78px);line-height:.98;margin-bottom:20px}
-h1 i{font-style:italic;background:var(--g-text);-webkit-background-clip:text;background-clip:text;
-  color:transparent;-webkit-text-fill-color:transparent;padding-right:.08em}
-.lead{font-family:var(--serif);font-style:italic;font-size:clamp(19px,2.2vw,25px);line-height:1.38;
-  color:var(--ink-2);max-width:38ch;margin-bottom:clamp(30px,5vw,50px)}
-
-.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;
-  border-top:1px solid var(--ink);border-bottom:1px solid var(--rule);margin-bottom:clamp(28px,4vw,44px)}
-.steps > div{padding:22px clamp(14px,2vw,26px) 26px;border-left:1px solid var(--rule)}
-.steps > div:first-child{border-left:0;padding-left:0}
-.steps b{display:block;font-family:var(--serif);font-size:26px;font-weight:500;color:var(--brass);
-  line-height:1;margin-bottom:12px}
-.steps span{font-size:15px;line-height:1.52;display:block}
-@media(max-width:680px){
-  .steps{grid-template-columns:1fr}
-  .steps > div{border-left:0;padding-left:0;border-top:1px solid var(--rule)}
-  .steps > div:first-child{border-top:0}
+h1,h2,h3{font-family:'Playfair',Georgia,serif;font-weight:500;line-height:1.1;letter-spacing:-.015em}
+.wrap{max-width:960px;margin:0 auto;padding:0 24px}
+header{border-bottom:1px solid var(--line);background:#fff}
+.hd{display:flex;align-items:center;gap:14px;padding:16px 0}
+.lm{font-family:'Playfair',serif;font-size:24px;font-weight:600;color:var(--plum);text-decoration:none}
+.ld{font-size:11.5px;color:var(--ink-2);line-height:1.25}
+.hd a.ph{margin-left:auto;font-weight:800;text-decoration:none;font-size:18px}
+main{padding:64px 0 80px}
+.ok{width:74px;height:74px;border-radius:50%;background:var(--plum-soft);display:flex;align-items:center;justify-content:center;margin-bottom:26px}
+h1{font-size:clamp(30px,4.4vw,50px);margin-bottom:16px}
+.lead{font-size:19px;color:var(--ink-2);max-width:680px}
+.kick{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.kick i{width:32px;height:1px;background:var(--gold)}
+.kick span{font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.next{display:grid;gap:0;margin:40px 0 8px;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--sh);overflow:hidden}
+.next>div{display:grid;grid-template-columns:64px 1fr;gap:20px;padding:24px 26px;border-bottom:1px solid var(--line);align-items:start}
+.next>div:last-child{border-bottom:0}
+.next b.n{font-family:'Playfair',serif;font-size:32px;color:var(--gold);line-height:1}
+.next h3{font-size:19px;margin-bottom:6px}
+.next p{font-size:15.5px;color:var(--ink-2)}
+.box{background:var(--bg-alt);border-radius:18px;padding:34px;margin-top:40px;display:grid;grid-template-columns:1fr auto;gap:28px;align-items:center}
+.box h2{font-size:27px;margin-bottom:10px}
+.box p{color:var(--ink-2);font-size:16px;max-width:560px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--cta);color:#fff;
+  border:0;cursor:pointer;font-weight:800;font-size:17px;padding:19px 34px;border-radius:99px;text-decoration:none;
+  box-shadow:0 12px 26px -10px rgba(163,47,76,.62);transition:.18s;white-space:nowrap}
+.btn:hover{background:var(--cta-hi);transform:translateY(-2px)}
+.btn-tg{background:#2aabee;box-shadow:0 12px 26px -12px rgba(42,171,238,.7)}
+.btn-tg:hover{background:#1f97d6}
+.btn-ghost{background:transparent;color:var(--plum);border:1px solid var(--line-2);box-shadow:none}
+.btn-ghost:hover{background:var(--plum);color:#fff;border-color:var(--plum)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px;box-shadow:var(--sh)}
+.card h3{font-size:19px;margin-bottom:8px}
+.card p{font-size:15px;color:var(--ink-2)}
+.note{margin-top:36px;padding:20px 24px;border:1px solid var(--line-2);border-radius:14px;font-size:14.5px;color:var(--ink-2);line-height:1.55}
+.note b{color:var(--ink)}
+footer{background:var(--bg-dark);color:#a89398;padding:36px 0;font-size:14px;margin-top:20px}
+footer a{color:#c2b1b5}
+.fb{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+@media (max-width:760px){
+  .cards{grid-template-columns:1fr}
+  .box{grid-template-columns:1fr}
+  main{padding:44px 0 56px}
+  .btn{width:100%}
+  .next>div{grid-template-columns:44px 1fr;gap:14px;padding:20px}
 }
-
-.cta{display:flex;flex-wrap:wrap;gap:14px 20px;align-items:center;margin-bottom:26px}
-.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;
-  background:linear-gradient(140deg,var(--accent-hi) 0%,var(--accent) 55%,#143229 100%);
-  color:#F6F2E5;text-decoration:none;font-weight:600;font-size:16px;
-  padding:17px 32px;box-shadow:0 12px 22px -14px rgba(16,48,36,.85);
-  transition:background .2s,box-shadow .24s,transform .24s}
-.btn:hover{background:linear-gradient(140deg,#347A61 0%,#245741 55%,#19402F 100%);
-  transform:translateY(-2px);box-shadow:0 18px 28px -14px rgba(16,48,36,.9)}
-.msgs{display:flex;gap:10px;flex-wrap:wrap}
-.msg{display:inline-flex;align-items:center;padding:11px 20px;border-radius:999px;text-decoration:none;
-  font-weight:600;font-size:14.5px;color:var(--ink);box-shadow:inset 0 0 0 1px var(--rule)}
-.msg:hover{box-shadow:inset 0 0 0 1px var(--ink)}
-.small{font-size:14px;color:var(--ink-3);margin-top:28px;padding-top:18px;border-top:1px solid var(--rule);
-  max-width:52ch}
 </style>
 </head>
 <body>
-<div class="page">
 
-  <div class="head">
-    <a class="mast" href="index.html">VIV Studio</a>
-    <a class="back" href="index.html">← На главную</a>
+<header>
+  <div class="wrap hd">
+    <a href="index.html" class="lm">VIV.STUDIO</a>
+    <span class="ld">Лазерная эпиляция<br>и косметология</span>
+    <a href="tel:+79219156255" class="ph">+7 (921) 915-62-55</a>
   </div>
+</header>
 
-  <span class="label">Заявка принята</span>
-  <h1>Спасибо,<br><i>мы перезвоним</i></h1>
-  <p class="lead">Мастер студии наберёт вас с номера +7 921 915-62-55 в течение 15 минут в рабочее время,
-  предложит ближайшие свободные окна и закрепит за вами скидку 50% на первый визит.</p>
-
-  <div class="steps">
-    <div><b>I</b><span>Созвонимся и подберём удобное время — визит занимает 30 минут</span></div>
-    <div><b>II</b><span>В кабинете расспросим о здоровье и сделаем тестовую вспышку</span></div>
-    <div><b>III</b><span>Проведём процедуру и отдадим план курса на руки — решать будете дома</span></div>
-  </div>
-
-  <div class="cta">
-    <a class="btn" href="index.html">Вернуться на сайт</a>
-    <div class="msgs">
-      <a class="msg" href="https://t.me/VIV_Studio" target="_blank" rel="noopener">Telegram</a>
-      <a class="msg" href="https://wa.me/79219156255" target="_blank" rel="noopener">WhatsApp</a>
-      <a class="msg" href="https://yandex.ru/maps/org/116601474737/" target="_blank" rel="noopener">Как доехать</a>
+<main>
+  <div class="wrap">
+    <div class="ok">
+      <svg width="34" height="34" viewBox="0 0 24 24" fill="none"><path d="M4 12.5l5 5L20 6.5" stroke="#a32f4c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </div>
+    <h1>Заявка принята. Скидка 50% закреплена за вашим номером</h1>
+    <p class="lead">Косметолог напишет вам в течение 15 минут в рабочее время — с 10:00 до 21:00. Если вы оставили заявку ночью, ответим утром первым делом.</p>
+
+    <div class="kick" style="margin-top:44px"><i></i><span>Что дальше</span></div>
+    <div class="next">
+      <div>
+        <b class="n">01</b>
+        <div>
+          <h3>Мы пишем вам в Telegram или звоним — как вы выбрали</h3>
+          <p>Уточним зоны, ответим на вопросы про противопоказания и пришлём расчёт курса: цену, число процедур и интервалы. Это займёт пару минут переписки.</p>
+        </div>
+      </div>
+      <div>
+        <b class="n">02</b>
+        <div>
+          <h3>Подбираем удобное время</h3>
+          <p>Предложим 2–3 свободных окна. Запись идёт на конкретное время: в студии один кабинет, очереди и ожидания в коридоре нет.</p>
+        </div>
+      </div>
+      <div>
+        <b class="n">03</b>
+        <div>
+          <h3>Приходите на диагностику — она бесплатна</h3>
+          <p>30 минут: разбор кожи и волос, письменная проверка противопоказаний, тест-вспышка и план курса на 12 месяцев. Записываться на процедуру после неё вы не обязаны.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="box">
+      <div>
+        <h2>Хотите ускорить — напишите нам сами</h2>
+        <p>В Telegram отвечаем быстрее всего. Заодно можете сразу прислать фото зоны, если хотите понять, сколько процедур понадобится именно вам.</p>
+      </div>
+      <a href="https://t.me/VIV_Studio" target="_blank" rel="noopener" class="btn btn-tg">Написать в Telegram</a>
+    </div>
+
+    <div class="kick" style="margin-top:52px"><i></i><span>Пока ждёте</span></div>
+    <h2 style="font-size:29px;margin-bottom:6px">Три вещи, которые стоит сделать до визита</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Побрейте зону за 1–2 дня</h3>
+        <p>Не выщипывайте и не делайте шугаринг за две недели до процедуры: корень волоса должен остаться на месте, иначе лазеру не по чему работать.</p>
+      </div>
+      <div class="card">
+        <h3>Две недели без загара</h3>
+        <p>Свежий загар и автозагар — противопоказание. Если вы недавно вернулись с моря или из солярия, скажите об этом: перенесём дату, а не «попробуем аккуратнее».</p>
+      </div>
+      <div class="card">
+        <h3>Вспомните про лекарства</h3>
+        <p>Некоторые препараты повышают светочувствительность кожи. Если принимаете что-то постоянно — просто назовите на диагностике, разберёмся вместе.</p>
+      </div>
+    </div>
+
+    <div class="note">
+      <b>Как нас найти:</b> Санкт-Петербург, Суворовский пр-кт, 35 — 6 минут пешком от м. Чернышевская.
+      Точный номер кабинета и код домофона пришлём вместе с подтверждением записи.
+      <br><br>
+      Имеются противопоказания. Необходима консультация специалиста.
+    </div>
+
+    <p style="margin-top:30px"><a href="index.html" class="btn btn-ghost">Вернуться на сайт</a></p>
   </div>
+</main>
 
-  <p class="small">Суворовский пр-т, 35, офис 409. Заблудитесь в здании — позвоните, встретят.</p>
+<footer>
+  <div class="wrap fb">
+    <span>© <span id="year">2026</span> VIV.STUDIO · Суворовский пр-кт, 35, Санкт-Петербург</span>
+    <span><a href="privacy.html">Политика конфиденциальности</a> · <a href="tel:+79219156255">+7 (921) 915-62-55</a></span>
+  </div>
+</footer>
 
-</div>
+<script>
+/* Номер счётчика продублировать из index.html: по этой странице ставится цель «лид». */
+var METRIKA_ID = 0;
+document.getElementById('year').textContent = new Date().getFullYear();
+if (METRIKA_ID) {
+  (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+  m[i].l=1*new Date();k=e.createElement(t);a=e.getElementsByTagName(t)[0];
+  k.async=1;k.src=r;a.parentNode.insertBefore(k,a)})
+  (window,document,'script','https://mc.yandex.ru/metrika/tag.js','ym');
+  ym(METRIKA_ID,'init',{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});
+  ym(METRIKA_ID,'reachGoal','lead_confirmed');
+} else {
+  console.log('[goal] lead_confirmed');
+}
+</script>
 </body>
 </html>
