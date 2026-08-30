@@ -567,6 +567,56 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
   .slots i{animation:none}
 }
 
+
+/* ── глава 02: экономика решения ─────────────────────────────────────────
+   Три способа быть гладкой, посчитанные на одинаковом горизонте — три
+   года. Проигрывающие карточки набраны тише (серые иконки, полупрозрачная
+   бумага), выигрывающая поднята на белую с золотой рамкой: сравнение
+   должно читаться до чтения текста.
+   ──────────────────────────────────────────────────────────────────────── */
+.cmp{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px;align-items:stretch}
+.cmp .c{display:flex;flex-direction:column;padding:28px 26px;border-radius:22px;
+  background:rgba(255,255,255,.66);border:1px solid var(--tint-line)}
+.cmp .c.win{background:var(--white);border-color:var(--line-gold);box-shadow:var(--sh);position:relative}
+.cmp .ct{font-size:10.5px;font-weight:800;letter-spacing:.17em;text-transform:uppercase;color:var(--soft)}
+.cmp .c.win .ct{color:var(--gold-ink)}
+.cmp .big{font-family:'Cormorant',Georgia,serif;font-size:44px;font-weight:600;line-height:1;
+  color:var(--plum);margin:13px 0 5px;letter-spacing:-.01em}
+.cmp .c.win .big{color:var(--gold-ink)}
+.cmp .bs{font-size:13px;color:var(--soft);line-height:1.45;min-height:37px}
+.cmp ul{list-style:none;display:grid;gap:11px;margin-top:19px;padding-top:18px;border-top:1px solid var(--tint-line)}
+.cmp li{display:flex;gap:11px;font-size:14.5px;line-height:1.5}
+.cmp li svg{flex:none;margin-top:4px;color:var(--soft);opacity:.7}
+.cmp .c.win li svg{color:var(--gold);opacity:1}
+.cmp li b{color:var(--plum);font-weight:700}
+.cmp .flag{position:absolute;top:-11px;left:26px;background:var(--grad-gold);color:#2a1b33;
+  font-size:9.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:5px 12px;border-radius:999px}
+.sum{display:flex;flex-wrap:wrap;align-items:center;gap:20px 32px;margin-top:24px;padding:26px 30px;
+  border-radius:22px;background:var(--gold-soft);border:1px solid var(--line-gold)}
+.sum .si{line-height:1.2}
+.sum .si b{display:block;font-family:'Cormorant',Georgia,serif;font-size:33px;font-weight:600;
+  color:var(--gold-ink);margin-bottom:3px}
+.sum .si span{font-size:13px;color:var(--body)}
+.sum .sd{width:1px;align-self:stretch;background:var(--line-gold)}
+.sum .btn{margin-left:auto}
+
+/* ── глава 03: что будет по процедурам ───────────────────────────────────
+   Горизонтальная дорожка курса: золотая линия, четыре точки, под каждой —
+   срок и то, что клиентка увидит своими глазами. На узких экранах линия
+   переворачивается в вертикальную.
+   ──────────────────────────────────────────────────────────────────────── */
+.road{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin-top:40px;position:relative}
+.road::before{content:'';position:absolute;left:2px;right:2px;top:13px;height:1px;
+  background:linear-gradient(90deg,var(--line-gold),rgba(168,129,63,.14))}
+.road li{position:relative;padding-top:46px}
+.road li::before{content:'';position:absolute;top:6px;left:0;width:15px;height:15px;border-radius:50%;
+  background:var(--white);border:2px solid var(--gold);box-shadow:0 0 0 5px var(--tint-soft)}
+.road .rw{display:block;font-size:10.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--acc-ink);margin-bottom:9px}
+.road b{display:block;font-family:'Cormorant',Georgia,serif;font-size:24px;font-weight:600;
+  line-height:1.14;color:var(--plum);margin-bottom:9px}
+.road p{font-size:14.8px;line-height:1.55}
+.road p b{display:inline;font-family:inherit;font-size:inherit;font-weight:700;margin:0}
 /* ── адаптив ── */
 @media (max-width:1080px){
   .hero-g{grid-template-columns:1fr;gap:48px}
@@ -633,6 +683,27 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
   .mod{padding:28px 20px}
   .quote{font-size:23px;padding-left:20px}
 }
+@media (max-width:1080px){
+  .cmp{grid-template-columns:1fr;gap:14px}
+  .cmp .bs{min-height:0}
+  .sum .btn{margin-left:0}
+  .road{grid-template-columns:1fr 1fr;gap:34px 28px}
+  .road::before{display:none}
+}
+@media (max-width:640px){
+  .cmp .big{font-size:36px}
+  .sum{padding:22px 20px;gap:18px 24px}
+  .sum .sd{display:none}
+  .sum .si{flex:1 0 40%}
+  .sum .si b{font-size:29px}
+  .sum .btn{margin-left:0}
+  .road{grid-template-columns:1fr;gap:0;margin-top:32px}
+  .road li{padding:0 0 26px 32px}
+  .road li:last-child{padding-bottom:0}
+  .road li::before{top:2px}
+  .road li::after{content:'';position:absolute;left:7px;top:21px;bottom:0;width:1px;background:var(--line-gold)}
+  .road li:last-child::after{display:none}
+}
 </style>
 </head>
 <body>
@@ -649,6 +720,7 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
     </a>
     <nav>
       <a href="#prices">Цены</a>
+      <a href="#result">Результат</a>
       <a href="#expert">Условия</a>
       <a href="#answers">Ответы</a>
       <a href="#contacts">Контакты</a>
@@ -829,6 +901,66 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
   </div>
 </section>
 
+<!-- ============ 2. ЭКОНОМИКА РЕШЕНИЯ ============
+     Блок отвечает на возражение «дорого» не скидкой, а горизонтом:
+     курс платится один раз и заканчивается, бритва и воск — платёж
+     без конца. Все цифры считаны на одинаковом сроке в три года,
+     методика расчёта открыта в сноске под блоком. -->
+<section class="pane t-champ rv" id="economy">
+  <div class="wrap">
+    <div class="kick"><i></i><em>02</em><span>Сколько стоит не делать</span></div>
+    <h2>Бритва и воск уже стоят дороже курса лазера. <span class="acc">Просто вы платите частями</span></h2>
+    <p class="lead">Посчитали три способа быть гладкой на одинаковом сроке — три года, по средним ценам Петербурга. Курс лазера оплачивается один раз и заканчивается. Станок и воск — это платёж, который не заканчивается никогда.</p>
+
+    <div class="cmp">
+      <div class="c">
+        <span class="ct">Станок и кассеты</span>
+        <div class="big num">32 400 ₽</div>
+        <div class="bs">за три года — и дальше каждый месяц</div>
+        <ul>
+          <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8.8" stroke="currentColor" stroke-width="1.1"/><path d="M6.4 10h7.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><span><b>93 часа в ванной</b> — по 12 минут через день</span></li>
+          <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8.8" stroke="currentColor" stroke-width="1.1"/><path d="M6.4 10h7.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><span>Щетина к вечеру, вросшие, тёмные точки</span></li>
+          <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8.8" stroke="currentColor" stroke-width="1.1"/><path d="M6.4 10h7.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><span>И завтра всё сначала</span></li>
+        </ul>
+      </div>
+
+      <div class="c">
+        <span class="ct">Шугаринг и воск</span>
+        <div class="big num">147 000 ₽</div>
+        <div class="bs">за три года — при 14 визитах в год</div>
+        <ul>
+          <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8.8" stroke="currentColor" stroke-width="1.1"/><path d="M6.4 10h7.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><span><b>63 часа</b> — дорога, кабинет и боль каждые три недели</span></li>
+          <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8.8" stroke="currentColor" stroke-width="1.1"/><path d="M6.4 10h7.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><span>Отращивать заново, чтобы мастер взял на процедуру</span></li>
+          <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8.8" stroke="currentColor" stroke-width="1.1"/><path d="M6.4 10h7.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><span>Ещё через десять лет — <b>полмиллиона рублей</b></span></li>
+        </ul>
+      </div>
+
+      <div class="c win">
+        <span class="flag">так это заканчивается</span>
+        <span class="ct">Курс лазера в VIV.STUDIO</span>
+        <div class="big num">93 100 ₽</div>
+        <div class="bs">за три года — курс целиком и вся поддержка</div>
+        <ul>
+          <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9.2" stroke="currentColor" stroke-opacity=".38" stroke-width="1.1"/><path d="M5.8 10.3l2.7 2.7 5.6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>7 часов за три года</b> — восемь визитов по 40 минут</span></li>
+          <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9.2" stroke="currentColor" stroke-opacity=".38" stroke-width="1.1"/><path d="M5.8 10.3l2.7 2.7 5.6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Курс — 6–8 процедур, дальше поддержка раз в год</span></li>
+          <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9.2" stroke="currentColor" stroke-opacity=".38" stroke-width="1.1"/><path d="M5.8 10.3l2.7 2.7 5.6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Платить всё сразу не нужно: <b>вход — 4 900 ₽</b> за первый визит</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sum">
+      <div class="si"><b class="num">18-й месяц</b><span>лазер становится дешевле воска</span></div>
+      <div class="sd"></div>
+      <div class="si"><b class="num">−53 900 ₽</b><span>ваша выгода за три года</span></div>
+      <div class="sd"></div>
+      <div class="si"><b class="num">+56 часов</b><span>неделя жизни, которую забирает воск</span></div>
+      <button class="btn" data-cb="economy" data-goal="economy_cta">Посчитать мой курс</button>
+    </div>
+
+    <p class="under" style="margin-top:18px">Расчёт по средним ценам Петербурга на август 2026: шугаринг всего тела — 3 500 ₽ раз в три-четыре недели; кассеты, пена и станок — около 900 ₽ в месяц; курс лазера — первый визит 4 900 ₽ и семь визитов по 9 800 ₽, плюс две поддерживающие процедуры за три года. По вашим зонам обычно выходит дешевле, чем комплекс «всё тело», — точную сумму назовём на бесплатной диагностике, до оплаты.</p>
+  </div>
+</section>
+
 <!-- ============ 2. ФОРМА ЗАХВАТА — БЕСПЛАТНАЯ ДИАГНОСТИКА ============ -->
 <section class="vivid rv">
   <div class="wrap">
@@ -852,6 +984,51 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
         <button type="submit" class="btn btn-w" data-goal="diag_submit">Записаться на бесплатную диагностику</button>
         <p class="under" style="margin-top:13px">Косметолог свяжется в течение 15 минут и предложит 2–3 свободных окна на выбор.</p>
       </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. ЧТО БУДЕТ ПО ПРОЦЕДУРАМ ============
+     Продаёт результат во времени и снимает «а вдруг не сработает».
+     Сроки и формулировки честные: «навсегда» не обещаем нигде,
+     поддержка стоит в плане с самого начала, а не всплывает потом. -->
+<section class="pane t-sage rv" id="result">
+  <div class="wrap">
+    <div class="kick"><i></i><em>03</em><span>Что будет по процедурам</span></div>
+    <h2>Через год вы <span class="acc">просто перестаёте об этом думать</span>. Вот что происходит по дороге</h2>
+    <p class="lead">Лазер видит только те волосы, что сейчас в фазе роста, — поэтому процедур 6–8, а не одна. Чтобы вы не гадали, «работает или нет», вот честный график: что вы увидите после каждой.</p>
+
+    <ol class="road">
+      <li>
+        <span class="rw">1-я процедура · первый месяц</span>
+        <b>Волос выпадает сам</b>
+        <p>На 10–14-й день волоски выходят из кожи — просто смахиваются мочалкой. <b>Три-четыре недели бриться не нужно совсем.</b></p>
+      </li>
+      <li>
+        <span class="rw">2–3-я · 2–4-й месяц</span>
+        <b>Заметно реже и тоньше</b>
+        <p>Волос становится примерно на треть меньше, оставшийся — тоньше и светлее. Раздражение и вросшие уходят первыми, обычно уже после второй.</p>
+      </li>
+      <li>
+        <span class="rw">4–6-я · 5–9-й месяц</span>
+        <b>Гладко постоянно</b>
+        <p>Остаются единичные тонкие волоски. <b>Бассейн, пляж и свидание больше не нужно планировать вокруг депиляции.</b></p>
+      </li>
+      <li>
+        <span class="rw">7–8-я · 10–12-й месяц</span>
+        <b>Курс закрыт</b>
+        <p>Дальше — поддержка раз в 6–12 месяцев, те же 40 минут. Всё остальное время про волосы можно не помнить.</p>
+      </li>
+    </ol>
+
+    <div class="p-note">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8.6" stroke="currentColor" stroke-width="1.2"/><path d="M10 9v5M10 6.2v.9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+      <span><b>Честно: «навсегда и на 100%» не даёт ни один аппарат в мире.</b> Гормональный фон возвращает единичные волоски — поэтому поддержка стоит в плане с первого дня, а не всплывает потом как сюрприз. И если к третьей процедуре разницы не видно — пересматриваем параметры и делаем коррекцию за наш счёт.</span>
+    </div>
+
+    <div style="margin-top:30px;display:flex;gap:14px;flex-wrap:wrap;align-items:center">
+      <button class="btn" data-cb="result" data-goal="result_cta">Записаться на первый визит</button>
+      <span class="under">первый визит — <b>4 900 ₽ вместо 9 800 ₽</b>, диагностика с планом курса бесплатно</span>
     </div>
   </div>
 </section>
@@ -885,7 +1062,7 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
       </div>
 
       <div>
-        <div class="kick"><i></i><em>02</em><span>Кто работает и на каких условиях</span></div>
+        <div class="kick"><i></i><em>04</em><span>Кто работает и на каких условиях</span></div>
         <h2>Вас ведёт <span class="acc">один косметолог</span> — с медицинским образованием, а не оператор аппарата</h2>
 
         <div class="quote">«Моя работа — не убрать волосы. Моя работа — чтобы через год вы были довольны тем, что мы сделали. Поэтому иногда я отговариваю».</div>
@@ -910,7 +1087,7 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
 <!-- ============ 4. ЧЕСТНЫЕ ОТВЕТЫ ============ -->
 <section class="pane t-ivory rv" id="answers">
   <div class="wrap">
-    <div class="kick"><i></i><em>03</em><span>Разберём по-честному</span></div>
+    <div class="kick"><i></i><em>05</em><span>Разберём по-честному</span></div>
     <h2>Четыре вопроса, из-за которых обычно откладывают. <span class="acc">Отвечаем прямо</span></h2>
     <p class="lead" style="margin-bottom:32px">Не будем убеждать, что «совсем не больно». Расскажем, как есть, — а вы решите.</p>
 
@@ -984,7 +1161,7 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
       </div>
 
       <div>
-        <div class="kick"><i></i><em>04</em><span>Где нас найти</span></div>
+        <div class="kick"><i></i><em>06</em><span>Где нас найти</span></div>
         <h2><span class="acc">Шесть минут</span> пешком от Чернышевской</h2>
         <p class="lead">Суворовский проспект, 35 — самый центр. Можно зайти в обеденный перерыв: комплекс «всё тело» занимает 40 минут.</p>
         <ul class="addr">
@@ -1111,6 +1288,8 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
     <h3 style="margin-bottom:20px">VIV.STUDIO</h3>
     <nav style="display:grid;gap:2px">
       <a href="#prices" data-close style="padding:14px 0;border-bottom:1px solid var(--line);text-decoration:none;font-weight:700">Цены</a>
+      <a href="#economy" data-close style="padding:14px 0;border-bottom:1px solid var(--line);text-decoration:none;font-weight:700">Сколько стоит не делать</a>
+      <a href="#result" data-close style="padding:14px 0;border-bottom:1px solid var(--line);text-decoration:none;font-weight:700">Что будет по процедурам</a>
       <a href="#expert" data-close style="padding:14px 0;border-bottom:1px solid var(--line);text-decoration:none;font-weight:700">Косметолог и условия</a>
       <a href="#answers" data-close style="padding:14px 0;border-bottom:1px solid var(--line);text-decoration:none;font-weight:700">Честные ответы</a>
       <a href="#contacts" data-close style="padding:14px 0;text-decoration:none;font-weight:700">Контакты</a>
