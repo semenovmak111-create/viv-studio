@@ -286,8 +286,8 @@ header{
 .burger{display:none;background:none;border:0;cursor:pointer;padding:8px;color:var(--plum)}
 
 /* ── первый экран ── */
-.hero{padding:64px 0 92px}
-.hero-g{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.hero{padding:48px 0 76px}
+.hero-g{display:grid;grid-template-columns:1.12fr .88fr;gap:52px;align-items:center}
 .tag{
   display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line-gold);
   border-radius:99px;padding:8px 18px 8px 12px;font-size:13.5px;font-weight:600;color:var(--body);
@@ -303,7 +303,7 @@ h1 .pr.acc{font-style:normal;font-weight:600;color:var(--vio-deep);
 /* ценник первого экрана: скидка в рублях — обязательная часть оффера */
 .offer{
   display:inline-flex;align-items:center;gap:22px;flex-wrap:wrap;margin:28px 0 0;
-  padding:16px 28px;border-radius:20px;background:rgba(255,253,252,.86);
+  padding:14px 26px;border-radius:20px;background:rgba(255,253,252,.86);
   border:1px solid var(--line-gold);box-shadow:var(--sh-s)
 }
 .offer .ol{font-size:10.5px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;
@@ -317,13 +317,27 @@ h1 .pr.acc{font-style:normal;font-weight:600;color:var(--vio-deep);
   padding:9px 16px;border-radius:99px;background:var(--gold-soft);border:1px solid var(--line-gold)
 }
 .offer .sep{width:1px;align-self:stretch;background:var(--line-gold)}
-.h-sub{font-size:18px;color:var(--body);margin:26px 0 30px;max-width:600px}
+.h-sub{font-size:17.5px;color:var(--body);margin:22px 0 24px;max-width:610px}
 .h-sub b{color:var(--plum);font-weight:700}
-.bul{list-style:none;display:grid;gap:14px;margin-bottom:34px;max-width:600px}
+.bul{list-style:none;display:grid;gap:12px;margin-bottom:28px;max-width:620px}
 .bul li{display:flex;gap:13px;font-size:15.5px;line-height:1.5}
 .bul svg{flex:none;margin-top:3px;color:var(--vio)}
 .bul b{font-weight:800;color:var(--plum)}
-.h-cta{display:flex;flex-wrap:wrap;gap:14px 24px;align-items:center;margin-bottom:18px}
+.h-cta{display:flex;flex-wrap:wrap;gap:14px 18px;align-items:center;margin-bottom:18px}
+/* стрелка-указатель слева от главной кнопки первого экрана.
+   В самом ряду слева места нет — колонка начинается ровно с края кнопки,
+   поэтому стрелка вынесена абсолютом в левое поле страницы. */
+.cta-wrap{position:relative;display:inline-flex}
+.cta-arrow{position:absolute;right:100%;top:50%;margin-right:10px;
+  transform:translateY(-50%);pointer-events:none}
+.cta-arrow svg{display:block;overflow:visible;
+  filter:drop-shadow(0 4px 7px rgba(124,90,194,.26));
+  animation:cta-point 2.9s ease-in-out infinite}
+.cta-arrow .a-body,.cta-arrow .a-head{fill:url(#arw)}
+@keyframes cta-point{0%,100%{transform:translateX(0)}50%{transform:translateX(5px)}}
+/* левое поле страницы = (ширина окна − 1180)/2 + 24. Стрелке нужно 70 px
+   плюс воздух до края экрана — ниже 1340 px она липнет к краю, убираем */
+@media(max-width:1339px){.cta-arrow{display:none}}
 .tglink{display:inline-flex;align-items:center;gap:8px;font-size:15.5px;font-weight:700;color:var(--vio-deep);
   text-decoration:none;border-bottom:1px solid rgba(85,58,144,.3);padding-bottom:2px;transition:.15s}
 .tglink:hover{color:var(--rose-deep);border-color:var(--rose)}
@@ -760,6 +774,7 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
 .rv.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){
   .rv{opacity:1;transform:none;transition:none}
+  .cta-arrow svg{animation:none}
   html{scroll-behavior:auto}
   .strip .row{animation:none}
   .slots i{animation:none}
@@ -877,7 +892,7 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
         <a href="tel:+79219156255" data-goal="phone">+7 (921) 915-62-55</a>
         <span>Суворовский пр-кт, 35</span>
       </div>
-      <button class="btn btn-ghost btn-sm" data-cb="header">Перезвоните мне</button>
+      <button class="btn btn-sm" data-cb="header">Записаться</button>
       <button class="burger only-mob" id="burger" aria-label="Меню">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
       </button>
@@ -892,10 +907,12 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
       <!-- Оффер по формуле №1: РКС «лазерная эпиляция» дословно + две выгоды
            (40 минут на всё тело; цена курса зафиксирована на год) + скидка
            в рублях + кнопка расчёта и лид-магнит в подзаголовке. -->
+      <!-- Оффер по 4U с «выгодой вперёд»: первым идёт результат, за ним РКС
+           «лазерная эпиляция» дословно, дальше конкретика и скидка в рублях. -->
       <div class="h-txt">
         <div class="tag"><i></i> Суворовский пр-кт, 35 · 6 минут от м. Чернышевская</div>
 
-        <h1>Лазерная эпиляция всего тела <span class="acc">за 40 минут</span> — без анестезии и с ценой курса, зафиксированной на год</h1>
+        <h1>Волос заметно меньше <span class="acc">уже к третьей процедуре</span>: лазерная эпиляция всего тела за 40 минут</h1>
 
         <div class="offer">
           <div>
@@ -907,38 +924,48 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
           <div class="save">Выгода 4 900 ₽</div>
         </div>
 
-        <p class="h-sub">Пройдите тест за минуту — узнаете <b>стоимость своего курса</b>, число процедур и план на 12 месяцев. Заодно пришлём чек-лист «11 вопросов, которые стоит задать студии до оплаты».</p>
+        <p class="h-sub">Терпимо без обезболивания — за счёт сплошного сапфирового охлаждения до −5 °C. Всё тело проходим за один визит на диодном лазере <b>MAGIC ONE 4000 Вт</b>.</p>
 
         <ul class="bul">
           <li>
             <svg width="19" height="19" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9.2" stroke="currentColor" stroke-opacity=".38" stroke-width="1.1"/><path d="M5.8 10.3l2.7 2.7 5.6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span><b>Диодный лазер MAGIC ONE 4000 Вт</b> — медицинское изделие с регистрационным удостоверением</span>
+            <span><b>Курс из 6–8 процедур, а не из десяти</b> — мощности 4000 Вт хватает, чтобы не догонять результат количеством визитов</span>
           </li>
           <li>
             <svg width="19" height="19" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9.2" stroke="currentColor" stroke-opacity=".38" stroke-width="1.1"/><path d="M5.8 10.3l2.7 2.7 5.6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span><b>Ведёт косметолог с медицинским образованием</b>, а не оператор аппарата</span>
+            <span><b>Цена курса не вырастет 12 месяцев</b> — фиксируем её в вашей карте в день оплаты</span>
           </li>
           <li>
             <svg width="19" height="19" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9.2" stroke="currentColor" stroke-opacity=".38" stroke-width="1.1"/><path d="M5.8 10.3l2.7 2.7 5.6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span><b>Сапфировое охлаждение до −5 °C</b> — терпимо без обезболивания</span>
+            <span><b>Параметры под ваш фототип, а не одна программа на всех</b> — работает косметолог с медицинским образованием</span>
           </li>
           <li>
             <svg width="19" height="19" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9.2" stroke="currentColor" stroke-opacity=".38" stroke-width="1.1"/><path d="M5.8 10.3l2.7 2.7 5.6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span><b>Скажем до оплаты, если лазер вам не подойдёт</b> — а не после третьей процедуры</span>
+            <span><b>Узнаете до оплаты, подойдёт ли вам лазер</b> — на седых и совсем светлых волосах он не работает, и мы скажем это сразу</span>
           </li>
         </ul>
 
         <div class="h-cta">
-          <a href="#quiz" class="btn btn-lg" data-goal="hero_cta">Рассчитать стоимость курса</a>
-          <a href="https://t.me/VIV_Studio" target="_blank" rel="noopener" class="tglink" data-goal="tg"><svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M21.3 4.4L2.9 11.5c-.9.4-.9 1.6.1 1.9l4.5 1.4 1.7 5c.3.8 1.4.9 1.9.3l2.4-3.2 4.6 3.4c.7.5 1.7.1 1.9-.7l2.9-13.4c.2-.9-.8-1.7-1.6-1.3zM9.4 14.3l8.4-5.2-6.8 6.2-.3 3.3-1.3-4.3z"/></svg> или напишите в Telegram</a>
+          <span class="cta-wrap">
+            <span class="cta-arrow" aria-hidden="true">
+              <svg viewBox="1 1 60 26" width="60" height="26">
+                <defs><linearGradient id="arw" x1="0" y1="0" x2="1" y2=".8">
+                  <stop offset="0" stop-color="#E3CD9B"/><stop offset=".45" stop-color="#A8813F"/>
+                  <stop offset="1" stop-color="#7C5AC2"/></linearGradient></defs>
+                <path class="a-body" d="M1.8 2.1 L2.4 3.5 L3.0 4.9 L3.6 6.2 L4.3 7.5 L5.0 8.7 L5.7 9.9 L6.5 11.0 L7.2 12.1 L8.0 13.1 L8.8 14.0 L9.7 14.9 L10.5 15.8 L11.4 16.6 L12.3 17.4 L13.2 18.1 L14.1 18.8 L15.0 19.4 L16.0 20.0 L17.0 20.5 L17.9 21.0 L18.9 21.5 L19.9 21.9 L20.9 22.3 L21.9 22.6 L23.0 22.9 L24.0 23.2 L25.0 23.4 L26.1 23.6 L27.1 23.8 L28.1 23.9 L29.2 24.0 L30.2 24.1 L31.3 24.1 L32.3 24.1 L33.4 24.1 L34.4 24.1 L35.4 24.0 L36.4 23.9 L37.5 23.8 L38.5 23.7 L39.5 23.5 L40.5 23.3 L41.5 23.2 L42.5 23.0 L43.4 22.7 L44.4 22.5 L45.3 22.2 L46.3 22.0 L47.2 21.7 L48.1 21.4 L49.0 21.1 L49.9 20.8 L48.0 16.0 L47.2 16.4 L46.4 16.7 L45.6 17.0 L44.7 17.3 L43.9 17.7 L43.0 18.0 L42.2 18.2 L41.3 18.5 L40.4 18.8 L39.5 19.0 L38.6 19.2 L37.7 19.5 L36.8 19.6 L35.9 19.8 L35.0 20.0 L34.0 20.1 L33.1 20.2 L32.2 20.3 L31.2 20.4 L30.3 20.4 L29.3 20.4 L28.4 20.4 L27.4 20.4 L26.5 20.3 L25.6 20.2 L24.6 20.1 L23.7 19.9 L22.7 19.7 L21.8 19.5 L20.9 19.2 L19.9 18.9 L19.0 18.6 L18.1 18.2 L17.2 17.8 L16.3 17.3 L15.4 16.8 L14.5 16.3 L13.6 15.7 L12.7 15.0 L11.8 14.3 L11.0 13.6 L10.1 12.8 L9.3 12.0 L8.4 11.1 L7.6 10.1 L6.8 9.1 L6.0 8.1 L5.2 7.0 L4.4 5.8 L3.7 4.6 L2.9 3.3 L2.2 1.9Z"/>
+                <path class="a-head" d="M60.2 15.1 L46.4 26.3 Q49.2 18.5 42.5 13.7Z"/>
+              </svg>
+            </span>
+            <button class="btn btn-lg" data-cb="hero" data-goal="hero_cta">Записаться на первый визит</button>
+          </span>
+          <a href="#quiz" class="btn btn-ghost" data-goal="hero_quiz">Рассчитать стоимость</a>
         </div>
 
         <p class="h-note">
           <svg width="17" height="17" viewBox="0 0 20 20" fill="none"><path d="M10 1.7l7 3v5.1c0 4-2.9 7.7-7 8.5-4.1-.8-7-4.5-7-8.5V4.7l7-3z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/><path d="M6.6 10.2l2.2 2.2 4.6-4.8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <span>Расчёт бесплатный и ни к чему не обязывает. Не захотите звонка — пришлём в Telegram и не будем звонить.</span>
+          <span>Перед процедурой — бесплатная диагностика: разберём кожу и волосы, проверим противопоказания и сделаем тест-вспышку. Записываться после неё не обязательно.</span>
         </p>
       </div>
-
       <div class="h-vis">
         <div class="h-frame">
           <svg viewBox="0 0 420 525" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
@@ -1012,8 +1039,8 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
 <section class="pane t-blush rv" id="pain">
   <div class="wrap">
     <div class="kick"><i></i><em>01</em><span>Узнаёте себя?</span></div>
-    <h2>Волосы отнимают <span class="acc">четыре часа в месяц</span> — и вы всё равно ими недовольны</h2>
-    <p class="lead" style="margin-bottom:36px">Если хотя бы один пункт про вас — лазер решает вопрос за курс, а не откладывает его до следующей недели.</p>
+    <h2>Вернёте себе <span class="acc">четыре часа в месяц</span> и перестанете планировать жизнь вокруг бритвы</h2>
+    <p class="lead" style="margin-bottom:36px">Столько уходит на бритьё и шугаринг за год работы «по кругу». Лазер закрывает вопрос курсом, а не откладывает его до следующей недели.</p>
 
     <div class="grid g3">
       <div class="pain">
@@ -1032,10 +1059,10 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
 
     <div class="pain-out">
       <div>
-        <h3>Лазер убирает не волос, а его способность расти</h3>
-        <p>Импульс выводит из строя фолликул в активной фазе роста. Поэтому нужен курс: за один визит в этой фазе находится только часть волос. Зато то, что ушло, — ушло.</p>
+        <h3>То, что ушло, — ушло навсегда</h3>
+        <p>Лазер убирает не волос, а способность фолликула расти. Поэтому нужен курс: за один визит в активной фазе находится только часть волос — зато обработанные не возвращаются.</p>
       </div>
-      <a href="#quiz" class="btn" data-goal="pain_cta">Рассчитать стоимость курса</a>
+      <button class="btn" data-cb="pain" data-goal="pain_cta">Записаться на первый визит</button>
     </div>
   </div>
 </section>
@@ -1083,21 +1110,20 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
 
       <div>
         <div class="kick"><i></i><em>02</em><span>За счёт чего это работает</span></div>
-        <h2>Мощность, из-за которой процедура короткая, а <span class="acc">результат — быстрый</span></h2>
-        <p class="lead">Слабый аппарат приходится «догонять» количеством процедур. Мощный диодный лазер отдаёт нужную энергию сразу — зоны проходятся быстрее, а курс не растягивается на два года.</p>
+        <h2>Сэкономите <span class="acc">2–4 процедуры</span> и год времени — за счёт мощности 4000 Вт</h2>
+        <p class="lead">Слабый аппарат приходится догонять количеством визитов. Мощный диодный лазер отдаёт нужную энергию сразу: зона проходится быстрее, а курс не растягивается на два года.</p>
 
         <div class="spec">
           <div><span>Мощность</span><b class="num">4000 Вт</b></div>
           <div><span>Охлаждение</span><b>Сплошное сапфировое, до −5 °C</b></div>
-          <div><span>Комплекс «всё тело»</span><b class="num">около 40 минут</b></div>
           <div><span>Статус</span><b>Медицинское изделие,<br>регистрационное удостоверение</b></div>
         </div>
 
-        <p class="under" style="margin-top:18px">Регистрационное удостоверение получает не каждый аппарат «диодной эпиляции». У нас он лежит в кабинете, и мы покажем его сами.</p>
+        <p class="under" style="margin-top:18px">Регистрационное удостоверение получает не каждый аппарат «диодной эпиляции». У нас оно лежит в кабинете — попросите показать, покажем.</p>
       </div>
     </div>
 
-    <h3 style="margin-top:56px;margin-bottom:4px">Чем это отличается от того, что предлагали раньше</h3>
+    <h3 style="margin-top:56px;margin-bottom:4px">Что вы получите вместо того, что предлагали раньше</h3>
     <div class="tw"><table class="vs">
       <tr>
         <th>Что сравниваем</th>
@@ -1134,8 +1160,8 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
     <div class="quiz-g">
       <div class="quiz-l">
         <div class="kick"><i></i><em>03</em><span>Расчёт курса</span></div>
-        <h2>Сколько процедур нужно <span class="acc">именно вам</span> — и сколько стоит курс целиком</h2>
-        <p class="lead">Пять вопросов, минута времени. Мы не считаем «среднюю по больнице»: цена зависит от зон, плотности волос и того, делали вы лазер раньше или нет.</p>
+        <h2>Узнаете цену <span class="acc">своего</span> курса за минуту — без звонков и «цены по запросу»</h2>
+        <p class="lead">Пять вопросов. Мы не считаем среднюю по больнице: стоимость зависит от зон, плотности волос и того, делали вы лазер раньше или нет.</p>
 
         <ul class="qlist">
           <li><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9.2" stroke="currentColor" stroke-opacity=".38" stroke-width="1.1"/><path d="M5.8 10.3l2.7 2.7 5.6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Стоимость вашего курса</b> с учётом скидки первого визита и пакетной цены</span></li>
@@ -1151,7 +1177,7 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
           </div>
           <div>
             <b class="dt">Персональный план курса</b>
-            <p>Документ, который вы получите после расчёта. С ним можно прийти в любую другую студию и сравнить — мы не против.</p>
+            <p>С ним можно прийти в любую другую студию и сравнить цены — мы не против.</p>
           </div>
         </div>
       </div>
@@ -1241,10 +1267,6 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
           <div class="qs">Последний шаг — и мы соберём план.</div>
           <div class="qsum" id="qSum"></div>
           <div class="fld">
-            <label for="qName">Как к вам обращаться</label>
-            <input type="text" id="qName" name="name" placeholder="Например, Анна" autocomplete="given-name">
-          </div>
-          <div class="fld">
             <label for="qPhone">Номер, на который отправить расчёт и план курса</label>
             <input type="tel" id="qPhone" name="phone" placeholder="+7 ___ ___ __ __" autocomplete="tel" inputmode="tel">
           </div>
@@ -1261,8 +1283,8 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
 <section class="pane t-lilac rv" id="prices">
   <div class="wrap">
     <div class="kick"><i></i><em>04</em><span>Цены</span></div>
-    <h2>Открытый прайс. Скидка первого визита действует <span class="acc">на любую строку</span></h2>
-    <p class="lead" style="margin-bottom:30px">Никаких «цена по запросу»: <b>−50% на лазерную эпиляцию</b> и <b>−20% на косметологию</b> в первый визит.</p>
+    <h2>Заплатите вдвое меньше в первый визит — <span class="acc">на любую строку</span> прайса</h2>
+    <p class="lead" style="margin-bottom:30px">Скидка не только на «акционную» зону: <b>−50% на лазерную эпиляцию</b> и <b>−20% на косметологию</b>. Цены открыты, считать по телефону не придётся.</p>
 
     <div class="tabs">
       <button class="tab on" data-tab="p1">Лазерная эпиляция</button>
@@ -1302,8 +1324,9 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
     </div>
 
     <div style="margin-top:30px;display:flex;gap:14px;flex-wrap:wrap;align-items:center">
-      <a href="#quiz" class="btn" data-goal="prices_cta">Рассчитать стоимость курса</a>
-      <span class="under">или сразу <a href="https://t.me/VIV_Studio" target="_blank" rel="noopener" style="color:var(--vio-deep);font-weight:700" data-goal="tg">напишите в Telegram</a> — пришлём полный прайс файлом</span>
+      <button class="btn" data-cb="prices" data-goal="prices_cta">Записаться со скидкой 50%</button>
+      <a href="#quiz" class="btn btn-ghost" data-goal="prices_quiz">Рассчитать свой курс</a>
+      <span class="under">или <a href="https://t.me/VIV_Studio" target="_blank" rel="noopener" style="color:var(--vio-deep);font-weight:700" data-goal="tg">напишите в Telegram</a> — пришлём полный прайс файлом</span>
     </div>
   </div>
 </section>
@@ -1312,37 +1335,37 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
 <section class="pane t-sage rv" id="how">
   <div class="wrap">
     <div class="kick"><i></i><em>05</em><span>Как проходит первый визит</span></div>
-    <h2>Час времени, из которых сама процедура — <span class="acc">сорок минут</span></h2>
-    <p class="lead">Вы приходите к конкретному времени. Один кабинет и один специалист: ни общего зала, ни очереди, ни «подождите, я к вам через десять минут».</p>
+    <h2>Уложитесь в <span class="acc">обеденный перерыв</span> и уйдёте с планом курса на год</h2>
+    <p class="lead">Час целиком, из них процедура — 40 минут. Приходите к конкретному времени: один кабинет и один специалист, ни общего зала, ни очереди.</p>
 
     <div class="steps">
       <div class="step">
         <div class="step-n">01<small>10 минут</small></div>
         <div>
-          <h4>Разбор кожи и волос, а не «раздевайтесь, начинаем»</h4>
-          <p>Косметолог смотрит фототип, плотность и цвет волос, спрашивает про здоровье, лекарства и загар. Здесь же выясняется, подойдёт ли вам лазер вообще.</p>
+          <h4>Узнаете, подойдёт ли вам лазер вообще</h4>
+          <p>Косметолог смотрит фототип, плотность и цвет волос, спрашивает про здоровье, лекарства и загар.</p>
           <div class="tick"><svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M4 10.5l4 4 8-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Бесплатно, даже если вы уйдёте без процедуры</div>
         </div>
       </div>
       <div class="step">
         <div class="step-n">02<small>2 минуты</small></div>
         <div>
-          <h4>Тест-вспышка на маленьком участке</h4>
-          <p>Вы понимаете, как это ощущается, ещё до того, как приняли решение. Не понравилось — расходимся без обид и без оплаты.</p>
+          <h4>Почувствуете процедуру до того, как заплатите</h4>
+          <p>Одна вспышка на маленьком участке. Не понравилось — расходимся без обид и без оплаты.</p>
         </div>
       </div>
       <div class="step">
         <div class="step-n">03<small>40 минут</small></div>
         <div>
-          <h4>Сама процедура</h4>
-          <p>Защитные очки, охлаждённая манипула, движение по зоне. Ощущение — тёплые щелчки, кожа под сапфиром остаётся прохладной. Комплекс «всё тело» проходим за один визит.</p>
+          <h4>Пройдёте всё тело за один визит</h4>
+          <p>Защитные очки, охлаждённая манипула, тёплые щелчки. Кожа под сапфиром остаётся прохладной.</p>
         </div>
       </div>
       <div class="step">
         <div class="step-n">04<small>8 минут</small></div>
         <div>
-          <h4>Памятка и запись на следующую дату</h4>
-          <p>Наносим успокаивающее средство, отдаём памятку на две недели и записываем следующую процедуру с правильным интервалом. Сорванные интервалы — главная причина, по которой «лазер не работает».</p>
+          <h4>Уйдёте с памяткой и датой следующего визита</h4>
+          <p>Записываем следующую процедуру с правильным интервалом и напоминаем за два дня. Сорванные интервалы — главная причина, по которой «лазер не работает».</p>
           <div class="tick"><svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M4 10.5l4 4 8-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Цена курса фиксируется на 12 месяцев</div>
         </div>
       </div>
@@ -1354,8 +1377,8 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
 <section class="rv" id="works">
   <div class="wrap">
     <div class="kick"><i></i><em>06</em><span>Работы и отзывы</span></div>
-    <h2>Результаты Екатерины — <span class="acc">без ретуши</span> и «улучшающих» фильтров</h2>
-    <p class="lead" style="margin-bottom:32px">Одинаковый свет, один ракурс, честная подпись: сколько прошло времени и что именно делали. Все фото публикуются с письменного согласия клиенток.</p>
+    <h2>Увидите результат <span class="acc">без ретуши</span> — и поймёте, чего ждать от своего курса</h2>
+    <p class="lead" style="margin-bottom:32px">Одинаковый свет, один ракурс, честная подпись: сколько прошло времени и что именно делали.</p>
 
     <div class="res">
       <div class="res-c">
@@ -1366,7 +1389,7 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
         </div>
         <div class="res-b">
           <h4>Контурная пластика губ</h4>
-          <p>Задача была не увеличить, а вернуть форму и убрать асимметрию.</p>
+          <p>Не увеличить, а вернуть форму и убрать асимметрию.</p>
           <div class="meta"><span>Препарат: <b>MirraLine</b></span><span>Оценка: <b>через 3 недели</b></span></div>
         </div>
       </div>
@@ -1378,7 +1401,7 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
         </div>
         <div class="res-b">
           <h4>Лазерная эпиляция голеней</h4>
-          <p>Между кадрами — пять процедур и восемь месяцев. То, что осталось, стало тоньше и светлее.</p>
+          <p>Пять процедур за восемь месяцев. То, что осталось, стало тоньше и светлее.</p>
           <div class="meta"><span>Процедур: <b>5 из 8</b></span><span>Интервал: <b>5 недель</b></span></div>
         </div>
       </div>
@@ -1390,7 +1413,7 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
         </div>
         <div class="res-b">
           <h4>Collost Micro, курс из 3 процедур</h4>
-          <p>Работали с тонусом и мелкими морщинами — без изменения черт лица.</p>
+          <p>Тонус и мелкие морщины — без изменения черт лица.</p>
           <div class="meta"><span>Курс: <b>3 процедуры</b></span><span>Срок: <b>2,5 месяца</b></span></div>
         </div>
       </div>
@@ -1398,8 +1421,8 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
 
     <div class="rev rev-cta rev-wide">
       <div>
-        <h3>Отзывы и разборы — в сообществе ВКонтакте</h3>
-        <p>147 постов и 93 видео: результаты, ход процедур и ответы на вопросы. Мы не переносим отзывы на сайт набранным текстом — читайте их там, где их писали.</p>
+        <h3>Проверите нас до записи: 147 постов и 93 видео во ВКонтакте</h3>
+        <p>Результаты, ход процедур и отзывы. Мы не переносим их на сайт набранным текстом — читайте там, где их писали.</p>
       </div>
       <a href="https://vk.com/viv.studio" target="_blank" rel="noopener" class="btn btn-ghost" data-goal="vk">Открыть сообщество</a>
     </div>
@@ -1412,8 +1435,8 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
     <div class="fbox">
       <div>
         <div class="kick"><i></i><span>Бесплатно</span></div>
-        <h3>Придите на диагностику — и уйдёте с планом, <span class="acc">даже если ничего не купите</span></h3>
-        <p>Полчаса с косметологом. Это не «замаскированная продажа»: мы честно скажем, если процедура вам сейчас не нужна.</p>
+        <h3>Уйдёте с планом курса на год, <span class="acc">даже если ничего не купите</span></h3>
+        <p>Полчаса с косметологом, стоят 1 500 ₽ — для вас 0 ₽. Это не замаскированная продажа: скажем честно, если процедура вам сейчас не нужна.</p>
         <ul class="give">
           <li><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9.2" stroke="currentColor" stroke-opacity=".38" stroke-width="1.1"/><path d="M5.8 10.3l2.7 2.7 5.6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Определим фототип и плотность волос, подберём параметры</span></li>
           <li><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9.2" stroke="currentColor" stroke-opacity=".38" stroke-width="1.1"/><path d="M5.8 10.3l2.7 2.7 5.6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Проверим противопоказания — письменно, а не «да всё нормально»</span></li>
@@ -1425,10 +1448,6 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
         <div class="gift">
           <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M3 9h18v11a1 1 0 01-1 1H4a1 1 0 01-1-1V9z" stroke="currentColor" stroke-width="1.3"/><path d="M2 6h20v3H2zM12 6v15" stroke="currentColor" stroke-width="1.3"/><path d="M12 6S9.5 2.5 7.5 3.4 8.6 6 12 6zm0 0s2.5-3.5 4.5-2.6S15.4 6 12 6z" stroke="currentColor" stroke-width="1.3"/></svg>
           <div><b>Диагностика стоит 1 500 ₽ — для вас 0 ₽</b><span>и остаётся бесплатной, даже если вы решите не записываться на процедуру</span></div>
-        </div>
-        <div class="fld">
-          <label for="dName">Как к вам обращаться</label>
-          <input type="text" id="dName" name="name" placeholder="Например, Мария" autocomplete="given-name">
         </div>
         <div class="fld">
           <label for="dPhone">Номер, на который придёт подтверждение записи</label>
@@ -1472,8 +1491,8 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
 
       <div>
         <div class="kick"><i></i><em>07</em><span>Кто будет с вами работать</span></div>
-        <h2>Екатерина, косметолог</h2>
-        <p class="lead">Здесь нет «оператора аппарата» и отдельного «врача, который придёт потом». Диагностику, процедуру и сопровождение между визитами ведёт один человек — тот же, что и в первый раз.</p>
+        <h2>Не будете объяснять историю своей кожи <span class="acc">трём разным людям</span></h2>
+        <p class="lead">Диагностику, процедуру и сопровождение между визитами ведёт один человек — косметолог Екатерина. Не «оператор аппарата» и не «врач, который придёт потом».</p>
 
         <div class="quote">«Моя работа — не сделать вам губы или убрать волосы. Моя работа — чтобы через год вы были довольны тем, что мы сделали. Поэтому иногда я отговариваю».</div>
 
@@ -1497,61 +1516,61 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
 <section class="pane t-ivory rv" id="answers">
   <div class="wrap">
     <div class="kick"><i></i><em>08</em><span>Разберём по-честному</span></div>
-    <h2>Шесть вещей, из-за которых обычно <span class="acc">не решаются</span></h2>
+    <h2>Получите прямые ответы на шесть вопросов, из-за которых обычно <span class="acc">не решаются</span></h2>
     <p class="lead" style="margin-bottom:32px">Мы не будем убеждать, что «всё абсолютно безопасно и совсем не больно». Расскажем, как есть, — а вы решите.</p>
 
     <div class="grid" style="gap:12px">
       <details class="fear">
         <summary><span class="fq">1</span><span>«Будет очень больно»</span><svg class="ar" width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
         <div class="fa">
-          <p>Терпимо — честный ответ. Ощущение похоже на тёплый щелчок резинкой и длится долю секунды. Сплошное сапфировое охлаждение держит кожу в контакте с холодом всё время работы, поэтому анестезия не нужна.</p>
-          <p><b>И главное:</b> перед процедурой мы делаем одну тест-вспышку. Вы почувствуете, как это, до того как заплатите.</p>
+          <p>Терпимо — честный ответ. Ощущение похоже на тёплый щелчок резинкой и длится долю секунды: сплошное сапфировое охлаждение держит кожу в контакте с холодом всё время работы.</p>
+          <p><b>И главное:</b> перед процедурой мы делаем тест-вспышку — вы почувствуете, как это, до того как заплатите.</p>
         </div>
       </details>
 
       <details class="fear">
         <summary><span class="fq">2</span><span>«Останутся ожоги или тёмные пятна»</span><svg class="ar" width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
         <div class="fa">
-          <p>Ожог на диодном лазере — почти всегда следствие двух вещей: неверной мощности под фототип и работы по свежему загару. Оба пункта решаются на диагностике, а не «по ходу дела».</p>
-          <p><b>Что делаем мы:</b> определяем фототип, спрашиваем про загар и лекарства, делаем тест-вспышку. Если кожа отреагировала не так — переносим процедуру, а не «пробуем аккуратнее».</p>
+          <p>Ожог — почти всегда следствие неверной мощности под фототип и работы по свежему загару. Оба пункта закрываются на диагностике, а не «по ходу дела».</p>
+          <p>Мы определяем фототип, спрашиваем про загар и лекарства, делаем тест-вспышку. Если кожа отреагировала не так — <b>переносим процедуру</b>, а не «пробуем аккуратнее».</p>
         </div>
       </details>
 
       <details class="fear">
         <summary><span class="fq">3</span><span>«Мне не подойдёт: у меня светлые или седые волосы»</span><svg class="ar" width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
         <div class="fa">
-          <p>Возможно, действительно не подойдёт — и мы скажем это прямо. Лазер находит волос по меланину. На седых и совсем светлых пушковых волосах его почти нет, и результата не будет ни на каком аппарате.</p>
-          <p><b>Тёмные, но тонкие волосы</b> — другое дело: они реагируют, просто процедур обычно нужно больше. Студия, которая обещает убрать седые волосы лазером, продаёт процедуры, а не результат.</p>
+          <p>Возможно, действительно не подойдёт — и вы узнаете это до оплаты. Лазер находит волос по меланину: на седых и совсем светлых его почти нет, результата не будет ни на каком аппарате.</p>
+          <p><b>Тёмные, но тонкие волосы</b> реагируют — просто процедур нужно больше. Студия, которая обещает убрать седые волосы лазером, продаёт процедуры, а не результат.</p>
         </div>
       </details>
 
       <details class="fear">
         <summary><span class="fq">4</span><span>«Разведут на курс из десяти процедур, а толку не будет»</span><svg class="ar" width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
         <div class="fa">
-          <p>Число процедур мы называем до оплаты и записываем в план: обычно 6–8 с интервалом 4–6 недель. Если по ходу курса выяснится, что нужно меньше, — оставшиеся оплаченные процедуры вернём деньгами.</p>
-          <p><b>Оплачивать курс целиком не обязательно.</b> Можно платить по одной процедуре: выйдет дороже, зато вы ничем не связаны.</p>
+          <p>Число процедур вы узнаете до оплаты, и оно записывается в план: обычно 6–8 с интервалом 4–6 недель. Если по ходу курса окажется, что нужно меньше, — <b>оставшиеся оплаченные процедуры вернём деньгами</b>.</p>
+          <p>Платить всё сразу не обязательно: можно по одной процедуре — выйдет дороже, зато вы ничем не связаны.</p>
         </div>
       </details>
 
       <details class="fear">
         <summary><span class="fq">5</span><span>Сколько нужно процедур и что нельзя делать до и после</span><svg class="ar" width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
         <div class="fa">
-          <p><b>Курс — 6–8 процедур с интервалом 4–6 недель,</b> дальше поддержка примерно раз в год-полтора. Лазер работает только по волосам в активной фазе роста, поэтому за один визит уходит часть — отсюда и курс.</p>
-          <p><b>За две недели до:</b> не загорать, не выщипывать, не делать шугаринг — корень должен быть на месте. Брить, наоборот, нужно за 1–2 дня. <b>После, 2–3 дня:</b> без бани, бассейна, спортзала и скрабов. Полную памятку выдаём в кабинете.</p>
+          <p><b>За две недели до:</b> не загорать, не выщипывать, не делать шугаринг — корень должен быть на месте. Брить, наоборот, нужно за 1–2 дня.</p>
+          <p><b>После, 2–3 дня:</b> без бани, бассейна, спортзала и скрабов. Полную памятку выдаём в кабинете, а даты следующих визитов ставим сами — чтобы интервалы не сорвались.</p>
         </div>
       </details>
 
       <details class="fear">
         <summary><span class="fq">6</span><span>Стесняюсь раздеваться. И будет ли отёк после губ</span><svg class="ar" width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
         <div class="fa">
-          <p>В студии один кабинет и один специалист — женщина. Ни общего зала, ни соседних кушеток за шторкой. Запись на конкретное время, поэтому в коридоре вы ни с кем не пересекаетесь. Одноразовое бельё — по умолчанию.</p>
-          <p><b>Честные сроки:</b> после лазерной эпиляции — покраснение на несколько часов, в тот же день можно идти куда угодно. После контурной пластики губ — отёк 2–4 дня. Поэтому губы не делают за день до важного события: мы сами спросим, есть ли у вас что-то в ближайшие две недели.</p>
+          <p>Один кабинет и один специалист — женщина. Ни общего зала, ни соседних кушеток за шторкой. Запись на конкретное время, поэтому в коридоре вы ни с кем не пересекаетесь. Одноразовое бельё — по умолчанию.</p>
+          <p><b>Честные сроки:</b> после эпиляции — покраснение на несколько часов, в тот же день можно идти куда угодно. После губ — отёк 2–4 дня, поэтому мы сами спросим, нет ли у вас важного события в ближайшие две недели.</p>
         </div>
       </details>
     </div>
 
     <div style="margin-top:32px;display:flex;gap:14px;flex-wrap:wrap;align-items:center">
-      <a href="#quiz" class="btn" data-goal="answers_cta">Рассчитать стоимость курса</a>
+      <button class="btn" data-cb="answers" data-goal="answers_cta">Записаться на первый визит</button>
       <span class="under">остались вопросы — <a href="https://t.me/VIV_Studio" target="_blank" rel="noopener" style="color:var(--vio-deep);font-weight:700" data-goal="tg">спросите Екатерину в Telegram</a></span>
     </div>
   </div>
@@ -1561,8 +1580,8 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
 <section class="pane t-champ rv" id="guarantees">
   <div class="wrap">
     <div class="kick"><i></i><em>09</em><span>Наши обязательства</span></div>
-    <h2>Пять вещей, которые мы обещаем <span class="acc">письменно</span></h2>
-    <p class="lead" style="margin-bottom:34px">Не «индивидуальный подход и высокое качество», а конкретные обязательства, которые можно предъявить.</p>
+    <h2>Рискуем мы, а не вы: пять обязательств, которые даём <span class="acc">письменно</span></h2>
+    <p class="lead" style="margin-bottom:34px">Не «индивидуальный подход и высокое качество», а конкретные обещания, которые можно предъявить.</p>
 
     <div class="gar">
       <div class="gar-c">
@@ -1591,7 +1610,7 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
           <h4>Скажем «вам это не нужно», если это так</h4>
           <p>Диагностика бесплатна и не обязана заканчиваться записью. Если лазер не даст результата на ваших волосах или процедуру лучше отложить — вы услышите это, а не предложение «начать с малого».</p>
         </div>
-        <a href="#quiz" class="btn" data-goal="gar_cta">Рассчитать стоимость курса</a>
+        <button class="btn" data-cb="guarantees" data-goal="gar_cta">Записаться на первый визит</button>
       </div>
     </div>
   </div>
@@ -1631,8 +1650,8 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
 
       <div>
         <div class="kick"><i></i><em>10</em><span>Где нас найти</span></div>
-        <h2>Суворовский проспект, 35</h2>
-        <p class="lead">Шесть минут пешком от метро Чернышевская, в самом центре. Можно зайти в обеденный перерыв: комплекс «всё тело» занимает 40 минут.</p>
+        <h2>Дойдёте от метро <span class="acc">за 6 минут</span> — Суворовский проспект, 35</h2>
+        <p class="lead">Самый центр, м. Чернышевская. Можно зайти в обеденный перерыв: комплекс «всё тело» занимает 40 минут.</p>
         <div class="facts">
           <span><b class="num">6</b> минут от метро</span>
           <span><b class="num">1</b> кабинет, без общего зала</span>
@@ -1652,11 +1671,12 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
             <span class="ai"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M21 4.6L2.9 11.3c-.9.3-.9 1.6.1 1.9l4.6 1.4 1.7 5c.3.9 1.5 1 2 .3l2.5-3.3 4.7 3.5c.7.5 1.7.1 1.9-.7l3-13.6c.2-1-.8-1.8-1.4-1.2z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg></span>
             <div><b><a href="https://t.me/VIV_Studio" target="_blank" rel="noopener" data-goal="tg">@VIV_Studio в Telegram</a></b><span>Самый быстрый способ: обычно отвечаем в течение 15 минут</span></div>
           </li>
-          <li>
-            <span class="ai"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9.2" stroke="currentColor" stroke-width="1.4"/><path d="M12 6.8V12l3.4 2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-            <div><b>Ежедневно, 10:00 — 21:00</b><span>Запись на конкретное время, очереди в студии нет</span></div>
-          </li>
         </ul>
+
+        <div style="margin-top:30px;display:flex;gap:14px;flex-wrap:wrap;align-items:center">
+          <button class="btn" data-cb="studio" data-goal="studio_cta">Записаться на первый визит</button>
+          <span class="under">номер кабинета и код домофона пришлём вместе с подтверждением</span>
+        </div>
       </div>
     </div>
   </div>
@@ -1669,8 +1689,8 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
       <div class="fin-g">
         <div>
           <div class="kick"><i></i><span>Предложение первого визита</span></div>
-          <h2>−50% на лазерную эпиляцию и −20% на косметологию</h2>
-          <p class="lead">Скидка действует один раз — на ваш первый визит, на любую строку прайса. Комплекс «всё тело» в этот визит стоит <b style="color:#fff">4 900 ₽ вместо 9 800 ₽</b>, диагностика с планом курса — бесплатно.</p>
+          <h2>Сэкономите <span class="acc">4 900 ₽</span> на первом визите</h2>
+          <p class="lead">Скидка действует один раз и на любую строку прайса: −50% на лазерную эпиляцию и −20% на косметологию. Комплекс «всё тело» в этот визит — <b style="color:#fff">4 900 ₽ вместо 9 800 ₽</b>, диагностика с планом курса — бесплатно.</p>
           <div class="timer" id="timer">
             <div><b class="num" id="tD">0</b><span>дней</span></div>
             <div><b class="num" id="tH">00</b><span>часов</span></div>
@@ -1685,12 +1705,8 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
         </div>
 
         <form class="fin-f" id="formFinal">
-          <h3>Записаться со скидкой первого визита</h3>
+          <h3>Закрепить скидку за своим номером</h3>
           <p class="sub">Оставьте номер — косметолог напишет в течение 15 минут, предложит свободные окна и ответит на вопросы про противопоказания.</p>
-          <div class="fld">
-            <label for="fName">Как к вам обращаться</label>
-            <input type="text" id="fName" name="name" placeholder="Например, Ольга" autocomplete="given-name">
-          </div>
           <div class="fld">
             <label for="fPhone">Номер, за которым закрепим скидку 50%</label>
             <input type="tel" id="fPhone" name="phone" placeholder="+7 ___ ___ __ __" autocomplete="tel" inputmode="tel">
@@ -1731,7 +1747,7 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
         <a href="tel:+79219156255" style="font-size:19px;font-weight:800;color:var(--on-dark);margin-bottom:12px" data-goal="phone">+7 (921) 915-62-55</a>
         <span style="display:block;margin-bottom:9px">Санкт-Петербург,<br>Суворовский пр-кт, 35<br>м. Чернышевская</span>
         <span style="display:block">Ежедневно, 10:00 — 21:00</span>
-        <button class="btn btn-ghost btn-sm" style="margin-top:16px" data-cb="footer">Перезвоните мне</button>
+        <button class="btn btn-ghost btn-sm" style="margin-top:16px" data-cb="footer">Записаться на визит</button>
       </div>
     </div>
 
@@ -1752,29 +1768,26 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
 
 <!-- ============ STICKY (мобильные) ============ -->
 <div class="sticky">
-  <a href="#quiz" class="btn" data-goal="sticky_quiz">Рассчитать стоимость</a>
+  <button class="btn" data-cb="sticky" data-goal="sticky_book">Записаться</button>
   <a href="tel:+79219156255" class="btn btn-ghost" aria-label="Позвонить" data-goal="phone"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6.6 3.4l3 .6 1 3.4-2 1.6c.9 2.4 2.9 4.4 5.3 5.3l1.6-2 3.4 1 .6 3c0 1-.8 1.8-1.8 1.7C10.6 17.6 6.4 13.4 4.9 5.2c-.1-1 .7-1.8 1.7-1.8z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></a>
   <a href="https://t.me/VIV_Studio" target="_blank" rel="noopener" class="btn btn-ghost" aria-label="Telegram" data-goal="tg"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M21.3 4.4L2.9 11.5c-.9.4-.9 1.6.1 1.9l4.5 1.4 1.7 5c.3.8 1.4.9 1.9.3l2.4-3.2 4.6 3.4c.7.5 1.7.1 1.9-.7l2.9-13.4c.2-.9-.8-1.7-1.6-1.3zM9.4 14.3l8.4-5.2-6.8 6.2-.3 3.3-1.3-4.3z"/></svg></a>
 </div>
 
-<!-- ============ МОДАЛКА: ПЕРЕЗВОНИТЕ МНЕ ============ -->
+<!-- ============ МОДАЛКА: ЗАПИСЬ (телефон и больше ничего) ============ -->
 <div class="ov" id="ovCb">
   <div class="mod">
     <button class="mx" data-close aria-label="Закрыть"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></button>
-    <h3>Перезвоним и ответим на вопросы</h3>
-    <p class="sub">Оставьте номер — косметолог перезвонит в течение 15 минут в рабочее время. Расскажем про процедуру, противопоказания и цену, ничего не навязывая.</p>
+    <div class="kick"><i></i><span>Первый визит −50%</span></div>
+    <h3>Запишем на удобное время</h3>
+    <p class="sub">Оставьте номер — косметолог напишет в течение 15 минут и предложит 2–3 свободных окна на выбор. Скидку первого визита закрепим за вашим номером на 7 дней.</p>
     <form id="formCb">
       <div class="fld">
-        <label for="cName">Как к вам обращаться</label>
-        <input type="text" id="cName" name="name" placeholder="Ваше имя" autocomplete="given-name">
-      </div>
-      <div class="fld">
-        <label for="cPhone">Номер для звонка</label>
+        <label for="cPhone">Ваш номер телефона</label>
         <input type="tel" id="cPhone" name="phone" placeholder="+7 ___ ___ __ __" autocomplete="tel" inputmode="tel">
       </div>
       <label class="agree"><input type="checkbox" checked data-agree><span>Согласна на обработку персональных данных и с <a href="privacy.html" target="_blank">политикой конфиденциальности</a></span></label>
-      <button type="submit" class="btn btn-w" data-goal="cb_submit">Жду звонка</button>
-      <p class="under" style="margin-top:12px">Мы не передаём номера третьим лицам и не подписываем на рассылки.</p>
+      <button type="submit" class="btn btn-w" data-goal="cb_submit">Записаться на первый визит</button>
+      <p class="under" style="margin-top:12px">Диагностика перед процедурой — бесплатно. Мы не передаём номера третьим лицам и не подписываем на рассылки.</p>
     </form>
   </div>
 </div>
@@ -1804,10 +1817,6 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
     <h3>Не уходите с пустыми руками</h3>
     <p class="sub">Заберите чек-лист «11 вопросов, которые стоит задать студии лазерной эпиляции». Он поможет не отдать 30 000 ₽ за курс, после которого волосы вернутся через полгода, — в любой студии города, не только в нашей.</p>
     <form id="formExit">
-      <div class="fld">
-        <label for="eName">Как к вам обращаться</label>
-        <input type="text" id="eName" name="name" placeholder="Ваше имя" autocomplete="given-name">
-      </div>
       <div class="fld">
         <label for="ePhone">Куда прислать чек-лист</label>
         <input type="tel" id="ePhone" name="phone" placeholder="+7 ___ ___ __ __" autocomplete="tel" inputmode="tel">
@@ -1950,7 +1959,7 @@ var CONFIG = {
   }
   hookForm('#formDiag', 'Бесплатная диагностика');
   hookForm('#formFinal', 'Финальная форма — скидка первого визита');
-  hookForm('#formCb', 'Перезвоните мне');
+  hookForm('#formCb', 'Запись на первый визит');
   hookForm('#formLead', 'Чек-лист 11 вопросов');
   hookForm('#formExit', 'Чек-лист (pop-up на выход)');
 
@@ -2039,7 +2048,7 @@ var CONFIG = {
       var a = answers();
       send({
         form: 'Квиз — расчёт курса',
-        name: $('#qName').value.trim(),
+        name: '',
         phone: phone.value.trim(),
         interest: a.q1, zones: a.q2, experience: a.q3, hair: a.q4, when: a.q5, channel: a.q6,
         page: location.href,
