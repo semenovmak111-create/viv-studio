@@ -435,6 +435,27 @@ h1 .pr.acc{font-style:normal;font-weight:600;color:var(--vio-deep);
 .fbox .give svg{flex:none;margin-top:3px;color:var(--gold-hi)}
 .frm{background:var(--white);border-radius:var(--r-lg);padding:32px;
   color:var(--body);box-shadow:0 40px 80px -34px rgba(0,0,0,.55)}
+
+/* ── поля форм ────────────────────────────────────────────────────────────
+   Одна разметка на все четыре формы: подпись сверху, крупное поле,
+   согласие мелко под ним. Поле должно быть заметно больше, чем кажется
+   нужным: это единственное действие, которое мы просим у человека. ───── */
+.fld{margin-bottom:16px}
+.fld label{display:block;font-size:13px;font-weight:700;letter-spacing:.01em;
+  color:var(--soft);margin-bottom:8px}
+.fld input{
+  width:100%;padding:17px 18px;border-radius:15px;font-size:17px;color:var(--plum);
+  background:var(--paper);border:1px solid var(--line-2);
+  transition:border-color .18s,box-shadow .18s,background .18s;
+}
+.fld input::placeholder{color:#a496ad}
+.fld input:focus{outline:0;background:var(--white);border-color:var(--vio);
+  box-shadow:0 0 0 4px rgba(124,90,194,.14)}
+.agree{display:flex;gap:10px;align-items:flex-start;font-size:12.5px;line-height:1.45;
+  color:var(--soft);margin-bottom:18px;cursor:pointer;
+  border:1px solid transparent;border-radius:10px;padding:2px}
+.agree input{flex:none;width:17px;height:17px;margin-top:1px;accent-color:var(--vio)}
+.agree a{color:var(--vio-deep);text-decoration:underline}
 .gift{display:flex;gap:14px;align-items:center;background:var(--gold-soft);
   border:1px solid var(--line-gold);border-radius:16px;padding:15px 17px;margin-bottom:20px;font-size:14px;line-height:1.45;color:var(--body)}
 .gift>svg{flex:none;color:var(--gold-ink)}
@@ -625,9 +646,9 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
 .road p{font-size:14.8px;line-height:1.55}
 .road p b{display:inline;font-family:inherit;font-size:inherit;font-weight:700;margin:0}
 
-/* ── глава 05: забота в деталях ──────────────────────────────────────────
-   Шесть карточек-мелочей, из которых складывается «мне было спокойно».
-   Каждая — тихая: светлая бумага главы, тонкий золотой кружок с иконкой,
+/* ── глава 05: как проходит визит ──────────────────────────────────────────
+   Три карточки-шага: попробовали — узнали цену — решили. Каждая тихая:
+   светлая бумага главы, тонкий золотой кружок с номером шага,
    заголовок антиквой. Ничего кричащего: блок должен звучать как студия,
    а не как реклама студии.
    ──────────────────────────────────────────────────────────────────────── */
@@ -638,6 +659,9 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
 .care .ci{width:48px;height:48px;border-radius:50%;background:var(--white);
   border:1px solid var(--line-gold);display:flex;align-items:center;justify-content:center;
   color:var(--gold-ink);margin-bottom:19px}
+/* номер шага вместо иконки: та же золотая окружность, антиква внутри */
+.care .ci.step-n{font-family:'Cormorant',Georgia,serif;font-size:25px;font-weight:600;line-height:1;
+  font-variant-numeric:lining-nums;padding-bottom:2px}
 .care h4{font-family:'Cormorant',Georgia,serif;font-size:23px;font-weight:600;
   letter-spacing:0;line-height:1.16;color:var(--plum);margin-bottom:9px}
 .care p{font-size:14.8px;line-height:1.6}
@@ -711,7 +735,7 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
 }
 @media (max-width:1080px){
   .cmp{grid-template-columns:1fr;gap:14px}
-  .care{grid-template-columns:1fr 1fr}
+  .care{grid-template-columns:1fr}
   .cmp .bs{min-height:0}
   .sum .btn{margin-left:0}
   .road{grid-template-columns:1fr 1fr;gap:34px 28px}
@@ -801,7 +825,7 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
         <ul class="bul">
           <li>
             <svg width="19" height="19" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9.2" stroke="currentColor" stroke-opacity=".38" stroke-width="1.1"/><path d="M5.8 10.3l2.7 2.7 5.6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span><b>Гладко и к вечеру, и через неделю</b> — без раздражения, тёмных точек и вросших волосков</span>
+            <span><b>Забудете про бритву уже после первой процедуры</b> — три-четыре недели гладко, без раздражения и вросших</span>
           </li>
           <li>
             <svg width="19" height="19" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9.2" stroke="currentColor" stroke-opacity=".38" stroke-width="1.1"/><path d="M5.8 10.3l2.7 2.7 5.6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -809,11 +833,11 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
           </li>
           <li>
             <svg width="19" height="19" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9.2" stroke="currentColor" stroke-opacity=".38" stroke-width="1.1"/><path d="M5.8 10.3l2.7 2.7 5.6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span><b>Цена курса не вырастет 12 месяцев</b> — фиксируем её в день оплаты</span>
+            <span><b>Попробуете лазер бесплатно, до оплаты</b> — пробная вспышка на диагностике, чтобы решать не вслепую</span>
           </li>
           <li>
             <svg width="19" height="19" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9.2" stroke="currentColor" stroke-opacity=".38" stroke-width="1.1"/><path d="M5.8 10.3l2.7 2.7 5.6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span><b>В кабинете вам ничего не продают</b> — если процедура вам сейчас не нужна, вы услышите это первой</span>
+            <span><b>Не будет результата к третьей процедуре — доведём за наш счёт</b>, а за неиспользованные процедуры вернём деньги</span>
           </li>
         </ul>
 
@@ -822,15 +846,15 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
             <span class="cta-arrow" aria-hidden="true">
               <svg viewBox="1 1 60 26" width="60" height="26">
                 <defs><linearGradient id="arw" x1="0" y1="0" x2="1" y2=".8">
-                  <stop offset="0" stop-color="#E3CD9B"/><stop offset=".45" stop-color="#A8813F"/>
-                  <stop offset="1" stop-color="#7C5AC2"/></linearGradient></defs>
+                  <stop offset="0" stop-color="#9D80D8"/><stop offset=".45" stop-color="#7C5AC2"/>
+                  <stop offset="1" stop-color="#553A90"/></linearGradient></defs>
                 <path class="a-body" d="M1.8 2.1 L2.4 3.5 L3.0 4.9 L3.6 6.2 L4.3 7.5 L5.0 8.7 L5.7 9.9 L6.5 11.0 L7.2 12.1 L8.0 13.1 L8.8 14.0 L9.7 14.9 L10.5 15.8 L11.4 16.6 L12.3 17.4 L13.2 18.1 L14.1 18.8 L15.0 19.4 L16.0 20.0 L17.0 20.5 L17.9 21.0 L18.9 21.5 L19.9 21.9 L20.9 22.3 L21.9 22.6 L23.0 22.9 L24.0 23.2 L25.0 23.4 L26.1 23.6 L27.1 23.8 L28.1 23.9 L29.2 24.0 L30.2 24.1 L31.3 24.1 L32.3 24.1 L33.4 24.1 L34.4 24.1 L35.4 24.0 L36.4 23.9 L37.5 23.8 L38.5 23.7 L39.5 23.5 L40.5 23.3 L41.5 23.2 L42.5 23.0 L43.4 22.7 L44.4 22.5 L45.3 22.2 L46.3 22.0 L47.2 21.7 L48.1 21.4 L49.0 21.1 L49.9 20.8 L48.0 16.0 L47.2 16.4 L46.4 16.7 L45.6 17.0 L44.7 17.3 L43.9 17.7 L43.0 18.0 L42.2 18.2 L41.3 18.5 L40.4 18.8 L39.5 19.0 L38.6 19.2 L37.7 19.5 L36.8 19.6 L35.9 19.8 L35.0 20.0 L34.0 20.1 L33.1 20.2 L32.2 20.3 L31.2 20.4 L30.3 20.4 L29.3 20.4 L28.4 20.4 L27.4 20.4 L26.5 20.3 L25.6 20.2 L24.6 20.1 L23.7 19.9 L22.7 19.7 L21.8 19.5 L20.9 19.2 L19.9 18.9 L19.0 18.6 L18.1 18.2 L17.2 17.8 L16.3 17.3 L15.4 16.8 L14.5 16.3 L13.6 15.7 L12.7 15.0 L11.8 14.3 L11.0 13.6 L10.1 12.8 L9.3 12.0 L8.4 11.1 L7.6 10.1 L6.8 9.1 L6.0 8.1 L5.2 7.0 L4.4 5.8 L3.7 4.6 L2.9 3.3 L2.2 1.9Z"/>
                 <path class="a-head" d="M60.2 15.1 L46.4 26.3 Q49.2 18.5 42.5 13.7Z"/>
               </svg>
             </span>
             <button class="btn btn-lg" data-cb="hero" data-goal="hero_cta">Записаться на первый визит</button>
           </span>
-          <a href="#prices" class="btn btn-ghost" data-goal="hero_prices">Посмотреть цены</a>
+          <a href="#prices" class="btn btn-ghost" data-goal="hero_prices">Рассчитать стоимость курса</a>
         </div>
 
         <p class="h-note">
@@ -918,8 +942,8 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
 <section class="pane t-lilac rv" id="prices">
   <div class="wrap">
     <div class="kick"><i></i><em>01</em><span>Цены</span></div>
-    <h2>В первый визит — <span class="acc">половина цены</span>. На любую зону</h2>
-    <p class="lead" style="margin-bottom:30px">Никаких «цена по запросу» и «уточняйте у администратора»: вы видите обычную стоимость и то, сколько заплатите в первый визит. В цену уже входит всё — подготовка, крем после процедуры и памятка по уходу.</p>
+    <h2>Половину платим мы: <span class="acc">вы экономите до 4 900 ₽</span> в первый визит</h2>
+    <p class="lead" style="margin-bottom:30px">Никаких «цена по запросу» и «уточняйте у администратора» — вы сразу видите, сколько заплатите вы. Подготовка, крем после процедуры и памятка по уходу уже в цене: в кабинете доплачивать не придётся ни за что.</p>
 
     <div class="tw"><table class="pt">
       <tr><th>Зона</th><th>Сколько занимает</th><th>Обычная цена</th><th>Первый визит −50%</th></tr>
@@ -943,63 +967,62 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
   </div>
 </section>
 
-<!-- ============ 2. ЭКОНОМИКА РЕШЕНИЯ ============
-     Блок отвечает на возражение «дорого» не скидкой, а горизонтом:
-     курс платится один раз и заканчивается, бритва и воск — платёж
-     без конца. Все цифры считаны на одинаковом сроке в три года,
-     методика расчёта открыта в сноске под блоком. -->
+<!-- ============ 2. СКОЛЬКО ВЫ ЭКОНОМИТЕ ============
+     Возражение «дорого» закрывается не скидкой, а горизонтом: курс
+     заканчивается, станок и воск — нет. Все три способа посчитаны на
+     одном сроке в три года, методика открыта в сноске под блоком. -->
 <section class="pane t-champ rv" id="economy">
   <div class="wrap">
-    <div class="kick"><i></i><em>02</em><span>Спокойная арифметика</span></div>
-    <h2>Курс лазера дешевле привычки. <span class="acc">Просто привычка платится частями</span></h2>
-    <p class="lead">Посчитали три способа быть гладкой на одинаковом сроке — три года, по средним ценам Петербурга. Курс лазера оплачивается один раз и заканчивается. Станок и воск — платёж, который не заканчивается никогда.</p>
+    <div class="kick"><i></i><em>02</em><span>Сколько вы экономите</span></div>
+    <h2>За три года вы <span class="acc">оставите себе 53 900 ₽</span> — и неделю своей жизни</h2>
+    <p class="lead">За гладкую кожу вы платите уже сейчас — просто по частям и без конца: станок, воск, дорога, снова воск. Курс лазера оплачивается один раз и заканчивается. Вот те же три года в деньгах, по средним ценам Петербурга.</p>
 
     <div class="cmp">
       <div class="c">
         <span class="ct">Станок и кассеты</span>
         <div class="big num">32 400 ₽</div>
-        <div class="bs">за три года — и дальше каждый месяц</div>
+        <div class="bs">вы отдадите за три года — и продолжите платить дальше</div>
         <ul>
-          <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8.8" stroke="currentColor" stroke-width="1.1"/><path d="M6.4 10h7.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><span><b>93 часа в ванной</b> — по 12 минут через день</span></li>
-          <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8.8" stroke="currentColor" stroke-width="1.1"/><path d="M6.4 10h7.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><span>Щетина к вечеру, вросшие, тёмные точки</span></li>
-          <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8.8" stroke="currentColor" stroke-width="1.1"/><path d="M6.4 10h7.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><span>И завтра всё сначала</span></li>
+          <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8.8" stroke="currentColor" stroke-width="1.1"/><path d="M6.4 10h7.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><span><b>93 часа в ванной</b> — почти четверо суток вашей жизни</span></li>
+          <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8.8" stroke="currentColor" stroke-width="1.1"/><path d="M6.4 10h7.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><span>И всё это за свои же деньги: щетина к вечеру, вросшие, тёмные точки</span></li>
+          <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8.8" stroke="currentColor" stroke-width="1.1"/><path d="M6.4 10h7.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><span>Ещё через десять лет — <b>минус 108 000 ₽</b></span></li>
         </ul>
       </div>
 
       <div class="c">
         <span class="ct">Шугаринг и воск</span>
         <div class="big num">147 000 ₽</div>
-        <div class="bs">за три года — при 14 визитах в год</div>
+        <div class="bs">вы отдадите за три года — при 14 визитах в год</div>
         <ul>
-          <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8.8" stroke="currentColor" stroke-width="1.1"/><path d="M6.4 10h7.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><span><b>63 часа</b> — дорога и кабинет каждые три недели</span></li>
-          <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8.8" stroke="currentColor" stroke-width="1.1"/><path d="M6.4 10h7.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><span>Отращивать заново, чтобы мастер взял на процедуру</span></li>
-          <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8.8" stroke="currentColor" stroke-width="1.1"/><path d="M6.4 10h7.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><span>Ещё через десять лет — <b>полмиллиона рублей</b></span></li>
+          <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8.8" stroke="currentColor" stroke-width="1.1"/><path d="M6.4 10h7.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><span><b>63 часа</b> — дорога и чужой кабинет каждые три недели</span></li>
+          <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8.8" stroke="currentColor" stroke-width="1.1"/><path d="M6.4 10h7.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><span>Отращивать заново и терпеть — и так без конца</span></li>
+          <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8.8" stroke="currentColor" stroke-width="1.1"/><path d="M6.4 10h7.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><span>Ещё через десять лет — <b>минус полмиллиона рублей</b></span></li>
         </ul>
       </div>
 
       <div class="c win">
-        <span class="flag">так это заканчивается</span>
+        <span class="flag">и на этом всё</span>
         <span class="ct">Курс лазера в VIV.STUDIO</span>
         <div class="big num">93 100 ₽</div>
-        <div class="bs">за три года — курс целиком и вся поддержка</div>
+        <div class="bs">вы платите один раз — и больше к этой теме не возвращаетесь</div>
         <ul>
-          <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9.2" stroke="currentColor" stroke-opacity=".38" stroke-width="1.1"/><path d="M5.8 10.3l2.7 2.7 5.6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>7 часов за три года</b> — восемь визитов по 40 минут</span></li>
-          <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9.2" stroke="currentColor" stroke-opacity=".38" stroke-width="1.1"/><path d="M5.8 10.3l2.7 2.7 5.6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Курс — 6–8 процедур, дальше поддержка раз в год</span></li>
-          <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9.2" stroke="currentColor" stroke-opacity=".38" stroke-width="1.1"/><path d="M5.8 10.3l2.7 2.7 5.6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Платить всё сразу не нужно: <b>вход — 4 900 ₽</b> за первый визит</span></li>
+          <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9.2" stroke="currentColor" stroke-opacity=".38" stroke-width="1.1"/><path d="M5.8 10.3l2.7 2.7 5.6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Экономите 53 900 ₽</b> против воска — на тех же трёх годах</span></li>
+          <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9.2" stroke="currentColor" stroke-opacity=".38" stroke-width="1.1"/><path d="M5.8 10.3l2.7 2.7 5.6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Возвращаете себе 56 часов</b> — это целая неделя жизни</span></li>
+          <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9.2" stroke="currentColor" stroke-opacity=".38" stroke-width="1.1"/><path d="M5.8 10.3l2.7 2.7 5.6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Входите за <b>4 900 ₽</b> — платить всё сразу не нужно</span></li>
         </ul>
       </div>
     </div>
 
     <div class="sum">
-      <div class="si"><b class="num">18-й месяц</b><span>лазер становится дешевле воска</span></div>
+      <div class="si"><b class="num">53 900 ₽</b><span>останутся у вас за три года</span></div>
       <div class="sd"></div>
-      <div class="si"><b class="num">−53 900 ₽</b><span>ваша выгода за три года</span></div>
+      <div class="si"><b class="num">56 часов</b><span>вы не проведёте в ванной и в чужом кабинете</span></div>
       <div class="sd"></div>
-      <div class="si"><b class="num">+56 часов</b><span>неделя жизни, которую забирает воск</span></div>
-      <button class="btn" data-cb="economy" data-goal="economy_cta">Посчитать мой курс</button>
+      <div class="si"><b class="num">18-й месяц</b><span>курс окупился — дальше вы только экономите</span></div>
+      <button class="btn" data-cb="economy" data-goal="economy_cta">Посчитать мою выгоду</button>
     </div>
 
-    <p class="under" style="margin-top:18px">Расчёт по средним ценам Петербурга на август 2026: шугаринг всего тела — 3 500 ₽ раз в три-четыре недели; кассеты, пена и станок — около 900 ₽ в месяц; курс лазера — первый визит 4 900 ₽ и семь визитов по 9 800 ₽, плюс две поддерживающие процедуры за три года. По вашим зонам обычно выходит дешевле, чем комплекс «всё тело», — точную сумму назовём на бесплатной диагностике, до оплаты.</p>
+    <p class="under" style="margin-top:18px">Считали по средним ценам Петербурга на август 2026: шугаринг всего тела — 3 500 ₽ раз в три-четыре недели; станок, кассеты и пена — около 900 ₽ в месяц; курс лазера — первый визит 4 900 ₽, семь визитов по 9 800 ₽ и две поддерживающие процедуры за три года. Если зон меньше, чем «всё тело», курс выйдет дешевле — вашу личную выгоду посчитаем на бесплатной диагностике, до оплаты.</p>
   </div>
 </section>
 
@@ -1009,12 +1032,12 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
     <div class="fbox">
       <div>
         <div class="kick"><i></i><span>Бесплатно</span></div>
-        <h3>Приходите познакомиться — <span class="acc">уйдёте с планом курса на год</span></h3>
-        <p>Полчаса с Екатериной, спокойно и без спешки. Диагностика стоит 1 500 ₽ — для вас бесплатно, даже если записываться на процедуру вы не будете.</p>
+        <h3>Придите познакомиться — <span class="acc">уйдёте с точной ценой курса</span></h3>
+        <p>Полчаса с Екатериной. Такая диагностика стоит 1 500 ₽ — вам бесплатно, даже если записываться вы не будете.</p>
         <ul class="give">
-          <li><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9.2" stroke="currentColor" stroke-opacity=".38" stroke-width="1.1"/><path d="M5.8 10.3l2.7 2.7 5.6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Проверим противопоказания и подберём параметры под вашу кожу</span></li>
-          <li><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9.2" stroke="currentColor" stroke-opacity=".38" stroke-width="1.1"/><path d="M5.8 10.3l2.7 2.7 5.6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Сделаем пробную вспышку — поймёте ощущения до оплаты</span></li>
-          <li><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9.2" stroke="currentColor" stroke-opacity=".38" stroke-width="1.1"/><path d="M5.8 10.3l2.7 2.7 5.6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Отдадим план курса на 12 месяцев с итоговой ценой</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9.2" stroke="currentColor" stroke-opacity=".38" stroke-width="1.1"/><path d="M5.8 10.3l2.7 2.7 5.6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Узнаете свою цену: сколько процедур нужно именно вам и сколько стоит курс целиком</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9.2" stroke="currentColor" stroke-opacity=".38" stroke-width="1.1"/><path d="M5.8 10.3l2.7 2.7 5.6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Попробуете лазер — пробная вспышка, чтобы решать не вслепую</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9.2" stroke="currentColor" stroke-opacity=".38" stroke-width="1.1"/><path d="M5.8 10.3l2.7 2.7 5.6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Заберёте план на 12 месяцев и спокойно подумаете дома</span></li>
         </ul>
       </div>
       <form class="frm" id="formDiag">
@@ -1023,59 +1046,58 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
           <input type="tel" id="dPhone" name="phone" placeholder="+7 ___ ___ __ __" autocomplete="tel" inputmode="tel">
         </div>
         <label class="agree"><input type="checkbox" checked data-agree><span>Согласна на обработку персональных данных и с <a href="privacy.html" target="_blank">политикой конфиденциальности</a></span></label>
-        <button type="submit" class="btn btn-w" data-goal="diag_submit">Записаться на бесплатную диагностику</button>
-        <p class="under" style="margin-top:13px">Екатерина напишет в течение 15 минут и предложит два-три удобных окна. Если звонить неудобно — так и скажите, будем только переписываться.</p>
+        <button type="submit" class="btn btn-w" data-goal="diag_submit">Записаться бесплатно</button>
+        <p class="under" style="margin-top:13px">Екатерина напишет в течение 15 минут и предложит два-три удобных окна. Звонить неудобно — так и скажите, будем только переписываться.</p>
       </form>
     </div>
   </div>
 </section>
 
-<!-- ============ 3. ЧТО БУДЕТ ПО ПРОЦЕДУРАМ ============
-     Продаёт результат во времени и снимает «а вдруг не сработает».
-     Сроки и формулировки честные: «навсегда» не обещаем нигде,
-     поддержка стоит в плане с самого начала, а не всплывает потом. -->
+<!-- ============ 3. ЧТО ВЫ ПОЛУЧАЕТЕ ============
+     Результат во времени: после каждой процедуры — конкретная выгода,
+     которую видно своими глазами. «Навсегда» не обещаем нигде. -->
 <section class="pane t-sage rv" id="result">
   <div class="wrap">
-    <div class="kick"><i></i><em>03</em><span>Что будет по процедурам</span></div>
-    <h2>Через год вы <span class="acc">просто перестаёте об этом думать</span>. Вот что происходит по дороге</h2>
-    <p class="lead">Лазер видит только те волосы, что сейчас в фазе роста, — поэтому процедур 6–8, а не одна. Чтобы вы не гадали, «работает или нет», вот честный график: что вы увидите после каждой.</p>
+    <div class="kick"><i></i><em>03</em><span>Ваш результат</span></div>
+    <h2>Что вы получаете <span class="acc">после каждой процедуры</span></h2>
+    <p class="lead">Никаких «подождите год — тогда увидите». Выгода приходит уже после первой.</p>
 
     <ol class="road">
       <li>
-        <span class="rw">1-я процедура · первый месяц</span>
-        <b>Волос выпадает сам</b>
-        <p>На 10–14-й день волоски выходят из кожи — просто смахиваются мочалкой. <b>Три-четыре недели бриться не нужно совсем.</b></p>
+        <span class="rw">После 1-й</span>
+        <b>Месяц без бритвы</b>
+        <p>На 10–14-й день волос выпадает сам. <b>Три-четыре недели вы не подходите к станку.</b></p>
       </li>
       <li>
-        <span class="rw">2–3-я · 2–4-й месяц</span>
-        <b>Заметно реже и тоньше</b>
-        <p>Волос становится примерно на треть меньше, оставшийся — тоньше и светлее. Раздражение и вросшие уходят первыми, обычно уже после второй.</p>
+        <span class="rw">После 2–3-й</span>
+        <b>Кожа перестаёт краснеть</b>
+        <p>Волос на треть меньше и тоньше. Раздражение и вросшие уходят первыми.</p>
       </li>
       <li>
-        <span class="rw">4–6-я · 5–9-й месяц</span>
-        <b>Гладко постоянно</b>
-        <p>Остаются единичные тонкие волоски. <b>Бассейн, пляж и свидание больше не нужно планировать вокруг депиляции.</b></p>
+        <span class="rw">После 4–6-й</span>
+        <b>Гладко всегда</b>
+        <p><b>Пляж, бассейн и свидание больше не надо планировать</b> вокруг депиляции.</p>
       </li>
       <li>
-        <span class="rw">7–8-я · 10–12-й месяц</span>
-        <b>Курс закрыт</b>
-        <p>Дальше — поддержка раз в 6–12 месяцев, те же 40 минут. Всё остальное время про волосы можно не помнить.</p>
+        <span class="rw">После 7–8-й</span>
+        <b>Тема закрыта</b>
+        <p>Дальше — 40 минут раз в год. Всё остальное время про волосы можно не помнить.</p>
       </li>
     </ol>
 
     <div class="p-note">
       <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8.6" stroke="currentColor" stroke-width="1.2"/><path d="M10 9v5M10 6.2v.9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
-      <span><b>Честно: «навсегда и на 100%» не даёт ни один аппарат в мире.</b> Гормональный фон возвращает единичные волоски — поэтому поддержка стоит в плане с первого дня, а не всплывает потом как сюрприз. И если к третьей процедуре разницы не видно — пересматриваем параметры и делаем коррекцию за наш счёт.</span>
+      <span><b>Не увидите разницы к третьей процедуре — доведём результат за наш счёт.</b> Это условие записано в вашем плане, а не сказано на словах.</span>
     </div>
 
     <div style="margin-top:30px;display:flex;gap:14px;flex-wrap:wrap;align-items:center">
       <button class="btn" data-cb="result" data-goal="result_cta">Записаться на первый визит</button>
-      <span class="under">первый визит — <b>4 900 ₽ вместо 9 800 ₽</b>, диагностика с планом курса бесплатно</span>
+      <span class="under">первый визит — <b>4 900 ₽ вместо 9 800 ₽</b>, диагностика бесплатно</span>
     </div>
   </div>
 </section>
 
-<!-- ============ 4. КТО РАБОТАЕТ И НА КАКИХ УСЛОВИЯХ ============ -->
+<!-- ============ 4. ВАШ КОСМЕТОЛОГ ============ -->
 <section class="pane t-blush rv" id="expert">
   <div class="wrap">
     <div class="exp">
@@ -1104,17 +1126,17 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
       </div>
 
       <div>
-        <div class="kick"><i></i><em>04</em><span>Кто вас ведёт и на каких условиях</span></div>
+        <div class="kick"><i></i><em>04</em><span>Ваш косметолог</span></div>
         <h2>Вас ведёт <span class="acc">один косметолог</span> — тот же человек, что встретит вас на диагностике</h2>
-        <p class="lead" style="margin-bottom:18px">Не «оператор аппарата» и не разные мастера по записи: Екатерина, косметолог с медицинским образованием, ведёт вас от первой встречи до последней процедуры и помнит вашу кожу без карточки.</p>
+        <p class="lead" style="margin-bottom:18px">Не оператор аппарата и не разные мастера по записи. Екатерина — косметолог с медицинским образованием, она помнит вашу кожу без карточки.</p>
 
-        <div class="quote">«Моя работа — не убрать волосы. Моя работа — чтобы через год вы были довольны тем, что мы сделали. Поэтому иногда я отговариваю».</div>
+        <div class="quote">«Моя работа — не убрать волосы, а чтобы через год вы были довольны. Поэтому иногда я отговариваю».</div>
 
         <ul class="creds">
-          <li><svg width="19" height="19" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9.2" stroke="currentColor" stroke-opacity=".38" stroke-width="1.1"/><path d="M5.8 10.3l2.7 2.7 5.6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Цена курса фиксируется на 12 месяцев</b> — прайс вырастет, ваш курс останется по старой цене</span></li>
-          <li><svg width="19" height="19" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9.2" stroke="currentColor" stroke-opacity=".38" stroke-width="1.1"/><path d="M5.8 10.3l2.7 2.7 5.6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Передумали — вернём деньги</b> за оставшиеся процедуры курса, без удержаний</span></li>
-          <li><svg width="19" height="19" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9.2" stroke="currentColor" stroke-opacity=".38" stroke-width="1.1"/><path d="M5.8 10.3l2.7 2.7 5.6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Нет разницы к третьей процедуре</b> — пересматриваем параметры и делаем коррекцию за наш счёт</span></li>
-          <li><svg width="19" height="19" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9.2" stroke="currentColor" stroke-opacity=".38" stroke-width="1.1"/><path d="M5.8 10.3l2.7 2.7 5.6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Скажем «вам это сейчас не нужно», если это так</b> — диагностика не обязана заканчиваться записью</span></li>
+          <li><svg width="19" height="19" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9.2" stroke="currentColor" stroke-opacity=".38" stroke-width="1.1"/><path d="M5.8 10.3l2.7 2.7 5.6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Цена курса заморожена на 12 месяцев</b> — прайс вырастет, ваш курс останется по старой цене</span></li>
+          <li><svg width="19" height="19" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9.2" stroke="currentColor" stroke-opacity=".38" stroke-width="1.1"/><path d="M5.8 10.3l2.7 2.7 5.6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Передумали — вернём деньги</b> за оставшиеся процедуры, без удержаний</span></li>
+          <li><svg width="19" height="19" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9.2" stroke="currentColor" stroke-opacity=".38" stroke-width="1.1"/><path d="M5.8 10.3l2.7 2.7 5.6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Нет разницы к третьей процедуре</b> — доводим результат за наш счёт</span></li>
+          <li><svg width="19" height="19" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9.2" stroke="currentColor" stroke-opacity=".38" stroke-width="1.1"/><path d="M5.8 10.3l2.7 2.7 5.6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Не нужна процедура — скажем прямо.</b> Диагностика не обязана заканчиваться записью</span></li>
         </ul>
 
         <div class="sign">
@@ -1127,63 +1149,44 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
   </div>
 </section>
 
-<!-- ============ 5. ЗАБОТА В ДЕТАЛЯХ ============
-     Главный блок про уют: продаёт не процедуру, а ощущение от визита.
-     Все шесть мелочей — операционные обещания студии, поэтому каждая
-     стоит в списке на подтверждение владельцем: обещать плед и 20 минут
-     между записями можно только если это правда. -->
+<!-- ============ 5. КАК ПРОХОДИТ ВИЗИТ ============
+     Три шага вместо списка мелочей: клиентка видит визит целиком и
+     понимает, что платит уже после того, как всё поняла и попробовала.
+     Уют вшит в третий шаг, а не вынесен в отдельную главу. -->
 <section class="pane t-ivory rv" id="care">
   <div class="wrap">
     <div class="kick"><i></i><em>05</em><span>Как проходит визит</span></div>
-    <h2><span class="acc">Уют — это детали.</span> Те самые, о которых обычно не говорят вслух</h2>
-    <p class="lead">В студии в одно время — одна клиентка. Ни общего зала, ни очереди в коридоре, ни «следующий!» через стенку. Всё остальное — из тех мелочей, которые и складываются в «мне было спокойно».</p>
+    <h2>Один визит — <span class="acc">и вы уже гладкая</span>. Всего 40 минут</h2>
+    <p class="lead">В студии в одно время — одна клиентка. Ни общего зала, ни очереди в коридоре, ни «следующий!» через стенку.</p>
 
     <div class="care">
       <div class="cc">
-        <div class="ci"><svg width="23" height="23" viewBox="0 0 24 24" fill="none"><path d="M6 3.6h9.6a1 1 0 0 1 1 1v15.8H6V3.6z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><circle cx="13.4" cy="12.2" r="1.05" fill="currentColor"/><path d="M3.6 20.4h16.8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></div>
-        <h4>Отдельный кабинет и никого за дверью</h4>
-        <p>Вы не встретите в коридоре ни одной другой клиентки: записи разведены по времени. Раздеваться не неловко, ждать не нужно.</p>
+        <div class="ci step-n">1</div>
+        <h4>Сначала пробуете</h4>
+        <p>Разбираем кожу и делаем пробную вспышку. Вы понимаете свои ощущения <b>до того, как достали кошелёк</b>.</p>
       </div>
 
       <div class="cc">
-        <div class="ci"><svg width="23" height="23" viewBox="0 0 24 24" fill="none"><path d="M3.4 8.2c3.6-1.9 6.6-1.9 9 0s5.4 1.9 8.2 0v9.1c-2.8 1.9-5.8 1.9-8.2 0s-5.4-1.9-9 0V8.2z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M3.4 12.6c3.6-1.9 6.6-1.9 9 0s5.4 1.9 8.2 0" stroke="currentColor" stroke-width="1.1" stroke-opacity=".7"/></svg></div>
-        <h4>Халат, мягкое бельё и тёплый плед</h4>
-        <p>Если знобит — укроем, под колени положим подушку. Бельё одноразовое, халат тёплый, кушетка с подогревом.</p>
+        <div class="ci step-n">2</div>
+        <h4>Потом узнаёте цену</h4>
+        <p>Сколько процедур нужно именно вам и во что обойдётся курс целиком. <b>Цена замораживается на 12 месяцев.</b></p>
       </div>
 
       <div class="cc">
-        <div class="ci"><svg width="23" height="23" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12.4" r="8.4" stroke="currentColor" stroke-width="1.3"/><path d="M12 7.8v4.8l3.1 1.9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h4>Время не встык</h4>
-        <p>После вас — двадцать минут на уборку и проветривание. Поэтому вас <b>не торопят</b> и не двигают запись, если предыдущий визит затянулся.</p>
-      </div>
-
-      <div class="cc">
-        <div class="ci"><svg width="23" height="23" viewBox="0 0 24 24" fill="none"><path d="M4.2 9.4h11v4.9a4 4 0 0 1-4 4H8.2a4 4 0 0 1-4-4V9.4z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M15.2 10.8h1.7a2.1 2.1 0 0 1 0 4.2h-1.7" stroke="currentColor" stroke-width="1.3"/><path d="M7.5 6.4c.5-.7.5-1.4 0-2.1M10.9 6.4c.5-.7.5-1.4 0-2.1" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/><path d="M3.4 21h13.4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></div>
-        <h4>Чай, вода и музыка на ваш выбор</h4>
-        <p>Можно свой плейлист, можно тишину. И можно молчать всю процедуру — вас никто не будет развлекать разговором, если не хочется.</p>
-      </div>
-
-      <div class="cc">
-        <div class="ci"><svg width="23" height="23" viewBox="0 0 24 24" fill="none"><path d="M9 3.4h6v2.3H9V3.4z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M8 5.7h8l1 3.4v10a1.5 1.5 0 0 1-1.5 1.5h-7A1.5 1.5 0 0 1 7 19.1v-10l1-3.4z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M10.2 13.4h3.6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></div>
-        <h4>Крем после процедуры — с собой</h4>
-        <p>Вместе с памяткой по уходу на ближайшие дни. Входит в стоимость: доплачивать в кабинете вам не придётся ни за что.</p>
-      </div>
-
-      <div class="cc">
-        <div class="ci"><svg width="23" height="23" viewBox="0 0 24 24" fill="none"><path d="M12 3.4a5.4 5.4 0 0 1 5.4 5.4c0 4.3 1.4 5.6 1.9 6.2.3.4 0 1-.5 1H5.2c-.5 0-.8-.6-.5-1 .5-.6 1.9-1.9 1.9-6.2A5.4 5.4 0 0 1 12 3.4z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M10.2 18.4a1.9 1.9 0 0 0 3.6 0" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></div>
-        <h4>Напоминание за день и код домофона</h4>
-        <p>Пришлём адрес, этаж, код и фото двери. Вы не будете искать вход по Суворовскому и нервничать, что опаздываете.</p>
+        <div class="ci step-n">3</div>
+        <h4>И только потом решаете</h4>
+        <p>Отдельный кабинет, тёплый плед, ваша музыка или тишина. Крем после процедуры и памятка — уже в цене.</p>
       </div>
     </div>
 
     <div class="p-note">
       <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 16.6S3.4 12.9 3.4 8.3a3.3 3.3 0 0 1 6.6-1 3.3 3.3 0 0 1 6.6 1c0 4.6-6.6 8.3-6.6 8.3z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
-      <span><b>И самое главное: в кабинете вам не продают.</b> Если процедура вам сейчас не нужна или её лучше отложить — вы услышите об этом первой. Всё, что мы можем предложить, Екатерина скажет на диагностике, спокойно и заранее, — а не когда вы уже лежите под лазером.</span>
+      <span><b>В кабинете вам ничего не продают.</b> Если процедура сейчас не нужна или её лучше отложить — вы услышите это первой.</span>
     </div>
 
     <div style="margin-top:30px;display:flex;gap:14px;flex-wrap:wrap;align-items:center">
       <button class="btn" data-cb="care" data-goal="care_cta">Записаться на первый визит</button>
-      <span class="under">хотите сначала просто посмотреть студию — <a href="https://t.me/VIV_Studio" target="_blank" rel="noopener" style="color:var(--vio-deep);font-weight:700" data-goal="tg">напишите, договоримся зайти</a></span>
+      <span class="under">хотите сначала посмотреть студию — <a href="https://t.me/VIV_Studio" target="_blank" rel="noopener" style="color:var(--vio-deep);font-weight:700" data-goal="tg">напишите, договоримся зайти</a></span>
     </div>
   </div>
 </section>
@@ -1191,43 +1194,42 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
 <!-- ============ 6. ЧЕСТНЫЕ ОТВЕТЫ ============ -->
 <section class="pane t-champ rv" id="answers">
   <div class="wrap">
-    <div class="kick"><i></i><em>06</em><span>Разберём по-честному</span></div>
-    <h2>Четыре вопроса, из-за которых обычно откладывают. <span class="acc">Отвечаем прямо</span></h2>
-    <p class="lead" style="margin-bottom:32px">Не будем убеждать, что «совсем не больно». Расскажем, как есть, — а вы решите.</p>
+    <div class="kick"><i></i><em>06</em><span>Честные ответы</span></div>
+    <h2>Четыре причины, по которым откладывают. <span class="acc">И четыре ответа</span></h2>
 
-    <div class="grid" style="gap:12px">
+    <div class="grid" style="gap:12px;margin-top:32px">
       <details class="fear">
         <summary><span class="fq">1</span><span>«Будет очень больно»</span><svg class="ar" width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
         <div class="fa">
-          <p>Терпимо — честный ответ. Похоже на тёплый щелчок резинкой, доля секунды: сплошное сапфировое охлаждение держит кожу в холоде всё время работы. <b>И главное:</b> перед процедурой мы делаем пробную вспышку — вы почувствуете, как это, до того как заплатите.</p>
+          <p>Терпимо: тёплый щелчок резинкой на долю секунды, кожа всё время под сапфировым холодом. <b>И верить на слово не нужно</b> — на диагностике сделаем пробную вспышку, бесплатно.</p>
         </div>
       </details>
 
       <details class="fear">
         <summary><span class="fq">2</span><span>«Останутся ожоги или тёмные пятна»</span><svg class="ar" width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
         <div class="fa">
-          <p>Ожог — почти всегда следствие неверной мощности и работы по свежему загару. Мы определяем тип кожи, спрашиваем про загар и лекарства, делаем пробную вспышку. Если кожа отреагировала не так — <b>переносим процедуру</b>, а не «пробуем аккуратнее».</p>
+          <p>Ожог — это чужая мощность и работа по свежему загару. Мы определяем ваш тип кожи и делаем тест. Кожа ответила не так — <b>перенесём визит</b>, а не «попробуем аккуратнее».</p>
         </div>
       </details>
 
       <details class="fear">
-        <summary><span class="fq">3</span><span>«Мне не подойдёт: у меня светлые или седые волосы»</span><svg class="ar" width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+        <summary><span class="fq">3</span><span>«Мне не подойдёт: светлые или седые волосы»</span><svg class="ar" width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
         <div class="fa">
-          <p>Возможно, действительно не подойдёт — и вы узнаете это до оплаты. Лазер видит пигмент: в седых и совсем светлых его почти нет, результата не будет ни на каком аппарате. Студия, которая обещает убрать седину лазером, продаёт процедуры, а не результат.</p>
+          <p>Может и не подойти — и вы узнаете это <b>бесплатно и до оплаты</b>. Лазер видит пигмент, в седых его нет. Кто обещает обратное — продаёт вам процедуры, а не результат.</p>
         </div>
       </details>
 
       <details class="fear">
-        <summary><span class="fq">4</span><span>«Разведут на курс из десяти процедур, а толку не будет»</span><svg class="ar" width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+        <summary><span class="fq">4</span><span>«Разведут на курс из десяти процедур»</span><svg class="ar" width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
         <div class="fa">
-          <p>Число процедур вы узнаете до оплаты, и оно записывается в план: обычно 6–8 с интервалом 4–6 недель. Если окажется, что нужно меньше, — <b>оставшиеся оплаченные процедуры вернём деньгами</b>. Платить всё сразу не обязательно.</p>
+          <p>Число процедур вы узнаете до оплаты, и оно записано в вашем плане: обычно 6–8. <b>Хватило меньше — вернём деньги за оставшиеся.</b></p>
         </div>
       </details>
     </div>
 
     <div style="margin-top:32px;display:flex;gap:14px;flex-wrap:wrap;align-items:center">
       <button class="btn" data-cb="answers" data-goal="answers_cta">Записаться на первый визит</button>
-      <span class="under">остались вопросы — <a href="https://t.me/VIV_Studio" target="_blank" rel="noopener" style="color:var(--vio-deep);font-weight:700" data-goal="tg">спросите Екатерину в Telegram</a></span>
+      <span class="under">свой вопрос — <a href="https://t.me/VIV_Studio" target="_blank" rel="noopener" style="color:var(--vio-deep);font-weight:700" data-goal="tg">спросите Екатерину в Telegram</a></span>
     </div>
   </div>
 </section>
@@ -1296,9 +1298,9 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
     <div class="fin">
       <div class="fin-g">
         <div>
-          <div class="kick"><i></i><span>Предложение первого визита</span></div>
-          <h2>Первый визит — <span class="acc">вдвое дешевле</span>. И это всё, что нужно решить сегодня</h2>
-          <p class="lead">Скидка действует один раз, на любую зону: комплекс «всё тело» в этот визит — <b style="color:#fff">4 900 ₽ вместо 9 800 ₽</b>, диагностика с планом курса — бесплатно. Решать про курс целиком не нужно: сначала просто познакомимся.</p>
+          <div class="kick"><i></i><span>Первый визит</span></div>
+          <h2>Всё тело за 4 900 ₽ вместо 9 800 — <span class="acc">и вы экономите половину</span></h2>
+          <p class="lead">Скидка действует один раз, на любую зону. Диагностика с планом курса и точной ценой — бесплатно. Решать про курс сегодня не нужно: сначала просто познакомимся.</p>
           <div class="timer" id="timer">
             <div><b class="num" id="tD">0</b><span>дней</span></div>
             <div><b class="num" id="tH">00</b><span>часов</span></div>
@@ -1309,15 +1311,15 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
         </div>
 
         <form class="fin-f" id="formFinal">
-          <h3>Оставьте номер — дальше мы всё сделаем сами</h3>
-          <p class="sub">Екатерина напишет в течение 15 минут, предложит удобные окна и пришлёт всё, что нужно знать перед визитом.</p>
+          <h3>Оставьте номер — остальное сделаем мы</h3>
+          <p class="sub">Екатерина напишет в течение 15 минут и предложит два-три удобных окна.</p>
           <div class="fld">
             <label for="fPhone">Номер, за которым закрепим скидку 50%</label>
             <input type="tel" id="fPhone" name="phone" placeholder="+7 ___ ___ __ __" autocomplete="tel" inputmode="tel">
           </div>
           <label class="agree"><input type="checkbox" checked data-agree><span>Согласна на обработку персональных данных и с <a href="privacy.html" target="_blank">политикой конфиденциальности</a></span></label>
-          <button type="submit" class="btn btn-w" data-goal="final_submit">Записаться со скидкой 50%</button>
-          <p class="under" style="margin-top:13px">Скидка закрепляется за номером на 7 дней — можно прийти не сегодня и спокойно выбрать день.</p>
+          <button type="submit" class="btn btn-w" data-goal="final_submit">Забрать скидку 50%</button>
+          <p class="under" style="margin-top:13px">Скидка держится за вашим номером <b>7 дней</b> — прийти можно не сегодня.</p>
         </form>
       </div>
     </div>
@@ -1394,10 +1396,10 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
     <h3 style="margin-bottom:20px">VIV.STUDIO</h3>
     <nav style="display:grid;gap:2px">
       <a href="#prices" data-close style="padding:14px 0;border-bottom:1px solid var(--line);text-decoration:none;font-weight:700">Цены</a>
-      <a href="#economy" data-close style="padding:14px 0;border-bottom:1px solid var(--line);text-decoration:none;font-weight:700">Сколько стоит не делать</a>
-      <a href="#result" data-close style="padding:14px 0;border-bottom:1px solid var(--line);text-decoration:none;font-weight:700">Что будет по процедурам</a>
+      <a href="#economy" data-close style="padding:14px 0;border-bottom:1px solid var(--line);text-decoration:none;font-weight:700">Сколько вы экономите</a>
+      <a href="#result" data-close style="padding:14px 0;border-bottom:1px solid var(--line);text-decoration:none;font-weight:700">Ваш результат</a>
       <a href="#care" data-close style="padding:14px 0;border-bottom:1px solid var(--line);text-decoration:none;font-weight:700">Как проходит визит</a>
-      <a href="#expert" data-close style="padding:14px 0;border-bottom:1px solid var(--line);text-decoration:none;font-weight:700">Косметолог и условия</a>
+      <a href="#expert" data-close style="padding:14px 0;border-bottom:1px solid var(--line);text-decoration:none;font-weight:700">Ваш косметолог</a>
       <a href="#answers" data-close style="padding:14px 0;border-bottom:1px solid var(--line);text-decoration:none;font-weight:700">Честные ответы</a>
       <a href="#contacts" data-close style="padding:14px 0;text-decoration:none;font-weight:700">Контакты</a>
     </nav>
