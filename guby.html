@@ -193,6 +193,16 @@ h1 .acc-r,h2 .acc-r{color:var(--rose)}
 h2 .acc-l{color:var(--lilac)}
 h2 .acc-m{color:var(--mint)}
 .lead{font-size:clamp(16.5px,1.25vw,18.5px);line-height:1.6;color:var(--tx2);max-width:62ch;margin-top:16px}
+/* Сообщение о том, что заявка не ушла. Появляется только при отказе
+   сервера: человек не должен остаться с ощущением «я записалась»,
+   если на самом деле его телефон никуда не уехал. */
+.sendfail{margin-top:16px;padding:16px 18px;border-radius:14px;font-size:14px;line-height:1.55;
+  color:var(--tx2);background:rgba(228,120,140,.1);border:1px solid rgba(228,120,140,.34)}
+.sendfail b{display:block;margin-bottom:4px;color:#FFF7F2}
+.sf-btns{display:flex;flex-wrap:wrap;gap:9px;margin-top:12px}
+.sf-btns a{padding:9px 15px;border-radius:99px;font-size:13.5px;font-weight:700;text-decoration:none;
+  color:#2A1B33;background:var(--grad-gold)}
+.sf-btns a+a{color:var(--tx);background:none;border:1px solid var(--line-2)}
 .under{font-size:13.5px;line-height:1.5;color:var(--tx3)}
 .under b{color:var(--tx2);font-weight:600}
 b,strong{font-weight:700;color:#FFF7F2}
@@ -1475,7 +1485,7 @@ var CONFIG = {
     });
   });
 
-  /* ---------- отправка заявок ---------- */
+  /* ---------- проверка полей ---------- */
   function digits(v) { return (v || '').replace(/\D/g, ''); }
   function markBad(el) {
     if (!el) return;
@@ -1483,22 +1493,45 @@ var CONFIG = {
     el.focus();
     setTimeout(function () { el.style.borderColor = ''; }, 2200);
   }
-  function send(payload, btn) {
+  /* ---------- отправка заявок ------------------------------------------
+     Правило одно: страницу «спасибо» человек видит только тогда, когда
+     заявка действительно принята. На статическом хостинге (GitHub Pages)
+     PHP не выполняется, POST возвращает 405 — и раньше это молча
+     выглядело как успех, а телефон клиентки исчезал навсегда. Теперь
+     любой отказ показывает живые контакты: WhatsApp с уже вписанным
+     номером, Telegram и звонок. -------------------------------------- */
+  function send(payload, btn, form) {
     goal('lead', { form: payload.form });
+    var label = btn ? btn.textContent : '';
     var done = function () { window.location.href = CONFIG.thanks; };
-    if (!CONFIG.leadEndpoint) {
-      console.warn('[lead] leadEndpoint не задан — заявка никуда не отправлена:', payload);
-      done(); return;
-    }
+    var fail = function (why) {
+      goal('lead_failed', { form: payload.form, why: why });
+      if (btn) { btn.disabled = false; btn.textContent = label; }
+      if (!form || $('.sendfail', form)) return;
+      var txt = encodeURIComponent(
+        'Здравствуйте! Оставляла заявку на сайте (' + payload.form + '), мой номер ' + payload.phone + '.');
+      var box = document.createElement('div');
+      box.className = 'sendfail';
+      box.innerHTML =
+        '<b>Заявка не ушла — виноват сайт, не вы.</b> Напишите нам напрямую, ' +
+        'ответим так же быстро.' +
+        '<span class="sf-btns">' +
+        '<a href="https://wa.me/' + CONFIG.phone.replace(/\D/g, '') + '?text=' + txt +
+        '" target="_blank" rel="noopener" data-goal="fail_wa">Написать в WhatsApp</a>' +
+        '<a href="' + CONFIG.tg + '" target="_blank" rel="noopener" data-goal="fail_tg">Telegram</a>' +
+        '<a href="tel:' + CONFIG.phone + '" data-goal="fail_phone">Позвонить</a>' +
+        '</span>';
+      form.appendChild(box);
+    };
+    if (!CONFIG.leadEndpoint) { fail('endpoint не задан'); return; }
     if (btn) { btn.disabled = true; btn.textContent = 'Отправляем…'; }
     fetch(CONFIG.leadEndpoint, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)
-    }).then(done).catch(function (err) {
-      console.error('[lead] ошибка отправки', err);
-      done();
-    });
+    }).then(function (r) {
+      if (r && r.ok) { done(); } else { fail('HTTP ' + (r ? r.status : '?')); }
+    }).catch(function () { fail('сеть'); });
   }
   function hookForm(sel, formName, extra) {
     var f = $(sel); if (!f) return;
@@ -1515,7 +1548,7 @@ var CONFIG = {
         ts: new Date().toISOString()
       };
       if (extra) extra(payload);
-      send(payload, $('button[type="submit"]', f));
+      send(payload, $('button[type="submit"]', f), f);
     });
   }
   hookForm('#formDiag', 'Губы — запись на разметку');
