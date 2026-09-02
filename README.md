@@ -388,7 +388,7 @@ config.example.php    образец config.php с токеном бота (са
 robots.txt            индексация открыта, заявки и приёмник закрыты
 sitemap.xml           одна страница: служебные закрыты noindex
 assets/fonts/         Prata и Onest, woff2
-assets/img/           favicon, apple-touch-icon, картинка для соцсетей
+assets/img/           favicon, apple-touch-icon, og.png и её исходник og-source.html
 assets/README.md      что снять, что заполнить, что подтвердить до запуска
 бриф-и-смыслы.md      анализ ЦА, отстройка, варианты оффера для A/B-теста
 ```

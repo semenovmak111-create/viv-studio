@@ -65,7 +65,14 @@
 как обман, даже когда результат настоящий.
 
 Уже лежат и трогать не нужно: `favicon.svg`, `apple-touch-icon.png`, `og.png`
-(картинка для мессенджеров, 1200×630), `og.svg` — исходник OG-картинки.
+(картинка для мессенджеров, 1200×630) и `og-source.html` — её исходник.
+Пересобрать картинку после правки исходника:
+
+```bash
+chrome --headless=new --disable-gpu --hide-scrollbars \
+  --window-size=1200,630 --virtual-time-budget=4000 \
+  --screenshot=assets/img/og.png assets/img/og-source.html
+```
 
 ---
 
