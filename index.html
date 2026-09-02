@@ -24,9 +24,8 @@
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/cormorant-cyrillic.woff2" crossorigin>
 <style>
 /* ── ГАРНИТУРЫ ──────────────────────────────────────────────────────────
-   Cormorant Garamond — витрина: заголовки, цифры, врезки. Старостильная
-   антиква с высоким контрастом штриха: набирается только крупно.
-   Manrope — корпус: текст, интерфейс, прайс, мелкие метки.
+   Cormorant Garamond — витрина: заголовки, крупные цифры, врезки.
+   Manrope — корпус: текст, интерфейс, прайс, метки.
    Обе лежат локально: Google Fonts из РФ отдаётся нестабильно.
    ─────────────────────────────────────────────────────────────────────── */
 @font-face{font-family:'Cormorant';font-style:normal;font-weight:400 700;font-display:swap;
@@ -48,720 +47,592 @@
   src:url(assets/fonts/manrope-latin.woff2) format('woff2');
   unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 
+/* ── ТОКЕНЫ ──────────────────────────────────────────────────────────────
+   Одна бумага на всю страницу, белые карточки поверх неё, волосяные линии
+   и ровно один акцент действия — фиолетовый. Золото живёт только в тонких
+   линиях, мелких метках и крупных цифрах: как фольга на визитке, а не как
+   краска. Смелость на странице потрачена в двух местах — тёмная плита
+   диагностики и тёмный финал. Всё остальное намеренно тихое.
+   ──────────────────────────────────────────────────────────────────────── */
 :root{
-  /* ── бумага: тёплый айвори, а не белый ── */
-  --paper:#fbf8f6;
-  --paper-2:#f5efeb;
-  --white:#fffdfc;
-  /* ── второй фирменный: пудровая роза ── */
-  --rose:#b8767f;
-  --rose-deep:#98525d;
-  /* ── первый фирменный: приглушённый фиолет — цвет действия ── */
+  --paper:#faf7f5;
+  --paper-2:#f4efec;
+  --card:#ffffff;
+  --ink:#2a1b33;
+  --body:#574764;
+  --soft:#7d6c88;
   --vio:#7c5ac2;
   --vio-deep:#553a90;
   --vio-hi:#9d80d8;
-  --vio-soft:#f0eafb;
-  /* ── тёмная сторона: баклажан ── */
-  --plum:#2a1b33;
-  --on-dark:#f7f1ee;
-  --on-dark-2:#c3b0cd;
-  /* ── золото: только линии, крупные цифры и метки ── */
-  --gold:#a8813f;
-  --gold-ink:#8a6a2f;
+  --vio-soft:#f1ecfa;
+  --rose:#b8767f;
+  --gold:#8a6a2f;
   --gold-hi:#d9be86;
-  --gold-soft:#f4e9d5;
-  /* ── текст ── */
-  --body:#574764;
-  --soft:#7d6c88;
-  /* ── линии ── */
+  --dark:#2a1b33;
+  --dark-2:#3a2748;
+  --on-dark:#f6f0f3;
+  --on-dark-2:#c2b0cc;
   --line:rgba(42,27,51,.10);
-  --line-2:rgba(42,27,51,.18);
-  --line-gold:rgba(168,129,63,.34);
-  --line-dark:rgba(255,255,255,.13);
-  --line-dark-2:rgba(255,255,255,.24);
-
-  --r:20px;
-  --r-lg:28px;
-  --r-xl:44px;
-  --arch:280px;
-  --c:1180px;
-  --grad:linear-gradient(120deg,#553a90 0%,#7c5ac2 100%);
-  --grad-gold:linear-gradient(100deg,#a8813f 0%,#e3cd9b 46%,#a8813f 100%);
-  --sh-s:0 1px 2px rgba(42,27,51,.04),0 6px 18px -10px rgba(42,27,51,.16);
-  --sh:0 2px 6px rgba(42,27,51,.045),0 20px 46px -26px rgba(42,27,51,.3);
-  --sh-lg:0 4px 12px rgba(42,27,51,.05),0 42px 84px -44px rgba(42,27,51,.42);
-  --glow:0 14px 32px -12px rgba(85,58,144,.45);
-  /* оттенок по умолчанию; плиты переопределяют его своим классом */
-  --tint:transparent;
-  --tint-line:rgba(42,27,51,.1);
-  --tint-soft:rgba(42,27,51,.04);
-  --acc-ink:#8a6a2f;
+  --line-2:rgba(42,27,51,.19);
+  --line-gold:rgba(168,129,63,.30);
+  --line-dark:rgba(255,255,255,.14);
+  --line-dark-2:rgba(255,255,255,.26);
+  --ghost:rgba(42,27,51,.04);
+  --r-s:12px;
+  --r:18px;
+  --r-lg:24px;
+  --c:1140px;
+  --sh-s:0 1px 2px rgba(42,27,51,.03),0 8px 20px -14px rgba(42,27,51,.18);
+  --sh:0 1px 3px rgba(42,27,51,.04),0 20px 44px -30px rgba(42,27,51,.28);
+  --sh-dark:0 30px 70px -40px rgba(42,27,51,.7);
+  --glow:0 12px 26px -12px rgba(85,58,144,.42);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%}
 body{
   font-family:'Manrope',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   background:var(--paper);color:var(--body);
-  font-size:17px;line-height:1.68;-webkit-font-smoothing:antialiased;
+  font-size:16.5px;line-height:1.62;-webkit-font-smoothing:antialiased;
   overflow-x:hidden;position:relative;
 }
 img{max-width:100%;display:block}
 a{color:inherit}
-button,input,select,textarea{font:inherit}
-::selection{background:rgba(184,118,127,.26);color:var(--plum)}
+button,input,select,textarea{font:inherit;color:inherit}
+::selection{background:rgba(124,90,194,.2);color:var(--ink)}
+:focus-visible{outline:2px solid var(--vio);outline-offset:3px;border-radius:4px}
 
-/* ── ФОН — «подсвеченный шёлк» ───────────────────────────────────────────
-   Слой зафиксирован и не скроллится. Шесть мягких заливок дают тёплое
-   свечение по краям полосы набора; полупрозрачные плиты глав плывут над
-   ним, поэтому их оттенок слегка меняется по мере прокрутки.
-   Сверху — едва заметный световой конус и плёнка зерна, чтобы бумага
-   не выглядела плоской заливкой.
-   ──────────────────────────────────────────────────────────────────────── */
-.bg{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;
+/* Единственный фоновый слой: одна тёплая заливка сверху страницы.
+   Ни пятен, ни зерна, ни параллакса — бумага должна быть бумагой. */
+.bg{position:fixed;inset:0;z-index:0;pointer-events:none;
   background:
-    linear-gradient(180deg,#fdfbf9 0%,var(--paper) 42%,#f7f1ee 100%)}
-.bg b{position:absolute;display:block;border-radius:50%;filter:blur(110px)}
-.bg .b1{width:860px;height:860px;top:-340px;left:-240px;background:radial-gradient(circle,#e4d2f2,transparent 68%);opacity:.85}
-.bg .b2{width:720px;height:720px;top:4%;right:-250px;background:radial-gradient(circle,#f4d8d3,transparent 66%);opacity:.8}
-.bg .b3{width:660px;height:660px;top:36%;left:-260px;background:radial-gradient(circle,#f2e2c9,transparent 66%);opacity:.62}
-.bg .b4{width:900px;height:900px;top:58%;right:-360px;background:radial-gradient(circle,#e6d8f5,transparent 68%);opacity:.72}
-.bg .b5{width:720px;height:720px;bottom:-300px;left:2%;background:radial-gradient(circle,#f6e0da,transparent 68%);opacity:.7}
-.bg .b6{width:560px;height:560px;top:44%;right:16%;background:radial-gradient(circle,#dfeadf,transparent 66%);opacity:.5}
-/* световой конус сверху — «окно студии» */
-.bg::before{
-  content:'';position:absolute;inset:0;
-  background:radial-gradient(1200px 620px at 50% -8%,rgba(255,255,255,.9),transparent 62%);
-}
-/* тонкая тёплая рамка по краям экрана: собирает полосу набора */
-.bg::after{
-  content:'';position:absolute;inset:0;
-  background:radial-gradient(130% 100% at 50% 50%,transparent 56%,rgba(168,129,63,.07) 100%);
-}
-.bg .grain{
-  position:absolute;inset:-50%;opacity:.55;mix-blend-mode:multiply;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='.11'/%3E%3C/svg%3E");
-}
-header,.hero,section,footer,.sticky,.up,.strip,.orn{position:relative;z-index:1}
+    radial-gradient(900px 520px at 78% -8%,rgba(124,90,194,.09),transparent 68%),
+    radial-gradient(760px 460px at 4% 4%,rgba(184,118,127,.08),transparent 66%)}
+.bg b,.grain{display:none}
+header,.hero,section,footer,.strip,.orn,.sticky,.ov,.progress,.up{position:relative;z-index:1}
 
-/* ── раскладка ── */
+/* ── СЕТКА И РИТМ ── */
 .wrap{max-width:var(--c);margin:0 auto;padding:0 24px}
-section{padding:104px 0}
-/* ── ЦВЕТНОЙ РИТМ ГЛАВ ───────────────────────────────────────────────────
-   Каждая глава лежит на своей плите-бумаге. Оттенки приглушённые и
-   одинаково тёплые, поэтому рядом они читаются как один набор, а не как
-   радуга. У плиты два токена: --tint (бумага) и --acc-ink (её акцент — им
-   набраны надзаголовок, номер главы и линии внутри). Плиты полупрозрачны:
-   сквозь них проступает подсветка фона, и при прокрутке оттенок «дышит».
+section{padding:80px 0}
+.grid{display:grid;gap:22px}
+.grid>*,.hero-g>*,.exp>*,.stu>*,.fbox>*,.fin-g>*,.fork>*,.calc-g>*{min-width:0}
+
+/* ── ТИПОГРАФИКА ────────────────────────────────────────────────────────
+   Шкала жёсткая: четыре размера витрины и три корпуса, шаг заметный.
+   Cormorant по умолчанию даёт старостильные цифры — для фактов и цен
+   включаем капительные, иначе «1» читается как «I».
    ──────────────────────────────────────────────────────────────────────── */
-.pane{
-  max-width:1340px;margin:30px auto;border-radius:var(--r-xl);
-  background:var(--tint);color:var(--body);box-shadow:var(--sh);
-  overflow:hidden;padding:104px 0;border:1px solid var(--tint-line);
-}
-.pane .lead{color:var(--body)}
-.pane h2,.pane h3,.pane h4{color:var(--plum)}
-
-/* пудра — глава о человеке */
-.t-blush{
-  --tint:linear-gradient(168deg,rgba(250,239,236,.9) 0%,rgba(246,232,229,.9) 58%,rgba(243,226,228,.9) 100%);
-  --tint-line:rgba(184,118,127,.2);--tint-soft:rgba(184,118,127,.09);--acc-ink:#96525f;
-}
-/* шампань — цифры и доказательства */
-.t-champ{
-  --tint:linear-gradient(168deg,rgba(251,245,235,.9) 0%,rgba(248,239,225,.9) 58%,rgba(245,233,219,.9) 100%);
-  --tint-line:rgba(168,129,63,.22);--tint-soft:rgba(168,129,63,.09);--acc-ink:#8a6a2f;
-}
-/* лаванда — цены и расчёт */
-.t-lilac{
-  --tint:linear-gradient(168deg,rgba(244,239,251,.9) 0%,rgba(238,232,249,.9) 58%,rgba(234,228,247,.9) 100%);
-  --tint-line:rgba(124,90,194,.18);--tint-soft:rgba(124,90,194,.08);--acc-ink:#5b3f99;
-}
-/* шалфей — ход времени, спокойные главы */
-.t-sage{
-  --tint:linear-gradient(168deg,rgba(238,243,238,.92) 0%,rgba(232,239,233,.92) 58%,rgba(228,237,230,.92) 100%);
-  --tint-line:rgba(93,122,99,.2);--tint-soft:rgba(93,122,99,.09);--acc-ink:#4d6b55;
-}
-/* айвори — самая тихая бумага: главы про уют и про честные ответы */
-.t-ivory{
-  --tint:linear-gradient(168deg,rgba(253,251,249,.92) 0%,rgba(250,246,242,.92) 100%);
-  --tint-line:rgba(42,27,51,.09);--tint-soft:rgba(42,27,51,.04);--acc-ink:#8a6a2f;
-}
-/* тёмная плита — акцентная глава на баклажане с золотом */
-.vivid{
-  max-width:1340px;margin:28px auto;border-radius:var(--r-xl);overflow:hidden;position:relative;
-  background:linear-gradient(150deg,#2a1b33 0%,#3b2749 48%,#4a2b45 100%);
-  box-shadow:var(--sh-lg);padding:96px 0;color:var(--on-dark-2);
-}
-.vivid::before{
-  content:'';position:absolute;inset:0;pointer-events:none;
-  background:radial-gradient(720px 420px at 88% 6%,rgba(184,118,127,.28),transparent 62%),
-             radial-gradient(560px 360px at 4% 96%,rgba(124,90,194,.26),transparent 64%);
-}
-.vivid>*{position:relative}
-
-/* ── типографика: Cormorant — витрина, Manrope — интерфейс ── */
 h1,h2,h3{font-family:'Cormorant',Georgia,'Times New Roman',serif;font-weight:500;
-  color:var(--plum);line-height:1.08;letter-spacing:-.005em}
-h4{font-family:'Manrope',sans-serif;font-weight:800;letter-spacing:-.015em;line-height:1.25;color:var(--plum)}
-h1{font-size:clamp(33px,4.05vw,53px);line-height:1.06}
-h2{font-size:clamp(29px,3.6vw,47px);margin-bottom:20px;max-width:15.5em}
-h3{font-size:27px;line-height:1.16}
-h4{font-size:18px}
-.lead{font-size:18.5px;color:var(--body);max-width:730px;line-height:1.68}
-/* Cormorant по умолчанию даёт старостильные цифры: «1» читается как «I».
-   Для фактов и цен включаем капительные (lining), декоративные номера глав
-   и гарантий оставляем старостильными — там это красиво. */
+  color:var(--ink);line-height:1.08;letter-spacing:-.004em;text-wrap:balance}
+h4{font-family:'Manrope',sans-serif;font-weight:800;letter-spacing:-.012em;line-height:1.28;color:var(--ink)}
+h1{font-size:clamp(35px,4.3vw,58px);line-height:1.05}
+h2{font-size:clamp(28px,3.2vw,43px);margin-bottom:18px;max-width:16em}
+h3{font-size:26px;line-height:1.16}
+h4{font-size:17px}
+.lead{font-size:18px;color:var(--body);max-width:66ch;line-height:1.65}
 .num{font-variant-numeric:tabular-nums lining-nums}
-h1,h2,h3,.strip b,.timer b,.h-badge .bg-n,.qstep h3{font-variant-numeric:lining-nums;font-feature-settings:"lnum" 1}
-/* акцентное слово — курсив антиквы в фиолете. Главный приём набора. */
+h1,h2,h3,.strip b,.timer b,.h-badge .bg-n,.big,.now,.si b,.cq b{font-variant-numeric:lining-nums;font-feature-settings:"lnum" 1}
 .acc,.gt{font-family:'Cormorant',Georgia,serif;font-style:italic;font-weight:500;color:var(--vio)}
-.vivid .acc,.vivid .gt{color:var(--gold-hi)}
-mark{background:linear-gradient(transparent 58%,rgba(184,118,127,.3) 58%);color:inherit;padding:0 2px}
-
-/* надзаголовок: золотая нить и метка */
-.kick{display:inline-flex;align-items:center;gap:12px;margin-bottom:22px}
-.kick i{width:30px;height:1px;background:var(--grad-gold);flex:none;border-radius:1px}
-.kick span{font-family:'Manrope',sans-serif;font-size:11px;font-weight:800;
-  letter-spacing:.2em;text-transform:uppercase;color:var(--acc-ink)}
-.kick i{background:linear-gradient(90deg,var(--acc-ink),transparent);opacity:.7}
-.kick em{font-family:'Cormorant',Georgia,serif;font-style:italic;font-size:17px;font-weight:600;
-  color:var(--acc-ink);opacity:.55;letter-spacing:0;line-height:1}
-.vivid .kick i{background:linear-gradient(100deg,#d9be86,#f0e2c4 50%,#d9be86)}
-.vivid .kick span{color:var(--gold-hi)}
-
-/* ── золотая виньетка между частями страницы ─────────────────────────────
-   Тонкая нить с ромбом посередине. Нужна не для украшения: она делит
-   ленту глав на смысловые части и даёт странице лишний вдох. ─────────── */
-.orn{display:flex;align-items:center;justify-content:center;gap:16px;
-  padding:56px 0 8px;color:var(--gold)}
-.orn i{height:1px;width:min(190px,24vw);background:linear-gradient(90deg,transparent,rgba(168,129,63,.45))}
-.orn i:last-child{background:linear-gradient(90deg,rgba(168,129,63,.45),transparent)}
-/* ── кнопки ── */
-.btn{
-  display:inline-flex;align-items:center;justify-content:center;gap:10px;
-  background:var(--grad);color:#fff;border:0;cursor:pointer;position:relative;
-  font-weight:700;font-size:16.5px;letter-spacing:.005em;line-height:1.25;
-  padding:20px 34px;border-radius:99px;text-decoration:none;text-align:center;
-  box-shadow:var(--glow);
-  transition:transform .2s,box-shadow .2s,filter .2s;
-}
-.btn:hover{filter:brightness(1.1);transform:translateY(-2px);box-shadow:0 20px 44px -14px rgba(85,58,144,.55)}
-.btn:active{transform:translateY(0)}
-.btn-lg{padding:23px 40px;font-size:17.5px}
-.btn-ghost{
-  background:transparent;color:var(--plum);border:1px solid var(--line-2);
-  box-shadow:none;padding:17px 26px;font-size:15.5px;font-weight:700;
-}
-.btn-ghost:hover{background:rgba(124,90,194,.07);border-color:var(--vio);color:var(--vio-deep);filter:none;transform:none;box-shadow:none}
-.vivid .btn{background:linear-gradient(100deg,#c9a95f,#e8d3a2 52%,#c9a95f);color:#2a1b33;box-shadow:0 16px 38px -14px rgba(0,0,0,.55)}
-.vivid .btn:hover{filter:brightness(1.05);box-shadow:0 22px 48px -16px rgba(0,0,0,.6)}
-.vivid .btn-ghost{color:var(--on-dark);border-color:var(--line-dark-2)}
-.vivid .btn-ghost:hover{background:rgba(255,255,255,.1);border-color:var(--gold-hi);color:#fff}
-.btn-sm{padding:13px 20px;font-size:14.5px}
-.btn-w{width:100%}
+.vivid .acc,.fin .acc,.vivid .gt{color:var(--gold-hi)}
+mark{background:linear-gradient(transparent 58%,rgba(184,118,127,.28) 58%);color:inherit;padding:0 2px}
 .under{font-size:13.5px;color:var(--soft);line-height:1.5}
 .under b{color:var(--body);font-weight:700}
-.vivid .under{color:rgba(255,255,255,.74)}
-.vivid .under b{color:#fff}
+.vivid .under,.fin .under{color:rgba(255,255,255,.72)}
+.vivid .under b,.fin .under b{color:#fff}
 .vivid .frm .under,.fin .fin-f .under{color:var(--soft)}
 .vivid .frm .under b,.fin .fin-f .under b{color:var(--body)}
 
-/* ── шапка ── */
-.progress{position:fixed;top:0;left:0;height:2px;width:0;background:var(--grad-gold);z-index:60;transition:width .1s linear}
-header{
-  position:sticky;top:0;z-index:50;background:rgba(251,248,246,.88);
-  backdrop-filter:saturate(1.4) blur(14px);border-bottom:1px solid var(--line);
-}
-.hd{display:flex;align-items:center;gap:22px;padding:15px 0}
-.logo{display:flex;align-items:center;gap:14px;text-decoration:none;flex:none}
-.logo .lm{
-  font-family:'Cormorant',Georgia,serif;font-size:26px;font-weight:600;letter-spacing:.05em;
-  line-height:1;color:var(--plum)
-}
-.logo .ld{font-size:11.5px;line-height:1.3;color:var(--soft);max-width:132px;
-  padding-left:14px;border-left:1px solid var(--line-gold)}
-.hd nav{display:flex;gap:24px;margin-left:auto}
-.hd nav a{
-  text-decoration:none;font-size:15px;font-weight:600;color:var(--body);white-space:nowrap;
-  padding:4px 0;border-bottom:1px solid transparent;transition:color .15s,border-color .15s
-}
-.hd nav a:hover{color:var(--vio-deep);border-color:var(--gold)}
-.hd-c{display:flex;align-items:center;gap:14px;flex:none}
-.hd-ph{text-align:right;line-height:1.2}
-.hd-ph a{display:block;font-size:17.5px;font-weight:800;text-decoration:none;letter-spacing:-.01em;color:var(--plum)}
-.hd-ph span{font-size:12px;color:var(--soft)}
-.burger{display:none;background:none;border:0;cursor:pointer;padding:8px;color:var(--plum)}
+/* надзаголовок: золотая нить, номер главы, метка */
+.kick{display:inline-flex;align-items:center;gap:11px;margin-bottom:20px}
+.kick i{width:26px;height:1px;background:linear-gradient(90deg,var(--gold),transparent);flex:none;opacity:.8}
+.kick em{font-family:'Cormorant',Georgia,serif;font-style:italic;font-size:16px;font-weight:600;
+  color:var(--gold);opacity:.6;line-height:1;font-variant-numeric:lining-nums}
+.kick span{font-family:'Manrope',sans-serif;font-size:10.5px;font-weight:800;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.vivid .kick i,.fin .kick i{background:linear-gradient(90deg,var(--gold-hi),transparent)}
+.vivid .kick span,.fin .kick span,.vivid .kick em,.fin .kick em{color:var(--gold-hi)}
 
-/* ── первый экран ── */
-.hero{padding:48px 0 76px}
-.hero-g{display:grid;grid-template-columns:1.12fr .88fr;gap:52px;align-items:center}
-.tag{
-  display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line-gold);
-  border-radius:99px;padding:8px 18px 8px 12px;font-size:13.5px;font-weight:600;color:var(--body);
-  margin-bottom:26px;background:rgba(255,255,255,.6)
+/* волосяная виньетка между смысловыми частями */
+.orn{display:flex;align-items:center;justify-content:center;gap:14px;padding:0;color:var(--gold)}
+.orn i{height:1px;width:min(280px,32vw);background:linear-gradient(90deg,transparent,var(--line-gold))}
+.orn i:last-child{background:linear-gradient(90deg,var(--line-gold),transparent)}
+.orn svg{opacity:.5}
+
+/* ── КНОПКИ ── */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  background:linear-gradient(120deg,var(--vio-deep),var(--vio));color:#fff;border:0;cursor:pointer;
+  font-weight:700;font-size:16px;letter-spacing:.004em;line-height:1.25;
+  padding:18px 32px;border-radius:99px;text-decoration:none;text-align:center;
+  box-shadow:var(--glow);transition:transform .18s,box-shadow .18s,filter .18s;
 }
-.tag i{width:6px;height:6px;border-radius:50%;background:var(--gold);flex:none;box-shadow:0 0 0 4px rgba(168,129,63,.14)}
-h1 .pr{white-space:nowrap}
-.rub{font-family:'Manrope',sans-serif;font-weight:600;font-size:.76em;letter-spacing:0}
-h1 .pr.acc{font-style:normal;font-weight:600;color:var(--vio-deep);
-  border-bottom:2px solid var(--gold-hi);padding-bottom:2px}
-.old{color:var(--soft);text-decoration:line-through;text-decoration-thickness:1.5px;font-weight:400}
-.ins{font-family:'Manrope',sans-serif;font-size:.28em;font-weight:600;color:var(--soft);letter-spacing:0;white-space:nowrap;vertical-align:middle}
-/* ценник первого экрана: скидка в рублях — обязательная часть оффера */
-.offer{
-  display:inline-flex;align-items:center;gap:22px;flex-wrap:wrap;margin:28px 0 0;
-  padding:14px 26px;border-radius:20px;background:rgba(255,253,252,.86);
-  border:1px solid var(--line-gold);box-shadow:var(--sh-s)
-}
-.offer .ol{font-size:10.5px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;
-  color:var(--gold-ink);display:block;margin-bottom:4px}
-.offer .now{font-family:'Cormorant',Georgia,serif;font-size:38px;font-weight:600;
-  line-height:1;color:var(--vio-deep);font-variant-numeric:lining-nums}
-.offer .was{font-size:14.5px;color:var(--soft);line-height:1.35}
-.offer .was s{text-decoration-thickness:1px}
-.offer .save{
-  font-size:13.5px;font-weight:800;color:var(--plum);line-height:1.3;
-  padding:9px 16px;border-radius:99px;background:var(--gold-soft);border:1px solid var(--line-gold)
-}
-.offer .sep{width:1px;align-self:stretch;background:var(--line-gold)}
-.h-sub{font-size:17.5px;color:var(--body);margin:22px 0 24px;max-width:610px}
-.h-sub b{color:var(--plum);font-weight:700}
-.bul{list-style:none;display:grid;gap:12px;margin-bottom:28px;max-width:620px}
-.bul li{display:flex;gap:13px;font-size:15.5px;line-height:1.5}
+.btn:hover{filter:brightness(1.08);transform:translateY(-1px);box-shadow:0 18px 38px -14px rgba(85,58,144,.5)}
+.btn:active{transform:translateY(0)}
+.btn-lg{padding:21px 38px;font-size:17px}
+.btn-sm{padding:12px 19px;font-size:14.5px}
+.btn-w{width:100%}
+.btn-ghost{background:none;color:var(--ink);border:1px solid var(--line-2);box-shadow:none;
+  padding:17px 26px;font-size:15.5px}
+.btn-ghost:hover{background:var(--vio-soft);border-color:var(--vio);color:var(--vio-deep);
+  filter:none;transform:none;box-shadow:none}
+.vivid .btn,.fin .btn{background:linear-gradient(120deg,#c9a95f,#e6d0a0 55%,#c9a95f);color:var(--ink);
+  box-shadow:0 14px 32px -14px rgba(0,0,0,.55)}
+.vivid .btn:hover,.fin .btn:hover{filter:brightness(1.04)}
+.vivid .btn-ghost{color:var(--on-dark);border-color:var(--line-dark-2);background:none}
+.vivid .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold-hi);color:#fff}
+
+/* ── ШАПКА ── */
+.progress{position:fixed;top:0;left:0;height:2px;width:0;background:var(--vio);z-index:60;transition:width .1s linear}
+header{position:sticky;top:0;z-index:50;background:rgba(250,247,245,.86);
+  backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);
+  border-bottom:1px solid var(--line)}
+.hd{display:flex;align-items:center;gap:26px;padding:15px 24px}
+.logo{display:flex;align-items:center;gap:13px;text-decoration:none;flex:none}
+.lm{font-family:'Cormorant',Georgia,serif;font-size:24px;font-weight:600;letter-spacing:.055em;color:var(--ink)}
+.ld{font-size:10.5px;line-height:1.3;color:var(--soft);padding-left:13px;border-left:1px solid var(--line-gold)}
+header nav{display:flex;gap:19px;margin-left:auto;font-size:14px;font-weight:600;white-space:nowrap}
+header nav a{text-decoration:none;color:var(--body);transition:color .15s;position:relative}
+header nav a:hover{color:var(--vio-deep)}
+.hd-c{display:flex;align-items:center;gap:16px;margin-left:auto}
+header nav+.hd-c{margin-left:0}
+.hd-ph{text-align:right;line-height:1.3;white-space:nowrap}
+.hd-ph a{display:block;font-size:15.5px;font-weight:800;color:var(--ink);text-decoration:none;font-variant-numeric:lining-nums}
+.hd-ph span{font-size:11.5px;color:var(--soft)}
+@media (max-width:1240px){header nav{gap:15px;font-size:13.5px}.hd-ph span{display:none}}
+@media (max-width:1120px){.hd-ph{display:none}}
+.burger{display:none;background:none;border:0;color:var(--ink);cursor:pointer;padding:4px}
+
+/* ── ПЕРВЫЙ ЭКРАН ── */
+.hero{padding:64px 0 84px}
+.hero-g{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.tag{display:inline-flex;align-items:center;gap:9px;font-size:12.5px;font-weight:700;color:var(--body);
+  background:var(--card);border:1px solid var(--line);border-radius:99px;padding:8px 16px;margin-bottom:26px;
+  box-shadow:var(--sh-s)}
+.tag i{width:6px;height:6px;border-radius:50%;background:var(--gold);flex:none}
+
+/* ценник: единственное место, где золото занимает площадь */
+.offer{display:inline-flex;align-items:center;gap:22px;flex-wrap:wrap;margin:26px 0 0;
+  background:var(--card);border:1px solid var(--line-gold);border-radius:var(--r);
+  padding:17px 24px;box-shadow:var(--sh-s)}
+.offer .ol{display:block;font-size:10px;font-weight:800;letter-spacing:.17em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:3px}
+.offer .now{font-family:'Cormorant',Georgia,serif;font-size:42px;font-weight:600;color:var(--ink);line-height:1}
+.offer .rub{font-size:.62em}
+.offer .sep{width:1px;align-self:stretch;background:var(--line)}
+.offer .was{font-size:13.5px;color:var(--soft);line-height:1.4}
+.offer .was s{color:var(--soft)}
+.offer .save{font-size:12.5px;font-weight:800;color:var(--gold);background:rgba(168,129,63,.10);
+  border-radius:99px;padding:7px 14px;white-space:nowrap}
+.h-sub{font-size:17.5px;line-height:1.6;margin:24px 0 26px;max-width:62ch}
+.h-sub b{color:var(--ink);font-weight:700}
+.bul{list-style:none;display:grid;gap:13px;margin-bottom:30px}
+.bul li{display:flex;gap:12px;font-size:15.5px;line-height:1.5}
 .bul svg{flex:none;margin-top:3px;color:var(--vio)}
-.bul b{font-weight:800;color:var(--plum)}
-.h-cta{display:flex;flex-wrap:wrap;gap:14px 18px;align-items:center;margin-bottom:18px}
-/* стрелка-указатель слева от главной кнопки первого экрана.
-   В самом ряду слева места нет — колонка начинается ровно с края кнопки,
-   поэтому стрелка вынесена абсолютом в левое поле страницы. */
+.bul b{font-weight:800;color:var(--ink)}
+.h-cta{display:flex;flex-wrap:wrap;gap:13px 16px;align-items:center;margin-bottom:16px}
 .cta-wrap{position:relative;display:inline-flex}
-.cta-arrow{position:absolute;right:100%;top:50%;margin-right:10px;
-  transform:translateY(-50%);pointer-events:none}
-.cta-arrow svg{display:block;overflow:visible;
-  filter:drop-shadow(0 4px 7px rgba(124,90,194,.26));
-  animation:cta-point 2.9s ease-in-out infinite}
+.cta-arrow{position:absolute;right:100%;top:50%;margin-right:10px;transform:translateY(-50%);pointer-events:none}
+.cta-arrow svg{display:block;overflow:visible;animation:cta-point 2.9s ease-in-out infinite}
 .cta-arrow .a-body,.cta-arrow .a-head{fill:url(#arw)}
 @keyframes cta-point{0%,100%{transform:translateX(0)}50%{transform:translateX(5px)}}
-/* левое поле страницы = (ширина окна − 1180)/2 + 24. Стрелке нужно 70 px
-   плюс воздух до края экрана — ниже 1340 px она липнет к краю, убираем */
 @media(max-width:1339px){.cta-arrow{display:none}}
-.tglink{display:inline-flex;align-items:center;gap:8px;font-size:15.5px;font-weight:700;color:var(--vio-deep);
-  text-decoration:none;border-bottom:1px solid rgba(85,58,144,.3);padding-bottom:2px;transition:.15s}
-.tglink:hover{color:var(--rose-deep);border-color:var(--rose)}
-.h-note{display:flex;gap:11px;max-width:530px;font-size:13.5px;color:var(--soft);line-height:1.5}
-.h-note svg{flex:none;margin-top:2px;color:var(--gold);opacity:.9}
+.h-note{display:flex;gap:10px;font-size:13.5px;color:var(--soft);line-height:1.5;max-width:56ch}
+.h-note svg{flex:none;margin-top:2px;color:var(--gold)}
 
-/* визуал первого экрана — арка. Фирменная форма всего сайта. */
 .h-vis{position:relative}
-.h-vis::before{
-  content:'';position:absolute;left:18px;right:18px;top:-18px;bottom:28px;pointer-events:none;
-  border:1px solid var(--line-gold);border-radius:var(--arch) var(--arch) 20px 20px;z-index:0
-}
-.h-frame{
-  aspect-ratio:5/7;
-  position:relative;overflow:hidden;
-  border-radius:var(--arch) var(--arch) 22px 22px;
-  background:linear-gradient(160deg,#e3d3ef 0%,#c6a9d8 42%,#c99196 100%);
-  box-shadow:0 40px 80px -38px rgba(42,27,51,.5),inset 0 0 0 1px rgba(255,255,255,.4);
-}
-@keyframes morph{0%,100%{transform:none}50%{transform:none}}
+.h-frame{position:relative;overflow:hidden;aspect-ratio:4/5;border-radius:200px 200px var(--r-lg) var(--r-lg);
+  background:var(--paper-2);border:1px solid var(--line);box-shadow:var(--sh)}
 .h-frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:2}
 .h-frame svg{position:absolute;inset:0;width:100%;height:100%}
-.h-badge{
-  position:absolute;z-index:3;border-radius:16px;padding:15px 19px;
-  background:rgba(255,253,252,.93);backdrop-filter:blur(14px);
-  border:1px solid var(--line);box-shadow:var(--sh)
-}
-.h-b1{left:-30px;top:78px}
-.h-b2{right:-20px;bottom:150px}
-.h-b3{left:-24px;bottom:44px;display:flex;align-items:center;gap:12px}
-.h-b3>svg{color:var(--vio-deep);flex:none}
-.h-badge .bg-n{font-family:'Cormorant',Georgia,serif;font-size:25px;font-weight:600;line-height:1;color:var(--vio-deep)}
-.h-badge .bg-t{font-size:12.5px;color:var(--soft);line-height:1.35;margin-top:5px}
-.h-badge .bg-l{font-size:9.5px;font-weight:800;letter-spacing:.17em;
-  text-transform:uppercase;color:var(--gold-ink);margin-bottom:7px}
-.ph-cap{
-  position:absolute;inset:auto 0 0 0;z-index:1;padding:16px 22px;font-size:12px;line-height:1.45;
-  color:rgba(42,27,51,.62);
-}
-.h-frame .ph-cap{padding:16px 30px 214px;max-width:74%}
-.app-vis .ph-cap{inset:0 0 auto 0;padding:118px 30px 20px;color:rgba(255,255,255,.72)}
-.exp-p .ph-cap{inset:auto 0 30% 0;padding:0 20%;text-align:center;font-size:11.5px;line-height:1.5}
+.ph-cap{position:absolute;left:0;right:0;bottom:0;z-index:1;padding:20px 26px 30px;font-size:11.5px;
+  line-height:1.5;color:var(--soft);text-align:center}
+.h-badge{position:absolute;z-index:3;background:var(--card);border:1px solid var(--line);
+  border-radius:var(--r);padding:14px 18px;box-shadow:var(--sh);display:flex;gap:11px;align-items:center}
+.h-badge .bg-l{font-size:9.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:3px}
+.h-badge .bg-n{font-family:'Cormorant',Georgia,serif;font-size:21px;font-weight:600;color:var(--ink);line-height:1.05}
+.h-badge .bg-t{font-size:11.5px;color:var(--soft);line-height:1.4;margin-top:3px}
+.h-badge>svg{flex:none;color:var(--gold)}
+.h-b1{top:5%;left:-9%}
+.h-b2{bottom:16%;right:-9%}
+.h-b3{bottom:2%;left:-6%}
 
-/* ── бегущая лента фактов: тёмная полоса с золотыми цифрами ── */
-.strip{
-  background:linear-gradient(100deg,#2a1b33,#3b2749 60%,#452a44);overflow:hidden;padding:0;
-  border-radius:var(--r-lg);max-width:1340px;margin:0 auto;box-shadow:var(--sh)
-}
-.strip .row{display:flex;width:max-content;animation:slide 40s linear infinite}
+/* ── ЛЕНТА ФАКТОВ ── */
+.strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;padding:22px 0}
+.strip .row{display:flex;gap:0;width:max-content;animation:mq 46s linear infinite}
+.strip .it{display:flex;align-items:baseline;gap:10px;padding:0 34px;border-right:1px solid var(--line);white-space:nowrap}
+.strip b{font-family:'Cormorant',Georgia,serif;font-size:25px;font-weight:600;color:var(--ink);line-height:1}
+.strip span{font-size:13px;color:var(--soft)}
+@keyframes mq{to{transform:translateX(-50%)}}
 .strip:hover .row{animation-play-state:paused}
-@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.strip .it{display:flex;align-items:baseline;gap:14px;padding:26px 34px;white-space:nowrap}
-.strip .it::after{content:'';align-self:center;width:5px;height:5px;border-radius:50%;background:rgba(217,190,134,.5);margin-left:20px}
-.strip b{font-family:'Cormorant',Georgia,serif;font-size:29px;font-weight:600;color:var(--gold-hi);line-height:1}
-.strip span{font-size:14px;color:var(--on-dark-2)}
 
-/* ── сетки и карточки ── */
-.grid{display:grid;gap:22px}
-.grid>*,.hero-g>*,.exp>*,.stu>*,.fbox>*,.fin-g>*{min-width:0}
+/* ── РАЗВИЛКА ДВУХ СЦЕНАРИЕВ ─────────────────────────────────────────────
+   Блок существует ради двух разных людей на одной странице: младшей нужен
+   вход по одной зоне, старшей — курс целиком с расчётом. Дальше страница
+   ведёт их по разным маршрутам: в прайс или в калькулятор.
+   ──────────────────────────────────────────────────────────────────────── */
+.fork{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:34px}
+.fork .fk{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);
+  border-radius:var(--r-lg);padding:34px 32px;box-shadow:var(--sh-s);
+  transition:transform .3s cubic-bezier(.22,1,.36,1),box-shadow .3s,border-color .3s}
+.fork .fk:hover{transform:translateY(-3px);box-shadow:var(--sh);border-color:var(--line-gold)}
+.fork .fl{font-size:10.5px;font-weight:800;letter-spacing:.17em;text-transform:uppercase;color:var(--gold)}
+.fork h3{margin:12px 0 10px;font-size:29px}
+.fork p{font-size:15.5px;line-height:1.58;margin-bottom:20px}
+.fork p b{color:var(--ink)}
+.fork ul{list-style:none;display:grid;gap:10px;margin-bottom:26px;font-size:14.5px;line-height:1.45}
+.fork li{display:flex;gap:10px}
+.fork li svg{flex:none;margin-top:3px;color:var(--vio)}
+.fork .fk>:last-child{margin-top:auto}
+.fork .fpr{font-family:'Cormorant',Georgia,serif;font-size:34px;font-weight:600;color:var(--ink);
+  line-height:1;margin-bottom:6px;font-variant-numeric:lining-nums}
+.fork .fpr small{font-family:'Manrope',sans-serif;font-size:13px;font-weight:600;color:var(--soft)}
 
-/* ── цены ── */
-.pane{overflow:visible}
-.pt{width:100%;border-collapse:separate;border-spacing:0;background:rgba(255,255,255,.8);
-  border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--tint-line)}
-.pt th,.pt td{padding:17px 22px;border-bottom:1px solid var(--tint-line);text-align:left;font-size:15.5px;color:var(--body)}
-.pt th{font-size:10px;letter-spacing:.17em;text-transform:uppercase;
-  color:var(--acc-ink);font-weight:800;background:var(--tint-soft);white-space:nowrap}
-.pt td:first-child{font-weight:700;color:var(--plum)}
-.pt td small{display:block;font-weight:400;font-size:13px;color:var(--soft);margin-top:3px}
-.pt .p-old{color:#9d8b94;text-decoration:line-through;white-space:nowrap;font-weight:400}
-.pt .p-new{color:var(--vio-deep);font-weight:800;white-space:nowrap;font-size:17px}
+/* ── ПРАЙС ── */
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r-lg);background:var(--card);
+  box-shadow:var(--sh-s)}
+.pt{border-collapse:collapse;width:100%;font-size:15px}
+.pt th,.pt td{text-align:left;padding:16px 22px;border-bottom:1px solid var(--line);vertical-align:middle}
 .pt tr:last-child td{border-bottom:0}
-.pt tr.hl td{background:var(--gold-soft)}
-.pt tr.hl td.p-new{color:var(--gold-ink)}
-.pt .chip{display:inline-block;margin-left:9px;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--plum);background:var(--gold-hi);border-radius:99px;padding:4px 10px;vertical-align:2px;font-weight:800}
-.p-note{display:flex;gap:12px;margin-top:22px;padding:20px 24px;border-radius:18px;font-size:14.5px;line-height:1.55;
-  color:var(--body);background:rgba(255,255,255,.6);border:1px solid var(--line-gold)}
-.p-note svg{flex:none;margin-top:2px;color:var(--gold-ink)}
-.p-note b{color:var(--plum)}
+.pt th{font-size:10.5px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:var(--soft);
+  background:var(--ghost);white-space:nowrap}
+.pt td:first-child{font-weight:700;color:var(--ink)}
+.pt small{display:block;font-size:12.5px;font-weight:400;color:var(--soft);margin-top:3px;line-height:1.45}
+.pt .p-old{color:var(--soft);text-decoration:line-through;white-space:nowrap}
+.pt .p-new{font-weight:800;color:var(--vio-deep);white-space:nowrap;font-size:16px}
+.pt tr.hl td{background:rgba(168,129,63,.055)}
+.chip{display:inline-block;font-size:9.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+  background:var(--vio-soft);color:var(--vio-deep);border-radius:99px;padding:3px 9px;margin-left:8px;
+  vertical-align:middle}
+.p-note{display:flex;gap:12px;margin-top:20px;padding:18px 22px;border-radius:var(--r);font-size:14.5px;
+  line-height:1.55;background:var(--card);border:1px solid var(--line)}
+.p-note svg{flex:none;margin-top:2px;color:var(--gold)}
+.p-note b{color:var(--ink)}
 
-/* ── форма-плита на тёмном ── */
+/* ── КАЛЬКУЛЯТОР КУРСА ───────────────────────────────────────────────────
+   Главный инструмент под сегмент «хочу закрыть вопрос»: он покупает не
+   скидку, а предсказуемость. Сначала человек получает свою цифру — и
+   только потом у него просят телефон.
+   ──────────────────────────────────────────────────────────────────────── */
+.calc-g{display:grid;grid-template-columns:1.05fr .95fr;gap:24px;margin-top:34px;align-items:start}
+.calc-z{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);padding:28px;
+  box-shadow:var(--sh-s)}
+.calc-z>p{font-size:13px;color:var(--soft);margin-bottom:16px}
+.zl{display:grid;gap:2px}
+.zl label{display:flex;align-items:center;gap:13px;padding:12px 14px;border-radius:var(--r-s);
+  cursor:pointer;transition:background .15s;font-size:15px}
+.zl label:hover{background:var(--ghost)}
+.zl input{appearance:none;-webkit-appearance:none;width:21px;height:21px;flex:none;border-radius:6px;
+  border:1.5px solid var(--line-2);background:var(--card);cursor:pointer;position:relative;transition:.15s}
+.zl input:checked{background:var(--vio);border-color:var(--vio)}
+.zl input:checked::after{content:'';position:absolute;left:6.5px;top:3px;width:5px;height:10px;
+  border:solid #fff;border-width:0 2px 2px 0;transform:rotate(42deg)}
+.zl .zn{flex:1;color:var(--ink);font-weight:600}
+.zl .zt{font-size:12.5px;color:var(--soft);font-weight:400;display:block}
+.zl .zp{font-variant-numeric:tabular-nums lining-nums;font-weight:700;color:var(--soft);font-size:14px;white-space:nowrap}
+.calc-out{background:linear-gradient(150deg,var(--dark),var(--dark-2));border-radius:var(--r-lg);
+  padding:30px 28px;color:var(--on-dark-2);box-shadow:var(--sh-dark);position:sticky;top:96px}
+.calc-out h4{color:var(--on-dark);font-size:15px;margin-bottom:20px}
+.cq{display:flex;justify-content:space-between;align-items:baseline;gap:16px;
+  padding:13px 0;border-bottom:1px solid var(--line-dark);font-size:14px}
+.cq:last-of-type{border-bottom:0}
+.cq span{color:var(--on-dark-2)}
+.cq b{font-family:'Cormorant',Georgia,serif;font-size:26px;font-weight:600;color:var(--on-dark);line-height:1;
+  white-space:nowrap;font-variant-numeric:tabular-nums lining-nums}
+.cq.big-q b{font-size:38px;color:var(--gold-hi)}
+.cq.big-q{padding:16px 0 18px}
+.cq s{color:rgba(255,255,255,.42);font-size:14px;font-family:'Manrope',sans-serif;font-weight:600}
+.calc-save{background:rgba(217,190,134,.12);border:1px solid rgba(217,190,134,.3);border-radius:var(--r);
+  padding:14px 16px;margin:18px 0;font-size:13.5px;line-height:1.5;color:var(--on-dark)}
+.calc-save b{color:var(--gold-hi)}
+.calc-out .btn{width:100%;margin-top:4px;background:linear-gradient(120deg,#c9a95f,#e6d0a0 55%,#c9a95f);
+  color:var(--ink);box-shadow:0 14px 32px -14px rgba(0,0,0,.55)}
+.calc-out .btn:hover{filter:brightness(1.04)}
+.calc-out .under{margin-top:12px;text-align:center}
+.calc-empty{font-size:14px;line-height:1.55;color:var(--on-dark-2);padding:8px 0 18px}
+
+/* ── ЭКОНОМИКА РЕШЕНИЯ ── */
+.cmp{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px;align-items:stretch}
+.cmp .c{display:flex;flex-direction:column;padding:28px 26px;border-radius:var(--r-lg);
+  background:var(--card);border:1px solid var(--line);box-shadow:var(--sh-s)}
+.cmp .c.win{border-color:var(--line-gold);box-shadow:var(--sh);position:relative}
+.cmp .ct{font-size:10.5px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:var(--soft)}
+.cmp .c.win .ct{color:var(--gold)}
+.cmp .big{font-family:'Cormorant',Georgia,serif;font-size:42px;font-weight:600;line-height:1;
+  color:var(--ink);margin:12px 0 8px}
+.cmp .c.win .big{color:var(--gold)}
+.cmp .bs{font-size:13px;color:var(--soft);line-height:1.45;min-height:37px}
+.cmp ul{list-style:none;display:grid;gap:11px;margin-top:19px;padding-top:18px;border-top:1px solid var(--line)}
+.cmp li{display:flex;gap:11px;font-size:14.5px;line-height:1.5}
+.cmp li svg{flex:none;margin-top:4px;color:var(--soft);opacity:.65}
+.cmp .c.win li svg{color:var(--gold);opacity:1}
+.cmp li b{color:var(--ink);font-weight:700}
+.cmp .flag{position:absolute;top:-11px;left:26px;background:linear-gradient(100deg,#a8813f,#e3cd9b 50%,#a8813f);
+  color:var(--ink);font-size:9.5px;font-weight:800;letter-spacing:.11em;text-transform:uppercase;
+  padding:5px 12px;border-radius:99px}
+.sum{display:flex;flex-wrap:wrap;align-items:center;gap:20px 32px;margin-top:20px;padding:24px 28px;
+  background:var(--card);border:1px solid var(--line-gold);border-radius:var(--r-lg)}
+.sum .si{line-height:1.2}
+.sum .si b{display:block;font-family:'Cormorant',Georgia,serif;font-size:31px;font-weight:600;color:var(--gold);margin-bottom:3px}
+.sum .si span{font-size:13px;color:var(--body)}
+.sum .sd{width:1px;align-self:stretch;background:var(--line)}
+.sum .btn{margin-left:auto}
+
+/* ── ТЁМНАЯ ПЛИТА: ДИАГНОСТИКА ── */
+.vivid{background:linear-gradient(150deg,var(--dark) 0%,var(--dark-2) 60%,#452a44 100%);
+  color:var(--on-dark-2);padding:84px 0}
+.vivid h3{color:var(--on-dark)}
 .fbox{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
-.fbox h3{font-size:33px;margin-bottom:14px;color:var(--on-dark)}
+.fbox h3{font-size:32px;margin-bottom:14px}
 .fbox>div>p{color:var(--on-dark-2);font-size:16px}
-.fbox .give{list-style:none;display:grid;gap:12px;margin-top:22px}
-.fbox .give li{display:flex;gap:12px;font-size:15.5px;line-height:1.45;color:var(--on-dark)}
-.fbox .give svg{flex:none;margin-top:3px;color:var(--gold-hi)}
-.frm{background:var(--white);border-radius:var(--r-lg);padding:32px;
-  color:var(--body);box-shadow:0 40px 80px -34px rgba(0,0,0,.55)}
+.give{list-style:none;display:grid;gap:12px;margin-top:22px}
+.give li{display:flex;gap:12px;font-size:15.5px;line-height:1.45;color:var(--on-dark)}
+.give svg{flex:none;margin-top:3px;color:var(--gold-hi)}
 
-/* ── поля форм ────────────────────────────────────────────────────────────
-   Одна разметка на все четыре формы: подпись сверху, крупное поле,
-   согласие мелко под ним. Поле должно быть заметно больше, чем кажется
-   нужным: это единственное действие, которое мы просим у человека. ───── */
-.fld{margin-bottom:16px}
-.fld label{display:block;font-size:13px;font-weight:700;letter-spacing:.01em;
-  color:var(--soft);margin-bottom:8px}
-.fld input{
-  width:100%;padding:17px 18px;border-radius:15px;font-size:17px;color:var(--plum);
-  background:var(--paper);border:1px solid var(--line-2);
-  transition:border-color .18s,box-shadow .18s,background .18s;
-}
+/* ── ФОРМЫ ── */
+.frm{background:var(--card);border-radius:var(--r-lg);padding:32px;color:var(--body);box-shadow:var(--sh-dark)}
+.fld{margin-bottom:15px}
+.fld label{display:block;font-size:12.5px;font-weight:700;color:var(--soft);margin-bottom:7px}
+.fld input{width:100%;padding:16px 17px;border-radius:var(--r-s);font-size:16.5px;color:var(--ink);
+  background:var(--paper);border:1px solid var(--line-2);transition:border-color .16s,box-shadow .16s,background .16s}
 .fld input::placeholder{color:#a496ad}
-.fld input:focus{outline:0;background:var(--white);border-color:var(--vio);
-  box-shadow:0 0 0 4px rgba(124,90,194,.14)}
-.agree{display:flex;gap:10px;align-items:flex-start;font-size:12.5px;line-height:1.45;
-  color:var(--soft);margin-bottom:18px;cursor:pointer;
-  border:1px solid transparent;border-radius:10px;padding:2px}
-.agree input{flex:none;width:17px;height:17px;margin-top:1px;accent-color:var(--vio)}
-.agree a{color:var(--vio-deep);text-decoration:underline}
-.gift{display:flex;gap:14px;align-items:center;background:var(--gold-soft);
-  border:1px solid var(--line-gold);border-radius:16px;padding:15px 17px;margin-bottom:20px;font-size:14px;line-height:1.45;color:var(--body)}
-.gift>svg{flex:none;color:var(--gold-ink)}
-.gift b{display:block;font-size:15px;margin-bottom:3px;color:var(--plum)}
+.fld input:focus{outline:0;background:var(--card);border-color:var(--vio);box-shadow:0 0 0 4px rgba(124,90,194,.13)}
+.agree{display:flex;gap:10px;align-items:flex-start;font-size:12.5px;line-height:1.45;color:var(--soft);
+  margin-bottom:17px;cursor:pointer;border:1px solid transparent;border-radius:8px;padding:2px}
+.agree input{flex:none;width:16px;height:16px;margin-top:1px;accent-color:var(--vio)}
+.agree a{color:var(--vio-deep)}
 
-/* ── специалист ── */
-.exp{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center}
-.exp-p{position:relative;overflow:hidden;aspect-ratio:3/4;
-  border-radius:var(--arch) var(--arch) 22px 22px;
-  background:linear-gradient(155deg,#dfcfe9,#c8a6c0 52%,#c48f95);
-  box-shadow:0 40px 80px -38px rgba(42,27,51,.5),inset 0 0 0 1px rgba(255,255,255,.4)}
+/* ── РЕЗУЛЬТАТ: ДОРОЖКА КУРСА ── */
+.road{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:26px;margin-top:40px;position:relative}
+.road::before{content:'';position:absolute;left:2px;right:2px;top:13px;height:1px;background:var(--line-gold)}
+.road li{position:relative;padding-top:44px}
+.road li::before{content:'';position:absolute;top:6px;left:0;width:15px;height:15px;border-radius:50%;
+  background:var(--paper);border:2px solid var(--gold)}
+.road .rw{display:block;font-size:10.5px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:9px}
+.road b{display:block;font-family:'Cormorant',Georgia,serif;font-size:24px;font-weight:600;
+  line-height:1.14;color:var(--ink);margin-bottom:9px}
+.road p{font-size:14.8px;line-height:1.55}
+.road p b{display:inline;font-family:inherit;font-size:inherit;font-weight:700;margin:0}
+
+/* ── КОСМЕТОЛОГ ── */
+.exp{display:grid;grid-template-columns:.82fr 1.18fr;gap:54px;align-items:center}
+.exp-p{position:relative;overflow:hidden;aspect-ratio:3/4;border-radius:170px 170px var(--r-lg) var(--r-lg);
+  background:var(--paper-2);border:1px solid var(--line);box-shadow:var(--sh)}
 .exp-p img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:2}
 .exp-p svg{position:absolute;inset:0;width:100%;height:100%}
-.exp-p .ph-cap{padding:16px 30px 34px}
-.quote{font-family:'Cormorant',Georgia,serif;font-style:italic;font-size:27px;font-weight:500;line-height:1.32;
-  padding-left:26px;border-left:1px solid var(--gold);margin:28px 0;color:var(--vio-deep)}
-.creds{list-style:none;display:grid;gap:13px;margin-top:24px}
-.creds li{display:flex;gap:13px;font-size:15.5px;line-height:1.5;color:var(--body)}
-.creds li b{color:var(--plum)}
+.exp-p .ph-cap{padding:0 22px 28px;bottom:0}
+.quote{font-family:'Cormorant',Georgia,serif;font-style:italic;font-size:25px;font-weight:500;line-height:1.34;
+  color:var(--ink);padding-left:22px;border-left:2px solid var(--line-gold);margin:22px 0}
+.creds{list-style:none;display:grid;gap:12px;margin-top:22px}
+.creds li{display:flex;gap:12px;font-size:15.5px;line-height:1.5}
+.creds li b{color:var(--ink)}
 .creds svg{flex:none;margin-top:3px;color:var(--vio)}
-.sign{display:flex;align-items:center;gap:16px;margin-top:28px;padding-top:24px;border-top:1px solid var(--tint-line);flex-wrap:wrap}
+.sign{display:flex;align-items:center;gap:15px;margin-top:26px;padding-top:22px;border-top:1px solid var(--line);flex-wrap:wrap}
 .sign>svg{flex:none;color:var(--vio)}
-.sign b{font-size:16px;color:var(--plum)}
+.sign b{font-size:16px;color:var(--ink)}
 .sign span{display:block;font-size:13.5px;color:var(--soft)}
+.sign a{color:var(--vio-deep);font-weight:700}
 
-/* ── страхи ── */
-.fear{background:rgba(255,255,255,.74);border:1px solid var(--tint-line);border-radius:16px;overflow:hidden;
-  transition:box-shadow .25s,border-color .25s}
-.fear[open]{border-color:var(--line-gold);background:var(--white);box-shadow:var(--sh-s)}
-.fear summary{padding:22px 26px;cursor:pointer;list-style:none;display:flex;gap:16px;align-items:flex-start;
-  font-size:17px;font-weight:700;line-height:1.4;color:var(--plum)}
+/* ── КАК ПРОХОДИТ ВИЗИТ ── */
+.care{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px}
+.care .cc{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);padding:30px 28px;
+  box-shadow:var(--sh-s);transition:transform .3s cubic-bezier(.22,1,.36,1),box-shadow .3s}
+.care .cc:hover{transform:translateY(-3px);box-shadow:var(--sh)}
+.care .ci{width:44px;height:44px;border-radius:50%;background:var(--paper);border:1px solid var(--line-gold);
+  color:var(--gold);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.care .ci.step-n{font-family:'Cormorant',Georgia,serif;font-size:23px;font-weight:600;line-height:1;
+  font-variant-numeric:lining-nums;padding-bottom:2px}
+.care h4{font-family:'Cormorant',Georgia,serif;font-size:23px;font-weight:600;letter-spacing:0;
+  line-height:1.16;color:var(--ink);margin-bottom:9px}
+.care p{font-size:14.8px;line-height:1.6}
+.care p b{color:var(--ink);font-weight:700}
+
+/* ── ЧЕСТНЫЕ ОТВЕТЫ ── */
+.fear{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;
+  transition:border-color .2s,box-shadow .2s}
+.fear[open]{border-color:var(--line-gold);box-shadow:var(--sh-s)}
+.fear summary{padding:20px 24px;cursor:pointer;list-style:none;display:flex;gap:15px;align-items:flex-start;
+  font-size:16.5px;font-weight:700;color:var(--ink)}
 .fear summary::-webkit-details-marker{display:none}
-.fear summary:hover{background:rgba(255,255,255,.5)}
-.fear summary .fq{flex:none;width:26px;height:26px;border-radius:50%;background:var(--vio-soft);color:var(--vio-deep);
-  border:1px solid rgba(124,90,194,.25);
-  display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;margin-top:2px}
+.fear summary:hover{background:var(--ghost)}
+.fear summary .fq{flex:none;width:25px;height:25px;border-radius:50%;background:var(--vio-soft);
+  color:var(--vio-deep);font-size:12.5px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-top:1px}
 .fear summary .ar{margin-left:auto;flex:none;transition:transform .2s;margin-top:5px;color:var(--gold)}
 .fear[open] summary .ar{transform:rotate(180deg)}
-.fear .fa{padding:0 26px 24px 68px;font-size:15.5px;line-height:1.65;color:var(--body)}
-.fear .fa b{color:var(--plum)}
+.fear .fa{padding:0 24px 22px 65px;font-size:15.5px;line-height:1.65}
+.fear .fa b{color:var(--ink)}
 .fear .fa p+p{margin-top:11px}
 
-/* ── студия ── */
-.stu{display:grid;grid-template-columns:1.15fr .85fr;gap:52px;align-items:center}
+/* ── ВТОРОЕ НАПРАВЛЕНИЕ ── */
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:32px}
+.g2 .cc{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);padding:30px 28px;
+  box-shadow:var(--sh-s)}
+.g2 h4{font-family:'Cormorant',Georgia,serif;font-size:24px;font-weight:600;margin-bottom:9px}
+.g2 p{font-size:15px;line-height:1.58}
+.g2 .pr{display:block;margin-top:14px;font-size:14px;font-weight:700;color:var(--gold);
+  font-variant-numeric:tabular-nums lining-nums}
+
+/* ── СТУДИЯ ── */
+.stu{display:grid;grid-template-columns:1.12fr .88fr;gap:50px;align-items:center}
 .stu-m{border-radius:var(--r-lg);overflow:hidden;position:relative;aspect-ratio:16/11;
   background:var(--paper-2);border:1px solid var(--line);box-shadow:var(--sh)}
 .stu-m img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:2}
 .stu-m svg{position:absolute;inset:0;width:100%;height:100%}
-.addr{list-style:none;display:grid;gap:20px;margin-top:26px}
-.addr li{display:flex;gap:15px;align-items:flex-start}
-.addr .ai{width:42px;height:42px;border-radius:12px;background:var(--white);border:1px solid var(--line-gold);
-  color:var(--gold-ink);display:flex;align-items:center;justify-content:center;flex:none}
-.addr b{display:block;font-size:16px;margin-bottom:3px;color:var(--plum)}
+.addr{list-style:none;display:grid;gap:18px;margin-top:24px}
+.addr li{display:flex;gap:14px;align-items:flex-start}
+.addr .ai{width:40px;height:40px;border-radius:var(--r-s);background:var(--card);border:1px solid var(--line-gold);
+  color:var(--gold);display:flex;align-items:center;justify-content:center;flex:none}
+.addr b{display:block;font-size:16px;margin-bottom:2px;color:var(--ink)}
 .addr span{font-size:14.5px;color:var(--body);line-height:1.5}
-.addr a{color:var(--vio-deep);font-weight:700;text-decoration:none;border-bottom:1px solid rgba(85,58,144,.3)}
+.addr a{color:var(--vio-deep);font-weight:700;text-decoration:none;border-bottom:1px solid rgba(85,58,144,.28)}
 
-/* ── финал ── */
-.fin{
-  max-width:1340px;margin:0 auto;border-radius:var(--r-xl);padding:60px;position:relative;overflow:hidden;
-  background:linear-gradient(150deg,#2a1b33 0%,#3b2749 46%,#4a2b45 100%);
-  box-shadow:var(--sh-lg);color:var(--on-dark-2)
-}
-.fin::before{content:'';position:absolute;top:-240px;right:-180px;width:660px;height:660px;
-  background:radial-gradient(circle,rgba(184,118,127,.32),transparent 64%);pointer-events:none}
-.fin::after{content:'';position:absolute;bottom:-280px;left:-160px;width:600px;height:600px;
-  background:radial-gradient(circle,rgba(168,129,63,.24),transparent 64%);pointer-events:none}
-.fin-g{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center;position:relative}
-.fin h2{color:var(--on-dark);font-size:clamp(30px,3.6vw,46px)}
+/* ── ФИНАЛ ── */
+.fin{border-radius:var(--r-lg);padding:56px;position:relative;overflow:hidden;
+  background:linear-gradient(150deg,var(--dark) 0%,var(--dark-2) 55%,#452a44 100%);
+  box-shadow:var(--sh-dark);color:var(--on-dark-2)}
+.fin-g{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center;position:relative}
+.fin h2{color:var(--on-dark);font-size:clamp(29px,3.3vw,42px)}
 .fin .lead{color:var(--on-dark-2)}
-.fin .acc{color:var(--gold-hi)}
-.fin .kick i{background:linear-gradient(100deg,#d9be86,#f0e2c4 50%,#d9be86)}
-.fin .kick span{color:var(--gold-hi)}
-.fin .btn{background:linear-gradient(100deg,#c9a95f,#e8d3a2 52%,#c9a95f);color:#2a1b33;box-shadow:0 16px 38px -14px rgba(0,0,0,.55)}
-.fin .under{color:rgba(255,255,255,.74)}
-.fin .under b{color:#fff}
-.timer{display:flex;gap:12px;margin:28px 0 8px}
-.timer div{background:rgba(255,255,255,.07);border:1px solid var(--line-dark-2);border-radius:14px;
-  padding:14px 6px;text-align:center;min-width:76px}
-.timer b{display:block;font-family:'Cormorant',Georgia,serif;font-size:34px;font-weight:600;color:var(--gold-hi);line-height:1}
-.timer span{font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--on-dark-2);margin-top:7px;display:block}
-.fin-f{background:var(--white);border-radius:var(--r-lg);padding:34px;color:var(--body);
-  box-shadow:0 40px 80px -34px rgba(0,0,0,.6)}
-.fin-f h3{font-size:26px;margin-bottom:7px}
-.fin-f .sub{font-size:14.5px;color:var(--soft);margin-bottom:22px}
-.slots{display:flex;align-items:center;gap:9px;font-size:13.5px;color:var(--on-dark-2);margin-top:16px}
-.slots i{width:7px;height:7px;border-radius:50%;background:var(--gold-hi);flex:none;animation:pulse 2.4s infinite;box-shadow:0 0 0 4px rgba(217,190,134,.16)}
+.timer{display:flex;gap:11px;margin:26px 0 8px}
+.timer div{background:rgba(255,255,255,.06);border:1px solid var(--line-dark-2);border-radius:var(--r-s);
+  padding:13px 6px;text-align:center;min-width:74px}
+.timer b{display:block;font-family:'Cormorant',Georgia,serif;font-size:32px;font-weight:600;color:var(--gold-hi);line-height:1}
+.timer span{font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--on-dark-2);margin-top:6px;display:block}
+.slots{display:flex;align-items:center;gap:9px;font-size:13.5px;color:var(--on-dark-2);margin-top:15px}
+.slots i{width:7px;height:7px;border-radius:50%;background:var(--gold-hi);flex:none;animation:pulse 2.4s infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+.fin-f{background:var(--card);border-radius:var(--r-lg);padding:32px;color:var(--body);box-shadow:var(--sh-dark)}
+.fin-f h3{font-size:25px;margin-bottom:6px}
+.fin-f .sub{font-size:14.5px;color:var(--soft);margin-bottom:20px}
 
-/* ── подвал ── */
-footer{background:linear-gradient(180deg,#2a1b33,#221429);color:var(--on-dark-2);padding:76px 0 34px;font-size:14.5px}
-.f-g{display:grid;grid-template-columns:1.5fr 1fr;gap:44px;padding-bottom:40px;border-bottom:1px solid var(--line-dark)}
-.f-g h5{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-hi);margin-bottom:18px;font-weight:800}
-.f-g a{color:var(--on-dark-2);text-decoration:none;display:block;margin-bottom:10px;transition:color .15s}
+/* ── ПОДВАЛ ── */
+footer{background:var(--dark);color:var(--on-dark-2);padding:68px 0 30px;font-size:14.5px;margin-top:96px}
+.f-g{display:grid;grid-template-columns:1.5fr 1fr;gap:44px;padding-bottom:36px;border-bottom:1px solid var(--line-dark)}
+.f-g h5{font-size:10px;letter-spacing:.19em;text-transform:uppercase;color:var(--gold-hi);margin-bottom:16px;font-weight:800}
+.f-g a{color:var(--on-dark-2);text-decoration:none;display:block;margin-bottom:9px;transition:color .15s}
 .f-g a:hover{color:#fff}
-.f-logo{font-family:'Cormorant',Georgia,serif;font-size:27px;font-weight:600;letter-spacing:.05em;margin-bottom:14px;color:var(--on-dark)}
-.f-soc{display:flex;gap:10px;margin-top:18px}
-.f-soc a{width:44px;height:44px;border-radius:12px;border:1px solid var(--line-dark-2);
+.f-logo{font-family:'Cormorant',Georgia,serif;font-size:26px;font-weight:600;letter-spacing:.05em;
+  margin-bottom:12px;color:var(--on-dark)}
+.f-soc{display:flex;gap:10px;margin-top:16px}
+.f-soc a{width:42px;height:42px;border-radius:var(--r-s);border:1px solid var(--line-dark-2);
   display:flex;align-items:center;justify-content:center;margin:0;transition:.15s}
-.f-soc a:hover{background:rgba(255,255,255,.08);border-color:var(--gold-hi);color:var(--gold-hi)}
+.f-soc a:hover{background:rgba(255,255,255,.07);border-color:var(--gold-hi);color:var(--gold-hi)}
 footer .btn-ghost{color:var(--on-dark);border-color:var(--line-dark-2)}
-footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold-hi);color:#fff}
-.f-b{padding-top:28px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:12.5px;color:#9a89a4;line-height:1.55}
+footer .btn-ghost:hover{background:rgba(255,255,255,.07);border-color:var(--gold-hi);color:#fff}
+.f-b{padding-top:26px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:12.5px;
+  color:#9a89a4;line-height:1.55}
 .f-b a{color:var(--on-dark-2);text-decoration:underline}
-.warn{margin-top:24px;padding:18px 22px;border:1px solid var(--line-dark);border-radius:14px;font-size:12.5px;color:#9a89a4;line-height:1.55;background:rgba(255,255,255,.03)}
 
-/* ── sticky / модалки ── */
-.sticky{position:fixed;left:0;right:0;bottom:0;z-index:45;display:none;gap:9px;padding:10px 12px;
-  background:rgba(251,248,246,.94);backdrop-filter:blur(16px);border-top:1px solid var(--line-2)}
-.sticky .btn{flex:1;padding:15px 10px;font-size:15px}
-.sticky .btn-ghost{flex:none;width:54px;padding:15px 0}
-.up{position:fixed;right:22px;bottom:22px;z-index:44;width:48px;height:48px;border-radius:50%;
-  background:rgba(255,253,252,.92);border:1px solid var(--line-2);color:var(--plum);cursor:pointer;
-  backdrop-filter:blur(12px);box-shadow:var(--sh);opacity:0;pointer-events:none;transition:opacity .25s}
+/* ── ПЛАВАЮЩЕЕ ── */
+.up{position:fixed;right:22px;bottom:22px;width:44px;height:44px;border-radius:50%;background:var(--card);
+  border:1px solid var(--line);color:var(--ink);cursor:pointer;box-shadow:var(--sh);z-index:40;
+  opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;display:flex;align-items:center;justify-content:center}
 .up.on{opacity:1;pointer-events:auto}
-.ov{position:fixed;inset:0;z-index:70;background:rgba(42,27,51,.55);backdrop-filter:blur(6px);
-  display:none;align-items:center;justify-content:center;padding:20px}
-.ov.on{display:flex;animation:fade .25s ease}
-.mod{background:var(--white);border-radius:var(--r-lg);padding:36px;max-width:460px;width:100%;
-  position:relative;box-shadow:0 50px 100px -30px rgba(42,27,51,.6);max-height:92vh;overflow-y:auto;color:var(--body)}
-.mod h3{font-size:27px;margin-bottom:9px}
-.mod .sub{font-size:15px;color:var(--soft);margin-bottom:22px}
-.mod nav a{color:var(--plum)!important;border-color:var(--line)!important}
-.mx{position:absolute;right:14px;top:14px;background:none;border:0;cursor:pointer;color:var(--soft);padding:8px;line-height:0}
-.mx:hover{color:var(--plum)}
-.mod-lg{max-width:620px}
+.up:hover{border-color:var(--vio);color:var(--vio-deep)}
+.sticky{display:none;position:fixed;left:0;right:0;bottom:0;z-index:45;padding:11px 14px;gap:10px;
+  background:rgba(250,247,245,.93);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border-top:1px solid var(--line)}
+.sticky .btn{flex:1;padding:16px 18px;font-size:15.5px}
+.sticky a.ic{width:52px;flex:none;display:flex;align-items:center;justify-content:center;border-radius:99px;
+  border:1px solid var(--line-2);color:var(--ink);text-decoration:none}
 
-.hide-mob{display:block}
-.only-mob{display:none}
+/* ── МОДАЛКИ ── */
+.ov{position:fixed;inset:0;z-index:70;background:rgba(42,27,51,.6);backdrop-filter:blur(5px);
+  display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .22s}
+.ov.on{opacity:1;pointer-events:auto}
+.mod{background:var(--card);border-radius:var(--r-lg);padding:34px;max-width:430px;width:100%;position:relative;
+  box-shadow:0 40px 90px -30px rgba(0,0,0,.5);transform:translateY(12px);transition:transform .22s}
+.ov.on .mod{transform:none}
+.mod-lg{max-width:520px}
+.mod h3{margin-bottom:7px}
+.mod .sub{font-size:14.5px;color:var(--soft);margin-bottom:20px}
+.mx{position:absolute;top:14px;right:14px;width:34px;height:34px;border-radius:50%;background:none;border:0;
+  color:var(--soft);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.mx:hover{background:var(--ghost);color:var(--ink)}
 
-.rv{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s cubic-bezier(.22,1,.36,1)}
+/* ── ПОЯВЛЕНИЕ ── */
+.rv{opacity:0;transform:translateY(16px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
 .rv.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){
-  .rv{opacity:1;transform:none;transition:none}
-  .cta-arrow svg{animation:none}
-  html{scroll-behavior:auto}
-  .strip .row{animation:none}
-  .slots i{animation:none}
-}
 
-
-/* ── глава 02: экономика решения ─────────────────────────────────────────
-   Три способа быть гладкой, посчитанные на одинаковом горизонте — три
-   года. Проигрывающие карточки набраны тише (серые иконки, полупрозрачная
-   бумага), выигрывающая поднята на белую с золотой рамкой: сравнение
-   должно читаться до чтения текста.
-   ──────────────────────────────────────────────────────────────────────── */
-.cmp{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px;align-items:stretch}
-.cmp .c{display:flex;flex-direction:column;padding:28px 26px;border-radius:22px;
-  background:rgba(255,255,255,.66);border:1px solid var(--tint-line)}
-.cmp .c.win{background:var(--white);border-color:var(--line-gold);box-shadow:var(--sh);position:relative}
-.cmp .ct{font-size:10.5px;font-weight:800;letter-spacing:.17em;text-transform:uppercase;color:var(--soft)}
-.cmp .c.win .ct{color:var(--gold-ink)}
-.cmp .big{font-family:'Cormorant',Georgia,serif;font-size:44px;font-weight:600;line-height:1;
-  color:var(--plum);margin:13px 0 5px;letter-spacing:-.01em}
-.cmp .c.win .big{color:var(--gold-ink)}
-.cmp .bs{font-size:13px;color:var(--soft);line-height:1.45;min-height:37px}
-.cmp ul{list-style:none;display:grid;gap:11px;margin-top:19px;padding-top:18px;border-top:1px solid var(--tint-line)}
-.cmp li{display:flex;gap:11px;font-size:14.5px;line-height:1.5}
-.cmp li svg{flex:none;margin-top:4px;color:var(--soft);opacity:.7}
-.cmp .c.win li svg{color:var(--gold);opacity:1}
-.cmp li b{color:var(--plum);font-weight:700}
-.cmp .flag{position:absolute;top:-11px;left:26px;background:var(--grad-gold);color:#2a1b33;
-  font-size:9.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:5px 12px;border-radius:999px}
-.sum{display:flex;flex-wrap:wrap;align-items:center;gap:20px 32px;margin-top:24px;padding:26px 30px;
-  border-radius:22px;background:var(--gold-soft);border:1px solid var(--line-gold)}
-.sum .si{line-height:1.2}
-.sum .si b{display:block;font-family:'Cormorant',Georgia,serif;font-size:33px;font-weight:600;
-  color:var(--gold-ink);margin-bottom:3px}
-.sum .si span{font-size:13px;color:var(--body)}
-.sum .sd{width:1px;align-self:stretch;background:var(--line-gold)}
-.sum .btn{margin-left:auto}
-
-/* ── глава 03: что будет по процедурам ───────────────────────────────────
-   Горизонтальная дорожка курса: золотая линия, четыре точки, под каждой —
-   срок и то, что клиентка увидит своими глазами. На узких экранах линия
-   переворачивается в вертикальную.
-   ──────────────────────────────────────────────────────────────────────── */
-.road{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin-top:40px;position:relative}
-.road::before{content:'';position:absolute;left:2px;right:2px;top:13px;height:1px;
-  background:linear-gradient(90deg,var(--line-gold),rgba(168,129,63,.14))}
-.road li{position:relative;padding-top:46px}
-.road li::before{content:'';position:absolute;top:6px;left:0;width:15px;height:15px;border-radius:50%;
-  background:var(--white);border:2px solid var(--gold);box-shadow:0 0 0 5px var(--tint-soft)}
-.road .rw{display:block;font-size:10.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--acc-ink);margin-bottom:9px}
-.road b{display:block;font-family:'Cormorant',Georgia,serif;font-size:24px;font-weight:600;
-  line-height:1.14;color:var(--plum);margin-bottom:9px}
-.road p{font-size:14.8px;line-height:1.55}
-.road p b{display:inline;font-family:inherit;font-size:inherit;font-weight:700;margin:0}
-
-/* ── глава 05: как проходит визит ──────────────────────────────────────────
-   Три карточки-шага: попробовали — узнали цену — решили. Каждая тихая:
-   светлая бумага главы, тонкий золотой кружок с номером шага,
-   заголовок антиквой. Ничего кричащего: блок должен звучать как студия,
-   а не как реклама студии.
-   ──────────────────────────────────────────────────────────────────────── */
-.care{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:38px}
-.care .cc{background:rgba(255,255,255,.74);border:1px solid var(--tint-line);
-  border-radius:24px;padding:30px 28px;transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s}
-.care .cc:hover{transform:translateY(-3px);box-shadow:var(--sh-s)}
-.care .ci{width:48px;height:48px;border-radius:50%;background:var(--white);
-  border:1px solid var(--line-gold);display:flex;align-items:center;justify-content:center;
-  color:var(--gold-ink);margin-bottom:19px}
-/* номер шага вместо иконки: та же золотая окружность, антиква внутри */
-.care .ci.step-n{font-family:'Cormorant',Georgia,serif;font-size:25px;font-weight:600;line-height:1;
-  font-variant-numeric:lining-nums;padding-bottom:2px}
-.care h4{font-family:'Cormorant',Georgia,serif;font-size:23px;font-weight:600;
-  letter-spacing:0;line-height:1.16;color:var(--plum);margin-bottom:9px}
-.care p{font-size:14.8px;line-height:1.6}
-.care p b{color:var(--plum);font-weight:700}
-/* ── адаптив ── */
+/* ── АДАПТИВ ── */
 @media (max-width:1080px){
-  .hero-g{grid-template-columns:1fr;gap:48px}
-  .h-vis{max-width:440px;margin:0 auto;width:100%}
+  .hero-g,.exp,.stu,.fbox,.fin-g,.calc-g{grid-template-columns:1fr;gap:38px}
+  .h-vis{max-width:430px;margin:0 auto;width:100%}
   .h-b1{left:0}.h-b2{right:0}.h-b3{left:0}
-  .app-g,.quiz-g,.exp,.stu,.fbox,.fin-g{grid-template-columns:1fr;gap:36px}
-  .exp-p,.app-vis{max-width:400px;width:100%}
-  .pane,.vivid{margin:16px;border-radius:32px;padding:72px 0}
-  .hd nav{display:none}
-  .burger{display:block;margin-left:auto}
+  .exp-p{max-width:380px;width:100%}
+  header nav{display:none}
+  .burger{display:block}
   .hd-c .btn{display:none}
-  .fin,.strip{border-radius:32px}
-  :root{--arch:220px}
-}
-@media (max-width:860px){
-  .g2{grid-template-columns:1fr}
-  .sticky{display:flex}
-  body{padding-bottom:74px}
-  .up{bottom:86px}
+  .hd-c{margin-left:auto}
+  .cmp,.care,.fork,.g2{grid-template-columns:1fr}
+  .cmp .bs{min-height:0}
+  .sum .btn{margin-left:0}
+  .road{grid-template-columns:1fr 1fr;gap:32px 26px}
+  .road::before{display:none}
+  .calc-out{position:static}
+  section{padding:66px 0}
+  .fin{padding:40px 32px}
 }
 @media (max-width:640px){
   body{font-size:16px}
-  section{padding:60px 0}
   .wrap{padding:0 18px}
-  .pane,.vivid{margin:10px;border-radius:26px;padding:54px 0}
-  .orn{padding:34px 0 2px;gap:12px}
-  .fin{border-radius:26px;padding:32px 22px;margin:0 10px}
-  .strip{border-radius:22px;margin:0 10px}
-  .strip .it{padding:20px 22px;gap:11px}
-  .strip b{font-size:23px}
-  .hero{padding:30px 0 48px}
+  section{padding:56px 0}
+  .hero{padding:34px 0 52px}
   .h-badge{display:none}
-  .h-vis::before{display:none}
-  .h-frame{aspect-ratio:1/1;min-height:260px;border-radius:170px 170px 20px 20px}
-  .h-frame .ph-cap{padding:14px 22px;max-width:100%}
-  .h-vis{margin-top:6px}
+  .h-frame{aspect-ratio:1/1;border-radius:150px 150px var(--r-lg) var(--r-lg)}
   .h-txt{display:flex;flex-direction:column}
-  .h-txt .tag{order:1}
+  .h-txt .tag{order:1;margin-bottom:20px}
   .h-txt h1{order:2}
   .h-txt .offer{order:3;margin:20px 0 0;width:100%;padding:15px 20px;gap:16px}
   .h-txt .offer .sep{display:none}
   .h-txt .offer .now{font-size:34px}
   .h-txt .h-sub{order:4;margin:18px 0 22px}
   .h-txt .h-cta{order:5;margin-bottom:14px}
-  .h-txt .h-note{order:6;margin-bottom:28px}
-  .h-txt .bul{order:7;gap:12px}
-  .h-txt .bul li{font-size:15px}
-  .ins{font-size:.34em}
-  h2{margin-bottom:14px}
-  .lead{font-size:17px}
-  .h-sub{font-size:17px}
-  .btn{width:100%;padding:18px 22px;font-size:16.5px}
-  .btn-sm,.sticky .btn{width:auto}
-  .fin-f,.frm{padding:24px 20px}
-  .f-g{grid-template-columns:1fr;gap:30px}
+  .h-txt .h-note{order:6;margin-bottom:26px}
+  .h-txt .bul{order:7}
+  .btn{width:100%;padding:17px 22px}
+  .btn-sm,.sticky .btn,.sticky a.ic{width:auto}
+  /* в ряду CTA кнопки ужимаются флексом — на телефоне ставим их столбиком */
+  .h-cta{flex-direction:column;align-items:stretch}
+  .cta-wrap{width:100%}
+  .sticky{display:flex}
+  .up{display:none}
+  .fin{padding:32px 22px;border-radius:var(--r)}
+  .fin-f,.frm,.calc-z,.calc-out{padding:24px 20px}
+  .fork .fk{padding:28px 24px}
+  .care .cc,.cmp .c,.g2 .cc{padding:24px 22px}
   .hide-mob{display:none}
   .only-mob{display:block}
   .pt th,.pt td{padding:13px 15px;font-size:14.5px}
   .pt th:nth-child(2),.pt td:nth-child(2){display:none}
-  .pt{min-width:440px}
-  .tw{margin-right:-18px;padding-right:18px}
-  .fear .fa{padding-left:26px}
-  .timer div{min-width:0;flex:1;padding:12px 4px}
-  .timer b{font-size:27px}
-  .mod{padding:28px 20px}
-  .quote{font-size:23px;padding-left:20px}
-}
-@media (max-width:1080px){
-  .cmp{grid-template-columns:1fr;gap:14px}
-  .care{grid-template-columns:1fr}
-  .cmp .bs{min-height:0}
-  .sum .btn{margin-left:0}
-  .road{grid-template-columns:1fr 1fr;gap:34px 28px}
-  .road::before{display:none}
-}
-@media (max-width:640px){
-  .cmp .big{font-size:36px}
-  .care{grid-template-columns:1fr;gap:12px;margin-top:28px}
-  .care .cc{padding:24px 22px}
-  .care .ci{width:42px;height:42px;margin-bottom:15px}
-  .sum{padding:22px 20px;gap:18px 24px}
-  .sum .sd{display:none}
-  .sum .si{flex:1 0 40%}
-  .sum .si b{font-size:29px}
-  .sum .btn{margin-left:0}
-  .road{grid-template-columns:1fr;gap:0;margin-top:32px}
-  .road li{padding:0 0 26px 32px}
+  .pt{min-width:430px}
+  .fear .fa{padding-left:24px}
+  .fear summary{padding:17px 18px;font-size:15.5px}
+  .timer div{min-width:0;flex:1;padding:11px 4px}
+  .timer b{font-size:26px}
+  .mod{padding:26px 20px}
+  .quote{font-size:22px;padding-left:18px}
+  .road{grid-template-columns:1fr;gap:0;margin-top:30px}
+  .road li{padding:0 0 24px 30px}
   .road li:last-child{padding-bottom:0}
   .road li::before{top:2px}
-  .road li::after{content:'';position:absolute;left:7px;top:21px;bottom:0;width:1px;background:var(--line-gold)}
+  .road li::after{content:'';position:absolute;left:7px;top:20px;bottom:0;width:1px;background:var(--line-gold)}
   .road li:last-child::after{display:none}
+  .sum{padding:20px;gap:16px 22px}
+  .sum .sd{display:none}
+  .sum .si{flex:1 0 40%}
+  .sum .si b{font-size:27px}
+  footer{margin-top:56px}
+  .f-g{grid-template-columns:1fr;gap:28px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .rv{opacity:1;transform:none}
+  html{scroll-behavior:auto}
 }
 </style>
 </head>
 <body>
-<div class="bg" aria-hidden="true"><b class="b1"></b><b class="b2"></b><b class="b3"></b><b class="b4"></b><b class="b5"></b><b class="b6"></b><span class="grain"></span></div>
+<div class="bg" aria-hidden="true"></div>
 
 <!-- ============ ШАПКА ============ -->
 <div class="progress" id="prog"></div>
@@ -774,10 +645,10 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
     </a>
     <nav>
       <a href="#prices">Цены</a>
+      <a href="#calc">Расчёт</a>
       <a href="#result">Результат</a>
       <a href="#expert">Косметолог</a>
-      <a href="#care">Визит</a>
-      <a href="#answers">Ответы</a>
+      <a href="#face">Лицо</a>
       <a href="#contacts">Контакты</a>
     </nav>
     <div class="hd-c">
@@ -816,8 +687,8 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
             <span class="now num">4 900 <span class="rub">₽</span></span>
           </div>
           <div class="sep"></div>
-          <div class="was">вместо <s class="num">9 800 ₽</s><br>комплекс «всё тело»</div>
-          <div class="save">Выгода 4 900 ₽</div>
+          <div class="was">вместо <s class="num">9 800 ₽</s><br>комплекс «всё тело»</div>
+          <div class="save">Выгода 4 900 ₽</div>
         </div>
 
         <p class="h-sub">Отдельный кабинет, тёплый плед и <b>одна клиентка в студии</b> — никакого общего зала и «следующий!» через стенку. Всё тело — за один визит и без анестезии, на диодном лазере <b>MAGIC ONE 4000 Вт</b>. Сколько нужно процедур и во что обойдётся курс целиком — <b>посчитаем на бесплатной диагностике, до оплаты</b>.</p>
@@ -936,23 +807,68 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
   </div>
 </div>
 
+<!-- ============ РАЗВИЛКА ДВУХ СЦЕНАРИЕВ ============
+     На странице живут два разных человека: 22–30 покупает вход и цену,
+     30–42 покупает закрытие темы и предсказуемость. Развилка называет оба
+     сценария вслух и разводит их по разным маршрутам — в прайс и
+     в калькулятор курса. -->
+<section class="rv" id="fork">
+  <div class="wrap">
+    <div class="kick"><i></i><span>С чего начать</span></div>
+    <h2>К нам приходят <span class="acc">двумя дорогами</span>. Обе рабочие</h2>
+    <p class="lead">Можно попробовать одну зону за 700 ₽ и ничего больше не решать. Можно сразу узнать цену курса целиком и закрыть тему на год вперёд. Выберите то, что ближе.</p>
+
+    <div class="fork">
+      <div class="fk">
+        <span class="fl">Дорога первая</span>
+        <h3>«Хочу сначала попробовать»</h3>
+        <p>Вы ничего не решаете про курс. Берёте одну зону, смотрите на результат через две недели и только потом думаете дальше.</p>
+        <ul>
+          <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9.2" stroke="currentColor" stroke-opacity=".38" stroke-width="1.1"/><path d="M5.8 10.3l2.7 2.7 5.6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Подмышки — <b>700 ₽</b> вместо 1 400 ₽, 6 минут</span></li>
+          <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9.2" stroke="currentColor" stroke-opacity=".38" stroke-width="1.1"/><path d="M5.8 10.3l2.7 2.7 5.6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Платить сразу за курс не нужно</span></li>
+          <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9.2" stroke="currentColor" stroke-opacity=".38" stroke-width="1.1"/><path d="M5.8 10.3l2.7 2.7 5.6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Не понравится — просто не придёте второй раз</span></li>
+        </ul>
+        <div>
+          <div class="fpr">от 700 ₽ <small>первый визит</small></div>
+          <a href="#prices" class="btn btn-ghost btn-w" data-goal="fork_try">Выбрать зону в прайсе</a>
+        </div>
+      </div>
+
+      <div class="fk">
+        <span class="fl">Дорога вторая</span>
+        <h3>«Хочу закрыть тему»</h3>
+        <p>Вы узнаёте точное число процедур и итоговую сумму за весь курс — до оплаты. Дальше она не меняется двенадцать месяцев.</p>
+        <ul>
+          <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9.2" stroke="currentColor" stroke-opacity=".38" stroke-width="1.1"/><path d="M5.8 10.3l2.7 2.7 5.6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Считаем ваш курс <b>за минуту</b>, прямо на сайте</span></li>
+          <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9.2" stroke="currentColor" stroke-opacity=".38" stroke-width="1.1"/><path d="M5.8 10.3l2.7 2.7 5.6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Цена заморожена на 12 месяцев</span></li>
+          <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9.2" stroke="currentColor" stroke-opacity=".38" stroke-width="1.1"/><path d="M5.8 10.3l2.7 2.7 5.6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Хватило меньше процедур — вернём деньги</span></li>
+        </ul>
+        <div>
+          <div class="fpr">за 1 минуту <small>без звонка и без записи</small></div>
+          <a href="#calc" class="btn btn-w" data-goal="fork_calc">Рассчитать мой курс</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <div class="orn" aria-hidden="true"><i></i><svg width="26" height="10" viewBox="0 0 26 10" fill="none"><path d="M13 1.2 16.2 5 13 8.8 9.8 5z" stroke="currentColor" stroke-width="1"/><circle cx="3" cy="5" r="1.2" fill="currentColor" fill-opacity=".7"/><circle cx="23" cy="5" r="1.2" fill="currentColor" fill-opacity=".7"/></svg><i></i></div>
 
 <!-- ============ 1. ЦЕНЫ ============ -->
-<section class="pane t-lilac rv" id="prices">
+<section class="rv" id="prices">
   <div class="wrap">
     <div class="kick"><i></i><em>01</em><span>Цены</span></div>
-    <h2>Половину платим мы: <span class="acc">вы экономите до 4 900 ₽</span> в первый визит</h2>
+    <h2>Половину платим мы: <span class="acc">вы экономите до 4 900 ₽</span> в первый визит</h2>
     <p class="lead" style="margin-bottom:30px">Никаких «цена по запросу» и «уточняйте у администратора» — вы сразу видите, сколько заплатите вы. Подготовка, крем после процедуры и памятка по уходу уже в цене: в кабинете доплачивать не придётся ни за что.</p>
 
     <div class="tw"><table class="pt">
       <tr><th>Зона</th><th>Сколько занимает</th><th>Обычная цена</th><th>Первый визит −50%</th></tr>
-      <tr class="hl"><td>Комплекс «Всё тело»<b class="chip">хит</b><small>ноги полностью, руки, бикини, подмышки, живот, лицо</small></td><td>около 40 минут</td><td class="p-old num">9 800 ₽</td><td class="p-new num">4 900 ₽</td></tr>
-      <tr><td>Комплекс «Гладкий минимум»<small>голени + глубокое бикини + подмышки</small></td><td>около 22 минут</td><td class="p-old num">7 200 ₽</td><td class="p-new num">3 600 ₽</td></tr>
-      <tr><td>Ноги полностью</td><td>около 20 минут</td><td class="p-old num">5 400 ₽</td><td class="p-new num">2 700 ₽</td></tr>
-      <tr><td>Глубокое бикини</td><td>около 10 минут</td><td class="p-old num">3 400 ₽</td><td class="p-new num">1 700 ₽</td></tr>
-      <tr><td>Подмышки<small>с этой зоны удобно попробовать, как проходит процедура</small></td><td>около 6 минут</td><td class="p-old num">1 400 ₽</td><td class="p-new num">700 ₽</td></tr>
-      <tr><td>Диагностика и план курса<b class="chip">0 ₽</b><small>разбор кожи, проверка противопоказаний, план на 12 месяцев</small></td><td>около 30 минут</td><td class="p-old num">1 500 ₽</td><td class="p-new">бесплатно</td></tr>
+      <tr class="hl"><td>Комплекс «Всё тело»<b class="chip">хит</b><small>ноги полностью, руки, бикини, подмышки, живот, лицо</small></td><td>около 40 минут</td><td class="p-old num">9 800 ₽</td><td class="p-new num">4 900 ₽</td></tr>
+      <tr><td>Комплекс «Гладкий минимум»<small>голени + глубокое бикини + подмышки</small></td><td>около 22 минут</td><td class="p-old num">7 200 ₽</td><td class="p-new num">3 600 ₽</td></tr>
+      <tr><td>Ноги полностью</td><td>около 20 минут</td><td class="p-old num">5 400 ₽</td><td class="p-new num">2 700 ₽</td></tr>
+      <tr><td>Глубокое бикини</td><td>около 10 минут</td><td class="p-old num">3 400 ₽</td><td class="p-new num">1 700 ₽</td></tr>
+      <tr><td>Подмышки<small>с этой зоны удобно попробовать, как проходит процедура</small></td><td>около 6 минут</td><td class="p-old num">1 400 ₽</td><td class="p-new num">700 ₽</td></tr>
+      <tr><td>Диагностика и план курса<b class="chip">0 ₽</b><small>разбор кожи, проверка противопоказаний, план на 12 месяцев</small></td><td>около 30 минут</td><td class="p-old num">1 500 ₽</td><td class="p-new">бесплатно</td></tr>
     </table></div>
 
     <div class="p-note">
@@ -967,31 +883,74 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
   </div>
 </section>
 
+<!-- ============ КАЛЬКУЛЯТОР КУРСА ============
+     Инструмент под сегмент «хочу закрыть вопрос»: он покупает не скидку,
+     а предсказуемость. Сначала человек получает свою цифру — цену первого
+     визита, вилку по курсу и выгоду против воска, — и только потом у него
+     просят телефон. Цены зон живут в data-p, шаг курса — 6–8 процедур. -->
+<section class="rv" id="calc">
+  <div class="wrap">
+    <div class="kick"><i></i><em>02</em><span>Расчёт за минуту</span></div>
+    <h2>Отметьте свои зоны — <span class="acc">и увидите цену курса целиком</span></h2>
+    <p class="lead">Без звонка, без записи и без «оставьте телефон, и мы вам расскажем». Сначала цифры, решение — потом.</p>
+
+    <div class="calc-g">
+      <div class="calc-z">
+        <p>Обычно берут две-три зоны. Отмечайте всё, что хотите закрыть.</p>
+        <div class="zl" id="zones">
+          <label><input type="checkbox" data-p="1400" data-t="6" checked><span class="zn">Подмышки<span class="zt">6 минут · с этой зоны удобно начать</span></span><span class="zp">1 400 ₽</span></label>
+          <label><input type="checkbox" data-p="3400" data-t="10" checked><span class="zn">Глубокое бикини<span class="zt">10 минут</span></span><span class="zp">3 400 ₽</span></label>
+          <label><input type="checkbox" data-p="2600" data-t="9"><span class="zn">Голени<span class="zt">9 минут</span></span><span class="zp">2 600 ₽</span></label>
+          <label><input type="checkbox" data-p="5400" data-t="20"><span class="zn">Ноги полностью<span class="zt">20 минут</span></span><span class="zp">5 400 ₽</span></label>
+          <label><input type="checkbox" data-p="1900" data-t="8"><span class="zn">Руки полностью<span class="zt">8 минут</span></span><span class="zp">1 900 ₽</span></label>
+          <label><input type="checkbox" data-p="1200" data-t="5"><span class="zn">Живот и белая линия<span class="zt">5 минут</span></span><span class="zp">1 200 ₽</span></label>
+          <label><input type="checkbox" data-p="1100" data-t="5"><span class="zn">Лицо: верхняя губа и подбородок<span class="zt">5 минут</span></span><span class="zp">1 100 ₽</span></label>
+          <label><input type="checkbox" data-p="9800" data-t="40" data-all="1"><span class="zn">Комплекс «Всё тело»<span class="zt">40 минут · всё перечисленное сразу, дешевле по сумме</span></span><span class="zp">9 800 ₽</span></label>
+        </div>
+      </div>
+
+      <div class="calc-out">
+        <h4>Ваш расчёт</h4>
+        <div id="calcBody" hidden>
+          <div class="cq big-q"><span>Первый визит<br><s id="cOld">9 800 ₽</s></span><b id="cFirst">4 900 ₽</b></div>
+          <div class="cq"><span>Дальше — за процедуру</span><b id="cReg">9 800 ₽</b></div>
+          <div class="cq"><span>Курс целиком, 6–8 процедур</span><b id="cCourse">— ₽</b></div>
+          <div class="cq"><span>Времени на визит</span><b id="cTime">40 мин</b></div>
+          <div class="calc-save">За три года шугаринга этих же зон вы отдали бы около <b id="cWax">147 000 ₽</b>. Ваша выгода на курсе — <b id="cSave">53 900 ₽</b> и примерно <b id="cHours">56 часов</b> жизни.</div>
+          <button class="btn" data-cb="calc" data-goal="calc_cta">Зафиксировать эту цену на 12 месяцев</button>
+          <p class="under">Расчёт предварительный: точную цену Екатерина назовёт на бесплатной диагностике, до оплаты. Ниже она не станет.</p>
+        </div>
+        <div id="calcEmpty" class="calc-empty">Отметьте хотя бы одну зону слева — сразу покажем цену первого визита, стоимость курса целиком и вашу выгоду против воска.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ 2. СКОЛЬКО ВЫ ЭКОНОМИТЕ ============
      Возражение «дорого» закрывается не скидкой, а горизонтом: курс
      заканчивается, станок и воск — нет. Все три способа посчитаны на
      одном сроке в три года, методика открыта в сноске под блоком. -->
-<section class="pane t-champ rv" id="economy">
+<section class="rv" id="economy">
   <div class="wrap">
-    <div class="kick"><i></i><em>02</em><span>Сколько вы экономите</span></div>
-    <h2>За три года вы <span class="acc">оставите себе 53 900 ₽</span> — и неделю своей жизни</h2>
+    <div class="kick"><i></i><em>03</em><span>Сколько вы экономите</span></div>
+    <h2>За три года вы <span class="acc">оставите себе 53 900 ₽</span> — и неделю своей жизни</h2>
     <p class="lead">За гладкую кожу вы платите уже сейчас — просто по частям и без конца: станок, воск, дорога, снова воск. Курс лазера оплачивается один раз и заканчивается. Вот те же три года в деньгах, по средним ценам Петербурга.</p>
 
     <div class="cmp">
       <div class="c">
         <span class="ct">Станок и кассеты</span>
-        <div class="big num">32 400 ₽</div>
+        <div class="big num">32 400 ₽</div>
         <div class="bs">вы отдадите за три года — и продолжите платить дальше</div>
         <ul>
           <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8.8" stroke="currentColor" stroke-width="1.1"/><path d="M6.4 10h7.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><span><b>93 часа в ванной</b> — почти четверо суток вашей жизни</span></li>
           <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8.8" stroke="currentColor" stroke-width="1.1"/><path d="M6.4 10h7.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><span>И всё это за свои же деньги: щетина к вечеру, вросшие, тёмные точки</span></li>
-          <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8.8" stroke="currentColor" stroke-width="1.1"/><path d="M6.4 10h7.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><span>Ещё через десять лет — <b>минус 108 000 ₽</b></span></li>
+          <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8.8" stroke="currentColor" stroke-width="1.1"/><path d="M6.4 10h7.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><span>Ещё через десять лет — <b>минус 108 000 ₽</b></span></li>
         </ul>
       </div>
 
       <div class="c">
         <span class="ct">Шугаринг и воск</span>
-        <div class="big num">147 000 ₽</div>
+        <div class="big num">147 000 ₽</div>
         <div class="bs">вы отдадите за три года — при 14 визитах в год</div>
         <ul>
           <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8.8" stroke="currentColor" stroke-width="1.1"/><path d="M6.4 10h7.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><span><b>63 часа</b> — дорога и чужой кабинет каждые три недели</span></li>
@@ -1003,18 +962,18 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
       <div class="c win">
         <span class="flag">и на этом всё</span>
         <span class="ct">Курс лазера в VIV.STUDIO</span>
-        <div class="big num">93 100 ₽</div>
+        <div class="big num">93 100 ₽</div>
         <div class="bs">вы платите один раз — и больше к этой теме не возвращаетесь</div>
         <ul>
-          <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9.2" stroke="currentColor" stroke-opacity=".38" stroke-width="1.1"/><path d="M5.8 10.3l2.7 2.7 5.6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Экономите 53 900 ₽</b> против воска — на тех же трёх годах</span></li>
+          <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9.2" stroke="currentColor" stroke-opacity=".38" stroke-width="1.1"/><path d="M5.8 10.3l2.7 2.7 5.6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Экономите 53 900 ₽</b> против воска — на тех же трёх годах</span></li>
           <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9.2" stroke="currentColor" stroke-opacity=".38" stroke-width="1.1"/><path d="M5.8 10.3l2.7 2.7 5.6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Возвращаете себе 56 часов</b> — это целая неделя жизни</span></li>
-          <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9.2" stroke="currentColor" stroke-opacity=".38" stroke-width="1.1"/><path d="M5.8 10.3l2.7 2.7 5.6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Входите за <b>4 900 ₽</b> — платить всё сразу не нужно</span></li>
+          <li><svg width="17" height="17" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9.2" stroke="currentColor" stroke-opacity=".38" stroke-width="1.1"/><path d="M5.8 10.3l2.7 2.7 5.6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Входите за <b>4 900 ₽</b> — платить всё сразу не нужно</span></li>
         </ul>
       </div>
     </div>
 
     <div class="sum">
-      <div class="si"><b class="num">53 900 ₽</b><span>останутся у вас за три года</span></div>
+      <div class="si"><b class="num">53 900 ₽</b><span>останутся у вас за три года</span></div>
       <div class="sd"></div>
       <div class="si"><b class="num">56 часов</b><span>вы не проведёте в ванной и в чужом кабинете</span></div>
       <div class="sd"></div>
@@ -1022,7 +981,7 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
       <button class="btn" data-cb="economy" data-goal="economy_cta">Посчитать мою выгоду</button>
     </div>
 
-    <p class="under" style="margin-top:18px">Считали по средним ценам Петербурга на август 2026: шугаринг всего тела — 3 500 ₽ раз в три-четыре недели; станок, кассеты и пена — около 900 ₽ в месяц; курс лазера — первый визит 4 900 ₽, семь визитов по 9 800 ₽ и две поддерживающие процедуры за три года. Если зон меньше, чем «всё тело», курс выйдет дешевле — вашу личную выгоду посчитаем на бесплатной диагностике, до оплаты.</p>
+    <p class="under" style="margin-top:18px">Считали по средним ценам Петербурга на август 2026: шугаринг всего тела — 3 500 ₽ раз в три-четыре недели; станок, кассеты и пена — около 900 ₽ в месяц; курс лазера — первый визит 4 900 ₽, семь визитов по 9 800 ₽ и две поддерживающие процедуры за три года. Если зон меньше, чем «всё тело», курс выйдет дешевле — вашу личную выгоду посчитаем на бесплатной диагностике, до оплаты.</p>
   </div>
 </section>
 
@@ -1033,7 +992,7 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
       <div>
         <div class="kick"><i></i><span>Бесплатно</span></div>
         <h3>Придите познакомиться — <span class="acc">уйдёте с точной ценой курса</span></h3>
-        <p>Полчаса с Екатериной. Такая диагностика стоит 1 500 ₽ — вам бесплатно, даже если записываться вы не будете.</p>
+        <p>Полчаса с Екатериной. Такая диагностика стоит 1 500 ₽ — вам бесплатно, даже если записываться вы не будете.</p>
         <ul class="give">
           <li><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9.2" stroke="currentColor" stroke-opacity=".38" stroke-width="1.1"/><path d="M5.8 10.3l2.7 2.7 5.6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Узнаете свою цену: сколько процедур нужно именно вам и сколько стоит курс целиком</span></li>
           <li><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9.2" stroke="currentColor" stroke-opacity=".38" stroke-width="1.1"/><path d="M5.8 10.3l2.7 2.7 5.6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Попробуете лазер — пробная вспышка, чтобы решать не вслепую</span></li>
@@ -1056,9 +1015,9 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
 <!-- ============ 3. ЧТО ВЫ ПОЛУЧАЕТЕ ============
      Результат во времени: после каждой процедуры — конкретная выгода,
      которую видно своими глазами. «Навсегда» не обещаем нигде. -->
-<section class="pane t-sage rv" id="result">
+<section class="rv" id="result">
   <div class="wrap">
-    <div class="kick"><i></i><em>03</em><span>Ваш результат</span></div>
+    <div class="kick"><i></i><em>04</em><span>Ваш результат</span></div>
     <h2>Что вы получаете <span class="acc">после каждой процедуры</span></h2>
     <p class="lead">Никаких «подождите год — тогда увидите». Выгода приходит уже после первой.</p>
 
@@ -1092,13 +1051,13 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
 
     <div style="margin-top:30px;display:flex;gap:14px;flex-wrap:wrap;align-items:center">
       <button class="btn" data-cb="result" data-goal="result_cta">Записаться на первый визит</button>
-      <span class="under">первый визит — <b>4 900 ₽ вместо 9 800 ₽</b>, диагностика бесплатно</span>
+      <span class="under">первый визит — <b>4 900 ₽ вместо 9 800 ₽</b>, диагностика бесплатно</span>
     </div>
   </div>
 </section>
 
 <!-- ============ 4. ВАШ КОСМЕТОЛОГ ============ -->
-<section class="pane t-blush rv" id="expert">
+<section class="rv" id="expert">
   <div class="wrap">
     <div class="exp">
       <div class="exp-p">
@@ -1126,7 +1085,7 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
       </div>
 
       <div>
-        <div class="kick"><i></i><em>04</em><span>Ваш косметолог</span></div>
+        <div class="kick"><i></i><em>05</em><span>Ваш косметолог</span></div>
         <h2>Вас ведёт <span class="acc">один косметолог</span> — тот же человек, что встретит вас на диагностике</h2>
         <p class="lead" style="margin-bottom:18px">Не оператор аппарата и не разные мастера по записи. Екатерина — косметолог с медицинским образованием, она помнит вашу кожу без карточки.</p>
 
@@ -1153,9 +1112,9 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
      Три шага вместо списка мелочей: клиентка видит визит целиком и
      понимает, что платит уже после того, как всё поняла и попробовала.
      Уют вшит в третий шаг, а не вынесен в отдельную главу. -->
-<section class="pane t-ivory rv" id="care">
+<section class="rv" id="care">
   <div class="wrap">
-    <div class="kick"><i></i><em>05</em><span>Как проходит визит</span></div>
+    <div class="kick"><i></i><em>06</em><span>Как проходит визит</span></div>
     <h2>Один визит — <span class="acc">и вы уже гладкая</span>. Всего 40 минут</h2>
     <p class="lead">В студии в одно время — одна клиентка. Ни общего зала, ни очереди в коридоре, ни «следующий!» через стенку.</p>
 
@@ -1192,9 +1151,9 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
 </section>
 
 <!-- ============ 6. ЧЕСТНЫЕ ОТВЕТЫ ============ -->
-<section class="pane t-champ rv" id="answers">
+<section class="rv" id="answers">
   <div class="wrap">
-    <div class="kick"><i></i><em>06</em><span>Честные ответы</span></div>
+    <div class="kick"><i></i><em>07</em><span>Честные ответы</span></div>
     <h2>Четыре причины, по которым откладывают. <span class="acc">И четыре ответа</span></h2>
 
     <div class="grid" style="gap:12px;margin-top:32px">
@@ -1234,7 +1193,38 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
   </div>
 </section>
 
-<!-- ============ 7. СТУДИЯ ============ -->
+<!-- ============ 8. ВТОРОЕ НАПРАВЛЕНИЕ ============
+     Не под холодный трафик: сегменты «губы», «проблемная кожа» и
+     «возрастная свежесть» требуют своей посадочной. Здесь блок работает
+     только на допродажу тем, кто уже пришёл за эпиляцией, — поэтому он
+     короткий и стоит в конце, а не спорит с главным оффером. -->
+<section class="rv" id="face">
+  <div class="wrap">
+    <div class="kick"><i></i><em>08</em><span>Ещё мы работаем с лицом</span></div>
+    <h2>Та же Екатерина — <span class="acc">и то же правило</span>: не нужно, значит не делаем</h2>
+    <p class="lead">Многие приходят на эпиляцию, а остаются на уход. Работаем малыми объёмами и от вашей анатомии: задача — чтобы читалось «она отдохнула», а не «она сделала».</p>
+
+    <div class="g2">
+      <div class="cc">
+        <h4>Губы и овал лица</h4>
+        <p>Контурная пластика губ и углов нижней челюсти, ботулинотерапия. Объём рисуем и согласовываем <b>до укола</b>, препарат показываем в упаковке. Если делать не надо — скажем прямо.</p>
+        <span class="pr">Губы Stylage M — 17 500 ₽, первый визит 14 000 ₽</span>
+      </div>
+      <div class="cc">
+        <h4>Проблемная кожа</h4>
+        <p>Розацеа, купероз, постакне, тусклый тон. Даём не разовую процедуру, а <b>план на полгода</b> с честным прогнозом: что уйдёт, а что придётся поддерживать. Домашний уход — по желанию, а не нагрузкой.</p>
+        <span class="pr">Collost Micro, курс из 3 процедур · уход ANGIOPHARM от 500 ₽</span>
+      </div>
+    </div>
+
+    <div style="margin-top:26px;display:flex;gap:14px;flex-wrap:wrap;align-items:center">
+      <button class="btn" data-cb="face" data-goal="face_cta">Записаться на консультацию</button>
+      <span class="under">первый визит по косметологии — <b>−20%</b>; полный прайс <a href="https://t.me/VIV_Studio" target="_blank" rel="noopener" style="color:var(--vio-deep);font-weight:700" data-goal="tg">пришлём в Telegram</a></span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 9. СТУДИЯ ============ -->
 <section class="rv" id="studio">
   <div class="wrap">
     <div class="stu">
@@ -1267,7 +1257,7 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
       </div>
 
       <div>
-        <div class="kick"><i></i><em>07</em><span>Где нас найти</span></div>
+        <div class="kick"><i></i><em>09</em><span>Где нас найти</span></div>
         <h2><span class="acc">Шесть минут</span> пешком от Чернышевской</h2>
         <p class="lead">Суворовский проспект, 35 — самый центр. Тихий двор, домофон, лифт. Можно зайти в обеденный перерыв или вечером после работы: комплекс «всё тело» занимает 40 минут.</p>
         <ul class="addr">
@@ -1299,7 +1289,7 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold
       <div class="fin-g">
         <div>
           <div class="kick"><i></i><span>Первый визит</span></div>
-          <h2>Всё тело за 4 900 ₽ вместо 9 800 — <span class="acc">и вы экономите половину</span></h2>
+          <h2>Всё тело за 4 900 ₽ вместо 9 800 — <span class="acc">и вы экономите половину</span></h2>
           <p class="lead">Скидка действует один раз, на любую зону. Диагностика с планом курса и точной ценой — бесплатно. Решать про курс сегодня не нужно: сначала просто познакомимся.</p>
           <div class="timer" id="timer">
             <div><b class="num" id="tD">0</b><span>дней</span></div>
@@ -1585,6 +1575,69 @@ var CONFIG = {
   var st = $('#slotsTxt');
   if (st && CONFIG.slots) st.textContent = 'Свободных окон на этой неделе: ' + CONFIG.slots;
   var y = $('#year'); if (y) y.textContent = new Date().getFullYear();
+
+  /* ---------- калькулятор курса ----------------------------------------
+     Считает по отмеченным зонам: первый визит вдвое дешевле, курс — вилка
+     6–8 процедур, выгода — против шугаринга тех же зон на трёх годах.
+     «Всё тело» — не сумма зон, а отдельный комплекс: он дешевле и гасит
+     остальные галочки. Числа предварительные и так и подписаны. ------- */
+  (function () {
+    var box = $('#zones'); if (!box) return;
+    var body = $('#calcBody'), empty = $('#calcEmpty');
+    var inputs = $$('input[type="checkbox"]', box);
+    var all = box.querySelector('input[data-all]');
+    /* до сотен вверх и с неразрывным разрядом: «26 400 ₽», как в прайсе */
+    var fmt = function (n) {
+      n = Math.round(n / 100) * 100;
+      return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' ₽';
+    };
+
+    function calc() {
+      var sum = 0, mins = 0, n = 0;
+      inputs.forEach(function (i) {
+        if (!i.checked) return;
+        sum += +i.getAttribute('data-p'); mins += +i.getAttribute('data-t'); n++;
+      });
+      if (!n) { body.hidden = true; empty.hidden = false; return; }
+      body.hidden = false; empty.hidden = true;
+
+      var first = sum / 2;
+      /* курс: первый визит со скидкой плюс 5–7 обычных */
+      var lo = first + sum * 5, hi = first + sum * 7;
+      /* шугаринг тех же зон: примерно 40% от прайса лазера за визит,
+         14 визитов в год, три года */
+      var wax = sum * .4 * 14 * 3;
+
+      $('#cFirst').textContent = fmt(first);
+      $('#cOld').textContent = fmt(sum);
+      $('#cReg').textContent = fmt(sum);
+      $('#cCourse').textContent = fmt(lo) + ' — ' + fmt(hi);
+      $('#cTime').textContent = 'около ' + Math.max(6, mins) + ' мин';
+      $('#cWax').textContent = fmt(wax);
+      var save = wax - hi;
+      $('#cSave').textContent = save > 0 ? fmt(save) : 'уже на втором году';
+
+      /* часы: на воск закладываем час на дорогу и ожидание плюс саму
+         процедуру, 42 визита за три года; на лазер — восемь визитов
+         и полчаса дороги */
+      var hWax = 42 * (1 + mins / 60), hLas = 8 * (.5 + mins / 60);
+      var h = Math.round(hWax - hLas);
+      var tail = (h % 10 === 1 && h % 100 !== 11) ? ' час'
+               : ([2, 3, 4].indexOf(h % 10) >= 0 && (h % 100 < 12 || h % 100 > 14)) ? ' часа' : ' часов';
+      $('#cHours').textContent = h + tail;
+    }
+
+    box.addEventListener('change', function (e) {
+      var t = e.target;
+      if (t === all && all.checked) {
+        inputs.forEach(function (i) { if (i !== all) i.checked = false; });
+      } else if (t !== all && t.checked && all.checked) {
+        all.checked = false;
+      }
+      calc();
+    });
+    calc();
+  })();
 
   /* ---------- pop-up на выход (только десктоп) ---------- */
   (function () {
