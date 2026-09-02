@@ -725,6 +725,17 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.1);border-color:var(--gold-
 .mod-lg{max-width:520px}
 .mod h3{margin-bottom:7px}
 .mod .sub{font-size:14.5px;color:var(--soft);margin-bottom:20px}
+/* Расчёт, приехавший из калькулятора: подтверждение того, что фиксируем */
+.cbsum{margin:0 0 20px;padding:16px 18px;border-radius:var(--r);
+  background:linear-gradient(120deg,rgba(168,129,63,.1),rgba(168,129,63,.035));
+  border:1px solid var(--gold-line)}
+.cbsum-t{font-size:10.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+  color:#8a6a2f;margin-bottom:9px}
+.cbsum-z{font-size:14px;line-height:1.5;color:var(--ink);font-weight:600;margin-bottom:11px}
+.cbsum-r{display:flex;align-items:baseline;justify-content:space-between;gap:14px;
+  font-size:13.5px;color:var(--soft);padding-top:8px;border-top:1px solid var(--gold-line)}
+.cbsum-r b{font-family:'Cormorant',Georgia,serif;font-size:21px;font-weight:600;color:var(--ink);
+  white-space:nowrap}
 .mx{position:absolute;top:14px;right:14px;width:34px;height:34px;border-radius:50%;background:none;border:0;
   color:var(--soft);cursor:pointer;display:flex;align-items:center;justify-content:center}
 .mx:hover{background:var(--ghost);color:var(--ink)}
@@ -793,9 +804,25 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.1);border-color:var(--gold-
   .incl .ic:nth-last-child(-n+2){border-bottom:0}
   .hide-mob{display:none}
   .only-mob{display:block}
-  .pt th,.pt td{padding:14px 16px;font-size:14.5px}
-  .pt th:nth-child(2),.pt td:nth-child(2){display:none}
-  .pt{min-width:430px}
+  /* Прайс на телефоне перестаёт быть таблицей и становится карточками.
+     Иначе четвёртая колонка — та самая цена первого визита, ради которой
+     сюда и смотрят, — уезжала за правый край, и на экране оставалась одна
+     зачёркнутая старая цена. */
+  .tw{overflow-x:visible;border:0;background:none;box-shadow:none;border-radius:0}
+  .pt,.pt tbody{display:block;width:100%}
+  .pt tr:first-child{display:none}
+  .pt tr{display:flex;flex-wrap:wrap;align-items:baseline;background:var(--card);
+    border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--sh-s);
+    padding:17px 19px;margin-bottom:10px}
+  .pt tr:last-child{margin-bottom:0}
+  .pt td{display:block;border:0;padding:0;font-size:15px}
+  .pt td:first-child{flex:1 0 100%;margin-bottom:13px}
+  .pt td:nth-child(2){flex:1 1 auto;font-size:13px;color:var(--soft)}
+  .pt td:nth-child(3){flex:0 0 auto;margin-left:auto;padding-right:11px;font-size:14px}
+  .pt td:nth-child(4){flex:0 0 auto;font-size:19px}
+  .pt tr.hl td,.pt tbody tr:hover td,.pt tr:hover td{background:none}
+  .pt tr.hl{background:linear-gradient(120deg,rgba(168,129,63,.11),rgba(168,129,63,.04));
+    border-color:var(--gold-line)}
   .fear .fa{padding:0 20px 20px 24px}
   .fear summary{padding:17px 18px;font-size:15.5px}
   .timer div{min-width:0;flex:1;padding:12px 4px}
@@ -1614,6 +1641,18 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.1);border-color:var(--gold-
     <div class="kick"><i></i><span>Первый визит −50%</span></div>
     <h3>Подберём удобное для вас время</h3>
     <p class="sub">Оставьте номер — Екатерина напишет в течение 15 минут и предложит два-три удобных окна. Скидку первого визита закрепим за вашим номером на 7 дней, так что выбирать день можно спокойно.</p>
+
+    <!-- Расчёт из калькулятора: человек только что отметил зоны и увидел
+         цену — переспрашивать его об этом в форме нельзя. Цифры едут
+         дальше сами: и на экран, чтобы было видно, что фиксируем, и в
+         заявку, чтобы Екатерина писала уже по делу. -->
+    <div class="cbsum" id="cbSum" hidden>
+      <div class="cbsum-t">Фиксируем ваш расчёт</div>
+      <div class="cbsum-z" id="cbZones"></div>
+      <div class="cbsum-r"><span>Первый визит</span><b id="cbFirst"></b></div>
+      <div class="cbsum-r"><span>Курс целиком</span><b id="cbCourse"></b></div>
+    </div>
+
     <form id="formCb">
       <div class="fld">
         <label for="cPhone">Ваш номер телефона</label>
@@ -1669,7 +1708,7 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.1);border-color:var(--gold-
    Перед запуском заполнить CONFIG: без leadEndpoint заявки никуда не уходят.
    ========================================================================== */
 var CONFIG = {
-  leadEndpoint: '',                 // URL вебхука CRM / Telegram-бота / lead.php
+  leadEndpoint: 'lead.php',         // приёмник заявок рядом; можно заменить на вебхук CRM
   metrikaId: 0,                     // номер счётчика Яндекс.Метрики
   tg: 'https://t.me/VIV_Studio',
   phone: '+79219156255',
@@ -1725,9 +1764,28 @@ var CONFIG = {
     (m ? [m] : $$('.ov.on')).forEach(function (x) { x.classList.remove('on'); });
     document.body.style.overflow = '';
   }
+  /* Последний расчёт калькулятора и место, откуда открыли модалку записи.
+     Нужны, чтобы не спрашивать у человека то, что он уже отметил. */
+  var LAST_CALC = null, CB_FROM = '';
+  function fillCbSum() {
+    var box = $('#cbSum'); if (!box) return;
+    if (CB_FROM !== 'calc' || !LAST_CALC) { box.hidden = true; return; }
+    $('#cbZones').textContent = LAST_CALC.zones;
+    $('#cbFirst').textContent = LAST_CALC.first;
+    $('#cbCourse').textContent = LAST_CALC.course;
+    box.hidden = false;
+  }
+
   document.addEventListener('click', function (e) {
     var cb = e.target.closest('[data-cb]');
-    if (cb) { e.preventDefault(); goal('cb_open', { from: cb.getAttribute('data-cb') }); openMod('#ovCb'); return; }
+    if (cb) {
+      e.preventDefault();
+      CB_FROM = cb.getAttribute('data-cb') || '';
+      goal('cb_open', { from: CB_FROM });
+      fillCbSum();
+      openMod('#ovCb');
+      return;
+    }
     if (e.target.closest('[data-close]')) { closeMod(e.target.closest('.ov')); return; }
     if (e.target.classList && e.target.classList.contains('ov')) { closeMod(e.target); }
   });
@@ -1782,7 +1840,21 @@ var CONFIG = {
   }
   hookForm('#formDiag', 'Бесплатная диагностика');
   hookForm('#formFinal', 'Финальная форма — скидка первого визита');
-  hookForm('#formCb', 'Запись на первый визит');
+  /* Из калькулятора заявка уезжает вместе с цифрами: зоны, цена первого
+     визита и вилка курса. Иначе Екатерина получает голый телефон и
+     переспрашивает то, что человек уже отметил на сайте. */
+  hookForm('#formCb', 'Запись на первый визит', function (p) {
+    if (CB_FROM) p['Кнопка'] = CB_FROM;
+    if (CB_FROM === 'calc' && LAST_CALC) {
+      /* в цифрах стоят неразрывные пробелы — в CSV и Telegram они лишние */
+      var plain = function (s) { return String(s).replace(/ /g, ' '); };
+      p.form = 'Запись из калькулятора';
+      p['Зоны'] = LAST_CALC.zones;
+      p['Первый визит'] = plain(LAST_CALC.first);
+      p['Курс целиком'] = plain(LAST_CALC.course);
+      p['Время визита'] = LAST_CALC.time;
+    }
+  });
   hookForm('#formExit', 'Чек-лист (pop-up на выход)');
 
   /* ---------- таймер акции ---------- */
@@ -1840,12 +1912,14 @@ var CONFIG = {
     };
 
     function calc() {
-      var sum = 0, mins = 0, n = 0;
+      var sum = 0, mins = 0, n = 0, names = [];
       inputs.forEach(function (i) {
         if (!i.checked) return;
         sum += +i.getAttribute('data-p'); mins += +i.getAttribute('data-t'); n++;
+        var zn = i.parentNode.querySelector('.zn');
+        if (zn) names.push(zn.firstChild.textContent.trim());
       });
-      if (!n) { body.hidden = true; empty.hidden = false; return; }
+      if (!n) { body.hidden = true; empty.hidden = false; LAST_CALC = null; return; }
       body.hidden = false; empty.hidden = true;
 
       var first = sum / 2;
@@ -1872,6 +1946,14 @@ var CONFIG = {
       var tail = (h % 10 === 1 && h % 100 !== 11) ? ' час'
                : ([2, 3, 4].indexOf(h % 10) >= 0 && (h % 100 < 12 || h % 100 > 14)) ? ' часа' : ' часов';
       $('#cHours').textContent = h + tail;
+
+      /* снимок для модалки записи и для заявки */
+      LAST_CALC = {
+        zones: names.join(', '),
+        first: fmt(first),
+        course: fmt(lo) + ' — ' + fmt(hi),
+        time: 'около ' + Math.max(6, mins) + ' мин'
+      };
     }
 
     box.addEventListener('change', function (e) {
