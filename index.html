@@ -322,8 +322,8 @@ header nav a:hover::after{right:0}
 .strip span{font-size:13px;color:var(--tx3)}
 /* цифры в ленте идут тремя цветами по кругу — золото, лиловый, мятный:
    одноцветная лента на тёмном читается как техническая строка */
-.strip .it:nth-child(3n+2) b{background:linear-gradient(120deg,#F3AABA,#BCA2FA)}
-.strip .it:nth-child(3n) b{background:linear-gradient(120deg,#B7EEDD,#8FDBC7)}
+.strip .it:nth-child(3n+2) b{background-image:linear-gradient(120deg,#F3AABA,#BCA2FA)}
+.strip .it:nth-child(3n) b{background-image:linear-gradient(120deg,#B7EEDD,#8FDBC7)}
 
 /* ── ГЛАВЫ ── */
 /* На стыке двух тёмных бумаг нужна не линия, а перегиб: сверху тонкий
@@ -332,16 +332,44 @@ header nav a:hover::after{right:0}
 .pane{position:relative;padding:104px 0;background:var(--bg);isolation:isolate;
   box-shadow:inset 0 1px 0 rgba(255,240,220,.07),inset 0 -26px 40px -30px rgba(0,0,0,.9)}
 .pane::before{content:'';position:absolute;inset:0;pointer-events:none;z-index:-1;background:var(--spot,none)}
-.t-wine{--bg:#1B0F19;--spot:radial-gradient(60% 50% at 88% 0%,rgba(243,170,186,.11),transparent 70%);--acc:var(--rose)}
-.t-indigo{--bg:#0E1126;--spot:radial-gradient(56% 46% at 10% 4%,rgba(188,162,250,.13),transparent 70%);--acc:var(--lilac)}
-.t-plum{--bg:#150C1D;--spot:radial-gradient(60% 50% at 92% 10%,rgba(188,162,250,.12),transparent 70%);--acc:var(--lilac)}
-.t-jade{--bg:#091716;--spot:radial-gradient(58% 46% at 8% 0%,rgba(143,219,199,.11),transparent 70%);--acc:var(--mint)}
-.t-espresso{--bg:#190F0C;--spot:radial-gradient(58% 48% at 86% 4%,rgba(226,190,134,.13),transparent 70%);--acc:var(--gold-lt)}
-.t-night{--bg:#0C0F22;--spot:radial-gradient(56% 44% at 14% 100%,rgba(143,219,199,.09),transparent 70%);--acc:var(--mint)}
-.t-rosewood{--bg:#1C1014;--spot:radial-gradient(56% 46% at 90% 0%,rgba(243,170,186,.12),transparent 70%);--acc:var(--rose)}
+/* У каждой главы два световых пятна разного цвета: одно у верхнего угла,
+   второе — у противоположного нижнего. Одно пятно давало ровную заливку и
+   глава читалась плоско; два дают глубину и цветную ноту, ради которой
+   ночная страница вообще может быть красочной. */
+.t-wine{--bg:#1B0F19;--acc:var(--rose);
+  --spot:radial-gradient(56% 46% at 88% 0%,rgba(243,170,186,.2),transparent 68%),
+         radial-gradient(48% 40% at 2% 100%,rgba(226,190,134,.13),transparent 70%)}
+.t-indigo{--bg:#0E1126;--acc:var(--lilac);
+  --spot:radial-gradient(54% 44% at 8% 2%,rgba(188,162,250,.22),transparent 68%),
+         radial-gradient(46% 40% at 96% 100%,rgba(143,219,199,.12),transparent 70%)}
+.t-plum{--bg:#150C1D;--acc:var(--lilac);
+  --spot:radial-gradient(56% 46% at 92% 6%,rgba(188,162,250,.2),transparent 68%),
+         radial-gradient(48% 40% at 0% 96%,rgba(243,170,186,.13),transparent 70%)}
+.t-jade{--bg:#091716;--acc:var(--mint);
+  --spot:radial-gradient(54% 44% at 6% 0%,rgba(143,219,199,.19),transparent 68%),
+         radial-gradient(48% 42% at 98% 96%,rgba(226,190,134,.13),transparent 70%)}
+.t-espresso{--bg:#190F0C;--acc:var(--gold-lt);
+  --spot:radial-gradient(56% 46% at 86% 2%,rgba(226,190,134,.22),transparent 68%),
+         radial-gradient(46% 40% at 4% 100%,rgba(243,170,186,.12),transparent 70%)}
+.t-night{--bg:#0C0F22;--acc:var(--mint);
+  --spot:radial-gradient(52% 44% at 12% 100%,rgba(143,219,199,.16),transparent 68%),
+         radial-gradient(50% 42% at 92% 0%,rgba(188,162,250,.16),transparent 70%)}
+.t-rosewood{--bg:#1C1014;--acc:var(--rose);
+  --spot:radial-gradient(54% 46% at 90% 0%,rgba(243,170,186,.2),transparent 68%),
+         radial-gradient(48% 40% at 4% 98%,rgba(188,162,250,.12),transparent 70%)}
 
 .card{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);
   transition:transform .5s var(--ease),border-color .5s var(--ease),background .5s var(--ease),box-shadow .5s var(--ease)}
+/* Один угол у карточки всегда острый, и в каждой паре он свой. Приём с
+   печатного разворота: одинаковые скруглённые прямоугольники подряд
+   усыпляют глаз, срезанный угол задаёт направление чтения. */
+.fork .fk:nth-child(1){border-radius:var(--r-xl) var(--r-lg) var(--r-lg) 6px}
+.fork .fk:nth-child(2){border-radius:var(--r-lg) var(--r-xl) 6px var(--r-lg)}
+.care .cc:nth-child(1),.g2 .cc:nth-child(1){border-radius:var(--r-xl) var(--r-lg) var(--r-lg) 6px}
+.care .cc:nth-child(2){border-radius:var(--r-lg) var(--r-lg) var(--r-lg) var(--r-lg)}
+.care .cc:nth-child(3),.g2 .cc:nth-child(2){border-radius:var(--r-lg) var(--r-xl) 6px var(--r-lg)}
+.cmp .c:nth-child(1){border-radius:var(--r-xl) var(--r-lg) var(--r-lg) 6px}
+.cmp .c:nth-child(3){border-radius:var(--r-lg) var(--r-xl) 6px var(--r-lg)}
 .card:hover{transform:translateY(-4px);border-color:var(--line-2);background:var(--card-h);box-shadow:var(--sh)}
 
 /* ── РАЗВИЛКА ── */
@@ -372,7 +400,7 @@ header nav a:hover::after{right:0}
   line-height:1.55;color:var(--tx2);background:var(--card);border:1px solid var(--line)}
 .note .i{flex:none;margin-top:2px;color:var(--acc)}
 .cta-row{margin-top:30px;display:flex;gap:16px;flex-wrap:wrap;align-items:center}
-.cta-row .under{max-width:38ch}
+.cta-row .under{max-width:46ch}
 .lnk{color:var(--gold-lt);font-weight:600;text-decoration:none;border-bottom:1px solid var(--line-2);
   transition:border-color .3s var(--ease),color .3s var(--ease)}
 .lnk:hover{color:#FFF8F0;border-color:var(--gold)}
@@ -1168,7 +1196,7 @@ footer h5{font-size:10.5px;font-weight:700;letter-spacing:.2em;text-transform:up
 
       <div class="cta-row">
         <button class="btn" data-cb="care" data-goal="care_cta">Записаться на первый визит</button>
-        <span class="under">хотите сначала посмотреть студию — <a class="lnk" href="https://t.me/VIV_Studio" target="_blank" rel="noopener" data-goal="tg">напишите нам</a></span>
+        <span class="under">хотите сначала посмотреть студию — <a class="lnk" href="https://t.me/VIV_Studio" target="_blank" rel="noopener" data-goal="tg">напишите</a></span>
       </div>
     </div>
   </div>
