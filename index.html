@@ -18,6 +18,95 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
+
+<!-- Микроразметка. Поиск показывает по ней карточку студии (адрес, часы,
+     телефон, цена) и раскрывает вопросы прямо в выдаче — это лишние
+     касания до перехода на сайт. Правило одно: в разметке нет ничего,
+     чего нет на странице, и нет ни одного отзыва и рейтинга, пока их
+     не появилось на самом деле. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BeautySalon",
+  "name": "VIV.STUDIO",
+  "description": "Студия лазерной эпиляции и косметологии в центре Санкт-Петербурга: одна клиентка в одно время, отдельный кабинет, один косметолог с медицинским образованием.",
+  "url": "https://viv.studio/",
+  "image": "https://viv.studio/assets/img/og.png",
+  "telephone": "+7 921 915-62-55",
+  "priceRange": "700–9800 ₽",
+  "currenciesAccepted": "RUB",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Суворовский проспект, 35",
+    "addressLocality": "Санкт-Петербург",
+    "addressCountry": "RU"
+  },
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "10:00",
+    "closes": "21:00"
+  }],
+  "sameAs": ["https://vk.com/viv.studio", "https://t.me/VIV_Studio"],
+  "makesOffer": [
+    {
+      "@type": "Offer",
+      "name": "Лазерная эпиляция, комплекс «Всё тело», первый визит",
+      "price": "4900",
+      "priceCurrency": "RUB",
+      "description": "Всё тело за один визит, около 40 минут, без анестезии. Обычная цена 9 800 ₽."
+    },
+    {
+      "@type": "Offer",
+      "name": "Диагностика и план курса",
+      "price": "0",
+      "priceCurrency": "RUB",
+      "description": "Разбор кожи, проверка противопоказаний, пробная вспышка и план на 12 месяцев. Бесплатно и ни к чему не обязывает."
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Лазерная эпиляция — это очень больно?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Терпимо: тёплый щелчок резинкой на долю секунды, кожа всё время под сапфировым холодом. Верить на слово не нужно — на бесплатной диагностике делаем пробную вспышку."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Останутся ли ожоги или тёмные пятна?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ожог — это чужая мощность и работа по свежему загару. Мы определяем тип кожи и делаем тест. Если кожа ответила не так, визит переносим, а не «пробуем аккуратнее»."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Подойдёт ли лазер, если волосы светлые или седые?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Может и не подойти — и вы узнаете это бесплатно и до оплаты. Лазер видит пигмент, в седых волосах его нет."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Сколько процедур нужно и не разведут ли на лишние?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Обычно 6–8 процедур с интервалом 4–6 недель. Число вы узнаёте до оплаты, и оно записано в плане. Хватило меньше — вернём деньги за оставшиеся."
+      }
+    }
+  ]
+}
+</script>
+
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/manrope-cyrillic.woff2" crossorigin>

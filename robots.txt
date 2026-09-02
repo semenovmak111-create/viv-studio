@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /leads/
+Disallow: /lead.php
+
+Sitemap: https://viv.studio/sitemap.xml
