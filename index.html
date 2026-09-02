@@ -129,7 +129,7 @@
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%}
 body{
   font-family:'Manrope',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-  background:var(--paper);color:var(--body);
+  background:#f7f0e9;color:var(--body);
   font-size:16.5px;line-height:1.64;-webkit-font-smoothing:antialiased;
   overflow-x:hidden;position:relative;
 }
@@ -144,13 +144,7 @@ button,input,select,textarea{font:inherit;color:inherit}
    зерна снимает пластиковую гладкость заливки. Слой зафиксирован и не
    скроллится, поэтому оттенок плит слегка «дышит» при прокрутке.
    ──────────────────────────────────────────────────────────────────────── */
-.bg{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
-.bg::before{content:'';position:absolute;inset:-10%;
-  background:
-    radial-gradient(760px 520px at 82% -4%,rgba(122,81,196,.13),transparent 66%),
-    radial-gradient(680px 480px at 2% 8%,rgba(184,118,127,.14),transparent 64%),
-    radial-gradient(900px 600px at 50% 108%,rgba(168,129,63,.1),transparent 68%)}
-.bg::after{content:'';position:absolute;inset:0;opacity:.5;
+.bg{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.045'/%3E%3C/svg%3E")}
 header,.hero,section,footer,.strip,.orn,.sticky,.ov,.progress,.up{position:relative;z-index:1}
 
@@ -159,48 +153,73 @@ header,.hero,section,footer,.strip,.orn,.sticky,.ov,.progress,.up{position:relat
 .grid{display:grid;gap:22px}
 .grid>*,.hero-g>*,.exp>*,.stu>*,.fbox>*,.fin-g>*,.fork>*,.calc-g>*{min-width:0}
 
-/* ── ПЛИТА ГЛАВЫ ─────────────────────────────────────────────────────────
-   Средний уровень глубины. Заливка слабая и всегда из фирменной пары
-   (роза / золото / фиолет), рамка золотая волосяная, углы крупные.
-   Плита полупрозрачна — сквозь неё видно подсветку фона.
+/* ── ПОЛОСЫ ГЛАВ ─────────────────────────────────────────────────────────
+   Никаких плавающих прямоугольников с полями: глава — это цветная полоса
+   во всю ширину экрана, содержимое держит только колонка набора. Цвета
+   идут по кругу и никогда не повторяются подряд, поэтому лента страницы
+   читается как разворот журнала, а не как стопка карточек.
+
+   Заливки приглушённые — 4–7 процентов насыщенности от фирменной пары.
+   Яркость намеренно отдана двум экранам: первому и финальному.
    ──────────────────────────────────────────────────────────────────────── */
-.pane{
-  max-width:1300px;margin:26px auto;border-radius:var(--r-xl);
-  background:var(--tint);border:1px solid var(--tint-line);
-  box-shadow:var(--sh);padding:88px 0;overflow:hidden;position:relative;
+.pane{background:var(--tint);padding:92px 0;position:relative;overflow:hidden}
+section:not(.pane){padding:92px 0}
+
+.t-champ{--tint:linear-gradient(170deg,#fdf6e9,#f9eeda);--tint-line:var(--gold-line);--acc:var(--gold-ink)}
+.t-lilac{--tint:linear-gradient(170deg,#f3eefc,#ebe4f8);--tint-line:var(--vio-line);--acc:var(--vio-deep)}
+.t-blush{--tint:linear-gradient(170deg,#fceeec,#f9e4e4);--tint-line:var(--rose-line);--acc:var(--rose-deep)}
+.t-mint{--tint:linear-gradient(170deg,#eef4f0,#e6efe9);--tint-line:rgba(94,127,109,.24);--acc:#456354}
+.t-ivory{--tint:linear-gradient(170deg,#fdf9f6,#f9f2ec);--tint-line:var(--line);--acc:var(--gold-ink)}
+
+/* волосяная золотая нить на стыке полос — шов виден, но не спорит */
+.pane+.pane::before,.pane+.vivid::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold-line-2) 22%,var(--gold-line-2) 78%,transparent);
+  z-index:2}
+
+/* ── ЯРКИЕ ЭКРАНЫ ────────────────────────────────────────────────────────
+   Два экрана держат весь цвет страницы: первый и финальный. Это шёлковая
+   сетка из четырёх пятен — лиловое, розовое, персиковое и золотое, — по
+   которой идёт мягкий свет. Остальная страница намеренно тише, иначе
+   яркость перестаёт работать.
+   ──────────────────────────────────────────────────────────────────────── */
+.hero{
+  padding:66px 0 86px;
+  background:
+    radial-gradient(880px 620px at 78% 4%,rgba(150,96,214,.55),transparent 60%),
+    radial-gradient(740px 560px at 8% 10%,rgba(228,124,140,.52),transparent 58%),
+    radial-gradient(820px 600px at 92% 94%,rgba(242,176,116,.5),transparent 60%),
+    radial-gradient(680px 520px at 22% 98%,rgba(186,140,226,.5),transparent 60%),
+    linear-gradient(160deg,#fbeadf,#f2e0f4 46%,#fdeedd);
 }
-.pane::before{content:'';position:absolute;inset:0;pointer-events:none;
-  border-radius:inherit;box-shadow:inset 0 1px 0 rgba(255,255,255,.7)}
-section:not(.pane){padding:88px 0}
+.hero::after{content:'';position:absolute;left:0;right:0;bottom:0;height:120px;pointer-events:none;
+  background:linear-gradient(180deg,transparent,rgba(253,246,233,.85))}
 
-.t-blush{--tint:linear-gradient(166deg,rgba(251,238,236,.92),rgba(248,231,230,.88) 62%,rgba(246,235,239,.9));
-  --tint-line:var(--rose-line);--acc:var(--rose-deep)}
-.t-champ{--tint:linear-gradient(166deg,rgba(252,245,233,.92),rgba(249,239,223,.88) 60%,rgba(250,242,231,.9));
-  --tint-line:var(--gold-line);--acc:var(--gold-ink)}
-.t-lilac{--tint:linear-gradient(166deg,rgba(244,238,252,.92),rgba(237,230,250,.88) 60%,rgba(241,236,251,.9));
-  --tint-line:var(--vio-line);--acc:var(--vio-deep)}
-.t-ivory{--tint:linear-gradient(166deg,rgba(255,253,251,.94),rgba(252,247,243,.9));
-  --tint-line:var(--line);--acc:var(--gold-ink)}
-
-/* ── ТЁМНАЯ ПЛИТА ────────────────────────────────────────────────────────
-   Смелость потрачена здесь: диагностика и финал. Внутренняя золотая
-   рамка с отступом — приём с печатного приглашения; диагональная сетка
-   в три процента снимает плоскость заливки.
-   ──────────────────────────────────────────────────────────────────────── */
-.vivid,.fin{
-  position:relative;overflow:hidden;color:var(--on-dark-2);
+/* ── ТЁМНАЯ ПОЛОСА ── */
+.vivid,.fin{position:relative;overflow:hidden;color:var(--on-dark-2)}
+.vivid{
+  padding:88px 0;
   background:
     radial-gradient(680px 420px at 88% 4%,rgba(184,118,127,.34),transparent 62%),
     radial-gradient(560px 380px at 2% 96%,rgba(122,81,196,.32),transparent 64%),
     linear-gradient(152deg,var(--dark) 0%,var(--dark-2) 52%,var(--dark-3) 100%);
 }
-.vivid{max-width:1300px;margin:26px auto;border-radius:var(--r-xl);padding:84px 0;box-shadow:var(--sh-lg)}
-.vivid::after,.fin::after{content:'';position:absolute;inset:14px;border-radius:calc(var(--r-xl) - 10px);
-  border:1px solid rgba(224,196,141,.22);pointer-events:none}
+/* второй яркий экран — финал. Та же шёлковая сетка, что на первом, но
+   в насыщенных тонах: страница открывается и закрывается цветом. */
+.fin{
+  background:
+    radial-gradient(720px 460px at 84% 2%,rgba(214,104,132,.62),transparent 62%),
+    radial-gradient(640px 440px at 8% 96%,rgba(126,74,196,.62),transparent 62%),
+    radial-gradient(560px 400px at 96% 92%,rgba(196,138,72,.5),transparent 60%),
+    linear-gradient(148deg,#3a1c46 0%,#4a1f4a 46%,#5a2748 100%);
+}
+.vivid::after,.fin::after{content:'';position:absolute;inset:16px;border-radius:22px;
+  border:1px solid rgba(224,196,141,.2);pointer-events:none}
 .vivid::before,.fin::before{content:'';position:absolute;inset:0;pointer-events:none;opacity:.5;
   background-image:repeating-linear-gradient(115deg,rgba(255,255,255,.05) 0 1px,transparent 1px 9px)}
 .vivid>*,.fin>*{position:relative;z-index:1}
 .vivid h2,.vivid h3,.fin h2,.fin h3{color:var(--on-dark)}
+/* карточки форм стоят на белом — тёмная полоса не должна красить их текст */
+.fin .fin-f h3,.vivid .frm h3,.fin .fin-f h2,.vivid .frm h2{color:var(--ink)}
 
 /* ── ТИПОГРАФИКА ── */
 h1,h2,h3{font-family:'Cormorant',Georgia,'Times New Roman',serif;font-weight:500;
@@ -296,7 +315,6 @@ header nav+.hd-c{margin-left:0}
 @media (max-width:1120px){.hd-ph{display:none}}
 
 /* ── ПЕРВЫЙ ЭКРАН ── */
-.hero{padding:58px 0 78px}
 .hero-g{display:grid;grid-template-columns:1.08fr .92fr;gap:54px;align-items:center}
 .tag{display:inline-flex;align-items:center;gap:9px;font-size:12.5px;font-weight:700;color:var(--body);
   background:var(--card);border:1px solid var(--gold-line);border-radius:99px;padding:8px 17px;
@@ -364,9 +382,9 @@ header nav+.hd-c{margin-left:0}
 .h-b3{bottom:23%;left:-7%}
 
 /* ── ЛЕНТА ФАКТОВ ── */
-.strip{max-width:1300px;margin:0 auto;border-radius:99px;overflow:hidden;padding:20px 0;
+.strip{overflow:hidden;padding:22px 0;
   background:linear-gradient(120deg,var(--dark),var(--dark-2) 60%,var(--dark-3));
-  box-shadow:var(--sh-lg);position:relative}
+  position:relative}
 .strip::after{content:'';position:absolute;inset:0;pointer-events:none;
   background:linear-gradient(90deg,var(--dark) 0,transparent 4%,transparent 96%,var(--dark) 100%)}
 .strip .row{display:flex;width:max-content;animation:mq 48s linear infinite}
@@ -643,7 +661,7 @@ header nav+.hd-c{margin-left:0}
 .addr a{color:var(--vio-deep);font-weight:700;text-decoration:none;border-bottom:1px solid rgba(84,54,143,.3)}
 
 /* ── ФИНАЛ ── */
-.fin{max-width:1300px;margin:0 auto;border-radius:var(--r-xl);padding:60px;box-shadow:var(--sh-lg)}
+.fin{padding:96px 0}
 .fin-g{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center}
 .fin h2{font-size:clamp(30px,3.5vw,44px)}
 .fin .lead{color:var(--on-dark-2)}
@@ -736,15 +754,14 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.1);border-color:var(--gold-
   .incl{grid-template-columns:repeat(3,1fr)}
   .incl .ic:nth-child(3n){border-right:0}
   .incl .ic:nth-child(-n+3){border-bottom:1px solid var(--line)}
-  .pane,.vivid{margin:16px;padding:64px 0;border-radius:28px}
+  .pane,.vivid{padding:64px 0}
   section:not(.pane){padding:64px 0}
-  .fin{padding:40px 32px;margin:0 16px}
-  .strip{margin:0 16px;border-radius:40px}
+  .fin{padding:64px 0}
 }
 @media (max-width:640px){
   body{font-size:16px}
   .wrap{padding:0 18px}
-  .pane,.vivid{margin:10px;padding:52px 0;border-radius:24px}
+  .pane,.vivid{padding:52px 0}
   section:not(.pane){padding:52px 0}
   .hero{padding:30px 0 46px}
   .h-frame{aspect-ratio:1/1;border-radius:150px 150px var(--r-lg) var(--r-lg)}
@@ -764,8 +781,8 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.1);border-color:var(--gold-
   .cta-wrap{width:100%}
   .sticky{display:flex}
   .up{display:none}
-  .fin{padding:32px 22px;border-radius:24px;margin:0 10px}
-  .strip{margin:0 10px;border-radius:30px;padding:16px 0}
+  .fin{padding:52px 0}
+  .strip{padding:16px 0}
   .strip b{font-size:22px}
   .strip .it{padding:0 24px}
   .fin-f,.frm,.calc-z,.calc-out{padding:24px 20px}
@@ -1045,8 +1062,6 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.1);border-color:var(--gold-
   </div>
 </section>
 
-<div class="orn" aria-hidden="true"><i></i><svg width="26" height="10" viewBox="0 0 26 10" fill="none"><path d="M13 1.2 16.2 5 13 8.8 9.8 5z" stroke="currentColor" stroke-width="1"/><circle cx="3" cy="5" r="1.2" fill="currentColor" fill-opacity=".7"/><circle cx="23" cy="5" r="1.2" fill="currentColor" fill-opacity=".7"/></svg><i></i></div>
-
 <!-- ============ 1. ЦЕНЫ ============ -->
 <section class="pane t-lilac rv" id="prices">
   <div class="wrap">
@@ -1081,7 +1096,7 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.1);border-color:var(--gold-
      а предсказуемость. Сначала человек получает свою цифру — цену первого
      визита, вилку по курсу и выгоду против воска, — и только потом у него
      просят телефон. Цены зон живут в data-p, шаг курса — 6–8 процедур. -->
-<section class="pane t-ivory rv" id="calc">
+<section class="pane t-blush rv" id="calc">
   <div class="wrap">
     <div class="kick"><i></i><em>02</em><span>Расчёт за минуту</span></div>
     <h2>Отметьте свои зоны — <span class="acc">и увидите цену курса целиком</span></h2>
@@ -1208,7 +1223,7 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.1);border-color:var(--gold-
 <!-- ============ 3. ЧТО ВЫ ПОЛУЧАЕТЕ ============
      Результат во времени: после каждой процедуры — конкретная выгода,
      которую видно своими глазами. «Навсегда» не обещаем нигде. -->
-<section class="pane t-ivory rv" id="result">
+<section class="pane t-mint rv" id="result">
   <div class="wrap">
     <div class="kick"><i></i><em>04</em><span>Ваш результат</span></div>
     <h2>Что вы получаете <span class="acc">после каждой процедуры</span></h2>
@@ -1387,7 +1402,7 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.1);border-color:var(--gold-
 </section>
 
 <!-- ============ 6. ЧЕСТНЫЕ ОТВЕТЫ ============ -->
-<section class="pane t-ivory rv" id="answers">
+<section class="pane t-lilac rv" id="answers">
   <div class="wrap">
     <div class="kick"><i></i><em>07</em><span>Честные ответы</span></div>
     <h2>Четыре причины, по которым откладывают. <span class="acc">И четыре ответа</span></h2>
@@ -1461,7 +1476,7 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.1);border-color:var(--gold-
 </section>
 
 <!-- ============ 9. СТУДИЯ ============ -->
-<section class="rv" id="studio">
+<section class="pane t-mint rv" id="studio">
   <div class="wrap">
     <div class="stu">
       <div class="stu-m">
@@ -1516,13 +1531,10 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.1);border-color:var(--gold-
   </div>
 </section>
 
-<div class="orn" aria-hidden="true"><i></i><svg width="26" height="10" viewBox="0 0 26 10" fill="none"><path d="M13 1.2 16.2 5 13 8.8 9.8 5z" stroke="currentColor" stroke-width="1"/><circle cx="3" cy="5" r="1.2" fill="currentColor" fill-opacity=".7"/><circle cx="23" cy="5" r="1.2" fill="currentColor" fill-opacity=".7"/></svg><i></i></div>
-
 <!-- ============ ФИНАЛЬНАЯ ФОРМА ============ -->
-<section class="rv">
+<section class="fin rv">
   <div class="wrap">
-    <div class="fin">
-      <div class="fin-g">
+    <div class="fin-g">
         <div>
           <div class="kick"><i></i><span>Первый визит</span></div>
           <h2>Всё тело за 4 900 ₽ вместо 9 800 — <span class="acc">и вы экономите половину</span></h2>
@@ -1548,7 +1560,6 @@ footer .btn-ghost:hover{background:rgba(255,255,255,.1);border-color:var(--gold-
           <p class="under" style="margin-top:13px">Скидка держится за вашим номером <b>7 дней</b> — прийти можно не сегодня.</p>
         </form>
       </div>
-    </div>
   </div>
 </section>
 
